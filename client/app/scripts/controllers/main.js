@@ -8,20 +8,23 @@
 * Controller of the clientApp
 */
 angular.module('clientApp')
-.controller('MainCtrl', function ($http, $scope) {
-    var req = $http.get('/api/users');
-    // arrow functions would be nice here
-    // but this tutorial is already really long
-    // so let's not mess with modifying grunt linting
-    req.then(function (res) {
-        $scope.awesomeUsers = res.data.users;
-    });
-    req.catch(function (err) {
-        console.log(err);
-    });
-    this.awesomeThings = [
-        'HTML5 Boilerplate',
-        'AngularJS',
-        'Karma'
-    ];
+.controller('MainCtrl', function ($http, feedManager) {
+    var vm = this;
+    vm.feed = {};
+
+    function init() {
+        getFeed();
+    }
+
+    function getFeed() {
+        feedManager.parseFeed().then(function(response) {
+            console.log(response);
+            vm.feed = response;
+        }).catch(function(error) {
+            console.log(error);
+        });
+    }
+
+
+    init();
 });
