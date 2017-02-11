@@ -1,37 +1,58 @@
 'use strict';
 
 /**
- * @ngdoc overview
- * @name clientApp
- * @description
- * # clientApp
- *
- * Main module of the application.
- */
+* @ngdoc overview
+* @name clientApp
+* @description
+* # clientApp
+*
+* Main module of the application.
+*/
 angular
-  .module('clientApp', [
+.module('clientApp', [
     'ngAnimate',
     'ngCookies',
     'ngMessages',
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
-  ])
-  .config(function ($routeProvider, $locationProvider) {
+    'ngTouch',
+    'ui.router'
+])
+.config(function ($urlRouterProvider, $stateProvider, $locationProvider) {
     $locationProvider.html5Mode(true); // <-- ADD THIS
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
-      })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
-  });
+
+    $urlRouterProvider.otherwise('/');
+
+    $stateProvider.state('root', {
+        url: '',
+        // Make this state abstract so it can never be
+        // loaded directly
+        abstract: true,
+        resolve: {
+        },
+        views: {
+            'titlebar@': {
+                templateUrl: 'views/titlebar.html',
+                controller: 'TitlebarCtrl',
+                controllerAs: 'vm'
+            },
+        }
+    });
+    $stateProvider.state('root.dashboard', {
+        url: '/',
+        resolve: {
+        },
+        data: {
+            pageName: 'MainCtrl',
+            browserTitle: 'Main'
+        },
+        views: {
+            'container@': {
+                templateUrl: 'views/main.html',
+                controller: 'MainCtrl',
+                controllerAs: 'vm'
+            }
+        }
+    });
+});
