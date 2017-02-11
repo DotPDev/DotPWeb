@@ -6,18 +6,25 @@ describe('Controller: MainCtrl', function () {
   beforeEach(module('clientApp'));
 
   var MainCtrl,
-    scope;
+    scope,
+    feedManager,
+    $q;
 
   // Initialize the controller and a mock scope
-  beforeEach(inject(function ($controller, $rootScope) {
+  beforeEach(inject(function ($controller, $rootScope, _feedManager_, _$q_) {
     scope = $rootScope.$new();
+    feedManager = _feedManager_;
+    $q = _$q_;
     MainCtrl = $controller('MainCtrl', {
-      $scope: scope
-      // place here mocked dependencies
+      $scope: scope,
+      feedManager: _feedManager_
     });
   }));
 
-  it('should attach a list of awesomeThings to the scope', function () {
-    expect(MainCtrl.awesomeThings.length).toBe(3);
+  describe('init', function () {
+      it('should make sure to call getFeeds', function () {
+        expect(MainCtrl.feed.length).not.toBe({});
+      });
   });
+
 });
