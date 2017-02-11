@@ -10,16 +10,27 @@
 * Factory in the clientApp.
 */
 angular.module('clientApp')
-.factory('feedManager', function ($window, $http, $sce) {
+.factory('feedManager', function ($http, $sce) {
     function parseFeed() {
         var url = $sce.trustAsResourceUrl('http://defenseofthepatience.libsyn.com/rss');
         return $http.get(url).then(function(response) {
-            var xml = $window.$.parseXML(response.data);
+            var xml = parseXml(response.data);
             var json = xml2json(xml, '');
             return JSON.parse(json);
         }).catch(function(error) {
+            //TODO show UI error to user
             console.log(error);
         });
+    }
+
+    function parseXml(xmlString) {
+        if (window.DOMParser) {
+                return (new window.DOMParser()).parseFromString(xmlString, "text/xml");
+        } else {
+            // browser is old/IE8 or older, we're not supporting
+            //TODO show unsupported browser message to user
+            return null;
+        }
     }
 
     // xml2json function taken from http://goessner.net/download/prj/jsonxml/
