@@ -6,11 +6,8 @@
   "dependencies": {},
   "devDependencies": {},
   "scripts": {
-    "pretest": "cd client && npm install && bower install",
-    "test": "grunt test",
-    "posttest": "cd ..",
     "preinstall": "cd server && npm install",
-    "postinstall": "cd .."
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
