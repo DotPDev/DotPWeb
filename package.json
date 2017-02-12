@@ -6,11 +6,11 @@
   "dependencies": {},
   "devDependencies": {},
   "scripts": {
-    "preinstall": "cd server && npm install",
-    "postinstall": "cd ..",
     "pretest": "cd client && npm install && bower install",
     "test": "grunt test",
-    "posttest": "cd .."
+    "posttest": "cd ..",
+    "preinstall": "cd server && npm install",
+    "postinstall": "cd .."
   },
   "repository": {
     "type": "git",
