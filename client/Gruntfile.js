@@ -373,6 +373,18 @@ module.exports = function (grunt) {
       }
     },
 
+    //less capability
+    less: {
+      production: {
+        options: {
+          paths: ['app/styles']
+        },
+        files: {
+            'app/styles/main.css': 'app/styles/main.less'
+        }
+      }
+    },
+
     // Replace Google CDN references
     cdnify: {
       dist: {
@@ -418,6 +430,7 @@ module.exports = function (grunt) {
         'copy:styles'
       ],
       dist: [
+        'less:production',
         'copy:styles',
         'imagemin',
         'svgmin'
@@ -433,6 +446,7 @@ module.exports = function (grunt) {
     }
   });
 
+  grunt.loadNpmTasks('grunt-contrib-less');
 
   grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
     if (target === 'dist') {
