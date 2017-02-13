@@ -12,8 +12,7 @@
 angular.module('clientApp')
 .factory('feedManager', function ($http) {
     function parseFeed() {
-        var url = 'http://defenseofthepatience.libsyn.com/rss';
-        return $http.get(url).then(function(response) {
+        return $http.get('/api/feed/').then(function(response) {
             var xml = parseXml(response.data);
             var json = xml2json(xml, '');
             return JSON.parse(json);
