@@ -8,6 +8,7 @@ var cors = require('cors')
 
 var index = require('./routes/index');
 var users = require('./routes/users');
+var feed = require('./routes/feed');
 
 var app = express();
 
@@ -27,6 +28,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // app.use('/', index);
 app.use('/api/users', users); // <-- note we're calling this API
+app.use('/api/feed', feed);
 
 // In production, we'll actually serve our angular app from express
 if (app.get('env') === 'production') {
@@ -42,12 +44,5 @@ if (app.get('env') === 'production') {
     });
   });
 }
-
-app.set('port', process.env.PORT || 3000);
-
-var server = app.listen(app.get('port'), function() {
-	// debug('Express server listening on port ' + server.address().port);
-   	console.log('myApp server listening on port ' + app.get('port'));
-});
 
 module.exports = app;
