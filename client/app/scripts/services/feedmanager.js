@@ -10,9 +10,9 @@
 * Factory in the clientApp.
 */
 angular.module('clientApp')
-.factory('feedManager', function ($http, $sce) {
+.factory('feedManager', function ($http) {
     function parseFeed() {
-        var url = $sce.trustAsResourceUrl('http://defenseofthepatience.libsyn.com/rss');
+        var url = 'http://defenseofthepatience.libsyn.com/rss';
         return $http.get(url).then(function(response) {
             var xml = parseXml(response.data);
             var json = xml2json(xml, '');
