@@ -17,6 +17,7 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
+    'firebase',
     'ui.router'
 ])
 .config(function ($urlRouterProvider, $stateProvider, $locationProvider) {
@@ -70,7 +71,8 @@ angular
         }
     });
 })
-.run(function ($rootScope) {
+.run(function ($rootScope, firebaseSvc) {
+    firebaseSvc.initialize();
 
     //send page to Google Analytics on state change
     $rootScope.$on('$stateChangeSuccess', function (event) {
