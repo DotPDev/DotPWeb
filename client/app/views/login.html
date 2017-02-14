@@ -93,16 +93,16 @@
             <button ng-disabled="loginForm.$invalid" type="submit" class="cmdr-button" ng-if="!vm.createMode && !vm.resetPasswordMode">
                 LOGIN
             </button>
-            <button type="submit" class="cmdr-button" ng-click="vm.createMode = !vm.createMode" ng-if="!vm.createMode && !vm.resetPasswordMode">
+            <button type="submit" ng-click="vm.createMode = !vm.createMode" ng-if="!vm.createMode && !vm.resetPasswordMode">
                 REGISTER
             </button>
-            <button ng-disabled="loginForm.$invalid" class="cmdr-button" ng-if="vm.createMode">
+            <button ng-disabled="loginForm.$invalid" ng-if="vm.createMode">
                 CREATE
             </button>
-            <button ng-disabled="loginForm.$invalid" class="cmdr-button" ng-click="vm.forgotPassword()" ng-if="vm.resetPasswordMode">
+            <button ng-disabled="loginForm.$invalid" ng-click="vm.forgotPassword()" ng-if="vm.resetPasswordMode">
                 SEND EMAIL
             </button>
-            <button class="cmdr-button" ng-click="vm.cancelAction()" ng-if="vm.createMode || vm.resetPasswordMode">
+            <button ng-click="vm.cancelAction()" ng-if="vm.createMode || vm.resetPasswordMode">
                 CANCEL
             </button>
             <div class="forgot-password" ng-click="vm.resetPassword()" ng-if="!vm.resetPasswordMode && !vm.createMode">
