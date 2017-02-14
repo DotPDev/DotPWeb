@@ -54,6 +54,22 @@ angular
             }
         }
     });
+    $stateProvider.state('root.login', {
+        url: '/login',
+        resolve: {
+        },
+        data: {
+            pageName: 'LoginCtrl',
+            browserTitle: 'Login'
+        },
+        views: {
+            'container@': {
+                templateUrl: 'views/login.html',
+                controller: 'LoginCtrl',
+                controllerAs: 'vm'
+            }
+        }
+    });
     $stateProvider.state('root.about', {
         url: '/about',
         resolve: {
@@ -77,7 +93,6 @@ angular
     //send page to Google Analytics on state change
     $rootScope.$on('$stateChangeSuccess', function (event) {
         //TODO do something here to track the page (Google Analytics);
-        console.log(event);
     });
 
 });
