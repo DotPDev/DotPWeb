@@ -54,6 +54,22 @@ angular
             }
         }
     });
+    $stateProvider.state('root.login', {
+        url: '/login',
+        resolve: {
+        },
+        data: {
+            pageName: 'LoginCtrl',
+            browserTitle: 'Login'
+        },
+        views: {
+            'container@': {
+                templateUrl: 'views/login.html',
+                controller: 'LoginCtrl',
+                controllerAs: 'vm'
+            }
+        }
+    });
     $stateProvider.state('root.about', {
         url: '/about',
         resolve: {

@@ -1,4 +1,5 @@
 var express = require('express');
+var router = express.Router();
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
@@ -14,10 +15,6 @@ var app = express();
 
 app.use(cors()) // <--- CORS
 
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
-
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
@@ -30,9 +27,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/api/users', users); // <-- note we're calling this API
 app.use('/api/feed', feed);
 
+
 // In production, we'll actually serve our angular app from express
 if (app.get('env') === 'production') {
   app.use(express.static(path.join(__dirname, '/dist')));
+
+  // rewrite virtual urls to angular app to enable refreshing of internal pages
+  app.use('*', function (req, res, next) {
+      res.sendFile(path.resolve('dist/index.html'));
+  });
 
 // production error handler
   // no stacktraces leaked to user

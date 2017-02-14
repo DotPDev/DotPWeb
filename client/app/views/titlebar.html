@@ -11,7 +11,11 @@
         <ul class="nav navbar-nav">
           <li class="active"><a href="/">Home</a></li>
           <li><a ng-href="/about">About</a></li>
-          <li><a ng-href="/">Contact</a></li>
+          <li>
+              <a ng-if="!vm.user" ng-href="/login">Login</a>
+              <a ng-if="vm.user" ng-href="/login">{{vm.user.email}}</a>
+          </li>
+          <li><a ng-if="vm.user" ng-click="vm.signOut()" ng-href="/">Sign Out</a></li>
         </ul>
       </div>
     </div>
