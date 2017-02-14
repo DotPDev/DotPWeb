@@ -93,7 +93,6 @@ angular
     //send page to Google Analytics on state change
     $rootScope.$on('$stateChangeSuccess', function (event) {
         //TODO do something here to track the page (Google Analytics);
-        console.log(event);
     });
 
 });

@@ -14,6 +14,7 @@ angular.module('clientApp')
     function createUserAccount(email, password) {
         return firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
             //TODO handle error
+            console.log(error);
             return null;
         });
     }
@@ -21,6 +22,7 @@ angular.module('clientApp')
     function signIn(email, password) {
         return firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
             //TODO handle error
+            console.log(error);
             return null;
         });
     }

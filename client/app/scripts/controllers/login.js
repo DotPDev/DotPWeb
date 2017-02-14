@@ -8,7 +8,7 @@
  * Controller of the clientApp
  */
 angular.module('clientApp')
-  .controller('LoginCtrl', function ($state, auth, $window) {
+  .controller('LoginCtrl', function ($state, auth, $window, utils) {
     var vm = this;
     vm.user = auth.getAuth();
     vm.submitForm = submitForm;
@@ -21,6 +21,7 @@ angular.module('clientApp')
     vm.password = '';
     vm.userEmail = '';
     vm.newUserEmail = '';
+    vm.newUserDisplayName = '';
     vm.resetEmail = '';
     vm.newPassword = '';
     vm.confirmPassword = '';
@@ -47,9 +48,13 @@ angular.module('clientApp')
         vm.resetPasswordMode = false;
     }
 
-    function forgotPassword() {
-        auth.resetPassword('test@email.com').then(function(response) {
-            //TODO will always be void
+    function forgotPassword(email) {
+        auth.resetPassword(email).then(function(response) {
+            //TODO show email sent UI
+        }).catch(function(error) {
+            //TODO show error in UI to user
+            console.log(error);
+            console.log('reset email error, object is:');
         });
     }
 
@@ -59,27 +64,58 @@ angular.module('clientApp')
             $state.go('root.dashboard');
         }).catch(function(error) {
             //TODO catch error
+            console.log(error);
         });
     }
 
     function createUser() {
         auth.createUserAccount(vm.newUserEmail, vm.newPassword).then(function(response) {
             //TODO then update and add user to users collection
+            updateProfile(response, true);
         }).catch(function(error) {
             //TODO catch error
+            console.log(error);
         });
     }
 
-    function updateProfile(commanderName, isNew) {
-        var user = $window.firebase.auth().currentUser;
+    function updateProfile(user, isNewAccount) {
         user.updateProfile({
-            displayName: commanderName
+            email: user.email,
+            displayName: vm.newUserDisplayName || ''
         }).then(function() {
-            if (isNew) {
-                $state.go('root.dashboard');
-            }
+            //The UI is observing the state changes to firebase.Auth() so we are calling login() again here to register changes after doing updateProfile()
+            //No need to call a third time after updateCustomProfile() because the bound UI elements displaying the logged in user only are concerned with the account and not our custom profile.
+            login();
+            updateCustomProfile(user, isNewAccount);
         }, function(error) {
+            //TODO handle ui error to user
+            console.log(error);
         });
+    }
+
+    function updateCustomProfile(user, isNewAccount) {
+        var createdTime = utils.makeServerTime();
+        var userUpdateSet = {
+            email: user.email,
+            displayName: vm.newUserDisplayName || '',
+            photoURL: user.photoURL || '',
+            createdAt: createdTime
+        };
+        if (isNewAccount) {
+            $window.firebase.database().ref('users/' + user.uid).set(userUpdateSet).then(function() {
+                //TODO successful UI message
+            }).catch(function(error) {
+                //TODO fail UI message
+                console.log(error);
+            });
+        } else {
+            $window.firebase.database().ref('users/' + user.uid).update(userUpdateSet).then(function() {
+                //TODO successful UI message
+            }).catch(function(error) {
+                //TODO fail UI message
+                console.log(error);
+            });
+        }
     }
 
 
