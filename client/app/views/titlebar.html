@@ -1,23 +1,28 @@
-<div class="header">
-  <div class="navbar navbar-default" role="navigation">
-    <div class="container">
-      <div class="navbar-header">
-
-        <a class="navbar-brand" href="/">client</a>
-      </div>
-
-      <div class="collapse">
-
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="/">Home</a></li>
-          <li><a ng-href="/about">About</a></li>
-          <li>
-              <a ng-if="!vm.user" ng-href="/login">Login</a>
-              <a ng-if="vm.user" ng-href="/login">{{vm.user.displayName || vm.user.email}}</a>
-          </li>
-          <li ng-if="vm.user"><a ng-click="vm.signOut()" ng-href="/">Sign Out</a></li>
-        </ul>
-      </div>
+<header>
+    <div>
+        <a ui-sref="root.dashboard">Home</a>
     </div>
-  </div>
-</div>
+</header>
+    <nav role="navigation">
+        <ul class="nav">
+            <li class="active">
+                <a ui-sref="root.dotpeeps"><span>dotpeeps</span></a>
+            </li>
+            <li>
+                <a ui-sref="root.ladder"><span>ladder</span></a>
+            </li>
+            <li>
+                <a ui-sref="root.media"><span>media</span></a>
+            </li>
+            <li>
+                <a ui-sref="root.about"><span>about us</span></a>
+            </li>
+            <li class="action-wrapper">
+                <a ng-if="!vm.user" ui-sref="root.login"><span>Login</span></a>
+                <a ng-if="vm.user" ui-sref="root.login"><span>{{vm.user.displayName || vm.user.email}}</span></a>
+            </li>
+            <li ng-if="vm.user">
+                <a ng-click="vm.signOut()" ui-sref="root.dashboard"><span>Sign Out</span></a>
+            </li>
+        </ul>
+    </nav>
