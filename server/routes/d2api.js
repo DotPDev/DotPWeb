@@ -12,4 +12,29 @@ var router = express.Router();
       console.log(errorResponseStatusText);
   });
 
+
+  router.get('/users/:userId/matches', function(req, res, next) {
+    da.getMatchHistory(options).then((result) => {
+      res.json(result);
+      }, (errorResponseStatusText) => {
+      console.log(errorResponseStatusText);
+    });
+  });
+
+  router.get('/users/:userId', function(req, res, next) {
+    da.getMatchHistory(options).then((result) => {
+      res.json(result);
+      }, (errorResponseStatusText) => {
+      console.log(errorResponseStatusText);
+    });
+  });
+
+  router.get('/leagues/', function(req, res, next) {
+    da.getLeagueListing().then((result) => {
+      res.json(result);
+      }, (errorResponseStatusText) => {
+      console.log(errorResponseStatusText);
+    });
+  });
+
   module.exports = router;
