@@ -7,4 +7,12 @@
             {{episode.title}}
         </li>
     </ul>
+    <div id="paging">
+        <div id="prev">
+        <a ng-href="{{vm.links.prev}}" ng-click="vm.links.goPrev()">Previous</a>
+        </div>
+        <div id="next">
+            <a ng-href="{{vm.links.next}}" ng-click="vm.links.goNext()">Next</a>
+        </div>
+    </div>
 </div>
