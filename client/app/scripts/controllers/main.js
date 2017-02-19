@@ -20,18 +20,16 @@ angular.module('clientApp')
     };
 
     function init() {
-        console.log("test");
         vm.page = parseInt(utils.getParameterByName('page'));
 
         if (!vm.page) {
             vm.page = 1;
         }
-        setPageLinks(vm.page);
-        getFeed(vm.page);
+        setPageLinks();
+        getFeed();
     }
 
     function setPageLinks() {
-        console.log("setPages - " + vm.page);
         if (vm.page === 1) {
             vm.links.next = "/?page=" + (vm.page + 1);
             vm.links.prev = "/";
@@ -42,17 +40,17 @@ angular.module('clientApp')
     }
 
     function goNext() {
+        //HACK - timeout to prevent error with 2 way binding
         setTimeout(function() {
-            console.log("page " + vm.page);
             vm.page += 1;
             setPageLinks();
             getFeed();
-            console.log("page2 " + vm.page);
         },1);
 
     }
 
     function goPrev() {
+        //HACK - timeout to prevent error with 2 way binding
         setTimeout(function() {
             if (vm.page > 1) {
                 vm.page -= 1;
