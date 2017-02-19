@@ -1,3 +1,20 @@
-<div class="">
-    ladder view
+<div class="main-wrapper">
+    <div class="">
+
+    </div>
+    <ul>
+        <li ng-repeat="player in vm.ladder.players">
+        	<div style='color:{{::player.color}}' class="player">
+        		<div class="name">
+        			<a ng-href="http://www.dotabuff.com/players/{{::player.playerId}}">{{::player.nickName}}</a>
+        		</div>
+        		<div class="record">
+        			{{::player.wins}}-{{::player.losses}}
+        		</div>
+        		<div class="points">
+        			{{::player.points}}
+        		</div>
+        	</div>
+        </li>
+    </ul>
 </div>
