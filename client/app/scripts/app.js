@@ -129,12 +129,14 @@ angular
         }
     });
 })
-.run(function ($rootScope, firebaseSvc) {
+.run(function ($rootScope, firebaseSvc, $location, googleAnalytics) {
+    googleAnalytics.init();
+
     firebaseSvc.initialize();
 
     //send page to Google Analytics on state change
     $rootScope.$on('$stateChangeSuccess', function (event) {
-        //TODO do something here to track the page (Google Analytics);
+        googleAnalytics.trackPage($location.path());
     });
 
 });
