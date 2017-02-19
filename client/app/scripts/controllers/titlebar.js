@@ -12,8 +12,16 @@ angular.module('clientApp')
     var vm = this;
     vm.user = auth.getAuth();
     vm.signOut = signOut;
+    vm.isShowingLogin = false;
+    vm.goToLogin = goToLogin;
+
+    function goToLogin() {
+        vm.isShowingLogin = false;
+        $state.go('root.login');
+    }
 
     function signOut() {
+        vm.isShowingLogin = false;
         auth.signOut();
         $state.go('root.dashboard');
     }

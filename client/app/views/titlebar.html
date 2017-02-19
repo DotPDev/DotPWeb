@@ -1,12 +1,18 @@
-<header>
-    <div>
-        <a ui-sref="root.dashboard">Home</a>
-    </div>
-</header>
     <nav role="navigation">
         <ul class="nav">
             <li class="active">
-                <a ui-sref="root.dotpeeps"><span>dotpeeps</span></a>
+                <header>
+                    <div class="left-stone">&nbsp;</div>
+                    <div class="right-stone">&nbsp;</div>
+                    <div class="center-stone">
+                        <div class="center-left">&nbsp;</div>
+                        <div class="center-right">&nbsp;</div>
+                        <a ui-sref="root.dashboard">
+                            <img class="logo" src="../images/Logo259x256.jpg" alt="">
+                        </a>
+                    </div>
+                </header>
+                <a class="dotpeeps" ui-sref="root.dotpeeps"><span>dotpeeps</span></a>
             </li>
             <li>
                 <a ui-sref="root.ladder"><span>ladder</span></a>
@@ -18,11 +24,14 @@
                 <a ui-sref="root.about"><span>about us</span></a>
             </li>
             <li class="action-wrapper">
-                <a ng-if="!vm.user" ui-sref="root.login"><span>Login</span></a>
-                <a ng-if="vm.user" ui-sref="root.login"><span>{{vm.user.displayName || vm.user.email}}</span></a>
-            </li>
-            <li ng-if="vm.user">
-                <a ng-click="vm.signOut()" ui-sref="root.dashboard"><span>Sign Out</span></a>
+                <div class="power" ng-click="vm.isShowingLogin = !vm.isShowingLogin">
+                    <i class="fa fa-power-off"></i>
+                </div>
+                <div class="hidden-login" ng-class="{ 'show-login': vm.isShowingLogin }">
+                    <a ng-if="!vm.user" ng-click="vm.goToLogin()" ui-sref="root.login"><span>Login</span></a>
+                    <a ng-if="vm.user" ng-click="vm.goToLogin()" ui-sref="root.login"><span>{{vm.user.displayName || vm.user.email}}</span></a>
+                    <a ng-if="vm.user" ng-click="vm.signOut()" ui-sref="root.dashboard"><span>Sign Out</span></a>
+                </div>
             </li>
         </ul>
     </nav>
