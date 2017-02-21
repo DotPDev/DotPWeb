@@ -219,10 +219,25 @@ body {
 #title-bar nav ul li:first-child header .center-stone a {
   position: absolute;
   padding: 10px!important;
+  left: 10px;
+  top: 6px;
 }
 #title-bar nav ul li:first-child header .center-stone .logo {
-  width: 90px;
-  height: 90px;
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: 0;
+  left: 6px;
+  transition: all 0.2s ease-in-out;
+}
+@media only screen and (max-width: 568px) {
+  #title-bar nav ul li:first-child header .center-stone .logo {
+    transition: all 0.2s ease-in-out;
+    width: 60px;
+    height: 60px;
+    top: -5px;
+    left: 14px;
+  }
 }
 #title-bar nav ul li:first-child span {
   text-align: right;
@@ -252,8 +267,10 @@ body {
   color: #9DA4AA;
   transform: skewx(20deg);
   text-align: center;
+  transition: all 0.2s ease-in-out;
 }
 #title-bar nav ul span:hover {
+  transition: all 0.2s ease-in-out;
   color: #fff;
 }
 #title-bar nav ul .action-wrapper {
@@ -298,13 +315,19 @@ body {
   display: block!important;
 }
 .main-wrapper ul {
-  width: 60%;
-  min-width: 260px;
+  transition: all 0.2s ease-in-out;
+  width: 80%;
   max-width: 600px;
   margin: 0 auto;
   display: block;
   list-style: none;
   padding: 0;
+}
+@media only screen and (max-width: 568px) {
+  .main-wrapper ul {
+    width: 90%;
+    transition: all 0.2s ease-in-out;
+  }
 }
 .main-wrapper ul li {
   position: relative;
@@ -367,25 +390,26 @@ body {
   border-top: 1px solid #030303;
   border-bottom: 1px solid #777777;
 }
-.main-wrapper ul li .podcast-container .episode-image {
+.main-wrapper ul li .podcast-container .episode-image img {
   position: absolute;
-  right: 5px;
   top: 5px;
+  right: 10px;
   border-radius: 50%;
   border: 2px solid #565656;
   width: 65px;
   height: 65px;
   overflow: hidden;
 }
-.main-wrapper ul li .podcast-container .episode-image img {
-  position: absolute;
-  top: 2px;
-  left: -9px;
-}
 .main-wrapper ul li .podcast-container h2 {
+  transition: all 0.2s ease-in-out;
   padding: 0;
   margin: 0;
   margin-top: 15px;
+}
+.main-wrapper ul li .podcast-container h2:hover {
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  text-decoration: underline;
 }
 .main-wrapper ul li .podcast-container h2 a {
   text-decoration: none;
@@ -434,6 +458,9 @@ body {
   position: relative;
   text-decoration: none;
   color: inherit;
+  border-right: 1px solid #000000;
+  border-left: 1px solid #5c5c5c;
+  border-bottom: 1px solid #5f5f67;
 }
 .main-wrapper ul li .podcast-actions .play-control:hover {
   cursor: pointer;
@@ -459,6 +486,9 @@ body {
   position: relative;
   text-decoration: none;
   color: inherit;
+  border-left: 1px solid #5c5c5c;
+  border-right: 1px solid #000000;
+  border-bottom: 1px solid #5f5f67;
 }
 .main-wrapper ul li .podcast-actions .download-control:hover {
   cursor: pointer;
@@ -482,6 +512,9 @@ body {
   padding: 20px;
   flex: 1;
   position: relative;
+  border-left: 1px solid #5c5c5c;
+  border-right: 1px solid #5c5c5c;
+  border-bottom: 1px solid #5f5f67;
 }
 .main-wrapper ul li .podcast-actions .share-control:hover {
   cursor: pointer;
@@ -529,13 +562,23 @@ body {
   flex: 1;
   text-align: right;
 }
+.main-wrapper #paging #prev:hover .prev-text {
+  margin-left: -40px;
+  transition: all 0.2s ease-in-out;
+}
+.main-wrapper #paging #prev:hover i {
+  right: 15px;
+  transition: all 0.2s ease-in-out;
+}
 .main-wrapper #paging #prev .prev-text {
+  transition: all 0.2s ease-in-out;
   height: 100%;
   width: 100%;
   line-height: 50px;
   margin-left: -30px;
 }
 .main-wrapper #paging #prev i {
+  transition: all 0.2s ease-in-out;
   top: 9px;
   right: 5px;
 }
@@ -544,13 +587,23 @@ body {
   flex: 1;
   text-align: left;
 }
+.main-wrapper #paging #next:hover .next-text {
+  margin-left: 40px;
+  transition: all 0.2s ease-in-out;
+}
+.main-wrapper #paging #next:hover i {
+  margin-left: 10px;
+  transition: all 0.2s ease-in-out;
+}
 .main-wrapper #paging #next .next-text {
+  transition: all 0.2s ease-in-out;
   height: 100%;
   width: 100%;
   line-height: 50px;
   margin-left: 30px;
 }
 .main-wrapper #paging #next i {
+  transition: all 0.2s ease-in-out;
   top: 9px;
   left: 5px;
 }
