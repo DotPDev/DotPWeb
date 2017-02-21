@@ -299,6 +299,258 @@ body {
 }
 .main-wrapper ul {
   width: 60%;
+  min-width: 260px;
+  max-width: 600px;
   margin: 0 auto;
   display: block;
+  list-style: none;
+  padding: 0;
+}
+.main-wrapper ul li {
+  position: relative;
+}
+.main-wrapper ul li:first-child {
+  margin-top: 40px;
+}
+.main-wrapper ul li:last-child {
+  margin-bottom: 130px;
+}
+.main-wrapper ul li .podcast-container {
+  color: #9DA4AA;
+  font-family: 'Constantia, Arial, sans-serif';
+  background: #101116;
+  background-image: #101116;
+  padding: 20px;
+  margin-top: 10px;
+  position: relative;
+  background-image: url("https://www.transparenttextures.com/patterns/assault.png"), radial-gradient(top left, circle cover, #252834, #101116);
+  background-image: url("https://www.transparenttextures.com/patterns/assault.png"), -o-radial-gradient(top left, circle cover, #252834, #101116);
+  background-image: url("https://www.transparenttextures.com/patterns/assault.png"), -ms-radial-gradient(top left, circle cover, #252834, #101116);
+  background-image: url("https://www.transparenttextures.com/patterns/assault.png"), -moz-radial-gradient(top left, circle cover, #252834, #101116);
+  background-image: url("https://www.transparenttextures.com/patterns/assault.png"), -webkit-radial-gradient(top left, circle cover, #252834, #101116);
+}
+.main-wrapper ul li .podcast-container:before,
+.main-wrapper ul li .podcast-container:after {
+  content: "";
+  position: absolute;
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#5F5F67), to(transparent));
+  background-image: -webkit-linear-gradient(#5F5F67, transparent);
+  background-image: -moz-linear-gradient(#5F5F67, transparent);
+  background-image: -o-linear-gradient(#5F5F67, transparent);
+  background-image: linear-gradient(#5F5F67, transparent);
+  top: -1px;
+  bottom: -1px;
+  width: 1px;
+}
+.main-wrapper ul li .podcast-container:before {
+  left: -1px;
+}
+.main-wrapper ul li .podcast-container:after {
+  right: 0;
+  top: -1px;
+  width: 100%;
+  height: 1px;
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#5F5F67), to(transparent));
+  background-image: -webkit-linear-gradient(to right, #5F5F67, transparent);
+  background-image: -moz-linear-gradient(to right, #5F5F67, transparent);
+  background-image: -o-linear-gradient(to right, #5F5F67, transparent);
+  background-image: linear-gradient(to right, #5F5F67, transparent);
+}
+.main-wrapper ul li .podcast-container .publish-date {
+  color: #ffffff;
+  padding: 10px;
+  background: #101116;
+  opacity: 0.3;
+  -webkit-box-shadow: inset 0px 0px 10px 0px #000000;
+  -moz-box-shadow: inset 0px 0px 10px 0px #000000;
+  box-shadow: inset 0px 0px 10px 0px #000000;
+  border-top: 1px solid #030303;
+  border-bottom: 1px solid #777777;
+}
+.main-wrapper ul li .podcast-container .episode-image {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  border-radius: 50%;
+  border: 2px solid #565656;
+  width: 65px;
+  height: 65px;
+  overflow: hidden;
+}
+.main-wrapper ul li .podcast-container .episode-image img {
+  position: absolute;
+  top: 2px;
+  left: -9px;
+}
+.main-wrapper ul li .podcast-container h2 {
+  padding: 0;
+  margin: 0;
+  margin-top: 15px;
+}
+.main-wrapper ul li .podcast-container h2 a {
+  text-decoration: none;
+  color: inherit;
+  color: #ffffff;
+}
+.main-wrapper ul li .podcast-summary {
+  color: #9DA4AA;
+  font-family: 'Constantia, Arial, sans-serif';
+  background: #101116;
+  background-image: url("https://www.transparenttextures.com/patterns/assault.png");
+  -webkit-box-shadow: inset 0px 0px 10px 0px #000000;
+  -moz-box-shadow: inset 0px 0px 10px 0px #000000;
+  box-shadow: inset 0px 0px 10px 0px #000000;
+  padding: 20px;
+  position: relative;
+}
+.main-wrapper ul li .podcast-summary p {
+  padding: 0;
+  margin: 0;
+  word-wrap: break-word;
+}
+.main-wrapper ul li .podcast-actions {
+  color: #ffffff;
+  font-family: 'Constantia, Arial, sans-serif';
+  background: #101116;
+  background-image: #101116;
+  margin-bottom: 50px;
+  position: relative;
+  display: flex;
+  text-align: center;
+  background-image: url("https://www.transparenttextures.com/patterns/assault.png"), radial-gradient(top left, circle cover, #252834, #101116);
+  background-image: url("https://www.transparenttextures.com/patterns/assault.png"), -o-radial-gradient(top left, circle cover, #252834, #101116);
+  background-image: url("https://www.transparenttextures.com/patterns/assault.png"), -ms-radial-gradient(top left, circle cover, #252834, #101116);
+  background-image: url("https://www.transparenttextures.com/patterns/assault.png"), -moz-radial-gradient(top left, circle cover, #252834, #101116);
+  background-image: url("https://www.transparenttextures.com/patterns/assault.png"), -webkit-radial-gradient(top left, circle cover, #252834, #101116);
+}
+.main-wrapper ul li .podcast-actions .play-text,
+.main-wrapper ul li .podcast-actions .share-text,
+.main-wrapper ul li .podcast-actions .dl-text {
+  opacity: 0;
+}
+.main-wrapper ul li .podcast-actions .play-control {
+  padding: 20px;
+  flex: 1;
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+}
+.main-wrapper ul li .podcast-actions .play-control:hover {
+  cursor: pointer;
+}
+.main-wrapper ul li .podcast-actions .play-control:hover i {
+  transition: all 0.2s ease-in-out;
+  top: 5px;
+}
+.main-wrapper ul li .podcast-actions .play-control:hover .play-text {
+  opacity: 1;
+  transition: all 0.2s ease-in-out;
+}
+.main-wrapper ul li .podcast-actions .play-control i {
+  transition: all 0.2s ease-in-out;
+  position: absolute;
+  top: 20px;
+  left: 0;
+  right: 0;
+}
+.main-wrapper ul li .podcast-actions .download-control {
+  padding: 20px;
+  flex: 1;
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+}
+.main-wrapper ul li .podcast-actions .download-control:hover {
+  cursor: pointer;
+}
+.main-wrapper ul li .podcast-actions .download-control:hover i {
+  transition: all 0.2s ease-in-out;
+  top: 5px;
+}
+.main-wrapper ul li .podcast-actions .download-control:hover .dl-text {
+  opacity: 1;
+  transition: all 0.2s ease-in-out;
+}
+.main-wrapper ul li .podcast-actions .download-control i {
+  transition: all 0.2s ease-in-out;
+  position: absolute;
+  top: 20px;
+  left: 0;
+  right: 0;
+}
+.main-wrapper ul li .podcast-actions .share-control {
+  padding: 20px;
+  flex: 1;
+  position: relative;
+}
+.main-wrapper ul li .podcast-actions .share-control:hover {
+  cursor: pointer;
+}
+.main-wrapper ul li .podcast-actions .share-control:hover i {
+  transition: all 0.2s ease-in-out;
+  top: 5px;
+}
+.main-wrapper ul li .podcast-actions .share-control:hover .share-text {
+  opacity: 1;
+  transition: all 0.2s ease-in-out;
+}
+.main-wrapper ul li .podcast-actions .share-control i {
+  transition: all 0.2s ease-in-out;
+  position: absolute;
+  top: 20px;
+  left: 0;
+  right: 0;
+}
+.main-wrapper #paging {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: calc(100% - 17px);
+  height: 50px;
+  background: #101116;
+  border-top: 1px solid #5F5F67;
+  display: flex;
+  background-image: #101116;
+  background-image: url("https://www.transparenttextures.com/patterns/assault.png"), radial-gradient(top left, circle cover, #252834, #101116);
+  background-image: url("https://www.transparenttextures.com/patterns/assault.png"), -o-radial-gradient(top left, circle cover, #252834, #101116);
+  background-image: url("https://www.transparenttextures.com/patterns/assault.png"), -ms-radial-gradient(top left, circle cover, #252834, #101116);
+  background-image: url("https://www.transparenttextures.com/patterns/assault.png"), -moz-radial-gradient(top left, circle cover, #252834, #101116);
+  background-image: url("https://www.transparenttextures.com/patterns/assault.png"), -webkit-radial-gradient(top left, circle cover, #252834, #101116);
+}
+.main-wrapper #paging div a {
+  text-decoration: none;
+  color: #ffffff;
+}
+.main-wrapper #paging div a i {
+  position: absolute;
+}
+.main-wrapper #paging #prev {
+  position: relative;
+  flex: 1;
+  text-align: right;
+}
+.main-wrapper #paging #prev .prev-text {
+  height: 100%;
+  width: 100%;
+  line-height: 50px;
+  margin-left: -30px;
+}
+.main-wrapper #paging #prev i {
+  top: 9px;
+  right: 5px;
+}
+.main-wrapper #paging #next {
+  position: relative;
+  flex: 1;
+  text-align: left;
+}
+.main-wrapper #paging #next .next-text {
+  height: 100%;
+  width: 100%;
+  line-height: 50px;
+  margin-left: 30px;
+}
+.main-wrapper #paging #next i {
+  top: 9px;
+  left: 5px;
 }

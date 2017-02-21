@@ -18,6 +18,8 @@ angular.module('clientApp')
         prev: "/",
         goPrev: goPrev
     };
+    vm.stripHtml = stripHtml;
+    vm.getImage = getImage;
 
     function init() {
         vm.page = parseInt(utils.getParameterByName('page'));
@@ -27,6 +29,23 @@ angular.module('clientApp')
         }
         setPageLinks();
         getFeed();
+    }
+
+    function getImage(date) {
+        var dateObj = new Date(date);
+        var day = dateObj.getDay();
+        if (day === 2) {
+            return '../images/tues.png';
+        } else if (day === 4) {
+            return '../images/thurs.png';
+        } else {
+            return '../images/generic.png';
+        }
+    }
+
+    function stripHtml(htmlString) {
+        var newSummary = htmlString.replace('<h2>Defense of the Patience - A Dota 2 Podcast</h2> ', '');
+        return newSummary;
     }
 
     function setPageLinks() {
