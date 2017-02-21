@@ -4,15 +4,44 @@
     </div>
     <ul>
         <li ng-repeat="episode in vm.feed.episodes">
-            {{episode.title}}
+            <div class="podcast-container">
+                <div class="publish-date"><span class="episode-date">{{episode.date | date:'mediumDate' }}<span></div>
+                <div class="episode-image"><img ng-src="{{vm.getImage(episode.date)}}" alt=""></div>
+                <h2>
+                    <a ng-href="/episode/{{episode.guid}}">{{episode.title}}</a>
+                </h2>
+            </div>
+            <div class="podcast-summary">
+                <p class="episode-description">{{vm.stripHtml(episode.summary)}}</p>
+            </div>
+            <div class="podcast-actions">
+                <a ng-href="{{episode.link}}" class="play-control">
+                    <i class="fa fa-play"></i>
+                    <span class="play-text">Play</span>
+                </a>
+                <a ng-href="{{episode.link}}" class="download-control" download="{{episode.guid}}">
+                    <i class="fa fa-cloud-download"></i>
+                    <span class="dl-text">Download</span>
+                </a>
+                <div class="share-control">
+                    <i class="fa fa-share-alt"></i>
+                    <span class="share-text">Share</span>
+                </div>
+            </div>
         </li>
     </ul>
     <div id="paging">
         <div id="prev">
-        <a ng-href="{{vm.links.prev}}" ng-click="vm.links.goPrev()">Previous</a>
+            <a ng-href="{{vm.links.prev}}" ng-click="vm.links.goPrev()">
+                <div class="prev-text">Previous</div>
+                <i class="fa fa-chevron-left fa-2x"></i>
+            </a>
         </div>
         <div id="next">
-            <a ng-href="{{vm.links.next}}" ng-click="vm.links.goNext()">Next</a>
+            <a ng-href="{{vm.links.next}}" ng-click="vm.links.goNext()">
+                <i class="fa fa-chevron-right fa-2x"></i>
+                <div class="next-text">Next</div>
+            </a>
         </div>
     </div>
 </div>
