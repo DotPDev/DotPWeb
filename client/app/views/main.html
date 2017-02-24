@@ -12,7 +12,7 @@
                 <p class="episode-description">{{vm.stripHtml(episode.summary)}}</p>
             </div>
             <div class="podcast-actions">
-                <a ng-href="{{episode.link}}" class="play-control">
+                <a class="play-control" ng-click="vm.startPodcast(episode)">
                     <i class="fa fa-play"></i>
                     <span class="play-text">Play</span>
                 </a>

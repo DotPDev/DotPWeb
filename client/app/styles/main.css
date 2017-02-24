@@ -106,7 +106,7 @@ body {
   top: 0;
   height: 50px;
   width: 100%;
-  z-index: 20;
+  z-index: 100;
 }
 #title-bar nav {
   background: #101116;
@@ -315,28 +315,86 @@ body {
   display: block!important;
 }
 .videogular-container {
-  width: 100%;
+  transition: all 0.2s ease-in-out;
+  width: 50%!important;
   height: 320px;
   margin: auto;
+  overflow: visible;
+  color: #9DA4AA!important;
+}
+@media only screen and (max-width: 568px) {
+  .videogular-container {
+    transition: all 0.2s ease-in-out;
+    width: 100%!important;
+  }
+}
+.videogular-container .audio {
+  height: 50px;
+  background: none!important;
+}
+.videogular-container .audio vg-volume:before {
+  content: '\f028';
+  font-family: FontAwesome;
+  color: #fff;
+}
+.videogular-container .audio .verticalVolumeBar {
+  background: #101116;
+  background-image: #101116;
+  background-image: url("https://www.transparenttextures.com/patterns/assault.png"), radial-gradient(top left, circle cover, #252834, #101116);
+  background-image: url("https://www.transparenttextures.com/patterns/assault.png"), -o-radial-gradient(top left, circle cover, #252834, #101116);
+  background-image: url("https://www.transparenttextures.com/patterns/assault.png"), -ms-radial-gradient(top left, circle cover, #252834, #101116);
+  background-image: url("https://www.transparenttextures.com/patterns/assault.png"), -moz-radial-gradient(top left, circle cover, #252834, #101116);
+  background-image: url("https://www.transparenttextures.com/patterns/assault.png"), -webkit-radial-gradient(top left, circle cover, #252834, #101116);
+}
+.videogular-container .audio .time-holder {
+  padding-left: 5px;
+  font-size: 15px;
+  width: 110px;
+}
+.videogular-container videogular vg-controls .controls-container,
+.videogular-container [videogular] vg-controls .controls-container {
+  background: none!important;
+}
+.player-wrapper.open {
+  height: calc(100% - 50px);
+  transition: all 0.2s ease-in-out;
+}
+.player-wrapper {
+  transition: all 0.2s ease-in-out;
+  z-index: 20;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  min-height: 50px;
+  height: 0%;
+  height: 50px;
+  background: #101116;
+  border-top: 1px solid #5F5F67;
+  background-image: #101116;
+  background-image: url("https://www.transparenttextures.com/patterns/assault.png"), radial-gradient(top left, circle cover, #252834, #101116);
+  background-image: url("https://www.transparenttextures.com/patterns/assault.png"), -o-radial-gradient(top left, circle cover, #252834, #101116);
+  background-image: url("https://www.transparenttextures.com/patterns/assault.png"), -ms-radial-gradient(top left, circle cover, #252834, #101116);
+  background-image: url("https://www.transparenttextures.com/patterns/assault.png"), -moz-radial-gradient(top left, circle cover, #252834, #101116);
+  background-image: url("https://www.transparenttextures.com/patterns/assault.png"), -webkit-radial-gradient(top left, circle cover, #252834, #101116);
+}
+.player-wrapper .podcast-title {
+  position: absolute;
+  color: #fff;
+  width: 24%;
+  height: auto;
+  padding: 17px;
+  font-size: 13px;
+}
+@media only screen and (max-width: 568px) {
+  .player-wrapper .podcast-title {
+    display: none;
+  }
+}
+.player-wrapper .podcast-title div {
+  text-overflow: ellipsis;
+  white-space: nowrap;
   overflow: hidden;
-}
-@media (min-width: 1200px) {
-  .videogular-container {
-    width: 1170px;
-    height: 658.125px;
-  }
-}
-@media (min-width: 992px) and (max-width: 1199px) {
-  .videogular-container {
-    width: 940px;
-    height: 528.75px;
-  }
-}
-@media (min-width: 768px) and (max-width: 991px) {
-  .videogular-container {
-    width: 728px;
-    height: 409.5px;
-  }
+  color: #9DA4AA;
 }
 .main-wrapper ul {
   transition: all 0.2s ease-in-out;

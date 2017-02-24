@@ -8,7 +8,7 @@
 * Controller of the clientApp
 */
 angular.module('clientApp')
-.controller('MainCtrl', function ($http, feedManager, utils) {
+.controller('MainCtrl', function ($http, $rootScope, feedManager, utils) {
     var vm = this;
     vm.feed = {};
     vm.page = 1;
@@ -20,6 +20,7 @@ angular.module('clientApp')
     };
     vm.stripHtml = stripHtml;
     vm.getImage = getImage;
+    vm.startPodcast = startPodcast;
 
     function init() {
         vm.page = parseInt(utils.getParameterByName('page'));
@@ -88,6 +89,9 @@ angular.module('clientApp')
         });
     }
 
+    function startPodcast(episode) {
+        $rootScope.$broadcast('player-play', episode);
+    }
 
     init();
 });

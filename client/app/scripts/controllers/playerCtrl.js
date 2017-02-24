@@ -8,27 +8,47 @@
 * Controller of the clientApp
 */
 angular.module('clientApp')
-.controller('PlayerCtrl', function ($scope, $sce, playerSvc) {
+.controller('PlayerCtrl', function ($timeout, $scope, $sce, playerSvc) {
     var vm = this;
+    vm.isOpen = false;
+    vm.API = null;
     vm.config = {
-        sources: [
-            {src: $sce.trustAsResourceUrl("http://static.videogular.com/assets/videos/videogular.mp4"), type: "video/mp4"},
-            {src: $sce.trustAsResourceUrl("http://static.videogular.com/assets/videos/videogular.webm"), type: "video/webm"},
-            {src: $sce.trustAsResourceUrl("http://static.videogular.com/assets/videos/videogular.ogg"), type: "video/ogg"}
-        ],
-        tracks: [
-            {
-                src: "http://www.videogular.com/assets/subs/pale-blue-dot.vtt",
-                kind: "subtitles",
-                srclang: "en",
-                label: "English",
-                default: ""
-            }
-        ],
+        sources: [],
+        //we'll see about how to use theme and plugins later, these aren't used for now.
         theme: "bower_components/videogular-themes-default/videogular.css",
         plugins: {
             poster: "http://www.videogular.com/assets/images/videogular.png"
-        }
+        },
+        title: ''
     };
+    vm.onPlayerReady = onPlayerReady;
+    vm.canPlay = canPlay;
+
+    function canPlay() {
+        playAudio();
+    }
+
+    function onPlayerReady(API) {
+        vm.API = API;
+    }
+
+    function playAudio() {
+        if (vm.config.sources !== []) {
+            vm.API.play();
+        }
+    }
+
+    $scope.$on('player-play', function(event, args) {
+        if (args) {
+            vm.API.stop();
+            vm.config.sources = [
+                {
+                    src: $sce.trustAsResourceUrl(args.link),
+                    type: "audio/mp3"
+                }
+            ];
+            vm.config.title = args.title;
+        }
+    });
 
 });
