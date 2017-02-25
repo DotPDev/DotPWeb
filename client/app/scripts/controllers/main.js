@@ -14,9 +14,7 @@ angular.module('clientApp')
     vm.page = 1;
     vm.links = {
         next: "/",
-        goNext: goNext,
-        prev: "/",
-        goPrev: goPrev
+        prev: "/"
     };
     vm.stripHtml = stripHtml;
     vm.getImage = getImage;
