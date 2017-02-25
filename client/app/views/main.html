@@ -12,7 +12,7 @@
                 <p class="episode-description">{{vm.stripHtml(episode.summary)}}</p>
             </div>
             <div class="podcast-actions">
-                <a ng-href="{{episode.link}}" class="play-control">
+                <a class="play-control" ng-click="vm.startPodcast(episode)">
                     <i class="fa fa-play"></i>
                     <span class="play-text">Play</span>
                 </a>
@@ -27,18 +27,4 @@
             </div>
         </li>
     </ul>
-    <div id="paging">
-        <div id="prev">
-            <a ng-href="{{vm.links.prev}}" ng-click="vm.links.goPrev()">
-                <div class="prev-text">Previous</div>
-                <i class="fa fa-chevron-left fa-2x"></i>
-            </a>
-        </div>
-        <div id="next">
-            <a ng-href="{{vm.links.next}}" ng-click="vm.links.goNext()">
-                <i class="fa fa-chevron-right fa-2x"></i>
-                <div class="next-text">Next</div>
-            </a>
-        </div>
-    </div>
 </div>

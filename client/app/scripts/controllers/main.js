@@ -8,18 +8,17 @@
 * Controller of the clientApp
 */
 angular.module('clientApp')
-.controller('MainCtrl', function ($http, feedManager, utils) {
+.controller('MainCtrl', function ($scope, $http, $rootScope, feedManager, utils) {
     var vm = this;
     vm.feed = {};
     vm.page = 1;
     vm.links = {
         next: "/",
-        goNext: goNext,
-        prev: "/",
-        goPrev: goPrev
+        prev: "/"
     };
     vm.stripHtml = stripHtml;
     vm.getImage = getImage;
+    vm.startPodcast = startPodcast;
 
     function init() {
         vm.page = parseInt(utils.getParameterByName('page'));
@@ -87,6 +86,19 @@ angular.module('clientApp')
             console.log(error);
         });
     }
+
+    function startPodcast(episode) {
+        $rootScope.$broadcast('player-play', episode);
+    }
+
+    $scope.$on('main-next', function(event, args) {
+        goNext();
+    });
+
+    $scope.$on('main-prev', function(event, args) {
+        goPrev();
+    });
+
 
 
     init();

@@ -8,6 +8,7 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/videogular-themes-default/videogular.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -31,10 +32,12 @@
                 <p><i class="fa fa-heart"></i> from the Yeoman team</p>
             </div>
         </div> -->
+        <player></player>
     </div>
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-aria/angular-aria.js"></script>
@@ -48,6 +51,32 @@
     <script src="bower_components/firebase/firebase.js"></script>
     <script src="bower_components/angularfire/dist/angularfire.js"></script>
     <script src="bower_components/mockfirebase/browser/mockfirebase.js"></script>
+    <script src="bower_components/videogular/videogular.js"></script>
+    <script src="bower_components/videogular-controls/vg-controls.js"></script>
+    <script src="bower_components/videogular-buffering/vg-buffering.js"></script>
+    <script src="bower_components/videogular-overlay-play/vg-overlay-play.js"></script>
+    <script src="bower_components/videogular-poster/vg-poster.js"></script>
+    <script src="bower_components/videogular-ima-ads/vg-ima-ads.js"></script>
+    <script src="bower_components/waypoints/waypoints.js"></script>
+    <script src="bower_components/SHA-1/sha1.js"></script>
+    <script src="bower_components/angulartics/src/angulartics.js"></script>
+    <script src="bower_components/angulartics/src/angulartics-adobe.js"></script>
+    <script src="bower_components/angulartics/src/angulartics-chartbeat.js"></script>
+    <script src="bower_components/angulartics/src/angulartics-cnzz.js"></script>
+    <script src="bower_components/angulartics/src/angulartics-flurry.js"></script>
+    <script src="bower_components/angulartics/src/angulartics-ga-cordova.js"></script>
+    <script src="bower_components/angulartics/src/angulartics-ga.js"></script>
+    <script src="bower_components/angulartics/src/angulartics-gtm.js"></script>
+    <script src="bower_components/angulartics/src/angulartics-kissmetrics.js"></script>
+    <script src="bower_components/angulartics/src/angulartics-mixpanel.js"></script>
+    <script src="bower_components/angulartics/src/angulartics-piwik.js"></script>
+    <script src="bower_components/angulartics/src/angulartics-scroll.js"></script>
+    <script src="bower_components/angulartics/src/angulartics-segmentio.js"></script>
+    <script src="bower_components/angulartics/src/angulartics-splunk.js"></script>
+    <script src="bower_components/angulartics/src/angulartics-woopra.js"></script>
+    <script src="bower_components/angulartics/src/angulartics-marketo.js"></script>
+    <script src="bower_components/angulartics/src/angulartics-intercom.js"></script>
+    <script src="bower_components/videogular-angulartics/vg-analytics.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -65,6 +94,8 @@
     <script src="scripts/controllers/ladder.js"></script>
     <script src="scripts/controllers/media.js"></script>
     <script src="scripts/services/googleanalytics.js"></script>
+    <script src="scripts/controllers/playerCtrl.js"></script>
+    <script src="scripts/directives/player.js"></script>
     <!-- endbuild -->
 </body>
 </html>

@@ -30,3 +30,21 @@
 @cardBg: #101116;
 @brightCard: lighten(@cardBg, 10%);
 @darkCard: darken(@cardBg, 10%);
+
+//pagination
+@right-bump: right-bump 0.4s ease;
+@left-bump: left-bump 0.4s ease;
+
+
+
+// keyframes
+@keyframes right-bump {
+  0% { margin-left: 0; }
+  50% { margin-left: 10px; }
+  100% { margin-left: 0; }
+}
+@keyframes left-bump {
+  0% { margin-right:0; }
+  50% { margin-right: 10px; }
+  100% { margin-right: 0; }
+}
