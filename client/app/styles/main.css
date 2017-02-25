@@ -130,12 +130,107 @@ body {
   width: 100%;
   z-index: 100;
 }
+#title-bar .nav.collapsed {
+  min-width: 330px;
+}
+#title-bar .nav.collapsed li:not(:first-child) {
+  display: none;
+}
+#title-bar .nav.collapsed li:last-child {
+  display: inherit;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: skewX(0);
+  height: 100%;
+  border-bottom: none;
+}
+#title-bar .nav.collapsed li:last-child .power {
+  transform: skewX(0);
+}
+#title-bar .nav.collapsed li:first-child {
+  min-width: 555px;
+}
+#title-bar .nav.collapsed li:first-child header {
+  right: inherit;
+  left: 8px;
+}
+#title-bar .nav.collapsed .dotpeeps {
+  width: 70%;
+}
+#title-bar .collapsed-nav.is-showing-nav {
+  width: 100%;
+  right: 0;
+  transition: all 0.2s ease-in-out;
+}
+#title-bar .collapsed-nav.is-showing-nav li {
+  flex: 1;
+  font-size: 1em;
+  text-shadow: -1px 2px 3px #000000;
+  text-transform: uppercase;
+  border-right: 1px solid #000000;
+  border-bottom: 1px solid #5f5f67;
+  transition: background .2s ease, color .2s ease;
+  letter-spacing: .1em;
+  position: relative;
+}
+#title-bar .collapsed-nav.is-showing-nav li a {
+  display: block;
+  text-decoration: none;
+  color: #9DA4AA;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: all 0.2s ease-in-out;
+}
+#title-bar .collapsed-nav.is-showing-nav li a:hover {
+  cursor: pointer;
+  color: #ffffff;
+  transition: all 0.2s ease-in-out;
+}
+#title-bar .collapsed-nav.is-showing-nav li a span {
+  position: absolute;
+  top: 40%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+}
+#title-bar .collapsed-nav.is-showing-nav .power {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  top: 0;
+  right: 0;
+}
+#title-bar .collapsed-nav {
+  transition: all 0.2s ease-in-out;
+  width: 0%;
+  height: calc(100% - 50px);
+  position: fixed;
+  top: 0;
+  right: -100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  top: 50px;
+  background-image: #101116;
+  background-image: url("https://www.transparenttextures.com/patterns/assault.png"), radial-gradient(top left, circle cover, #252834, #101116);
+  background-image: url("https://www.transparenttextures.com/patterns/assault.png"), -o-radial-gradient(top left, circle cover, #252834, #101116);
+  background-image: url("https://www.transparenttextures.com/patterns/assault.png"), -ms-radial-gradient(top left, circle cover, #252834, #101116);
+  background-image: url("https://www.transparenttextures.com/patterns/assault.png"), -moz-radial-gradient(top left, circle cover, #252834, #101116);
+  background-image: url("https://www.transparenttextures.com/patterns/assault.png"), -webkit-radial-gradient(top left, circle cover, #252834, #101116);
+}
 #title-bar nav {
   background: #101116;
   background-image: url("https://www.transparenttextures.com/patterns/assault.png");
   height: 100%;
 }
-#title-bar nav ul {
+#title-bar nav .nav {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -146,7 +241,7 @@ body {
   -moz-box-shadow: 0px 10px 24px -1px rgba(8, 13, 19, 0.8);
   box-shadow: 0px 10px 24px -1px rgba(8, 13, 19, 0.8);
 }
-#title-bar nav ul li {
+#title-bar nav .nav li {
   flex: 1;
   position: relative;
   font-size: 1em;
@@ -159,26 +254,26 @@ body {
   transition: background .2s ease, color .2s ease;
   letter-spacing: .1em;
 }
-#title-bar nav ul li:first-child {
+#title-bar nav .nav li:first-child {
   flex-grow: 3;
   border-left: none;
   position: relative;
   min-width: 295px;
 }
-#title-bar nav ul li:first-child header {
+#title-bar nav .nav li:first-child header {
   position: absolute;
   width: 150px;
   height: 65px;
   left: 0;
-  right: 80px;
+  right: 120px;
   margin: auto;
   display: flex;
   transform: skewx(20deg);
 }
-#title-bar nav ul li:first-child header div {
+#title-bar nav .nav li:first-child header div {
   background: #222225;
 }
-#title-bar nav ul li:first-child header .left-stone {
+#title-bar nav .nav li:first-child header .left-stone {
   flex: 1;
   position: absolute;
   left: 0;
@@ -193,7 +288,7 @@ body {
   background-image: url("../images/txture.png"), -moz-linear-gradient(left, #3B4D59, #12191F);
   background-image: url("../images/txture.png"), -webkit-linear-gradient(left, #3B4D59, #12191F);
 }
-#title-bar nav ul li:first-child header .right-stone {
+#title-bar nav .nav li:first-child header .right-stone {
   flex: 1;
   position: absolute;
   right: 0;
@@ -209,7 +304,7 @@ body {
   background-image: url("../images/txture.png"), -moz-linear-gradient(right, #3B4D59, #12191F);
   background-image: url("../images/txture.png"), -webkit-linear-gradient(right, #3B4D59, #12191F);
 }
-#title-bar nav ul li:first-child header .center-stone {
+#title-bar nav .nav li:first-child header .center-stone {
   position: absolute;
   width: 110px;
   left: 0;
@@ -224,27 +319,27 @@ body {
   background-image: url("../images/txture.png"), -moz-radial-gradient(center center, circle cover, #3B4D59, #12191F);
   background-image: url("../images/txture.png"), -webkit-radial-gradient(center center, circle cover, #3B4D59, #12191F);
 }
-#title-bar nav ul li:first-child header .center-stone .center-left {
+#title-bar nav .nav li:first-child header .center-stone .center-left {
   flex: 1;
   transform: skewx(5deg);
   border-left: 1px solid #000000;
   border-bottom: 1px solid #5f5f67;
   background: none;
 }
-#title-bar nav ul li:first-child header .center-stone .center-right {
+#title-bar nav .nav li:first-child header .center-stone .center-right {
   flex: 1;
   transform: skewx(-5deg);
   border-right: 1px solid #000000;
   border-bottom: 1px solid #5f5f67;
   background: none;
 }
-#title-bar nav ul li:first-child header .center-stone a {
+#title-bar nav .nav li:first-child header .center-stone a {
   position: absolute;
   padding: 10px!important;
   left: 10px;
   top: 6px;
 }
-#title-bar nav ul li:first-child header .center-stone .logo {
+#title-bar nav .nav li:first-child header .center-stone .logo {
   width: 80px;
   height: 80px;
   position: absolute;
@@ -253,7 +348,7 @@ body {
   transition: all 0.2s ease-in-out;
 }
 @media only screen and (max-width: 568px) {
-  #title-bar nav ul li:first-child header .center-stone .logo {
+  #title-bar nav .nav li:first-child header .center-stone .logo {
     transition: all 0.2s ease-in-out;
     width: 60px;
     height: 60px;
@@ -261,29 +356,54 @@ body {
     left: 14px;
   }
 }
-#title-bar nav ul li:first-child span {
+#title-bar nav .nav li:first-child span {
   text-align: right;
 }
-#title-bar nav ul li a {
+#title-bar nav .nav li a {
   display: block;
   padding: 1em;
   text-decoration: none;
   color: inherit;
 }
-#title-bar nav ul .dotpeeps {
-  width: 28%;
+#title-bar nav .nav .dotpeeps {
+  width: 42%;
   float: right;
+  padding: .3em;
 }
-#title-bar nav ul .active {
-  -webkit-box-shadow: inset 0px 10px 24px -1px rgba(8, 13, 19, 0.8);
-  -moz-box-shadow: inset 0px 10px 24px -1px rgba(8, 13, 19, 0.8);
-  box-shadow: inset 0px 10px 24px -1px rgba(8, 13, 19, 0.8);
+#title-bar nav .nav .dotpeeps:hover {
+  cursor: default;
 }
-#title-bar nav ul .action-wrapper {
+#title-bar nav .nav .dotpeeps span:hover {
+  transition: none;
+}
+#title-bar nav .nav .dotpeeps .defense {
+  text-align: left;
+  color: #fff;
+}
+#title-bar nav .nav .dotpeeps .small-header {
+  position: absolute;
+  font-size: 8px;
+}
+#title-bar nav .nav .dotpeeps .small-header span {
+  text-align: left!important;
+  color: #fff;
+}
+#title-bar nav .nav .dotpeeps .patience {
+  font-size: 1.1em;
+  text-align: left;
+  padding-left: 21px;
+  color: #fff;
+}
+#title-bar nav .nav .active {
+  -webkit-box-shadow: inset 0px 18px 24px -1px rgba(0, 0, 0, 0.9);
+  -moz-box-shadow: inset 0px 18px 24px -1px rgba(0, 0, 0, 0.9);
+  box-shadow: inset 0px 18px 24px -1px rgba(0, 0, 0, 0.9);
+}
+#title-bar nav .nav .action-wrapper {
   flex-grow: 4;
   border-right: none;
 }
-#title-bar nav ul span {
+#title-bar nav .nav span {
   display: block;
   font-family: 'Constantia, Arial, sans-serif';
   color: #9DA4AA;
@@ -291,24 +411,24 @@ body {
   text-align: center;
   transition: all 0.2s ease-in-out;
 }
-#title-bar nav ul span:hover {
+#title-bar nav .nav span:hover {
   transition: all 0.2s ease-in-out;
   color: #fff;
 }
-#title-bar nav ul .action-wrapper {
+#title-bar nav .nav .action-wrapper {
   z-index: 20;
 }
-#title-bar nav ul .action-wrapper .power {
+#title-bar nav .nav .action-wrapper .power {
   transform: skewx(20deg);
   width: 50px;
   height: 100%;
   float: right;
   background: #26090B;
 }
-#title-bar nav ul .action-wrapper .power:hover {
+#title-bar nav .nav .action-wrapper .power:hover {
   cursor: pointer;
 }
-#title-bar nav ul .action-wrapper .power .fa-power-off:before {
+#title-bar nav .nav .action-wrapper .power .fa-power-off:before {
   background: #B95B2A;
   border-radius: 50%;
   color: #000;
@@ -321,7 +441,7 @@ body {
   width: 15px;
   height: 15px;
 }
-#title-bar nav ul .action-wrapper .hidden-login {
+#title-bar nav .nav .action-wrapper .hidden-login {
   display: none;
   position: absolute;
   top: 50px;
@@ -330,10 +450,10 @@ body {
   width: 200px;
   background: #26090B;
 }
-#title-bar nav ul .action-wrapper .hidden-login a span {
+#title-bar nav .nav .action-wrapper .hidden-login a span {
   transform: none!important;
 }
-#title-bar nav ul .action-wrapper .show-login {
+#title-bar nav .nav .action-wrapper .show-login {
   display: block!important;
 }
 .videogular-container {
