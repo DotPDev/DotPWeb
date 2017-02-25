@@ -8,7 +8,7 @@
 * Controller of the clientApp
 */
 angular.module('clientApp')
-.controller('PlayerCtrl', function ($rootScope, $state, $timeout, $scope, $sce, playerSvc) {
+.controller('PlayerCtrl', function ($rootScope, $state, $timeout, $scope, $sce) {
     var vm = this;
     vm.isOpen = false;
     vm.isPlaying = false;
