@@ -41,6 +41,10 @@
 .player-wrapper.open {
     height: calc(~"100% - 50px");
     transition: @transition;
+
+    #paging {
+        display: none;
+    }
 }
 
 .player-wrapper {
@@ -75,6 +79,125 @@
             white-space: nowrap;
             overflow: hidden;
             color: #9DA4AA;
+        }
+    }
+    .player.show-player {
+        transition: @transition;
+        display: inherit;
+        @media @smartphones {
+            position: absolute;
+            width: 100%;
+            bottom: 50px;
+            height: 50px;
+        }
+    }
+    .player {
+        transition: @transition;
+        display: none;
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        height: 50px;
+        @media @smartphones {
+            background: #101116;
+            border-top: 1px solid #5F5F67;
+            background-image:@cardBg;
+            background-image: @navPattern, radial-gradient(top left, circle cover, @brightCard, @cardBg);
+            background-image: @navPattern, -o-radial-gradient(top left, circle cover, @brightCard, @cardBg);
+            background-image: @navPattern, -ms-radial-gradient(top left, circle cover, @brightCard, @cardBg);
+            background-image: @navPattern, -moz-radial-gradient(top left, circle cover, @brightCard, @cardBg);
+            background-image: @navPattern, -webkit-radial-gradient(top left, circle cover, @brightCard, @cardBg);
+        }
+    }
+    #paging.is-playing {
+        transition: @transition;
+        right: 0;
+        width: 20%;
+        position: absolute;
+        left: inherit;
+        @media @smartphones {
+            width:100%;
+        }
+    }
+    #paging {
+        transition: @transition;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width:  ~"calc(100% - 17px)";
+        height: 50px;
+        background: #101116;
+        border-top: 1px solid #5F5F67;
+        display: flex;
+        background-image:@cardBg;
+        background-image: @navPattern, radial-gradient(top left, circle cover, @brightCard, @cardBg);
+        background-image: @navPattern, -o-radial-gradient(top left, circle cover, @brightCard, @cardBg);
+        background-image: @navPattern, -ms-radial-gradient(top left, circle cover, @brightCard, @cardBg);
+        background-image: @navPattern, -moz-radial-gradient(top left, circle cover, @brightCard, @cardBg);
+        background-image: @navPattern, -webkit-radial-gradient(top left, circle cover, @brightCard, @cardBg);
+        div a {
+            text-decoration: none;
+            color: #9DA4AA;
+            &:hover {
+                color:#ffffff;
+            }
+            i {
+                position: absolute;
+            }
+        }
+        #prev {
+            position: relative;
+            flex: 1;
+            text-align: right;
+            &:hover {
+                cursor: pointer;
+                .prev-text {
+                    transition: @transition;
+                }
+                i {
+                    animation: @left-bump;
+                    transition: @transition;
+                }
+            }
+            .prev-text {
+                transition: @transition;
+                height: 100%;
+                width: 100%;
+                line-height: 50px;
+                margin-left: -40px;
+            }
+            i {
+                transition: @transition;
+                top: 9px;
+                right:5px;
+            }
+        }
+        #next {
+            position: relative;
+            flex: 1;
+            text-align: left;
+            &:hover {
+                cursor: pointer;
+                .next-text {
+                    transition: @transition;
+                }
+                i {
+                    animation: @right-bump;
+                    transition: @transition;
+                }
+            }
+            .next-text {
+                transition: @transition;
+                height: 100%;
+                width: 100%;
+                line-height: 50px;
+                margin-left: 40px;
+            }
+            i {
+                transition: @transition;
+                top: 9px;
+                left:5px;
+            }
         }
     }
 }

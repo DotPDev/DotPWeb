@@ -1,3 +1,25 @@
+@keyframes right-bump {
+  0% {
+    margin-left: 0;
+  }
+  50% {
+    margin-left: 10px;
+  }
+  100% {
+    margin-left: 0;
+  }
+}
+@keyframes left-bump {
+  0% {
+    margin-right: 0;
+  }
+  50% {
+    margin-right: 10px;
+  }
+  100% {
+    margin-right: 0;
+  }
+}
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -359,6 +381,9 @@ body {
   height: calc(100% - 50px);
   transition: all 0.2s ease-in-out;
 }
+.player-wrapper.open #paging {
+  display: none;
+}
 .player-wrapper {
   transition: all 0.2s ease-in-out;
   z-index: 20;
@@ -395,6 +420,131 @@ body {
   white-space: nowrap;
   overflow: hidden;
   color: #9DA4AA;
+}
+.player-wrapper .player.show-player {
+  transition: all 0.2s ease-in-out;
+  display: inherit;
+}
+@media only screen and (max-width: 568px) {
+  .player-wrapper .player.show-player {
+    position: absolute;
+    width: 100%;
+    bottom: 50px;
+    height: 50px;
+  }
+}
+.player-wrapper .player {
+  transition: all 0.2s ease-in-out;
+  display: none;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  height: 50px;
+}
+@media only screen and (max-width: 568px) {
+  .player-wrapper .player {
+    background: #101116;
+    border-top: 1px solid #5F5F67;
+    background-image: #101116;
+    background-image: url("https://www.transparenttextures.com/patterns/assault.png"), radial-gradient(top left, circle cover, #252834, #101116);
+    background-image: url("https://www.transparenttextures.com/patterns/assault.png"), -o-radial-gradient(top left, circle cover, #252834, #101116);
+    background-image: url("https://www.transparenttextures.com/patterns/assault.png"), -ms-radial-gradient(top left, circle cover, #252834, #101116);
+    background-image: url("https://www.transparenttextures.com/patterns/assault.png"), -moz-radial-gradient(top left, circle cover, #252834, #101116);
+    background-image: url("https://www.transparenttextures.com/patterns/assault.png"), -webkit-radial-gradient(top left, circle cover, #252834, #101116);
+  }
+}
+.player-wrapper #paging.is-playing {
+  transition: all 0.2s ease-in-out;
+  right: 0;
+  width: 20%;
+  position: absolute;
+  left: inherit;
+}
+@media only screen and (max-width: 568px) {
+  .player-wrapper #paging.is-playing {
+    width: 100%;
+  }
+}
+.player-wrapper #paging {
+  transition: all 0.2s ease-in-out;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: calc(100% - 17px);
+  height: 50px;
+  background: #101116;
+  border-top: 1px solid #5F5F67;
+  display: flex;
+  background-image: #101116;
+  background-image: url("https://www.transparenttextures.com/patterns/assault.png"), radial-gradient(top left, circle cover, #252834, #101116);
+  background-image: url("https://www.transparenttextures.com/patterns/assault.png"), -o-radial-gradient(top left, circle cover, #252834, #101116);
+  background-image: url("https://www.transparenttextures.com/patterns/assault.png"), -ms-radial-gradient(top left, circle cover, #252834, #101116);
+  background-image: url("https://www.transparenttextures.com/patterns/assault.png"), -moz-radial-gradient(top left, circle cover, #252834, #101116);
+  background-image: url("https://www.transparenttextures.com/patterns/assault.png"), -webkit-radial-gradient(top left, circle cover, #252834, #101116);
+}
+.player-wrapper #paging div a {
+  text-decoration: none;
+  color: #9DA4AA;
+}
+.player-wrapper #paging div a:hover {
+  color: #ffffff;
+}
+.player-wrapper #paging div a i {
+  position: absolute;
+}
+.player-wrapper #paging #prev {
+  position: relative;
+  flex: 1;
+  text-align: right;
+}
+.player-wrapper #paging #prev:hover {
+  cursor: pointer;
+}
+.player-wrapper #paging #prev:hover .prev-text {
+  transition: all 0.2s ease-in-out;
+}
+.player-wrapper #paging #prev:hover i {
+  animation: left-bump 0.4s ease;
+  transition: all 0.2s ease-in-out;
+}
+.player-wrapper #paging #prev .prev-text {
+  transition: all 0.2s ease-in-out;
+  height: 100%;
+  width: 100%;
+  line-height: 50px;
+  margin-left: -40px;
+}
+.player-wrapper #paging #prev i {
+  transition: all 0.2s ease-in-out;
+  top: 9px;
+  right: 5px;
+}
+.player-wrapper #paging #next {
+  position: relative;
+  flex: 1;
+  text-align: left;
+}
+.player-wrapper #paging #next:hover {
+  cursor: pointer;
+}
+.player-wrapper #paging #next:hover .next-text {
+  transition: all 0.2s ease-in-out;
+}
+.player-wrapper #paging #next:hover i {
+  animation: right-bump 0.4s ease;
+  transition: all 0.2s ease-in-out;
+}
+.player-wrapper #paging #next .next-text {
+  transition: all 0.2s ease-in-out;
+  height: 100%;
+  width: 100%;
+  line-height: 50px;
+  margin-left: 40px;
+}
+.player-wrapper #paging #next i {
+  transition: all 0.2s ease-in-out;
+  top: 9px;
+  left: 5px;
 }
 .main-wrapper ul {
   transition: all 0.2s ease-in-out;

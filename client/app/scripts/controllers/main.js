@@ -8,7 +8,7 @@
 * Controller of the clientApp
 */
 angular.module('clientApp')
-.controller('MainCtrl', function ($http, $rootScope, feedManager, utils) {
+.controller('MainCtrl', function ($scope, $http, $rootScope, feedManager, utils) {
     var vm = this;
     vm.feed = {};
     vm.page = 1;
@@ -92,6 +92,16 @@ angular.module('clientApp')
     function startPodcast(episode) {
         $rootScope.$broadcast('player-play', episode);
     }
+
+    $scope.$on('main-next', function(event, args) {
+        goNext();
+    });
+
+    $scope.$on('main-prev', function(event, args) {
+        goPrev();
+    });
+
+
 
     init();
 });

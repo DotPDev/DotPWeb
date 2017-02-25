@@ -8,10 +8,15 @@
 * Controller of the clientApp
 */
 angular.module('clientApp')
-.controller('PlayerCtrl', function ($timeout, $scope, $sce, playerSvc) {
+.controller('PlayerCtrl', function ($rootScope, $state, $timeout, $scope, $sce, playerSvc) {
     var vm = this;
     vm.isOpen = false;
+    vm.isPlaying = false;
+    vm.isDashboard = false;
     vm.API = null;
+    vm.onPlayerReady = onPlayerReady;
+    vm.canPlay = canPlay;
+    vm.onComplete = onComplete;
     vm.config = {
         sources: [],
         //we'll see about how to use theme and plugins later, these aren't used for now.
@@ -21,8 +26,26 @@ angular.module('clientApp')
         },
         title: ''
     };
-    vm.onPlayerReady = onPlayerReady;
-    vm.canPlay = canPlay;
+    vm.goNext = goNext;
+    vm.goPrev = goPrev;
+
+    function goNext() {
+        $rootScope.$broadcast('main-next', {});
+    }
+
+    function goPrev() {
+        $rootScope.$broadcast('main-prev', {});
+    }
+
+    function init() {
+        if ($state.current.name === 'root.dashboard') {
+            vm.isDashboard = true;
+        }
+    }
+
+    function onComplete() {
+        vm.isPlaying = false;
+    }
 
     function canPlay() {
         playAudio();
@@ -35,6 +58,7 @@ angular.module('clientApp')
     function playAudio() {
         if (vm.config.sources !== []) {
             vm.API.play();
+            vm.isPlaying = true;
         }
     }
 
@@ -50,5 +74,15 @@ angular.module('clientApp')
             vm.config.title = args.title;
         }
     });
+
+    $scope.$on('$stateChangeSuccess', function (event) {
+        if ($state.current.name !== 'root.dashboard') {
+            vm.isDashboard = false;
+        } else {
+            vm.isDashboard = true;
+        }
+    });
+
+    init();
 
 });
