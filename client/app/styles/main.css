@@ -377,6 +377,14 @@ body {
 .videogular-container [videogular] vg-controls .controls-container {
   background: none!important;
 }
+.videogular-container vg-play-pause-button .pause:before {
+  content: "\f04c";
+  font-family: FontAwesome;
+}
+.videogular-container vg-play-pause-button .play:before {
+  content: "\f04b";
+  font-family: FontAwesome;
+}
 .player-wrapper.open {
   height: calc(100% - 50px);
   transition: all 0.2s ease-in-out;
