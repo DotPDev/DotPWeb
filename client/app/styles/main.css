@@ -276,7 +276,7 @@ body {
 #title-bar nav .nav li:first-child header .left-stone {
   flex: 1;
   position: absolute;
-  left: 0;
+  left: 8px;
   width: 25px;
   height: 85%;
   transform: skewx(15deg);
@@ -291,7 +291,7 @@ body {
 #title-bar nav .nav li:first-child header .right-stone {
   flex: 1;
   position: absolute;
-  right: 0;
+  right: 8px;
   width: 25px;
   height: 85%;
   transform: skewx(-15deg);
@@ -306,7 +306,7 @@ body {
 }
 #title-bar nav .nav li:first-child header .center-stone {
   position: absolute;
-  width: 110px;
+  width: 95px;
   left: 0;
   right: 0;
   margin: auto;
@@ -340,21 +340,11 @@ body {
   top: 6px;
 }
 #title-bar nav .nav li:first-child header .center-stone .logo {
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   position: absolute;
-  top: 0;
+  top: -6px;
   left: 6px;
-  transition: all 0.2s ease-in-out;
-}
-@media only screen and (max-width: 568px) {
-  #title-bar nav .nav li:first-child header .center-stone .logo {
-    transition: all 0.2s ease-in-out;
-    width: 60px;
-    height: 60px;
-    top: -5px;
-    left: 14px;
-  }
 }
 #title-bar nav .nav li:first-child span {
   text-align: right;
@@ -464,7 +454,7 @@ body {
   overflow: visible;
   color: #9DA4AA!important;
 }
-@media only screen and (max-width: 568px) {
+@media only screen and (max-width: 775px) {
   .videogular-container {
     transition: all 0.2s ease-in-out;
     width: 100%!important;
@@ -538,7 +528,7 @@ body {
   padding: 17px;
   font-size: 13px;
 }
-@media only screen and (max-width: 568px) {
+@media only screen and (max-width: 775px) {
   .player-wrapper .podcast-title {
     display: none;
   }
@@ -553,7 +543,7 @@ body {
   transition: all 0.2s ease-in-out;
   display: inherit;
 }
-@media only screen and (max-width: 568px) {
+@media only screen and (max-width: 775px) {
   .player-wrapper .player.show-player {
     position: absolute;
     width: 100%;
@@ -569,7 +559,7 @@ body {
   bottom: 0;
   height: 50px;
 }
-@media only screen and (max-width: 568px) {
+@media only screen and (max-width: 775px) {
   .player-wrapper .player {
     background: #101116;
     border-top: 1px solid #5F5F67;
@@ -588,7 +578,7 @@ body {
   position: absolute;
   left: inherit;
 }
-@media only screen and (max-width: 568px) {
+@media only screen and (max-width: 775px) {
   .player-wrapper #paging.is-playing {
     width: 100%;
   }
@@ -683,7 +673,7 @@ body {
   list-style: none;
   padding: 0;
 }
-@media only screen and (max-width: 568px) {
+@media only screen and (max-width: 775px) {
   .main-wrapper ul {
     width: 90%;
     transition: all 0.2s ease-in-out;
