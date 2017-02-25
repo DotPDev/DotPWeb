@@ -21,7 +21,8 @@
     "videogular-overlay-play": "^1.4.4",
     "videogular-poster": "^1.4.4",
     "videogular-ima-ads": "^1.4.4",
-    "videogular-angulartics": "^1.4.4"
+    "videogular-angulartics": "^1.4.4",
+    "angular-media-queries": "^0.6.1"
   },
   "devDependencies": {
     "angular-mocks": "1.5.8"
