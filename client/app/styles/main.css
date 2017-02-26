@@ -297,6 +297,41 @@ body {
 #title-bar nav ul .action-wrapper .show-login {
   display: block!important;
 }
+#ladder-records {
+  margin: 0 auto;
+  max-width: 1000px;
+  width: 60%;
+  border: thick solid white;
+  text-align: center;
+  font-family: 'Constantia, Arial, sans-serif';
+  color: #9e9e9e;
+}
+#ladder-records .flex-parent {
+  display: flex;
+}
+#ladder-records .records-column-main {
+  flex: 1;
+}
+#ladder-records .records-column-alt {
+  display: flex;
+  flex: 1;
+}
+#ladder-records .records-column {
+  flex: 1;
+}
+#ladder-records .player {
+  padding: 5px;
+  margin: 2px;
+  border: thin black solid;
+  background: rgba(30, 30, 30, 0.8);
+}
+#ladder-records .name a {
+  text-decoration: none;
+  color: #9e9e9e;
+}
+#ladder-records .records-highlight {
+  color: #f7f7f7;
+}
 .main-wrapper ul {
   width: 60%;
   margin: 0 auto;

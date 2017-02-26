@@ -1,0 +1,47 @@
+@records-color: #9e9e9e;
+@records-name-color: #c6c6c6;
+
+#ladder-records {
+	margin: 0 auto;
+	max-width: 1000px;
+	width: 60%;
+	border:thick solid white;
+	text-align: center;
+    font-family: @main-font-family;
+    color: @records-color;
+
+	.flex-parent {
+		display: flex;
+	}
+
+	.records-column-main {
+		flex: 1;
+	}
+
+	.records-column-alt {
+		display: flex;
+		flex: 1;
+	}
+
+	.records-column {
+		flex: 1;
+	}
+
+	.player {
+		padding: 5px;
+		margin: 2px;
+		border: thin black solid;
+		background: rgba(30, 30, 30, 0.8);
+	}
+
+	.name {
+		a {
+			text-decoration: none;
+			color: @records-color;
+		}
+	}
+
+	.records-highlight {
+		color: #f7f7f7
+	}
+}
