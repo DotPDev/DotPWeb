@@ -23,7 +23,7 @@ angular.module('clientApp')
     function setDomain() {
         var currentUrl = $location.absUrl();
         if (currentUrl.indexOf('staging') > 0 || currentUrl.indexOf('localhost') > 0) {
-            console.log('got in staging')
+            console.log('got in staging');
             $window.ga('create', 'UA-92244858-1', 'auto');
         } else {
             console.log('got in prod');

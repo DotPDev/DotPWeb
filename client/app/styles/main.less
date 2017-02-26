@@ -2,11 +2,235 @@
 @import 'global.less';
 @import 'titlebar.less';
 @import 'ladder.less';
+@import 'player.less';
 
 .main-wrapper {
     ul {
-        width: 60%;
+        transition: @transition;
+        width: 80%;
+        max-width:600px;
         margin: 0 auto;
         display: block;
+        list-style:none;
+        padding:0;
+        @media @smartphones {
+            width: 90%;
+            transition: @transition;
+        }
+        li {
+            position: relative;
+            &:first-child {
+                margin-top:40px;
+            }
+            &:last-child {
+                margin-bottom:130px;
+            }
+            .podcast-container {
+                color: @navFontColor;
+                font-family: @main-font-family;
+                background: #101116;
+                background-image:@cardBg;
+                padding:20px;
+                margin-top: 10px;
+                position: relative;
+                background-image: @navPattern, radial-gradient(top left, circle cover, @brightCard, @cardBg);
+                background-image: @navPattern, -o-radial-gradient(top left, circle cover, @brightCard, @cardBg);
+                background-image: @navPattern, -ms-radial-gradient(top left, circle cover, @brightCard, @cardBg);
+                background-image: @navPattern, -moz-radial-gradient(top left, circle cover, @brightCard, @cardBg);
+                background-image: @navPattern, -webkit-radial-gradient(top left, circle cover, @brightCard, @cardBg);
+
+                &:before, &:after {
+                  content: "";
+                  position: absolute;
+                  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#5F5F67), to(transparent));
+                  background-image: -webkit-linear-gradient(#5F5F67, transparent);
+                  background-image: -moz-linear-gradient(#5F5F67, transparent);
+                  background-image: -o-linear-gradient(#5F5F67, transparent);
+                  background-image: linear-gradient(#5F5F67, transparent);
+                  top: -1px;
+                  bottom: -1px;
+                  width: 1px;
+                }
+                &:before {
+                  left: -1px;
+                }
+
+                &:after {
+                  right: 0;
+                  top: -1px;
+                  width: 100%;
+                  height: 1px;
+                  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#5F5F67), to(transparent));
+                  background-image: -webkit-linear-gradient(to right, #5F5F67, transparent);
+                  background-image: -moz-linear-gradient(to right, #5F5F67, transparent);
+                  background-image: -o-linear-gradient(to right, #5F5F67, transparent);
+                  background-image: linear-gradient(to right, #5F5F67, transparent);
+                }
+
+                .publish-date {
+                    color: #ffffff;
+                    padding:10px;
+                    background: @cardBg;
+                    opacity: 0.3;
+                    -webkit-box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,1);
+                    -moz-box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,1);
+                    box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,1);
+                    border-top: 1px solid #030303;
+                    border-bottom: 1px solid #777777;
+                }
+                .episode-image {
+                    img {
+                        position: absolute;
+                        top: 5px;
+                        right: 10px;
+                        border-radius: 50%;
+                        border: 2px solid #565656;
+                        width: 65px;
+                        height: 65px;
+                        overflow: hidden;
+                    }
+                }
+                h2 {
+                    transition: @transition;
+                    padding: 0;
+                    margin:0;
+                    margin-top:15px;
+                    &:hover {
+                        transition: @transition;
+                        cursor: pointer;
+                        text-decoration: underline;
+                    }
+                    a {
+
+                        text-decoration: none;
+                        color: inherit;
+                        color: #ffffff;
+                    }
+                }
+            }
+            .podcast-summary {
+                color: @navFontColor;
+                font-family: @main-font-family;
+                background: #101116;
+                background-image:@navPattern;
+                -webkit-box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,1);
+                -moz-box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,1);
+                box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,1);
+                padding:20px;
+                position: relative;
+                // background-image: @navPattern, radial-gradient(top left, circle cover, @brightCard, @cardBg);
+                // background-image: @navPattern, -o-radial-gradient(top left, circle cover, @brightCard, @cardBg);
+                // background-image: @navPattern, -ms-radial-gradient(top left, circle cover, @brightCard, @cardBg);
+                // background-image: @navPattern, -moz-radial-gradient(top left, circle cover, @brightCard, @cardBg);
+                // background-image: @navPattern, -webkit-radial-gradient(top left, circle cover, @brightCard, @cardBg);
+                p {
+                    padding: 0;
+                    margin: 0;
+                    word-wrap:break-word;
+                }
+            }
+            .podcast-actions {
+                color: #ffffff;
+                font-family: @main-font-family;
+                background: #101116;
+                background-image:@cardBg;
+                margin-bottom: 50px;
+                position: relative;
+                display: flex;
+                text-align: center;
+                background-image: @navPattern, radial-gradient(top left, circle cover, @brightCard, @cardBg);
+                background-image: @navPattern, -o-radial-gradient(top left, circle cover, @brightCard, @cardBg);
+                background-image: @navPattern, -ms-radial-gradient(top left, circle cover, @brightCard, @cardBg);
+                background-image: @navPattern, -moz-radial-gradient(top left, circle cover, @brightCard, @cardBg);
+                background-image: @navPattern, -webkit-radial-gradient(top left, circle cover, @brightCard, @cardBg);
+                .play-text, .share-text, .dl-text {
+                    opacity: 0;
+                }
+                .play-control {
+                    padding:20px;
+                    flex: 1;
+                    position: relative;
+                    text-decoration: none;
+                    color: inherit;
+                    border-right: 1px solid #000000;
+                    border-left: 1px solid #5c5c5c;
+                    border-bottom: @navBottomBorder;
+
+                    &:hover {
+                        cursor: pointer;
+                        i {
+                            transition: @transition;
+                            top: 5px;
+                        }
+                        .play-text {
+                            opacity: 1;
+                            transition: @transition;
+                        }
+                    }
+                    i {
+                        transition: @transition;
+                        position: absolute;
+                        top: 20px;
+                        left: 0;
+                        right: 0;
+                    }
+                }
+                .download-control {
+                    padding:20px;
+                    flex: 1;
+                    position: relative;
+                    text-decoration: none;
+                    color: inherit;
+                    border-left: 1px solid #5c5c5c;
+                    border-right: 1px solid #000000;
+                    border-bottom: @navBottomBorder;
+                    &:hover {
+                        cursor: pointer;
+                        i {
+                            transition: @transition;
+                            top: 5px;
+                        }
+                        .dl-text {
+                            opacity: 1;
+                            transition: @transition;
+                        }
+                    }
+                    i {
+                        transition: @transition;
+                        position: absolute;
+                        top: 20px;
+                        left: 0;
+                        right: 0;
+                    }
+                }
+                .share-control {
+                    padding:20px;
+                    flex: 1;
+                    position: relative;
+                    border-left: 1px solid #5c5c5c;
+                    border-right: 1px solid #5c5c5c;
+                    border-bottom: @navBottomBorder;
+
+                    &:hover {
+                        cursor: pointer;
+                        i {
+                            transition: @transition;
+                            top: 5px;
+                        }
+                        .share-text {
+                            opacity: 1;
+                            transition: @transition;
+                        }
+                    }
+                    i {
+                        transition: @transition;
+                        position: absolute;
+                        top: 20px;
+                        left: 0;
+                        right: 0;
+                    }
+                }
+            }
+        }
     }
 }
