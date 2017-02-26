@@ -18,7 +18,7 @@ angular.module('clientApp')
     vm.slideNavPanel = false;
     vm.clickPower = clickPower;
     screenSize.rules = {
-        smartphones: 'only screen and (max-width: 568px)'
+        smartphones: 'only screen and (max-width: 775px)'
     };
 
     function init() {

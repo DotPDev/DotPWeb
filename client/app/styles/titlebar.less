@@ -137,7 +137,7 @@
                         .left-stone {
                             flex: 1;
                             position: absolute;
-                            left: 0;
+                            left: 8px;
                             width: 25px;
                             height: 85%;
                             transform: skewx(@skewPartialAngle);
@@ -152,7 +152,7 @@
                         .right-stone {
                             flex:1;
                             position: absolute;
-                            right: 0;
+                            right: 8px;
                             width: 25px;
                             height: 85%;
                             transform: skewx(-@skewPartialAngle);
@@ -167,7 +167,7 @@
                         }
                         .center-stone {
                             position: absolute;
-                            width: 110px;
+                            width: 95px;
                             left: 0;
                             right: 0;
                             margin: auto;
@@ -200,19 +200,11 @@
                                 top:6px;
                             }
                             .logo {
-                                width: 80px;
-                                height: 80px;
+                                width: 60px;
+                                height: 60px;
                                 position: absolute;
-                                top: 0;
+                                top: -6px;
                                 left: 6px;
-                                transition: @transition;
-                                @media @smartphones {
-                                    transition: @transition;
-                                    width: 60px;
-                                    height: 60px;
-                                    top: -5px;
-                                    left: 14px;
-                                }
                             }
                         }
                     }
