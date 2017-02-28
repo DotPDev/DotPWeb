@@ -479,9 +479,9 @@ body {
   background-image: url("https://www.transparenttextures.com/patterns/assault.png"), -webkit-radial-gradient(top left, circle cover, #252834, #101116);
 }
 .videogular-container .audio .time-holder {
-  padding-left: 5px;
+  padding-left: 15px;
   font-size: 15px;
-  width: 110px;
+  width: 124px;
 }
 .videogular-container videogular vg-controls .controls-container,
 .videogular-container [videogular] vg-controls .controls-container {

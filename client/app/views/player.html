@@ -16,7 +16,7 @@
                         <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
                         <vg-scrub-bar-buffer></vg-scrub-bar-buffer>
                     </vg-scrub-bar>
-                    <vg-time-display class="time-holder">{{ currentTime | date:'mm:ss' }} / {{ totalTime | date:'mm:ss' }}</vg-time-display>
+                    <vg-time-display class="time-holder">{{ currentTime | playerDate }} / {{ totalTime | date:'hh:mm:ss': 'UTC' }}</vg-time-display>
                     <vg-volume>
                         <vg-volume-bar></vg-volume-bar>
                     </vg-volume>
