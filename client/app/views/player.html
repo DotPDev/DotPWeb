@@ -6,7 +6,7 @@
             </div>
         </div>
         <div class="videogular-container">
-            <videogular vg-preload="auto" vg-player-ready="vm.onPlayerReady($API)" vg-can-play="vm.canPlay()" vg-update-time="vm.onUpdateTime($currentTime, $duration)" vg-complete="vm.onComplete()" vg-theme="vm.config.theme" class="audio" ng-click="$event.stopPropagation()">
+            <videogular vg-player-ready="vm.onPlayerReady($API)" vg-can-play="vm.canPlay()" vg-complete="vm.onComplete()" vg-theme="vm.config.theme" class="audio" ng-click="$event.stopPropagation()">
     			<vg-media vg-src="vm.config.sources"
                         vg-type="audio">
     			</vg-media>
