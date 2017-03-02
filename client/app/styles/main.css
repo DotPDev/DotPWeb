@@ -712,6 +712,16 @@ body {
   top: 9px;
   left: 5px;
 }
+.main-wrapper {
+  color: #9DA4AA;
+}
+.main-wrapper a {
+  color: #5c5cff;
+  text-decoration: none;
+}
+.main-wrapper a:visited {
+  color: #8159a6;
+}
 .main-wrapper ul {
   transition: all 0.2s ease-in-out;
   width: 80%;
