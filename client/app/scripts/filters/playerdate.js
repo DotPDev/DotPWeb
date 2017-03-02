@@ -9,7 +9,7 @@
 * Filter in the clientApp.
 */
 angular.module('clientApp')
-.filter('playerDate', function ($filter) {
+.filter('playerDate', function ($filter, moment) {
     var angularDateFilter = $filter('date');
     return function(theDate) {
         var now = new Date(theDate);
