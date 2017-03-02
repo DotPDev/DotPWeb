@@ -27,14 +27,17 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/api/users', users); // <-- note we're calling this API
 app.use('/api/feed', feed);
 
-
 // In production, we'll actually serve our angular app from express
 if (app.get('env') === 'production') {
   app.use(express.static(path.join(__dirname, '/dist')));
 
-  // rewrite virtual urls to angular app to enable refreshing of internal pages
-  app.use('*', function (req, res, next) {
-      res.sendFile(path.resolve('dist/index.html'));
+  // // rewrite virtual urls to angular app to enable refreshing of internal pages
+  // app.use('*', function (req, res, next) {
+  //     res.sendFile(path.resolve('dist/index.html'));
+  // });
+  app.all('/*', function(req, res, next) {
+    // Just send the index.html for other files to support HTML5Mode
+    res.sendFile('dist/index.html', { root: __dirname });
   });
 
 // production error handler
