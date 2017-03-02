@@ -1,9 +1,21 @@
 @import 'vars.less';
 @import 'global.less';
 @import 'titlebar.less';
+@import 'ladder.less';
 @import 'player.less';
 
 .main-wrapper {
+	color: @navFontColor;
+
+    a {
+        color: #5c5cff;
+        text-decoration: none;
+
+        &:visited {
+            color: #8159a6;
+        }
+    }
+
     ul {
         transition: @transition;
         width: 80%;

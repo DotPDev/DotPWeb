@@ -446,6 +446,54 @@ body {
 #title-bar nav .nav .action-wrapper .show-login {
   display: block!important;
 }
+.main-wrapper > div {
+  transition: all 0.2s ease-in-out;
+  width: 80%;
+  max-width: 600px;
+  margin: 0 auto;
+  display: block;
+  padding: 0;
+}
+@media only screen and (max-width: 775px) {
+  .main-wrapper > div {
+    width: 90%;
+    transition: all 0.2s ease-in-out;
+  }
+}
+.main-wrapper ul#ladder-records {
+  text-align: center;
+  font-family: 'Constantia, Arial, sans-serif';
+  color: #9DA4AA;
+}
+.main-wrapper ul#ladder-records li:first-child {
+  margin-top: 0;
+}
+.main-wrapper ul#ladder-records .flex-parent {
+  display: flex;
+}
+.main-wrapper ul#ladder-records .records-column-main {
+  flex: 1;
+}
+.main-wrapper ul#ladder-records .records-column-alt {
+  display: flex;
+  flex: 1;
+}
+.main-wrapper ul#ladder-records .records-column {
+  flex: 1;
+}
+.main-wrapper ul#ladder-records .player {
+  padding: 5px;
+  margin: 2px;
+  border: thin black solid;
+  background: rgba(30, 30, 30, 0.8);
+}
+.main-wrapper ul#ladder-records .name a {
+  text-decoration: none;
+  color: #9DA4AA;
+}
+.main-wrapper ul#ladder-records .records-highlight {
+  color: #f7f7f7;
+}
 .videogular-container {
   transition: all 0.2s ease-in-out;
   width: 50%!important;
@@ -663,6 +711,16 @@ body {
   transition: all 0.2s ease-in-out;
   top: 9px;
   left: 5px;
+}
+.main-wrapper {
+  color: #9DA4AA;
+}
+.main-wrapper a {
+  color: #5c5cff;
+  text-decoration: none;
+}
+.main-wrapper a:visited {
+  color: #8159a6;
 }
 .main-wrapper ul {
   transition: all 0.2s ease-in-out;
