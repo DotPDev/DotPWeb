@@ -134,6 +134,22 @@ angular
             }
         }
     });
+    $stateProvider.state('root.store', {
+        url: '/store',
+        resolve: {
+        },
+        data: {
+            pageName: 'StoreCtrl',
+            browserTitle: 'DotP Store'
+        },
+        views: {
+            'container@': {
+                templateUrl: 'views/store.html',
+                controller: 'StoreCtrl',
+                controllerAs: 'vm'
+            }
+        }
+    });
 })
 .run(function ($rootScope, firebaseSvc, $location, googleAnalytics) {
     googleAnalytics.init();
