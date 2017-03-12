@@ -1,0 +1,68 @@
+.about-wrapper {
+    color: #9DA4AA;
+    height: 100%;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto;
+    .hosts-section {
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            div {
+                position: relative;
+                padding-top: 80px;
+                padding-bottom: 1%;
+                margin-top: 30px;
+                .cyphus, .roland {
+                    font-size: 1.2em;
+                    color: #fff;
+                    position: absolute;
+                    right: 0;
+                    top: 5%;
+                    left: 0;
+                    margin: auto;
+                    text-align: center;
+                    @media @smartphones {
+
+                    }
+                }
+                .host-pic {
+                    position: absolute;
+                    right:25%;
+                    top: -3%;
+                    width: 100px;
+                    height: 100px;
+                    border-radius: 50%;
+                    border-color: rgba(0, 0, 0, 0.3);
+                    @media @smartphones {
+                        right: 20%;
+                    }
+                }
+            }
+            div.cyphus-container .cyphus {
+                @media @smartphones {
+                    text-align: left;
+                    padding-left: 20%;
+                }
+            }
+            div.roland-container {
+                margin-bottom: 100px;
+                .roland {
+                    @media @smartphones {
+                        text-align: right;
+                        padding-right: 20%;
+                    }
+                }
+            }
+            div.roland-container .host-pic {
+                left: 25%;
+                right: 0;
+                @media @smartphones {
+                    left: 20%;
+                }
+            }
+        }
+    }
+}
