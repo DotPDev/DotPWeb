@@ -12,16 +12,15 @@
         <li ui-sref-active="active" ng-click="vm.slideNavPanel = false">
             <a ui-sref="root.about"><span>about</span></a>
         </li>
-        <li ui-sref-active="active" ng-if="!vm.user" ui-sref="root.login" ng-click="vm.slideNavPanel = false">
+        <!-- <li ui-sref-active="active" ng-if="!vm.user" ui-sref="root.login" ng-click="vm.slideNavPanel = false">
             <a ng-click="vm.goToLogin()" ui-sref="root.login"><span>Login</span></a>
         </li>
         <li ui-sref-active="active" ng-if="vm.user" ng-click="vm.slideNavPanel = false">
             <a ng-click="vm.goToLogin()" ui-sref="root.login"><span>{{vm.user.displayName || vm.user.email}}</span></a>
-
         </li>
         <li ui-sref-active="active" ng-if="vm.user" ng-click="vm.slideNavPanel = false">
             <a ng-click="vm.signOut()" ui-sref="root.dashboard"><span>Sign Out</span></a>
-        </li>
+        </li> -->
     </ul>
     <ul class="nav" ng-class="{ 'collapsed': vm.isCollapsed }">
         <li ui-sref-active="active">
@@ -45,27 +44,32 @@
                 <span class="patience">Patience</span>
             </a>
         </li>
-        <li ui-sref-active="active">
+        <!-- <li ui-sref-active="active">
             <a ui-sref="root.dotpeeps"><span>dotpeeps</span></a>
-        </li>
+        </li> -->
         <li ui-sref-active="active">
             <a ui-sref="root.ladder"><span>ladder</span></a>
         </li>
-        <li ui-sref-active="active">
+        <!-- <li ui-sref-active="active">
             <a ui-sref="root.media"><span>media</span></a>
-        </li>
+        </li> -->
         <li ui-sref-active="active">
             <a ui-sref="root.about"><span>about</span></a>
         </li>
         <li class="action-wrapper">
-            <div class="power" ng-click="vm.clickPower()">
+            <!-- <div class="power" ng-click="vm.clickPower()">
                 <i class="fa fa-power-off"></i>
+            </div> -->
+            <div class="share-container" ui-sref-active="active">
+                <a class="share-icon" ui-sref="root.social">
+                    <i class="fa fa-share-alt"></i>
+                </a>
             </div>
-            <div class="hidden-login" ng-class="{ 'show-login': vm.isShowingLogin }">
+            <!-- <div class="hidden-login" ng-class="{ 'show-login': vm.isShowingLogin }">
                 <a ng-if="!vm.user" ng-click="vm.goToLogin()" ui-sref="root.login"><span>Login</span></a>
                 <a ng-if="vm.user" ng-click="vm.goToLogin()" ui-sref="root.login"><span>{{vm.user.displayName || vm.user.email}}</span></a>
                 <a ng-if="vm.user" ng-click="vm.signOut()" ui-sref="root.dashboard"><span>Sign Out</span></a>
-            </div>
+            </div> -->
         </li>
     </ul>
 </nav>

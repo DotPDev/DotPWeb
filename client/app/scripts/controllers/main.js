@@ -52,6 +52,7 @@ angular.module('clientApp')
     }
 
     function setPageLinks() {
+        console.log('in here');
         if (vm.page === 1) {
             vm.links.next = "/?page=" + (vm.page + 1);
             vm.links.prev = "/";
@@ -84,7 +85,6 @@ angular.module('clientApp')
 
     function getFeed() {
         feedManager.parseFeed(vm.page).then(function(response) {
-            console.log(response);
             vm.feed = response;
         }).catch(function(error) {
             console.log(error);
