@@ -1,14 +1,14 @@
 <nav role="navigation">
     <ul class="collapsed-nav" ng-class="{ 'is-showing-nav': vm.slideNavPanel }">
-        <li ui-sref-active="active" ng-click="vm.slideNavPanel = false">
+        <!-- <li ui-sref-active="active" ng-click="vm.slideNavPanel = false">
             <a ui-sref="root.dotpeeps"><span>dotpeeps</span></a>
-        </li>
+        </li> -->
         <li ui-sref-active="active" ng-click="vm.slideNavPanel = false">
             <a ui-sref="root.ladder"><span>ladder</span></a>
         </li>
-        <li ui-sref-active="active" ng-click="vm.slideNavPanel = false">
+        <!-- <li ui-sref-active="active" ng-click="vm.slideNavPanel = false">
             <a ui-sref="root.media"><span>media</span></a>
-        </li>
+        </li> -->
         <li ui-sref-active="active" ng-click="vm.slideNavPanel = false">
             <a ui-sref="root.about"><span>about</span></a>
         </li>
@@ -57,9 +57,9 @@
             <a ui-sref="root.about"><span>about</span></a>
         </li>
         <li class="action-wrapper">
-            <!-- <div class="power" ng-click="vm.clickPower()">
+            <div class="power" ng-if="vm.isCollapsed" ng-click="vm.clickPower()">
                 <i class="fa fa-power-off"></i>
-            </div> -->
+            </div>
             <div class="share-container" ui-sref-active="active">
                 <a class="share-icon" ui-sref="root.social">
                     <i class="fa fa-share-alt"></i>

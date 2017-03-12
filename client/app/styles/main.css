@@ -895,6 +895,7 @@ body {
 }
 @media only screen and (max-width: 830px) {
   .share-container {
+    right: 50px;
     transform: skewx(0deg);
     top: -1px;
   }
@@ -953,6 +954,74 @@ body {
   top: 0px;
   position: absolute;
   left: 0;
+}
+.about-wrapper {
+  color: #9DA4AA;
+  height: 100%;
+  padding: 20px;
+  width: 80%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.about-wrapper .hosts-section ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.about-wrapper .hosts-section ul div {
+  position: relative;
+  padding-top: 80px;
+  padding-bottom: 1%;
+  margin-top: 30px;
+}
+.about-wrapper .hosts-section ul div .cyphus,
+.about-wrapper .hosts-section ul div .roland {
+  font-size: 1.2em;
+  color: #fff;
+  position: absolute;
+  right: 0;
+  top: 5%;
+  left: 0;
+  margin: auto;
+  text-align: center;
+}
+.about-wrapper .hosts-section ul div .host-pic {
+  position: absolute;
+  right: 25%;
+  top: -3%;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border-color: rgba(0, 0, 0, 0.3);
+}
+@media only screen and (max-width: 830px) {
+  .about-wrapper .hosts-section ul div .host-pic {
+    right: 20%;
+  }
+}
+@media only screen and (max-width: 830px) {
+  .about-wrapper .hosts-section ul div.cyphus-container .cyphus {
+    text-align: left;
+    padding-left: 20%;
+  }
+}
+.about-wrapper .hosts-section ul div.roland-container {
+  margin-bottom: 100px;
+}
+@media only screen and (max-width: 830px) {
+  .about-wrapper .hosts-section ul div.roland-container .roland {
+    text-align: right;
+    padding-right: 20%;
+  }
+}
+.about-wrapper .hosts-section ul div.roland-container .host-pic {
+  left: 25%;
+  right: 0;
+}
+@media only screen and (max-width: 830px) {
+  .about-wrapper .hosts-section ul div.roland-container .host-pic {
+    left: 20%;
+  }
 }
 .main-wrapper {
   color: #9DA4AA;
