@@ -26,13 +26,13 @@
     </div>
     <div id="paging" ng-class="{ 'is-playing': vm.isPlaying }" ng-if="vm.isDashboard" ng-click="$event.stopPropagation()">
         <div id="prev">
-            <a ng-click="vm.goPrev()">
+            <a ng-href="{{vm.links.prev}}" ng-click="vm.goPrev()">
                 <div class="prev-text">Newer</div>
                 <i class="fa fa-chevron-left fa-2x"></i>
             </a>
         </div>
         <div id="next">
-            <a ng-click="vm.goNext()">
+            <a ng-href="{{vm.links.next}}" ng-click="vm.goNext()">
                 <i class="fa fa-chevron-right fa-2x"></i>
                 <div class="next-text">Older</div>
             </a>

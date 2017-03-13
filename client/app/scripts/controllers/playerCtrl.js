@@ -8,7 +8,7 @@
 * Controller of the clientApp
 */
 angular.module('clientApp')
-.controller('PlayerCtrl', function ($rootScope, $state, $timeout, $scope, $sce) {
+.controller('PlayerCtrl', function ($rootScope, $state, $timeout, $scope, $sce, utils) {
     var vm = this;
     vm.isOpen = false;
     vm.isPlaying = false;
@@ -28,16 +28,49 @@ angular.module('clientApp')
     };
     vm.goNext = goNext;
     vm.goPrev = goPrev;
+    vm.page = 1;
+    vm.links = {
+        next: "/",
+        prev: "/"
+    };
 
-    function goNext() {
-        $rootScope.$broadcast('main-next', {});
+    function setPageLinks() {
+        console.log('in here');
+        if (vm.page === 1) {
+            vm.links.next = "?page=" + (vm.page + 1);
+            vm.links.prev = "";
+        } else {
+            vm.links.next = "?page=" + (vm.page + 1);
+            vm.links.prev = "?page=" + (vm.page - 1);
+        }
     }
 
-    function goPrev() {
+    function goNext(e) {
+        e.preventDefault();
+        $rootScope.$broadcast('main-next', {});
+        setTimeout(function() {
+            vm.page += 1;
+            setPageLinks();
+        },1);
+    }
+
+    function goPrev(e) {
+        e.preventDefault();
         $rootScope.$broadcast('main-prev', {});
+        setTimeout(function() {
+            if (vm.page > 1) {
+                vm.page -= 1;
+                setPageLinks();
+            }
+        },1);
     }
 
     function init() {
+        vm.page = parseInt(utils.getParameterByName('page'));
+        if (!vm.page) {
+            vm.page = 1;
+        }
+        setPageLinks();
         if ($state.current.name === 'root.dashboard') {
             vm.isDashboard = true;
         }
