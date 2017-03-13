@@ -1,0 +1,231 @@
+.social-container {
+    margin-bottom: 50px;
+    width: 60%;
+    max-width: 725px;
+    margin: 0 auto;
+    height: calc(~"100% - 100px");
+    display: flex;
+    position: relative;
+    @media @smartphones {
+        flex-direction: column;
+    }
+    .close {
+        position: absolute;
+        right: 0;
+        top: 10px;
+        font-size: 50px;
+        color: #999999;
+        transition: @transition;
+        &:hover {
+            color: #ffffff;
+            transition: @transition;
+            cursor: pointer;
+        }
+    }
+    > div {
+        min-height: 155px;
+        h3 {
+            padding-top: 0;
+            margin-top: 0;
+            color: #ffffff;
+            margin-bottom: 5px;
+            text-align: center;
+        }
+        padding: 20px;
+    }
+    .left-column {
+        flex: 1;
+        order: 1;
+        padding: 5px;
+        display: flex;
+        align-items: center;
+    }
+    .middle-column {
+        flex: 1;
+        order: 1;
+        padding: 5px;
+        display: flex;
+        align-items: center;
+    }
+    .right-column {
+        flex: 1;
+        order: 1;
+        padding: 5px;
+        display: flex;
+        align-items: center;
+        @media @smartphones {
+            align-items: inherit;
+            margin-bottom: 50px;
+        }
+    }
+    .share-links {
+        flex: 1;
+    }
+    .community-links {
+        flex: 1;
+    }
+    .support-links {
+        flex: 1;
+    }
+    .link-wrapper {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        li {
+            height: 30px;
+            line-height: 30px;
+            display: block;
+            width: auto;
+            margin-top: 10px;
+            a {
+                height: 100%;
+                width: 80px;
+                display: block;
+                margin: 0 auto;
+                padding-left: 5px;
+                padding-right:5px;
+                border: 1px solid transparent;
+                border-radius: 4px;
+                text-decoration: none;
+                transition: @transition;
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    .facebook {
+        background-color: #3b5998;
+        color: #ffffff;
+        border-color: rgba(0,0,0,0.2)!important;
+        &:hover {
+            background-color: darken(#3b5998, 10%);
+            transition: @transition;
+        }
+    }
+    .twitter {
+        background-color: #55acee;
+        color: #ffffff;
+        border-color: rgba(0,0,0,0.2)!important;
+        &:hover {
+            background-color: darken(#55acee, 10%);
+            transition: @transition;
+        }
+    }
+    .reddit {
+        background-color: #eff7ff;
+        color: #000000;
+        border-color: rgba(0,0,0,0.2)!important;
+        &:hover {
+            background-color: darken(#eff7ff, 10%);
+            transition: @transition;
+        }
+    }
+    .patreon {
+        background-color: #232D32;
+        color: #E6461A;
+        border-color: rgba(230, 70, 26, 0.2)!important;
+        &:hover {
+            background-color: darken(#232D32, 10%);
+            transition: @transition;
+        }
+    }
+    .discord {
+        background-color: #7289DA;
+        color: #ffffff;
+        border-color: rgba(114, 137, 218, 0.2)!important;
+        &:hover {
+            background-color: darken(#7289DA, 10%);
+            transition: @transition;
+        }
+    }
+    .youtube {
+        background-color: #eff7ff;
+        color: #DD2724;
+        border-color: rgba(221, 39, 36, 0.2)!important;
+        &:hover {
+            background-color: darken(#eff7ff, 10%);
+            transition: @transition;
+        }
+    }
+    .twitch {
+        background-color: #6441A4;
+        color: #ffffff;
+        border-color: rgba(0,0,0,0.2)!important;
+        &:hover {
+            background-color: darken(#6441A4, 10%);
+            transition: @transition;
+        }
+    }
+}
+.share-container {
+    transform: skewx(@skewAngle);
+    width: 50px;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    .active {
+        background: #101116;
+        background-image: @navPattern;
+    }
+    @media @smartphones {
+        right:50px;
+        transform: skewx(0deg);
+        top:-1px;
+    }
+    &:hover {
+        cursor: pointer;
+    }
+    i {
+        position: absolute;
+        left: 0;
+        right: 0;
+    }
+    .fa-share-alt:before {
+        background: #4080FF;
+        border-radius: 50%;
+        color: #fff;
+        padding: 3px;
+        text-shadow: none;
+        position: absolute;
+        left: 1px;
+        right: 0;
+        margin: auto;
+        width: 15px;
+        height: 15px;
+    }
+}
+.discord-icon {
+    width: 10px;
+    height: 10px;
+    position: relative;
+    padding-left: 20px;
+    &:after {
+        background-image: url(../images/discordLogo.png);
+        background-size: 1em 1em;
+        width: 1em;
+        height: 1em;
+        display: inline-block;
+        content: "";
+        top: 0px;
+        position: absolute;
+        left: 0;
+    }
+}
+.patreon-icon {
+    width: 10px;
+    height: 10px;
+    position: relative;
+    padding-left: 20px;
+    &:after {
+        background-image: url(../images/patreonLogo.png);
+        background-size: 1em 1em;
+        width: 1em;
+        height: 1em;
+        display: inline-block;
+        content: "";
+        top: 0px;
+        position: absolute;
+        left: 0;
+    }
+}

@@ -103,7 +103,7 @@ body {
   margin-top: 28px;
 }
 /* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
+@media only screen and (max-width: 830px) {
   .container {
     max-width: 730px;
   }
@@ -412,8 +412,14 @@ body {
   transform: skewx(20deg);
   width: 50px;
   height: 100%;
-  float: right;
+  position: absolute;
+  right: 0;
   background: #26090B;
+}
+@media only screen and (max-width: 830px) {
+  #title-bar nav .nav .action-wrapper .power {
+    top: -1px;
+  }
 }
 #title-bar nav .nav .action-wrapper .power:hover {
   cursor: pointer;
@@ -454,7 +460,7 @@ body {
   display: block;
   padding: 0;
 }
-@media only screen and (max-width: 775px) {
+@media only screen and (max-width: 830px) {
   .main-wrapper > div {
     width: 90%;
     transition: all 0.2s ease-in-out;
@@ -502,7 +508,7 @@ body {
   overflow: visible;
   color: #9DA4AA!important;
 }
-@media only screen and (max-width: 775px) {
+@media only screen and (max-width: 830px) {
   .videogular-container {
     transition: all 0.2s ease-in-out;
     width: 100%!important;
@@ -576,7 +582,7 @@ body {
   padding: 17px;
   font-size: 13px;
 }
-@media only screen and (max-width: 775px) {
+@media only screen and (max-width: 830px) {
   .player-wrapper .podcast-title {
     display: none;
   }
@@ -591,7 +597,7 @@ body {
   transition: all 0.2s ease-in-out;
   display: inherit;
 }
-@media only screen and (max-width: 775px) {
+@media only screen and (max-width: 830px) {
   .player-wrapper .player.show-player {
     position: absolute;
     width: 100%;
@@ -607,7 +613,7 @@ body {
   bottom: 0;
   height: 50px;
 }
-@media only screen and (max-width: 775px) {
+@media only screen and (max-width: 830px) {
   .player-wrapper .player {
     background: #101116;
     border-top: 1px solid #5F5F67;
@@ -626,7 +632,7 @@ body {
   position: absolute;
   left: inherit;
 }
-@media only screen and (max-width: 775px) {
+@media only screen and (max-width: 830px) {
   .player-wrapper #paging.is-playing {
     width: 100%;
   }
@@ -712,6 +718,311 @@ body {
   top: 9px;
   left: 5px;
 }
+.social-container {
+  margin-bottom: 50px;
+  width: 60%;
+  max-width: 725px;
+  margin: 0 auto;
+  height: calc(100% - 100px);
+  display: flex;
+  position: relative;
+}
+@media only screen and (max-width: 830px) {
+  .social-container {
+    flex-direction: column;
+  }
+}
+.social-container .close {
+  position: absolute;
+  right: 0;
+  top: 10px;
+  font-size: 50px;
+  color: #999999;
+  transition: all 0.2s ease-in-out;
+}
+.social-container .close:hover {
+  color: #ffffff;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+.social-container > div {
+  min-height: 155px;
+  padding: 20px;
+}
+.social-container > div h3 {
+  padding-top: 0;
+  margin-top: 0;
+  color: #ffffff;
+  margin-bottom: 5px;
+  text-align: center;
+}
+.social-container .left-column {
+  flex: 1;
+  order: 1;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+}
+.social-container .middle-column {
+  flex: 1;
+  order: 1;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+}
+.social-container .right-column {
+  flex: 1;
+  order: 1;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+}
+@media only screen and (max-width: 830px) {
+  .social-container .right-column {
+    align-items: inherit;
+    margin-bottom: 50px;
+  }
+}
+.social-container .share-links {
+  flex: 1;
+}
+.social-container .community-links {
+  flex: 1;
+}
+.social-container .support-links {
+  flex: 1;
+}
+.social-container .link-wrapper {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.social-container .link-wrapper li {
+  height: 30px;
+  line-height: 30px;
+  display: block;
+  width: auto;
+  margin-top: 10px;
+}
+.social-container .link-wrapper li a {
+  height: 100%;
+  width: 80px;
+  display: block;
+  margin: 0 auto;
+  padding-left: 5px;
+  padding-right: 5px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+.social-container .link-wrapper li a:hover {
+  cursor: pointer;
+}
+.social-container .facebook {
+  background-color: #3b5998;
+  color: #ffffff;
+  border-color: rgba(0, 0, 0, 0.2) !important;
+}
+.social-container .facebook:hover {
+  background-color: #2d4373;
+  transition: all 0.2s ease-in-out;
+}
+.social-container .twitter {
+  background-color: #55acee;
+  color: #ffffff;
+  border-color: rgba(0, 0, 0, 0.2) !important;
+}
+.social-container .twitter:hover {
+  background-color: #2795e9;
+  transition: all 0.2s ease-in-out;
+}
+.social-container .reddit {
+  background-color: #eff7ff;
+  color: #000000;
+  border-color: rgba(0, 0, 0, 0.2) !important;
+}
+.social-container .reddit:hover {
+  background-color: #bcddff;
+  transition: all 0.2s ease-in-out;
+}
+.social-container .patreon {
+  background-color: #232D32;
+  color: #E6461A;
+  border-color: rgba(230, 70, 26, 0.2) !important;
+}
+.social-container .patreon:hover {
+  background-color: #0e1214;
+  transition: all 0.2s ease-in-out;
+}
+.social-container .discord {
+  background-color: #7289DA;
+  color: #ffffff;
+  border-color: rgba(114, 137, 218, 0.2) !important;
+}
+.social-container .discord:hover {
+  background-color: #4a67cf;
+  transition: all 0.2s ease-in-out;
+}
+.social-container .youtube {
+  background-color: #eff7ff;
+  color: #DD2724;
+  border-color: rgba(221, 39, 36, 0.2) !important;
+}
+.social-container .youtube:hover {
+  background-color: #bcddff;
+  transition: all 0.2s ease-in-out;
+}
+.social-container .twitch {
+  background-color: #6441A4;
+  color: #ffffff;
+  border-color: rgba(0, 0, 0, 0.2) !important;
+}
+.social-container .twitch:hover {
+  background-color: #4e337f;
+  transition: all 0.2s ease-in-out;
+}
+.share-container {
+  transform: skewx(20deg);
+  width: 50px;
+  height: 100%;
+  position: absolute;
+  right: 0;
+}
+.share-container .active {
+  background: #101116;
+  background-image: url("https://www.transparenttextures.com/patterns/assault.png");
+}
+@media only screen and (max-width: 830px) {
+  .share-container {
+    right: 50px;
+    transform: skewx(0deg);
+    top: -1px;
+  }
+}
+.share-container:hover {
+  cursor: pointer;
+}
+.share-container i {
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+.share-container .fa-share-alt:before {
+  background: #4080FF;
+  border-radius: 50%;
+  color: #fff;
+  padding: 3px;
+  text-shadow: none;
+  position: absolute;
+  left: 1px;
+  right: 0;
+  margin: auto;
+  width: 15px;
+  height: 15px;
+}
+.discord-icon {
+  width: 10px;
+  height: 10px;
+  position: relative;
+  padding-left: 20px;
+}
+.discord-icon:after {
+  background-image: url(../images/discordLogo.png);
+  background-size: 1em 1em;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  content: "";
+  top: 0px;
+  position: absolute;
+  left: 0;
+}
+.patreon-icon {
+  width: 10px;
+  height: 10px;
+  position: relative;
+  padding-left: 20px;
+}
+.patreon-icon:after {
+  background-image: url(../images/patreonLogo.png);
+  background-size: 1em 1em;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  content: "";
+  top: 0px;
+  position: absolute;
+  left: 0;
+}
+.about-wrapper {
+  color: #9DA4AA;
+  height: 100%;
+  padding: 20px;
+  width: 80%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.about-wrapper .hosts-section ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.about-wrapper .hosts-section ul div {
+  position: relative;
+  padding-top: 80px;
+  padding-bottom: 1%;
+  margin-top: 30px;
+}
+.about-wrapper .hosts-section ul div .cyphus,
+.about-wrapper .hosts-section ul div .roland {
+  font-size: 1.2em;
+  color: #fff;
+  position: absolute;
+  right: 0;
+  top: 5%;
+  left: 0;
+  margin: auto;
+  text-align: center;
+}
+.about-wrapper .hosts-section ul div .host-pic {
+  position: absolute;
+  right: 25%;
+  top: -3%;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border-color: rgba(0, 0, 0, 0.3);
+}
+@media only screen and (max-width: 830px) {
+  .about-wrapper .hosts-section ul div .host-pic {
+    right: 20%;
+  }
+}
+@media only screen and (max-width: 830px) {
+  .about-wrapper .hosts-section ul div.cyphus-container .cyphus {
+    text-align: left;
+    padding-left: 20%;
+  }
+}
+.about-wrapper .hosts-section ul div.roland-container {
+  margin-bottom: 100px;
+}
+@media only screen and (max-width: 830px) {
+  .about-wrapper .hosts-section ul div.roland-container .roland {
+    text-align: right;
+    padding-right: 20%;
+  }
+}
+.about-wrapper .hosts-section ul div.roland-container .host-pic {
+  left: 25%;
+  right: 0;
+}
+@media only screen and (max-width: 830px) {
+  .about-wrapper .hosts-section ul div.roland-container .host-pic {
+    left: 20%;
+  }
+}
 .main-wrapper {
   color: #9DA4AA;
 }
@@ -731,7 +1042,7 @@ body {
   list-style: none;
   padding: 0;
 }
-@media only screen and (max-width: 775px) {
+@media only screen and (max-width: 830px) {
   .main-wrapper ul {
     width: 90%;
     transition: all 0.2s ease-in-out;

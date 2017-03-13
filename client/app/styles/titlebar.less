@@ -288,8 +288,12 @@
                     transform: skewx(@skewAngle);
                     width: 50px;
                     height: 100%;
-                    float: right;
+                    position: absolute;
+                    right: 0;
                     background: #26090B;
+                    @media @smartphones {
+                        top:-1px;
+                    }
                     &:hover {
                         cursor: pointer;
                     }
@@ -308,6 +312,7 @@
                     }
 
                 }
+                
                 .hidden-login {
                     display:none;
                     position: absolute;

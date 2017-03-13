@@ -24,7 +24,8 @@ angular
     'com.2fdevs.videogular.plugins.overlayplay',
     'com.2fdevs.videogular.plugins.poster',
     'matchMedia',
-    'angularMoment'
+    'angularMoment',
+    '720kb.socialshare'
 ])
 .config(function ($urlRouterProvider, $stateProvider, $locationProvider) {
     $locationProvider.html5Mode(true);
@@ -50,7 +51,8 @@ angular
         },
         data: {
             pageName: 'MainCtrl',
-            browserTitle: 'Main'
+            browserTitle: 'Main',
+            description: 'A DOTA 2 Podcast dedicated to providing quality, regular content for fellow players enjoying the games we too know and love.'
         },
         views: {
             'container@': {
@@ -64,7 +66,8 @@ angular
         url: '/dotpeeps',
         data: {
             pageName: 'DotpeepsCtrl',
-            browserTitle: 'Dotpeeps'
+            browserTitle: 'Dotpeeps',
+            description: 'A list of people who have supported, built and ensured the growth of Defense of the Patience.'
         },
         views: {
             'container@': {
@@ -78,7 +81,8 @@ angular
         url: '/ladder',
         data: {
             pageName: 'LadderCtrl',
-            browserTitle: 'Ladder'
+            browserTitle: 'Ladder',
+            description: 'Every week on Wednesday starting at 9:00pm Eastern Time(USA) there will be (up to) 9 games that count towards our ladder (3 concurrent lobbies with 3 games each). Lobby 3 will be reserved for high skill players(4k+) while lobbies 1 and 2 will be for under 4k players. Once you have played in a game each night you are required to defer your spot in the following games to other players unless no other players are waiting to play.'
         },
         views: {
             'container@': {
@@ -124,7 +128,8 @@ angular
         },
         data: {
             pageName: 'AboutCtrl',
-            browserTitle: 'About'
+            browserTitle: 'About',
+            description: 'Defense of the Patience is a gaming podcast founded in July 2014. We began as humble, amateur Dota 2 podcast hosts, and have expanded to cover additional games with special bonus episodes while still featuring a solid lineup of shows devoted to Dota 2 featuring a wide array of talented Dota 2 players, amateurs and scene insiders alike.'
         },
         views: {
             'container@': {
@@ -134,15 +139,34 @@ angular
             }
         }
     });
+    $stateProvider.state('root.social', {
+        url: '/social',
+        resolve: {
+        },
+        data: {
+            pageName: 'SocialCtrl',
+            browserTitle: 'Social',
+            description: 'Share the Dota2 website to the social aggregator of your choice.'
+        },
+        views: {
+            'container@': {
+                templateUrl: 'views/social.html',
+                controller: 'SocialCtrl',
+                controllerAs: 'vm'
+            }
+        }
+    });
 })
-.run(function ($rootScope, firebaseSvc, $location, googleAnalytics) {
+.run(function ($rootScope, firebaseSvc, $location, googleAnalytics, MetaService) {
     googleAnalytics.init();
 
     firebaseSvc.initialize();
 
     //send page to Google Analytics on state change
-    $rootScope.$on('$stateChangeSuccess', function (event) {
+    $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
         googleAnalytics.trackPage($location.path());
+        $rootScope.metaservice = MetaService;
+        $rootScope.metaservice.set(toState.data.browserTitle, toState.data.description, "Keywords");
     });
 
 });
