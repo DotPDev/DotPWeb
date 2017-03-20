@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Web Application for DotP",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "body-parser": "^1.17.1"
+  },
   "devDependencies": {},
   "scripts": {
     "preinstall": "cd server && npm install",
