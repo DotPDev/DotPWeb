@@ -195,8 +195,6 @@ function createOrder(orderInfo) {
     }).success(ok_callback).error(error_callback);
 */
 
-
-
 /* GET users listing. */
 router.get('/', function(req, res, next) {
     console.log(req)
