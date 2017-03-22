@@ -1,0 +1,24 @@
+<div class="main-wrapper">
+	<div id="dotp-store">
+		<h2>DotP Store</h2>
+		<div class="store-item">
+			<div class="product" ng-repeat="product in vm.fakeStoreData">
+				<img src="{{::product.image}}" />
+				<div class="product-specs">
+					<div class="product-name">{{::product.name}}</div>
+					<div class="product-text">
+					Size:
+						<select>
+							<option ng-repeat="choice in product.sizes" value="{{::choice}}">{{::choice}}</option>
+						</select>
+					</div>
+					<div class="product-price">Price: {{::product.price | currency}}</div>
+					<div class="product-add-to-cart">
+						<i class="fa fa-cart-plus" aria-hidden="true"></i>
+						<span>Add to cart</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
