@@ -106,6 +106,20 @@ angular
             }
         }
     });
+    $stateProvider.state('root.store', {
+        url: '/store',
+        data: {
+            pageName: 'StoreCtrl',
+            browserTitle: 'Store'
+        },
+        views: {
+            'container@': {
+                templateUrl: 'views/store.html',
+                controller: 'StoreCtrl',
+                controllerAs: 'vm'
+            }
+        }
+    });
     $stateProvider.state('root.login', {
         url: '/login',
         resolve: {

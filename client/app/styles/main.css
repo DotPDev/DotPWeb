@@ -1023,6 +1023,33 @@ body {
     left: 20%;
   }
 }
+.product {
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 325px;
+}
+.product:last-child {
+  padding-bottom: 50px;
+}
+.product > .product-specs {
+  text-align: center;
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.product > .product-specs > div {
+  flex: 1;
+}
+.product > .product-specs > .product-add-to-cart {
+  cursor: pointer;
+}
+.product > img {
+  width: 192px;
+  height: 192px;
+}
 .main-wrapper {
   color: #9DA4AA;
 }
