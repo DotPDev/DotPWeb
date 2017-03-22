@@ -202,7 +202,7 @@ router.get('/', function(req, res, next) {
     console.log(next)
   //doRequest()
 })
-router.post('/hats', function(req, res) {
+router.post('/orders', function(req, res) {
     console.log(req.body)
 })
 
