@@ -8,7 +8,7 @@
  * Controller of the clientApp
  */
 angular.module('clientApp')
-  .controller('LadderCtrl', function (firebaseSvc, $http) {
+  .controller('StoreCtrl', function (firebaseSvc, $http) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -68,4 +68,30 @@ angular.module('clientApp')
       });
     }
 
+    vm.fakeStoreData = [
+      {
+        name: "DotP T-Shirt",
+        image: "../images/Troll-T.jpg",
+        price: 30.00,
+        sizes: ["Small", "Medium", "Large", "X-Large"]
+      },
+      {
+        name: "DotP Long Sleeve T-Shirt",
+        image: "../images/Troll-T.jpg",
+        price: 32.00,
+        sizes: ["Small", "Medium", "Large", "X-Large"]
+      },
+      {
+        name: "DotP Hoodie",
+        image: "../images/Troll-T.jpg",
+        price: 35.00,
+        sizes: ["Small", "Medium", "Large", "X-Large"]
+      },
+      {
+        name: "DotP Dress Shoes",
+        image: "../images/Troll-T.jpg",
+        price: 55.00,
+        sizes: ["8", "9", "10", "11", "12"]
+      }
+    ];
   });

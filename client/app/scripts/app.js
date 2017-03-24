@@ -114,8 +114,8 @@ angular
         },
         views: {
             'container@': {
-                templateUrl: 'views/media.html',
-                controller: 'MediaCtrl',
+                templateUrl: 'views/store.html',
+                controller: 'StoreCtrl',
                 controllerAs: 'vm'
             }
         }
