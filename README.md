@@ -1,6 +1,6 @@
 # DotPWeb
 
-Application front-end and backend for the Defense of the Patience website.
+Application front-end and backend for the Defense of the Patience website
 
 <sub>Project scaffold started from the article, [Building an Angular and Express App Part 1](http://start.jcolemorrison.com/building-an-angular-and-express-app-part-1/)(Current as of 2-5-2017).</sub>
 
