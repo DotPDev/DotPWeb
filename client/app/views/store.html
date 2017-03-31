@@ -1,6 +1,61 @@
 <div class="main-wrapper">
 	<div id="dotp-store">
 		<h2>DotP Store</h2>
+		<br/>
+
+		<script onload="renderButton()" src="https://www.paypalobjects.com/api/checkout.js"></script>
+		<div id="paypal-button"></div>
+		<script>
+		(function(){
+			setTimeout(renderButton,1500);
+			function renderButton() {
+				paypal.Button.render({
+
+			        env: 'sandbox', // Optional: specify 'sandbox' environment
+
+
+
+			        payment: function() {
+			            // Set up the payment here, when the buyer clicks on the button
+
+			            //Send data
+
+		                return paypal.request.post('/api/paypal/create/').then(function(res) {
+		                	console.log(res);
+		                	res.payment = res.id;
+		                	console.log(arguments.callee.caller);
+			                return res.id;
+			            });
+
+			            // var env    = this.props.env;
+			            // var client = this.props.client;
+
+			            // return paypal.rest.payment.create(env, client, {
+			            //     transactions: [
+			            //         {
+			            //             amount: { total: '1.00', currency: 'USD' }
+			            //         }
+			            //     ]
+			            // });
+			        },
+
+			        onAuthorize: function(data, actions) {
+			            // Execute the payment here, when the buyer approves the transaction
+			            console.log(data);
+			            console.log(actions);
+	                   return paypal.request.post('/api/paypal/execute/', {
+			                payToken: data.paymentID,
+			                payerId: data.payerID
+			            }).then(function (res) {
+
+			                document.querySelector('#paypal-button').innerText = 'Payment Complete!';
+			            });
+			       }
+
+			    }, '#paypal-button');
+			}
+		})();
+		</script>
 		<div class="store-item">
 			<div class="product" ng-repeat="product in vm.fakeStoreData">
 				<img src="{{::product.image}}" />

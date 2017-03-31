@@ -3,7 +3,7 @@ var router = express.Router()
 var request = require('request')
 var PrintfulClient = require('../printfulclient.js')
 
-var bodyParser = require("body-parser");
+var bodyParser = require("body-parser")
 
 
 const KEY = "cbjsvbwl-3vya-bqq8:3hve-4mjkonkv4acw"
@@ -14,7 +14,7 @@ var ok_callback = function(data, info){
     console.log(data);
     //If response includes paging information, show total number available
     if(info.total_items){
-        console.log('Total items available: '+info.total_items);
+        console.log('Total items available: '+info.total_items)
     }
 }
 
@@ -50,38 +50,26 @@ function doRequest() {
 }
 
 function createOrder(orderInfo) {
+  console.log(orderInfo)
     var defaultOrder = {
         recipient:  {
-            name: 'John Doe',
-            address1: '19749 Dearborn St',
-            city: 'Chatsworth',
-            state_code: 'CA',
+            name: 'AD Deadman',
+            address1: '1337 Epic St',
+            city: 'St. Louis',
+            state_code: 'MO',
             country_code: 'US',
-            zip: '91311'
+            zip: '63125'
         },
         items: [
             {
-                variant_id: 1, //Small poster
-                name: 'Niagara Falls poster', //Display name
+                variant_id: 6584, //Small poster
+                name: 'DotP T-Shirt', //Display name
                 retail_price: '19.99', //Retail price for packing slip
                 quantity: 1,
                 files: [
-                    {url: 'http://example.com/files/posters/poster_1.jpg'}
+                    {url: 'https://d1yg28hrivmbqm.cloudfront.net/files/083/0839977f59f96553d1fe47bce3d50b5a_preview.png'},
+                    {type: 'preview', url: 'https://d1yg28hrivmbqm.cloudfront.net/files/1f1/1f10966e40bd27388eeae9a5352d7fbf_preview.png'}
                 ]
-            },
-            {
-               variant_id: 1118,
-               quantity: 2,
-               name: 'Grand Canyon T-Shirt', //Display name
-               retail_price: '29.99', //Retail price for packing slip
-               files: [
-                    {url: 'http://example.com/files/tshirts/shirt_front.ai'}, //Front print
-                    {type: 'back', url: 'http://example.com/files/tshirts/shirt_back.ai'}, //Back print
-                    {type: 'preview', url: 'http://example.com/files/tshirts/shirt_mockup.jpg'} //Mockup image
-               ],
-               options: [ //Additional options
-                    {id: 'remove_labels', value: true}
-               ]
             }
         ]
     }
@@ -199,18 +187,8 @@ function createOrder(orderInfo) {
     }).success(ok_callback).error(error_callback);
 */
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-    console.log(req)
-    console.log(res)
-    console.log(next)
-  //doRequest()
-})
-router.post('/orders', function(req, res) {
-    console.log(req.body)
-})
-
-module.exports = router;
 
 
-    
+module.exports = {
+  createOrder
+}
