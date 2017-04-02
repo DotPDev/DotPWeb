@@ -8,7 +8,7 @@
  * Controller of the clientApp
  */
 angular.module('clientApp')
-  .controller('StoreCtrl',  ['google.places', function (firebaseSvc, $http) {
+  .controller('StoreCtrl',  function (firebaseSvc, $http) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -94,4 +94,4 @@ angular.module('clientApp')
         sizes: ["8", "9", "10", "11", "12"]
       }
     ];
-  }]);
+  });
