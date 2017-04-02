@@ -25,7 +25,8 @@ angular
     'com.2fdevs.videogular.plugins.poster',
     'matchMedia',
     'angularMoment',
-    '720kb.socialshare'
+    '720kb.socialshare',
+    'google.places'
 ])
 .config(function ($urlRouterProvider, $stateProvider, $locationProvider) {
     $locationProvider.html5Mode(true);
