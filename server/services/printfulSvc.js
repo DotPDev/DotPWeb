@@ -1,10 +1,11 @@
-var express = require('express')
-var router = express.Router()
-var request = require('request')
-var PrintfulClient = require('../printfulclient.js')
+const express = require('express')
+const router = express.Router()
+const request = require('request')
+const bodyParser = require("body-parser")
 
-var bodyParser = require("body-parser")
+const PrintfulClient = require('../printfulclient.js')
 
+const devDataSvc = require('../services/devDataSvc')
 
 const KEY = "cbjsvbwl-3vya-bqq8:3hve-4mjkonkv4acw"
 const ENCODED_KEY = "Y2Jqc3Zid2wtM3Z5YS1icXE4OjNodmUtNG1qa29ua3Y0YWN3"
@@ -50,34 +51,20 @@ function doRequest() {
 }
 
 function createOrder(orderInfo) {
-  console.log(orderInfo)
-    var defaultOrder = {
-        recipient:  {
-            name: 'AD Deadman',
-            address1: '1337 Epic St',
-            city: 'St. Louis',
-            state_code: 'MO',
-            country_code: 'US',
-            zip: '63125'
-        },
-        items: [
-            {
-                variant_id: 6584, //Small poster
-                name: 'DotP T-Shirt', //Display name
-                retail_price: '19.99', //Retail price for packing slip
-                quantity: 1,
-                files: [
-                    {url: 'https://d1yg28hrivmbqm.cloudfront.net/files/083/0839977f59f96553d1fe47bce3d50b5a_preview.png'},
-                    {type: 'preview', url: 'https://d1yg28hrivmbqm.cloudfront.net/files/1f1/1f10966e40bd27388eeae9a5352d7fbf_preview.png'}
-                ]
-            }
-        ]
-    }
+  return new Promise(function (fulfill, reject){
 
-    if (!orderInfo) {
-        orderInfo = defaultOrder;
-    }
-    pf.post('orders', orderInfo).success(ok_callback).error(error_callback);
+      if (!orderInfo) {
+          orderInfo = devDataSvc.printfulOrder
+      }
+
+      pf.post('orders', orderInfo)
+        .success(function(data, info) {
+          fulfill(data)
+        }).error(function() {
+          reject(err)
+        })
+  })
+
 
 }
     //Get product list
