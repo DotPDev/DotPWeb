@@ -25,8 +25,7 @@ angular
     'com.2fdevs.videogular.plugins.poster',
     'matchMedia',
     'angularMoment',
-    '720kb.socialshare',
-    'vsGoogleAutocomplete'
+    '720kb.socialshare'
 ])
 .config(function ($urlRouterProvider, $stateProvider, $locationProvider) {
     $locationProvider.html5Mode(true);
