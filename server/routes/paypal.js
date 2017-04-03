@@ -15,15 +15,11 @@ paypal.configure({
 })
 
 router.post('/create', function(req, res) {
-    printfulSvc.createOrder().then((data, info) => {
+  console.log(req.body)
+    printfulSvc.createOrder(JSON.parse(req.body.data)).then((data, info) => {
       const order = paypalObjectSvc.buildPaymentObject(data)
-      console.log(order)
       paypal.payment.create(order, function(error, payment) {
-          console.log(error)
-          console.log(payment)
           if (error) {
-            console.log("EEEERRRRRRRRROOOOOOOOOOOOOO)o0o0oR")
-            console.log(error);
             throw error;
           } else {
 
@@ -38,7 +34,7 @@ router.post('/create', function(req, res) {
 
 router.post('/execute', function(req, res) {
   const token = req.body.payToken, id = req.body.payerId
-console.log(req.body)
+
     var execute_payment_json = {
         "payer_id": id
     }

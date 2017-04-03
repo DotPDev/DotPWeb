@@ -211,6 +211,3 @@ router.post('/orders', function(req, res) {
 })
 
 module.exports = router;
-
-
-    

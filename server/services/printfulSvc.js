@@ -60,7 +60,7 @@ function createOrder(orderInfo) {
       pf.post('orders', orderInfo)
         .success(function(data, info) {
           fulfill(data)
-        }).error(function() {
+        }).error(function(err) {
           reject(err)
         })
   })
