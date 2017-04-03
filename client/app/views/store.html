@@ -1,31 +1,19 @@
 <div class="main-wrapper">
 	<div id="dotp-store">
 		<h2>DotP Store</h2>
-		<br/>
-		<div ng-show="vm.isCheckingOut">
-			<form>
-				<input class="form-control" placeholder="Enter Your Name" type="text" autocomplete="off" ng-model="buyer">
-				<input class="form-control" placeholder="Enter Delivery Address" vs-google-autocomplete ng-model="address.name" vs-place="address.place" vs-place-id="address.components.placeId" vs-street-number="address.components.streetNumber" vs-street="address.components.street" vs-city="address.components.city"
-				    vs-state="address.components.state" vs-country-short="address.components.countryCode" vs-country="address.components.country" vs-post-code="address.components.postCode" vs-district="address.components.district" vs-latitude="address.components.location.lat"
-				    vs-longitude="address.components.location.long" name="address" type="text">
-			</form>
-			<div id="paypal-button"></div>
-			<script src="https://www.paypalobjects.com/api/checkout.js"></script>
-		</div>
-		<div ng-click="vm.startCheckOut()" ng-show="!vm.isCheckingOut" class="checkout">Check Out</div>
-		<div class="store-item" ng-show="!vm.isCheckingOut">
+		<div class="store-item">
 			<div class="product" ng-repeat="product in vm.fakeStoreData">
-				<img ng-src="{{::product.files[1].url}}" />
+				<img src="{{::product.image}}" />
 				<div class="product-specs">
 					<div class="product-name">{{::product.name}}</div>
 					<div class="product-text">
-						Size:
-						<select ng-model="chosenSize">
+					Size:
+						<select>
 							<option ng-repeat="choice in product.sizes" value="{{::choice}}">{{::choice}}</option>
 						</select>
 					</div>
-					<div class="product-price">Price: {{::product.retail_price | currency}}</div>
-					<div class="product-add-to-cart" ng-click="vm.addToCart(product)">
+					<div class="product-price">Price: {{::product.price | currency}}</div>
+					<div class="product-add-to-cart">
 						<i class="fa fa-cart-plus" aria-hidden="true"></i>
 						<span>Add to cart</span>
 					</div>

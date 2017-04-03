@@ -64,8 +64,6 @@ module.exports = function(config) {
       'bower_components/moment/moment.js',
       'bower_components/angular-moment/angular-moment.js',
       'bower_components/angular-socialshare/dist/angular-socialshare.min.js',
-      'bower_components/vsGoogleAutocomplete/dist/vs-google-autocomplete.js',
-      'bower_components/vsGoogleAutocomplete/dist/vs-autocomplete-validator.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/scripts/**/*.js',
