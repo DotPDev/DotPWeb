@@ -24,7 +24,8 @@
     "videogular-angulartics": "^1.4.4",
     "angular-media-queries": "^0.6.1",
     "angular-moment": "^1.0.1",
-    "angular-socialshare": "angularjs-socialshare#^2.3.7"
+    "angular-socialshare": "angularjs-socialshare#^2.3.7",
+    "vsGoogleAutocomplete": "vs-google-autocomplete#^0.5.0"
   },
   "devDependencies": {
     "angular-mocks": "1.5.8"
