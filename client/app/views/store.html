@@ -1,24 +1,45 @@
 <div class="main-wrapper">
 	<div id="dotp-store">
-		<h2>DotP Store</h2>
-		<div class="store-item">
+		<h2>DotP Store{{checkoutMessage}}</h2>
+		<br/>
+		<div ng-class="{'hidden': !isCheckingOut}">
+			<form>
+				<input class="form-control" placeholder="Enter Your Name" type="text" autocomplete="off" ng-model="buyer">
+				<input class="form-control" placeholder="Enter Delivery Address" vs-google-autocomplete ng-model="data.address.name" vs-place="data.address.place" vs-place-id="data.address.components.placeId" vs-street-number="data.address.components.streetNumber" vs-street="data.address.components.street" vs-city="data.address.components.city"
+				    vs-state="data.address.components.state" vs-country-short="data.address.components.countryCode" vs-country="data.address.components.country" vs-post-code="data.address.components.postCode" vs-district="data.address.components.district" vs-latitude="data.address.components.location.lat"
+				    vs-longitude="data.address.components.location.long" name="address" type="text">
+			</form>
+			<div id="paypal-button"></div>
+			<script src="https://www.paypalobjects.com/api/checkout.js"></script>
+		</div>
+		<div class="store-item" ng-class="{'hidden': isCheckingOut}">
 			<div class="product" ng-repeat="product in vm.fakeStoreData">
-				<img src="{{::product.image}}" />
+				<img ng-src="{{::product.files[1].url}}" />
 				<div class="product-specs">
 					<div class="product-name">{{::product.name}}</div>
 					<div class="product-text">
-					Size:
-						<select>
-							<option ng-repeat="choice in product.sizes" value="{{::choice}}">{{::choice}}</option>
+						Size:
+						<select ng-init="product.chosenSize = product.sizes[0].variant_id" ng-model="product.chosenSize" ng-options="choice.variant_id as choice.size for choice in product.sizes">
 						</select>
 					</div>
-					<div class="product-price">Price: {{::product.price | currency}}</div>
-					<div class="product-add-to-cart">
+					<div class="product-price">Price: {{::product.retail_price | currency}}</div>
+					<div class="product-add-to-cart" ng-click="vm.addToCart(product)">
 						<i class="fa fa-cart-plus" aria-hidden="true"></i>
 						<span>Add to cart</span>
 					</div>
 				</div>
 			</div>
+			<div ng-click="vm.startCheckOut()" ng-class="{'hidden': isCheckingOut}" class="checkout">
+				<i class="fa fa-credit-card" aria-hidden="true"></i>
+				Check Out{{validationMessage}}
+			</div>
+
+		</div>
+		<div style="margin-bottom:200px">
+		  checking out = {{isCheckingOut}}</br>
+			name = {{buyer}}</br>
+			address = {{data.address}}</br>
+			cart = {{vm.cart.items}}</br>
 		</div>
 	</div>
 </div>
