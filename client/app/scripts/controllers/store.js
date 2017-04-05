@@ -8,7 +8,7 @@
  * Controller of the clientApp
  */
 angular.module('clientApp')
-  .controller('StoreCtrl',  function ($scope, firebaseSvc, $http) {
+  .controller('StoreCtrl', function ($scope, firebaseSvc, $http) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -41,7 +41,6 @@ angular.module('clientApp')
         district: ''
       }
     };
-    $scope.data.chosenSize = '';
     // jscs:disable
 
     function startCheckOut() {
