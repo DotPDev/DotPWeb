@@ -20,10 +20,11 @@ angular.module('clientApp')
     vm.cart = {};
     vm.cart.order = {};
     vm.cart.items = [];
-    vm.isCheckingOut = false;
+    $scope.isCheckingOut = false;
     vm.startCheckOut = startCheckOut;
     vm.addToCart = addToCart;
-    $scope.address = {
+    $scope.data = {};
+    $scope.data.address = {
       name: '',
       place: '',
       components: {
@@ -38,10 +39,14 @@ angular.module('clientApp')
         district: ''
       }
     };
+    $scope.data.chosenSize = {
+      size: '',
+      variant_id: ''
+    };
     // jscs:disable
 
     function startCheckOut() {
-      vm.isCheckingOut = true;
+      $scope.isCheckingOut = true;
       renderButton();
     }
 
@@ -50,37 +55,13 @@ angular.module('clientApp')
       return JSON.stringify({
           recipient:  {
               name: $scope.buyer,
-              address1: $scope.address.components.streetNumber + ' ' + $scope.address.components.street,
-              city: $scope.address.components.city,
-              state_code: $scope.address.components.state,
-              country_code: $scope.address.components.countryCode,
-              zip: $scope.address.components.postCode
+              address1: $scope.data.address.components.streetNumber + ' ' + $scope.data.address.components.street,
+              city: $scope.data.address.components.city,
+              state_code: $scope.data.address.components.state,
+              country_code: $scope.data.address.components.countryCode,
+              zip: $scope.data.address.components.postCode
           },
-          items: [
-              {
-                  variant_id: 1, //Small poster
-                  name: 'Niagara Falls poster', //Display name
-                  retail_price: '19.99', //Retail price for packing slip
-                  quantity: 1,
-                  files: [
-                      {url: 'http://example.com/files/posters/poster_1.jpg'}
-                  ]
-              },
-              {
-                 variant_id: 1118,
-                 quantity: 2,
-                 name: 'Grand Canyon T-Shirt', //Display name
-                 retail_price: '29.99', //Retail price for packing slip
-                 files: [
-                      {url: 'http://example.com/files/tshirts/shirt_front.ai'}, //Front print
-                      {type: 'back', url: 'http://example.com/files/tshirts/shirt_back.ai'}, //Back print
-                      {type: 'preview', url: 'http://example.com/files/tshirts/shirt_mockup.jpg'} //Mockup image
-                 ],
-                 options: [ //Additional options
-                      {id: 'remove_labels', value: true}
-                 ]
-              }
-          ]
+          items: vm.cart.items
       });
     }
 
@@ -96,13 +77,18 @@ angular.module('clientApp')
           {url: 'https://d1yg28hrivmbqm.cloudfront.net/files/083/0839977f59f96553d1fe47bce3d50b5a_preview.png'},
           {type: 'preview', url: 'https://d1yg28hrivmbqm.cloudfront.net/files/1f1/1f10966e40bd27388eeae9a5352d7fbf_preview.png'}
         ],
-        sizes: ["Small", "Medium", "Large", "X-Large"]
+        sizes: [{size: "Small", variant_id: "6584"}, {size: "Medium", variant_id: "6585"}, {size: "Large", variant_id: "6586"}, {size: "X-Large", variant_id: "6587"}]
       }
     ];
 
     function addToCart(product) {
-      console.log($scope.chosenSize);
-      console.log(product);
+      vm.cart.items.push({
+        variant_id: $scope.data.chosenSize,
+        name: product.name,
+        retail_price: product.retail_price,
+        quantity: 1,
+        files: product.files,
+      });
     }
 
     function renderButton() {
@@ -140,11 +126,37 @@ angular.module('clientApp')
                     payToken: data.paymentID,
                     payerId: data.payerID
                 }).then(function (res) {
-
+                    resetCheckout();
                     document.querySelector('#paypal-button').innerText = 'Payment Complete!';
                 });
            }
 
         }, '#paypal-button');
+    }
+
+    function resetCheckout() {
+      vm.cart.items = [];
+      $scope.isCheckingOut = false;
+      $scope.data.address = {
+        name: '',
+        place: '',
+        components: {
+          placeId: '',
+          streetNumber: '',
+          street: '',
+          city: '',
+          state: '',
+          countryCode: '',
+          country: '',
+          postCode: '',
+          district: ''
+        }
+      };
+      $scope.data.chosenSize = {
+        size: '',
+        variant_id: ''
+      };
+      $scope.buyer = ''
+      $scope.$digest();
     }
   });
