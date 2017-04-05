@@ -23,6 +23,8 @@ angular.module('clientApp')
     $scope.isCheckingOut = false;
     vm.startCheckOut = startCheckOut;
     vm.addToCart = addToCart;
+    $scope.validationMessage = '';
+    $scope.checkoutMessage = '';
     $scope.data = {};
     $scope.data.address = {
       name: '',
@@ -39,15 +41,16 @@ angular.module('clientApp')
         district: ''
       }
     };
-    $scope.data.chosenSize = {
-      size: '',
-      variant_id: ''
-    };
+    $scope.data.chosenSize = '';
     // jscs:disable
 
     function startCheckOut() {
-      $scope.isCheckingOut = true;
-      renderButton();
+      if (vm.cart.items.length) {
+        $scope.isCheckingOut = true;
+        renderButton();
+      } else {
+        $scope.validationMessage = " - No items in cart.";
+      }
     }
 
     //TODO - move to data creation services
@@ -77,18 +80,21 @@ angular.module('clientApp')
           {url: 'https://d1yg28hrivmbqm.cloudfront.net/files/083/0839977f59f96553d1fe47bce3d50b5a_preview.png'},
           {type: 'preview', url: 'https://d1yg28hrivmbqm.cloudfront.net/files/1f1/1f10966e40bd27388eeae9a5352d7fbf_preview.png'}
         ],
-        sizes: [{size: "Small", variant_id: "6584"}, {size: "Medium", variant_id: "6585"}, {size: "Large", variant_id: "6586"}, {size: "X-Large", variant_id: "6587"}]
+        sizes: [{size: "Small", variant_id: "6584"}, {size: "Medium", variant_id: "6585"}, {size: "Large", variant_id: "6586"}, {size: "X-Large", variant_id: "6587"}],
+        chosen_size: "6584"
       }
     ];
 
     function addToCart(product) {
-      vm.cart.items.push({
-        variant_id: $scope.data.chosenSize,
-        name: product.name,
-        retail_price: product.retail_price,
-        quantity: 1,
-        files: product.files,
-      });
+      console.log(product);
+        $scope.validationMessage = '';
+        vm.cart.items.push({
+          variant_id: product.chosenSize,
+          name: product.name,
+          retail_price: product.retail_price,
+          quantity: 1,
+          files: product.files,
+        });
     }
 
     function renderButton() {
@@ -128,6 +134,7 @@ angular.module('clientApp')
                 }).then(function (res) {
                     resetCheckout();
                     document.querySelector('#paypal-button').innerText = 'Payment Complete!';
+                    checkoutMessage = "Order Placed"
                 });
            }
 
@@ -151,10 +158,6 @@ angular.module('clientApp')
           postCode: '',
           district: ''
         }
-      };
-      $scope.data.chosenSize = {
-        size: '',
-        variant_id: ''
       };
       $scope.buyer = ''
       $scope.$digest();

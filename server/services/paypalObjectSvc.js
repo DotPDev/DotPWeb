@@ -63,6 +63,26 @@ function buildExecuteObject(payment) {
   }
 }
 
+function buildPaymentProfile() {
+  //Name needs to be unique so just generating a random one
+  var profile_name = Math.random().toString(36).substring(7);
+
+  var create_web_profile_json = {
+      "name": profile_name,
+      "presentation": {
+          "brand_name": "Defense of the Patience",
+          "logo_image": "https://ssl-static.libsyn.com/p/assets/e/a/d/1/ead16e847e4b4e85/height_90_width_90_Logo_1390x1392.jpg",
+          "locale_code": "US"
+      },
+      "input_fields": {
+          "allow_note": true,
+          "no_shipping": 1,
+          "address_override": 1
+      }
+  };
+  return create_web_profile_json;
+}
+
 function buildPaymentObject(printfulOrder) {
     // Build PayPal payment request
 
@@ -100,12 +120,19 @@ function buildPaymentObject(printfulOrder) {
                 }
             },
             "description": "Thank you for supporting Defense of the Patience!"
-        }]
+        }],
+
+        // DotP Dev Experience -
+        //'experience_profile_id': 'XP-2US8-UC7F-3AKP-52BS'
+
+        //Deadman Dev Experience -
+        'experience_profile_id': 'XP-B8Q8-KRKB-ASVE-ZFQQ'
     });
 
     return payReq;
 }
 
 module.exports = {
-  buildPaymentObject
+  buildPaymentObject,
+  buildPaymentProfile
 }

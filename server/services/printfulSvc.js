@@ -59,6 +59,9 @@ function createOrder(orderInfo) {
 
       pf.post('orders', orderInfo)
         .success(function(data, info) {
+          console.log("======printful======");
+          console.log(data);
+          console.log("======printful======");
           fulfill(data)
         }).error(function(err) {
           reject(err)

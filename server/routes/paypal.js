@@ -8,11 +8,25 @@ const paypalObjectSvc = require('../services/paypalObjectSvc')
 
 const TOKEN = "access_token$production$y26bhr2tmk88zrtx$18bab4b85418a871470a1cc18c31af25"
 
+let experience_profile_id = 'XP-B8Q8-KRKB-ASVE-ZFQQ';
+
 paypal.configure({
     'mode': 'sandbox', //sandbox or live
     'client_id': 'AeLvUGTnJOgmOHM_yTXYoKAz7zqbn9Rn08J1BQKUDVnIQKLgncdi-2nKwQ6r4uokHnjW0gAs96ybw9XA',
     'client_secret': 'EJivT9kSujVFY6IswykrNb8cwMCObI8ATZK5ToJB45TkjKlxlnKRA-37XfmjA5UvtQ6Exq495SNE4u7r'
 })
+
+if (!experience_profile_id) {
+  paypal.webProfile.create(paypalObjectSvc.buildPaymentProfile(), function (error, web_profile) {
+    if (error) {
+      console.log(error);
+    } else {
+      //Set the id of the created payment experience in payment json
+      experience_profile_id = web_profile.id;
+      console.log(experience_profile_id);
+    }
+  });
+}
 
 router.post('/create', function(req, res) {
   console.log(req.body)
