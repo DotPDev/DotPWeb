@@ -42,20 +42,23 @@ body {
   font-style: normal;
 }
 .wrapper {
-  background: #12191F;
-  background-image: url("../images/txture.png"), radial-gradient(center center, circle cover, #3B4D59, #12191F);
-  background-image: url("../images/txture.png"), -o-radial-gradient(center center, circle cover, #3B4D59, #12191F);
-  background-image: url("../images/txture.png"), -ms-radial-gradient(center center, circle cover, #3B4D59, #12191F);
-  background-image: url("../images/txture.png"), -moz-radial-gradient(center center, circle cover, #3B4D59, #12191F);
-  background-image: url("../images/txture.png"), -webkit-radial-gradient(center center, circle cover, #3B4D59, #12191F);
+  background: #72757e;
+  background-image: radial-gradient(center center, circle cover, #fafafa, #72757e);
+  background-image: -o-radial-gradient(center center, circle cover, #fafafa, #72757e);
+  background-image: -ms-radial-gradient(center center, circle cover, #fafafa, #72757e);
+  background-image: -moz-radial-gradient(center center, circle cover, #fafafa, #72757e);
+  background-image: -webkit-radial-gradient(center center, circle cover, #fafafa, #72757e);
   height: 100%;
-  font-family: 'Constantia, Arial, sans-serif';
+  font-family: sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.02em;
   width: 100%;
   position: fixed;
 }
 #content-main {
   position: absolute;
   top: 50px;
+  padding-top: 20px;
   width: 100%;
   height: 100%;
   overflow: auto;
@@ -126,7 +129,6 @@ body {
 #title-bar {
   position: absolute;
   top: 0;
-  height: 50px;
   width: 100%;
   z-index: 100;
 }
@@ -177,7 +179,7 @@ body {
 #title-bar .collapsed-nav.is-showing-nav li a {
   display: block;
   text-decoration: none;
-  color: #9DA4AA;
+  color: #1b1b1b;
   height: 100%;
   position: absolute;
   top: 0;
@@ -226,190 +228,94 @@ body {
   background-image: url("https://www.transparenttextures.com/patterns/assault.png"), -webkit-radial-gradient(top left, circle cover, #252834, #101116);
 }
 #title-bar nav {
-  background: #101116;
-  background-image: url("https://www.transparenttextures.com/patterns/assault.png");
+  background: #fff;
   height: 100%;
 }
 #title-bar nav .nav {
   list-style: none;
   padding: 0;
   margin: 0;
-  height: 50px;
+  margin-top: 30px;
+  height: 30px;
   position: relative;
   display: flex;
-  -webkit-box-shadow: 0px 10px 24px -1px rgba(8, 13, 19, 0.8);
-  -moz-box-shadow: 0px 10px 24px -1px rgba(8, 13, 19, 0.8);
-  box-shadow: 0px 10px 24px -1px rgba(8, 13, 19, 0.8);
 }
 #title-bar nav .nav li {
-  flex: 1;
+  flex: 2;
+  display: flex;
   position: relative;
   font-size: 1em;
-  text-shadow: -1px 2px 3px #000000;
   text-transform: uppercase;
-  border-right: 1px solid #000000;
-  border-left: 1px solid #5f5f67;
-  border-bottom: 1px solid #5f5f67;
-  transform: skewx(-20deg);
+  transform: skewx(-40deg);
   transition: background .2s ease, color .2s ease;
   letter-spacing: .1em;
 }
-#title-bar nav .nav li:first-child {
-  flex-grow: 3;
-  border-left: none;
+#title-bar nav .nav li.title-bar-spacer {
+  flex-grow: 1;
+  border: none;
+}
+#title-bar nav .nav li.title-bar-nav {
+  border: 2px solid black;
+  border-radius: 3px;
+  background-color: black;
+  height: 32px;
+}
+#title-bar nav .nav li > div {
+  flex: 1;
+  background-color: white;
+  border: 1px solid black;
+}
+#title-bar nav .nav li > div#dotp-logo {
+  transform: skewX(40deg);
+  border: none;
+}
+#title-bar nav .nav li > div#dotp-logo > img {
+  width: 120px;
+  margin: 0 auto;
+  display: block;
+  top: -27px;
   position: relative;
-  min-width: 295px;
 }
-#title-bar nav .nav li:first-child header {
-  position: absolute;
-  width: 150px;
-  height: 65px;
-  left: 0;
-  right: 120px;
-  margin: auto;
-  display: flex;
-  transform: skewx(20deg);
+#title-bar nav .nav li > div.share-container {
+  border: none;
 }
-#title-bar nav .nav li:first-child header div {
-  background: #222225;
+#title-bar nav .nav li > div > div {
+  height: 5px;
+  border-top: 1.5px solid black;
 }
-#title-bar nav .nav li:first-child header .left-stone {
-  flex: 1;
-  position: absolute;
-  left: 8px;
-  width: 25px;
-  height: 85%;
-  transform: skewx(15deg);
-  border-left: 1px solid #000000;
-  border-bottom: 1px solid #5f5f67;
-  background-image: url("../images/txture.png"), linear-gradient(left, #3B4D59, #12191F);
-  background-image: url("../images/txture.png"), -o-linear-gradient(left, #3B4D59, #12191F);
-  background-image: url("../images/txture.png"), -ms-linear-gradient(left, #3B4D59, #12191F);
-  background-image: url("../images/txture.png"), -moz-linear-gradient(left, #3B4D59, #12191F);
-  background-image: url("../images/txture.png"), -webkit-linear-gradient(left, #3B4D59, #12191F);
+#title-bar nav .nav li > div:hover > div {
+  transition: all 0.2s ease-in-out;
+  background-color: rgba(221, 73, 61, 0.55);
 }
-#title-bar nav .nav li:first-child header .right-stone {
-  flex: 1;
-  position: absolute;
-  right: 8px;
-  width: 25px;
-  height: 85%;
-  transform: skewx(-15deg);
-  border-right: 1px solid #000000;
-  border-bottom: 1px solid #5f5f67;
-  background: #12191F;
-  background-image: url("../images/txture.png"), linear-gradient(right, #3B4D59, #12191F);
-  background-image: url("../images/txture.png"), -o-linear-gradient(right, #3B4D59, #12191F);
-  background-image: url("../images/txture.png"), -ms-linear-gradient(right, #3B4D59, #12191F);
-  background-image: url("../images/txture.png"), -moz-linear-gradient(right, #3B4D59, #12191F);
-  background-image: url("../images/txture.png"), -webkit-linear-gradient(right, #3B4D59, #12191F);
-}
-#title-bar nav .nav li:first-child header .center-stone {
-  position: absolute;
-  width: 95px;
-  left: 0;
-  right: 0;
-  margin: auto;
-  height: 95%;
-  display: flex;
-  background: transparent;
-  background-image: url("../images/txture.png"), radial-gradient(center center, circle cover, #3B4D59, #12191F);
-  background-image: url("../images/txture.png"), -o-radial-gradient(center center, circle cover, #3B4D59, #12191F);
-  background-image: url("../images/txture.png"), -ms-radial-gradient(center center, circle cover, #3B4D59, #12191F);
-  background-image: url("../images/txture.png"), -moz-radial-gradient(center center, circle cover, #3B4D59, #12191F);
-  background-image: url("../images/txture.png"), -webkit-radial-gradient(center center, circle cover, #3B4D59, #12191F);
-}
-#title-bar nav .nav li:first-child header .center-stone .center-left {
-  flex: 1;
-  transform: skewx(5deg);
-  border-left: 1px solid #000000;
-  border-bottom: 1px solid #5f5f67;
-  background: none;
-}
-#title-bar nav .nav li:first-child header .center-stone .center-right {
-  flex: 1;
-  transform: skewx(-5deg);
-  border-right: 1px solid #000000;
-  border-bottom: 1px solid #5f5f67;
-  background: none;
-}
-#title-bar nav .nav li:first-child header .center-stone a {
-  position: absolute;
-  padding: 10px!important;
-  left: 10px;
-  top: 6px;
-}
-#title-bar nav .nav li:first-child header .center-stone .logo {
-  width: 60px;
-  height: 60px;
-  position: absolute;
-  top: -6px;
-  left: 6px;
-}
-#title-bar nav .nav li:first-child span {
-  text-align: right;
+#title-bar nav .nav li > div.active:hover > div {
+  background-color: #df5244;
 }
 #title-bar nav .nav li a {
   display: block;
-  padding: 1em;
+  padding: 0.2em;
   text-decoration: none;
   color: inherit;
 }
-#title-bar nav .nav .dotpeeps {
-  width: 42%;
-  float: right;
-  padding: .3em;
-}
-#title-bar nav .nav .dotpeeps:hover {
-  cursor: default;
-}
-#title-bar nav .nav .dotpeeps span:hover {
-  transition: none;
-}
-#title-bar nav .nav .dotpeeps .defense {
-  text-align: left;
-  color: #fff;
-}
-#title-bar nav .nav .dotpeeps .small-header {
-  position: absolute;
-  font-size: 8px;
-}
-#title-bar nav .nav .dotpeeps .small-header span {
-  text-align: left!important;
-  color: #fff;
-}
-#title-bar nav .nav .dotpeeps .patience {
-  font-size: 1.1em;
-  text-align: left;
-  padding-left: 21px;
-  color: #fff;
-}
-#title-bar nav .nav .active {
-  -webkit-box-shadow: inset 0px 18px 24px -1px rgba(0, 0, 0, 0.9);
-  -moz-box-shadow: inset 0px 18px 24px -1px rgba(0, 0, 0, 0.9);
-  box-shadow: inset 0px 18px 24px -1px rgba(0, 0, 0, 0.9);
+#title-bar nav .nav .active > div {
+  background-color: #df5244;
 }
 #title-bar nav .nav .action-wrapper {
-  flex-grow: 4;
+  flex-grow: 1;
   border-right: none;
 }
 #title-bar nav .nav span {
   display: block;
-  font-family: 'Constantia, Arial, sans-serif';
-  color: #9DA4AA;
-  transform: skewx(20deg);
+  font-family: sans-serif;
+  color: #1b1b1b;
+  transform: skewx(40deg);
   text-align: center;
   transition: all 0.2s ease-in-out;
-}
-#title-bar nav .nav span:hover {
-  transition: all 0.2s ease-in-out;
-  color: #fff;
 }
 #title-bar nav .nav .action-wrapper {
   z-index: 20;
 }
 #title-bar nav .nav .action-wrapper .power {
-  transform: skewx(20deg);
+  transform: skewx(40deg);
   width: 50px;
   height: 100%;
   position: absolute;
@@ -468,8 +374,12 @@ body {
 }
 .main-wrapper ul#ladder-records {
   text-align: center;
-  font-family: 'Constantia, Arial, sans-serif';
-  color: #9DA4AA;
+  font-family: sans-serif;
+  color: #476fa7;
+  margin-bottom: 125px;
+}
+.main-wrapper ul#ladder-records li {
+  background-color: #fff;
 }
 .main-wrapper ul#ladder-records li:first-child {
   margin-top: 0;
@@ -490,15 +400,13 @@ body {
 .main-wrapper ul#ladder-records .player {
   padding: 5px;
   margin: 2px;
-  border: thin black solid;
-  background: rgba(30, 30, 30, 0.8);
 }
 .main-wrapper ul#ladder-records .name a {
   text-decoration: none;
-  color: #9DA4AA;
+  color: #476fa7;
 }
 .main-wrapper ul#ladder-records .records-highlight {
-  color: #f7f7f7;
+  color: #f47522;
 }
 .videogular-container {
   transition: all 0.2s ease-in-out;
@@ -506,13 +414,27 @@ body {
   height: 320px;
   margin: auto;
   overflow: visible;
-  color: #9DA4AA!important;
 }
 @media only screen and (max-width: 830px) {
   .videogular-container {
     transition: all 0.2s ease-in-out;
     width: 100%!important;
   }
+}
+.videogular-container vg-scrub-bar [role=slider] {
+  background: rgba(62, 101, 158, 0.6);
+}
+.videogular-container vg-scrub-bar-buffer {
+  background-color: #3e659e;
+  opacity: 1;
+}
+.videogular-container vg-scrub-bar-current-time {
+  background-color: #f36820;
+  z-index: 1000;
+}
+.videogular-container vg-time-display,
+.videogular-container [videogular] vg-time-display {
+  color: #000;
 }
 .videogular-container .audio {
   height: 50px;
@@ -521,16 +443,16 @@ body {
 .videogular-container .audio vg-volume:before {
   content: '\f028';
   font-family: FontAwesome;
-  color: #fff;
 }
 .videogular-container .audio .verticalVolumeBar {
-  background: #101116;
-  background-image: #101116;
-  background-image: url("https://www.transparenttextures.com/patterns/assault.png"), radial-gradient(top left, circle cover, #252834, #101116);
-  background-image: url("https://www.transparenttextures.com/patterns/assault.png"), -o-radial-gradient(top left, circle cover, #252834, #101116);
-  background-image: url("https://www.transparenttextures.com/patterns/assault.png"), -ms-radial-gradient(top left, circle cover, #252834, #101116);
-  background-image: url("https://www.transparenttextures.com/patterns/assault.png"), -moz-radial-gradient(top left, circle cover, #252834, #101116);
-  background-image: url("https://www.transparenttextures.com/patterns/assault.png"), -webkit-radial-gradient(top left, circle cover, #252834, #101116);
+  background: #fff;
+  border: 1px solid #000;
+}
+.videogular-container .audio .verticalVolumeBar .volumeBackground {
+  background: #888888;
+}
+.videogular-container .audio .verticalVolumeBar .volumeBackground .volumeValue {
+  background: #476fa7;
 }
 .videogular-container .audio .time-holder {
   padding-left: 15px;
@@ -565,18 +487,11 @@ body {
   min-height: 50px;
   height: 0%;
   height: 50px;
-  background: #101116;
-  border-top: 1px solid #5F5F67;
-  background-image: #101116;
-  background-image: url("https://www.transparenttextures.com/patterns/assault.png"), radial-gradient(top left, circle cover, #252834, #101116);
-  background-image: url("https://www.transparenttextures.com/patterns/assault.png"), -o-radial-gradient(top left, circle cover, #252834, #101116);
-  background-image: url("https://www.transparenttextures.com/patterns/assault.png"), -ms-radial-gradient(top left, circle cover, #252834, #101116);
-  background-image: url("https://www.transparenttextures.com/patterns/assault.png"), -moz-radial-gradient(top left, circle cover, #252834, #101116);
-  background-image: url("https://www.transparenttextures.com/patterns/assault.png"), -webkit-radial-gradient(top left, circle cover, #252834, #101116);
+  background-color: #fff;
+  border-top: 1px solid black;
 }
 .player-wrapper .podcast-title {
   position: absolute;
-  color: #fff;
   width: 24%;
   height: auto;
   padding: 17px;
@@ -591,7 +506,6 @@ body {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  color: #9DA4AA;
 }
 .player-wrapper .player.show-player {
   transition: all 0.2s ease-in-out;
@@ -617,13 +531,11 @@ body {
   .player-wrapper .player {
     background: #101116;
     border-top: 1px solid #5F5F67;
-    background-image: #101116;
-    background-image: url("https://www.transparenttextures.com/patterns/assault.png"), radial-gradient(top left, circle cover, #252834, #101116);
-    background-image: url("https://www.transparenttextures.com/patterns/assault.png"), -o-radial-gradient(top left, circle cover, #252834, #101116);
-    background-image: url("https://www.transparenttextures.com/patterns/assault.png"), -ms-radial-gradient(top left, circle cover, #252834, #101116);
-    background-image: url("https://www.transparenttextures.com/patterns/assault.png"), -moz-radial-gradient(top left, circle cover, #252834, #101116);
-    background-image: url("https://www.transparenttextures.com/patterns/assault.png"), -webkit-radial-gradient(top left, circle cover, #252834, #101116);
   }
+}
+.player-wrapper .player videogular .iconButton,
+.player-wrapper .player [videogular] .iconButton {
+  color: #000;
 }
 .player-wrapper #paging.is-playing {
   transition: all 0.2s ease-in-out;
@@ -644,22 +556,18 @@ body {
   left: 0;
   width: calc(100% - 17px);
   height: 50px;
-  background: #101116;
+  background: #fff;
   border-top: 1px solid #5F5F67;
   display: flex;
-  background-image: #101116;
-  background-image: url("https://www.transparenttextures.com/patterns/assault.png"), radial-gradient(top left, circle cover, #252834, #101116);
-  background-image: url("https://www.transparenttextures.com/patterns/assault.png"), -o-radial-gradient(top left, circle cover, #252834, #101116);
-  background-image: url("https://www.transparenttextures.com/patterns/assault.png"), -ms-radial-gradient(top left, circle cover, #252834, #101116);
-  background-image: url("https://www.transparenttextures.com/patterns/assault.png"), -moz-radial-gradient(top left, circle cover, #252834, #101116);
-  background-image: url("https://www.transparenttextures.com/patterns/assault.png"), -webkit-radial-gradient(top left, circle cover, #252834, #101116);
+}
+.player-wrapper #paging div#prev a {
+  color: #f36820;
+}
+.player-wrapper #paging div#next a {
+  color: #3e659e;
 }
 .player-wrapper #paging div a {
   text-decoration: none;
-  color: #9DA4AA;
-}
-.player-wrapper #paging div a:hover {
-  color: #ffffff;
 }
 .player-wrapper #paging div a i {
   position: absolute;
@@ -671,9 +579,6 @@ body {
 }
 .player-wrapper #paging #prev:hover {
   cursor: pointer;
-}
-.player-wrapper #paging #prev:hover .prev-text {
-  transition: all 0.2s ease-in-out;
 }
 .player-wrapper #paging #prev:hover i {
   animation: left-bump 0.4s ease;
@@ -698,9 +603,6 @@ body {
 }
 .player-wrapper #paging #next:hover {
   cursor: pointer;
-}
-.player-wrapper #paging #next:hover .next-text {
-  transition: all 0.2s ease-in-out;
 }
 .player-wrapper #paging #next:hover i {
   animation: right-bump 0.4s ease;
@@ -883,7 +785,7 @@ body {
   transition: all 0.2s ease-in-out;
 }
 .share-container {
-  transform: skewx(20deg);
+  transform: skewx(40deg);
   width: 50px;
   height: 100%;
   position: absolute;
@@ -956,12 +858,12 @@ body {
   left: 0;
 }
 .about-wrapper {
-  color: #9DA4AA;
   height: 100%;
   padding: 20px;
   width: 80%;
   max-width: 600px;
   margin: 0 auto;
+  margin-bottom: 125px;
 }
 .about-wrapper .hosts-section ul {
   list-style: none;
@@ -1077,7 +979,7 @@ body {
   height: 192px;
 }
 .main-wrapper {
-  color: #9DA4AA;
+  color: #1b1b1b;
 }
 .main-wrapper a {
   color: #5c5cff;
@@ -1103,6 +1005,13 @@ body {
 }
 .main-wrapper ul li {
   position: relative;
+  margin-bottom: 50px;
+  border: 3px solid black;
+  border-bottom: 5px solid black;
+  border-left: 5px solid black;
+  border-top-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 2px;
 }
 .main-wrapper ul li:first-child {
   margin-top: 40px;
@@ -1111,28 +1020,17 @@ body {
   margin-bottom: 130px;
 }
 .main-wrapper ul li .podcast-container {
-  color: #9DA4AA;
-  font-family: 'Constantia, Arial, sans-serif';
-  background: #101116;
+  color: #1b1b1b;
+  font-family: sans-serif;
+  background: #fff;
   background-image: #101116;
-  padding: 20px;
-  margin-top: 10px;
+  padding: 15px;
   position: relative;
-  background-image: url("https://www.transparenttextures.com/patterns/assault.png"), radial-gradient(top left, circle cover, #252834, #101116);
-  background-image: url("https://www.transparenttextures.com/patterns/assault.png"), -o-radial-gradient(top left, circle cover, #252834, #101116);
-  background-image: url("https://www.transparenttextures.com/patterns/assault.png"), -ms-radial-gradient(top left, circle cover, #252834, #101116);
-  background-image: url("https://www.transparenttextures.com/patterns/assault.png"), -moz-radial-gradient(top left, circle cover, #252834, #101116);
-  background-image: url("https://www.transparenttextures.com/patterns/assault.png"), -webkit-radial-gradient(top left, circle cover, #252834, #101116);
 }
 .main-wrapper ul li .podcast-container:before,
 .main-wrapper ul li .podcast-container:after {
   content: "";
   position: absolute;
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#5F5F67), to(transparent));
-  background-image: -webkit-linear-gradient(#5F5F67, transparent);
-  background-image: -moz-linear-gradient(#5F5F67, transparent);
-  background-image: -o-linear-gradient(#5F5F67, transparent);
-  background-image: linear-gradient(#5F5F67, transparent);
   top: -1px;
   bottom: -1px;
   width: 1px;
@@ -1145,11 +1043,6 @@ body {
   top: -1px;
   width: 100%;
   height: 1px;
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#5F5F67), to(transparent));
-  background-image: -webkit-linear-gradient(to right, #5F5F67, transparent);
-  background-image: -moz-linear-gradient(to right, #5F5F67, transparent);
-  background-image: -o-linear-gradient(to right, #5F5F67, transparent);
-  background-image: linear-gradient(to right, #5F5F67, transparent);
 }
 .main-wrapper ul li .podcast-container .publish-date {
   color: #ffffff;
@@ -1158,14 +1051,13 @@ body {
   opacity: 0.3;
   -webkit-box-shadow: inset 0px 0px 10px 0px #000000;
   -moz-box-shadow: inset 0px 0px 10px 0px #000000;
-  box-shadow: inset 0px 0px 10px 0px #000000;
   border-top: 1px solid #030303;
   border-bottom: 1px solid #777777;
 }
 .main-wrapper ul li .podcast-container .episode-image img {
   position: absolute;
-  top: 5px;
-  right: 10px;
+  top: -25px;
+  right: -25px;
   border-radius: 50%;
   border: 2px solid #565656;
   width: 65px;
@@ -1176,26 +1068,24 @@ body {
   transition: all 0.2s ease-in-out;
   padding: 0;
   margin: 0;
-  margin-top: 15px;
+  margin-right: 75px;
 }
 .main-wrapper ul li .podcast-container h2:hover {
   transition: all 0.2s ease-in-out;
   cursor: pointer;
-  text-decoration: underline;
 }
 .main-wrapper ul li .podcast-container h2 a {
   text-decoration: none;
   color: inherit;
-  color: #ffffff;
+  color: #000;
+}
+.main-wrapper ul li .podcast-container h2 a:hover {
+  text-decoration: none;
 }
 .main-wrapper ul li .podcast-summary {
-  color: #9DA4AA;
-  font-family: 'Constantia, Arial, sans-serif';
-  background: #101116;
-  background-image: url("https://www.transparenttextures.com/patterns/assault.png");
-  -webkit-box-shadow: inset 0px 0px 10px 0px #000000;
-  -moz-box-shadow: inset 0px 0px 10px 0px #000000;
-  box-shadow: inset 0px 0px 10px 0px #000000;
+  color: #1b1b1b;
+  font-family: sans-serif;
+  background: #fff;
   padding: 20px;
   position: relative;
 }
@@ -1204,20 +1094,30 @@ body {
   margin: 0;
   word-wrap: break-word;
 }
+.main-wrapper ul li .podcast-summary div.left-accent {
+  width: 50px;
+  height: 120px;
+  background: #df5244;
+  position: absolute;
+  left: -55px;
+  top: 30px;
+}
+.main-wrapper ul li .podcast-summary div.right-accent {
+  width: 50px;
+  height: 120px;
+  background: #df5244;
+  position: absolute;
+  right: -53px;
+  top: 30px;
+}
 .main-wrapper ul li .podcast-actions {
-  color: #ffffff;
-  font-family: 'Constantia, Arial, sans-serif';
-  background: #101116;
+  color: #1b1b1b;
+  font-family: sans-serif;
+  background: #fff;
   background-image: #101116;
-  margin-bottom: 50px;
   position: relative;
   display: flex;
   text-align: center;
-  background-image: url("https://www.transparenttextures.com/patterns/assault.png"), radial-gradient(top left, circle cover, #252834, #101116);
-  background-image: url("https://www.transparenttextures.com/patterns/assault.png"), -o-radial-gradient(top left, circle cover, #252834, #101116);
-  background-image: url("https://www.transparenttextures.com/patterns/assault.png"), -ms-radial-gradient(top left, circle cover, #252834, #101116);
-  background-image: url("https://www.transparenttextures.com/patterns/assault.png"), -moz-radial-gradient(top left, circle cover, #252834, #101116);
-  background-image: url("https://www.transparenttextures.com/patterns/assault.png"), -webkit-radial-gradient(top left, circle cover, #252834, #101116);
 }
 .main-wrapper ul li .podcast-actions .play-text,
 .main-wrapper ul li .podcast-actions .share-text,
@@ -1230,20 +1130,21 @@ body {
   position: relative;
   text-decoration: none;
   color: inherit;
+  border-top: 1px solid #000000;
   border-right: 1px solid #000000;
-  border-left: 1px solid #5c5c5c;
-  border-bottom: 1px solid #5f5f67;
 }
 .main-wrapper ul li .podcast-actions .play-control:hover {
   cursor: pointer;
 }
 .main-wrapper ul li .podcast-actions .play-control:hover i {
   transition: all 0.2s ease-in-out;
-  top: 5px;
+  top: 10px;
 }
 .main-wrapper ul li .podcast-actions .play-control:hover .play-text {
   opacity: 1;
   transition: all 0.2s ease-in-out;
+  top: 10px;
+  position: relative;
 }
 .main-wrapper ul li .podcast-actions .play-control i {
   transition: all 0.2s ease-in-out;
@@ -1258,20 +1159,20 @@ body {
   position: relative;
   text-decoration: none;
   color: inherit;
-  border-left: 1px solid #5c5c5c;
-  border-right: 1px solid #000000;
-  border-bottom: 1px solid #5f5f67;
+  border-top: 1px solid #000;
 }
 .main-wrapper ul li .podcast-actions .download-control:hover {
   cursor: pointer;
 }
 .main-wrapper ul li .podcast-actions .download-control:hover i {
   transition: all 0.2s ease-in-out;
-  top: 5px;
+  top: 10px;
 }
 .main-wrapper ul li .podcast-actions .download-control:hover .dl-text {
   opacity: 1;
   transition: all 0.2s ease-in-out;
+  top: 10px;
+  position: relative;
 }
 .main-wrapper ul li .podcast-actions .download-control i {
   transition: all 0.2s ease-in-out;

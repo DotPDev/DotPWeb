@@ -23,8 +23,13 @@
         </li> -->
     </ul>
     <ul class="nav" ng-class="{ 'collapsed': vm.isCollapsed }">
-        <li ui-sref-active="active">
-            <header>
+        <li class="title-bar-spacer">
+          <div id="dotp-logo">
+            <img src='../images/dotp-logo.svg'/>
+          </div>
+        </li>
+        <li class="title-bar-nav">
+            <!-- <header>
                 <div class="left-stone">&nbsp;</div>
                 <div class="right-stone">&nbsp;</div>
                 <div class="center-stone">
@@ -34,28 +39,47 @@
                         <img class="logo" src="../images/newdotp.png" alt="">
                     </a>
                 </div>
-            </header>
-            <a class="dotpeeps" ui-sref="root.dashboard" ng-click="vm.slideNavPanel = false">
+            </header> -->
+            <div ui-sref-active="active" >
+              <a class="" ui-sref="root.dashboard" ng-click="vm.slideNavPanel = false">
+                <span>Episodes</span>
+              </a>
+              <div></div>
+            </div>
+
+            <!-- <a class="dotpeeps" ui-sref="root.dashboard" ng-click="vm.slideNavPanel = false">
                 <span class="defense">Defense</span>
                 <div class="small-header">
                     <span class="defense-small">of</span>
                     <span class="defense-small">the</span>
                 </div>
                 <span class="patience">Patience</span>
-            </a>
-        </li>
+            </a> -->
+
+
+        <!-- </li> -->
         <!-- <li ui-sref-active="active">
             <a ui-sref="root.dotpeeps"><span>dotpeeps</span></a>
         </li> -->
-        <li ui-sref-active="active">
-            <a ui-sref="root.ladder"><span>ladder</span></a>
-        </li>
-        <li ui-sref-active="active">
-            <a ui-sref="root.store"><span>store</span></a>
-        </li>
-        <li ui-sref-active="active">
-            <a ui-sref="root.about"><span>about</span></a>
-        </li>
+        <div ui-sref-active="active">
+            <a ui-sref="root.ladder">
+              <span>ladder</span>
+            </a>
+            <div></div>
+        </div>
+        <div ui-sref-active="active">
+            <a ui-sref="root.store">
+              <span>store</span>
+            </a>
+            <div></div>
+        </div>
+        <div ui-sref-active="active">
+            <a ui-sref="root.about">
+              <span>about</span>
+            </a>
+            <div></div>
+        </div>
+      </li>
         <li class="action-wrapper">
             <div class="power" ng-if="vm.isCollapsed" ng-click="vm.clickPower()">
                 <i class="fa fa-power-off"></i>

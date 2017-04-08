@@ -1,4 +1,4 @@
-@records-color: @navFontColor;
+@records-color: #476fa7;
 @records-name-color: #c6c6c6;
 
 .main-wrapper {
@@ -14,11 +14,16 @@
             transition: @transition;
         }
     }
-    
+
 	ul#ladder-records {
 		text-align: center;
-	    font-family: @main-font-family;
-	    color: @records-color;
+    font-family: @main-font-family;
+    color: @records-color;
+    margin-bottom: @margin-bottom;
+
+    li {
+      background-color: #fff;
+    }
 
 		li:first-child {
 			margin-top:0
@@ -44,8 +49,6 @@
 		.player {
 			padding: 5px;
 			margin: 2px;
-			border: thin black solid;
-			background: rgba(30, 30, 30, 0.8);
 		}
 
 		.name {
@@ -56,7 +59,7 @@
 		}
 
 		.records-highlight {
-			color: #f7f7f7
+			color: #f47522;
 		}
 	}
 }

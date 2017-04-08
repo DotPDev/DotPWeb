@@ -1,7 +1,7 @@
 #title-bar {
     position: absolute;
     top:0;
-    height: 50px;
+    //height: 50px;
     width:100%;
     z-index: 100;
     .nav.collapsed {
@@ -103,171 +103,124 @@
         background-image: @navPattern, -webkit-radial-gradient(top left, circle cover, @brightCard, @cardBg);
     }
     nav {
-        background: #101116;
-        background-image: @navPattern;
+        background: @navElemColor;
         height:100%;
         .nav {
             list-style: none;
             padding: 0;
             margin: 0;
-            height: 50px;
+            margin-top: 30px;
+            height: 30px;
             position: relative;
             display: flex;
-            -webkit-box-shadow: 0px 10px 24px -1px rgba(8,13,19,0.8);
-            -moz-box-shadow: 0px 10px 24px -1px rgba(8,13,19,0.8);
-            box-shadow: 0px 10px 24px -1px rgba(8,13,19,0.8);
+            // -webkit-box-shadow: 0px 10px 24px -1px rgba(8,13,19,0.8);
+            // -moz-box-shadow: 0px 10px 24px -1px rgba(8,13,19,0.8);
+            // box-shadow: 0px 10px 24px -1px rgba(8,13,19,0.8);
             li {
-                &:first-child {
-                    flex-grow: 3;
-                    border-left:none;
-                    position: relative;
-                    min-width:295px;
-                    header {
-                        position: absolute;
-                        width: 150px;
-                        height: 65px;
-                        left: 0;
-                        right: 120px;
-                        margin:auto;
-                        display: flex;
-                        transform: skewx(@skewAngle);
-                        div {
-                            background: @navBg;
-                        }
-                        .left-stone {
-                            flex: 1;
-                            position: absolute;
-                            left: 8px;
-                            width: 25px;
-                            height: 85%;
-                            transform: skewx(@skewPartialAngle);
-                            border-left: @navBorderDark;
-                            border-bottom:@navBottomBorder;
-                            background-image: @bgPattern, linear-gradient(left, @background-light, @background-dark);
-                            background-image: @bgPattern, -o-linear-gradient(left, @background-light, @background-dark);
-                            background-image: @bgPattern, -ms-linear-gradient(left, @background-light, @background-dark);
-                            background-image: @bgPattern, -moz-linear-gradient(left, @background-light, @background-dark);
-                            background-image: @bgPattern, -webkit-linear-gradient(left, @background-light, @background-dark);
-                        }
-                        .right-stone {
-                            flex:1;
-                            position: absolute;
-                            right: 8px;
-                            width: 25px;
-                            height: 85%;
-                            transform: skewx(-@skewPartialAngle);
-                            border-right: @navBorderDark;
-                            border-bottom:@navBottomBorder;
-                            background: @background-dark;
-                            background-image: @bgPattern, linear-gradient(right, @background-light, @background-dark);
-                            background-image: @bgPattern, -o-linear-gradient(right, @background-light, @background-dark);
-                            background-image: @bgPattern, -ms-linear-gradient(right, @background-light, @background-dark);
-                            background-image: @bgPattern, -moz-linear-gradient(right, @background-light, @background-dark);
-                            background-image: @bgPattern, -webkit-linear-gradient(right, @background-light, @background-dark);
-                        }
-                        .center-stone {
-                            position: absolute;
-                            width: 95px;
-                            left: 0;
-                            right: 0;
-                            margin: auto;
-                            height: 95%;
-                            display: flex;
-                            background: transparent;
-                            background-image: @bgPattern, radial-gradient(center center, circle cover, @background-light, @background-dark);
-                            background-image: @bgPattern, -o-radial-gradient(center center, circle cover, @background-light, @background-dark);
-                            background-image: @bgPattern, -ms-radial-gradient(center center, circle cover, @background-light, @background-dark);
-                            background-image: @bgPattern, -moz-radial-gradient(center center, circle cover, @background-light, @background-dark);
-                            background-image: @bgPattern, -webkit-radial-gradient(center center, circle cover, @background-light, @background-dark);
-                            .center-left{
-                                flex:1;
-                                transform: skewx(@skewSheerAngle);
-                                border-left: @navBorderDark;
-                                border-bottom:@navBottomBorder;
-                                background: none;
-                            }
-                            .center-right {
-                                flex:1;
-                                transform: skewx(-@skewSheerAngle);
-                                border-right: @navBorderDark;
-                                border-bottom:@navBottomBorder;
-                                background: none;
-                            }
-                            a {
-                                position: absolute;
-                                padding:10px!important;
-                                left: 10px;
-                                top:6px;
-                            }
-                            .logo {
-                                width: 60px;
-                                height: 60px;
-                                position: absolute;
-                                top: -6px;
-                                left: 6px;
-                            }
-                        }
-                    }
-                    span {
-                        text-align: right;
-                    }
-                }
-                flex: 1;
+              &.title-bar-spacer {
+                flex-grow: 1;
+                border: none;
+              }
+              &.title-bar-nav {
+                border: 2px solid black;
+                border-radius: 3px;
+                background-color: black;
+                height: 32px;
+              }
+                flex: 2;
+                display: flex;
                 position: relative;
                 font-size: @navFontSize;
-                text-shadow: @navFontTextShadow;
                 text-transform: uppercase;
-                border-right: @navBorderDark;
-                border-left:@navBorder;
-                border-bottom:@navBottomBorder;
                 transform: skewx(-@skewAngle);
                 transition: background .2s ease, color .2s ease;
                 letter-spacing: .1em;
+
+
+                & > div {
+                  flex: 1;
+                  //border: 1px solid black;
+                  //border-radius: 3px;
+                  background-color: white;
+                  border: 1px solid black;
+
+                  &#dotp-logo {
+                    transform: skewX(40deg);
+                    border: none;
+
+                    & > img {
+                      width: 120px;
+                      margin: 0 auto;
+                      display: block;
+                      top: -27px;
+                      position: relative;
+                    }
+                  }
+
+                  &.share-container {
+                    border: none;
+                  }
+
+                  & > div {
+                      height: 5px;
+                      border-top: 1.5px solid black;
+                  }
+
+                  &:hover > div {
+                    transition: @transition;
+                    background-color: @dotpRedHover;
+                  }
+                  &.active:hover > div {
+                    background-color: @dotpRed;
+                  }
+                }
+
                 a {
                     display: block;
-                    padding: @padding;
+                    padding: @navPadding;
                     text-decoration: none;
                     color:inherit;
+                    //border-bottom: 2px solid black;
                 }
             }
-            .dotpeeps {
-                width: 42%;
-                float: right;
-                padding: .3em;
-                &:hover {
-                    cursor:default;
-                }
-                span {
-                    &:hover {
-                        transition: none;
-                    }
-                }
-                .defense {
-                    text-align: left;
-                    color:#fff;
-                }
-                .small-header {
-                    position: absolute;
-                    font-size: 8px;
-                    span {
-                        text-align: left!important;
-                        color:#fff;
-                    }
-                }
-                .patience {
-                    font-size: 1.1em;
-                    text-align: left;
-                    padding-left:21px;
-                    color:#fff;
-                }
-            }
+            // .dotpeeps {
+            //     width: 42%;
+            //     float: right;
+            //     padding: .3em;
+            //     &:hover {
+            //         cursor:default;
+            //     }
+            //     span {
+            //         &:hover {
+            //             transition: none;
+            //         }
+            //     }
+            //     .defense {
+            //         text-align: left;
+            //         color:#fff;
+            //     }
+            //     .small-header {
+            //         position: absolute;
+            //         font-size: 8px;
+            //         span {
+            //             text-align: left!important;
+            //             color:#fff;
+            //         }
+            //     }
+            //     .patience {
+            //         font-size: 1.1em;
+            //         text-align: left;
+            //         padding-left:21px;
+            //         color:#fff;
+            //     }
+            // }
             .active {
-                -webkit-box-shadow: inset 0px 18px 24px -1px rgba(0, 0, 0, 0.9);
-                -moz-box-shadow: inset 0px 18px 24px -1px rgba(0, 0, 0, 0.9);
-                box-shadow: inset 0px 18px 24px -1px rgba(0, 0, 0, 0.9);
+              & > div {
+                background-color: @dotpRed;
+              }
             }
             .action-wrapper {
-                flex-grow: 4;
+                flex-grow: 1;
                 border-right:none;
             }
             span {
@@ -277,10 +230,6 @@
                 transform: skewx(@skewAngle);
                 text-align: center;
                 transition: @transition;
-                &:hover {
-                    transition: @transition;
-                    color:#fff;
-                }
             }
             .action-wrapper {
                 z-index: 20;
@@ -312,7 +261,7 @@
                     }
 
                 }
-                
+
                 .hidden-login {
                     display:none;
                     position: absolute;

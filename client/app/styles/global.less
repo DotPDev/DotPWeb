@@ -20,19 +20,22 @@ body {
 }
 .wrapper {
     background: @background-dark;
-    background-image: @bgPattern, radial-gradient(center center, circle cover, @background-light, @background-dark);
-    background-image: @bgPattern, -o-radial-gradient(center center, circle cover, @background-light, @background-dark);
-    background-image: @bgPattern, -ms-radial-gradient(center center, circle cover, @background-light, @background-dark);
-    background-image: @bgPattern, -moz-radial-gradient(center center, circle cover, @background-light, @background-dark);
-    background-image: @bgPattern, -webkit-radial-gradient(center center, circle cover, @background-light, @background-dark);
+    background-image: radial-gradient(center center, circle cover, @background-light, @background-dark);
+    background-image: -o-radial-gradient(center center, circle cover, @background-light, @background-dark);
+    background-image: -ms-radial-gradient(center center, circle cover, @background-light, @background-dark);
+    background-image: -moz-radial-gradient(center center, circle cover, @background-light, @background-dark);
+    background-image: -webkit-radial-gradient(center center, circle cover, @background-light, @background-dark);
     height:100%;
     font-family: @main-font-family;
+    font-weight: @main-font-weight;
+    letter-spacing: 0.02em;
     width: 100%;
     position: fixed;
 }
 #content-main {
     position: absolute;
     top:50px;
+    padding-top:20px;
     width:100%;
     height:100%;
     overflow:auto;
