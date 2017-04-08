@@ -5,26 +5,46 @@
         transition: @transition;
         width:100%!important;
     }
+
+    vg-scrub-bar {
+      [role=slider] {
+        background: rgba(62, 101, 158, 0.6);
+      }
+    }
+    vg-scrub-bar-buffer {
+      background-color: @dotpBlue;
+      opacity: 1;
+    }
+    vg-scrub-bar-current-time {
+      background-color: @dotpOrange;
+      z-index: 1000;
+    }
+
+    vg-time-display, [videogular] vg-time-display {
+      color: #000;
+    }
+
 	height: 320px;
 	margin: auto;
 	overflow: visible;
-    color: #9DA4AA!important;
     .audio {
         height: 50px;
         background: none!important;
         vg-volume:before {
             content: '\f028';
             font-family: FontAwesome;
-            color: #fff;
         }
         .verticalVolumeBar {
-            background: #101116;
-            background-image:@cardBg;
-            background-image: @navPattern, radial-gradient(top left, circle cover, @brightCard, @cardBg);
-            background-image: @navPattern, -o-radial-gradient(top left, circle cover, @brightCard, @cardBg);
-            background-image: @navPattern, -ms-radial-gradient(top left, circle cover, @brightCard, @cardBg);
-            background-image: @navPattern, -moz-radial-gradient(top left, circle cover, @brightCard, @cardBg);
-            background-image: @navPattern, -webkit-radial-gradient(top left, circle cover, @brightCard, @cardBg);
+            background: #fff;
+            border: 1px solid #000;
+
+            .volumeBackground {
+              background: rgb(136, 136, 136);
+
+              .volumeValue {
+                background: #476fa7;
+              }
+            }
         }
         .time-holder {
             padding-left:15px;
@@ -64,17 +84,16 @@
     min-height:50px;
     height:0%;
     height: 50px;
-    background: #101116;
-    border-top: 1px solid #5F5F67;
-    background-image:@cardBg;
-    background-image: @navPattern, radial-gradient(top left, circle cover, @brightCard, @cardBg);
-    background-image: @navPattern, -o-radial-gradient(top left, circle cover, @brightCard, @cardBg);
-    background-image: @navPattern, -ms-radial-gradient(top left, circle cover, @brightCard, @cardBg);
-    background-image: @navPattern, -moz-radial-gradient(top left, circle cover, @brightCard, @cardBg);
-    background-image: @navPattern, -webkit-radial-gradient(top left, circle cover, @brightCard, @cardBg);
+    background-color: #fff;
+    border-top: 1px solid black;
+    // background-image:@cardBg;
+    // background-image: @navPattern, radial-gradient(top left, circle cover, @brightCard, @cardBg);
+    // background-image: @navPattern, -o-radial-gradient(top left, circle cover, @brightCard, @cardBg);
+    // background-image: @navPattern, -ms-radial-gradient(top left, circle cover, @brightCard, @cardBg);
+    // background-image: @navPattern, -moz-radial-gradient(top left, circle cover, @brightCard, @cardBg);
+    // background-image: @navPattern, -webkit-radial-gradient(top left, circle cover, @brightCard, @cardBg);
     .podcast-title {
         position: absolute;
-        color: #fff;
         width: 24%;
         height: auto;
         padding: 17px;
@@ -86,7 +105,6 @@
             text-overflow: ellipsis;
             white-space: nowrap;
             overflow: hidden;
-            color: #9DA4AA;
         }
     }
     .player.show-player {
@@ -109,12 +127,15 @@
         @media @smartphones {
             background: #101116;
             border-top: 1px solid #5F5F67;
-            background-image:@cardBg;
-            background-image: @navPattern, radial-gradient(top left, circle cover, @brightCard, @cardBg);
-            background-image: @navPattern, -o-radial-gradient(top left, circle cover, @brightCard, @cardBg);
-            background-image: @navPattern, -ms-radial-gradient(top left, circle cover, @brightCard, @cardBg);
-            background-image: @navPattern, -moz-radial-gradient(top left, circle cover, @brightCard, @cardBg);
-            background-image: @navPattern, -webkit-radial-gradient(top left, circle cover, @brightCard, @cardBg);
+            // background-image:@cardBg;
+            // background-image: @navPattern, radial-gradient(top left, circle cover, @brightCard, @cardBg);
+            // background-image: @navPattern, -o-radial-gradient(top left, circle cover, @brightCard, @cardBg);
+            // background-image: @navPattern, -ms-radial-gradient(top left, circle cover, @brightCard, @cardBg);
+            // background-image: @navPattern, -moz-radial-gradient(top left, circle cover, @brightCard, @cardBg);
+            // background-image: @navPattern, -webkit-radial-gradient(top left, circle cover, @brightCard, @cardBg);
+        }
+        videogular .iconButton, [videogular] .iconButton {
+          color:#000;
         }
     }
     #paging.is-playing {
@@ -134,24 +155,32 @@
         left: 0;
         width:  ~"calc(100% - 17px)";
         height: 50px;
-        background: #101116;
+        background: #fff;
         border-top: 1px solid #5F5F67;
         display: flex;
-        background-image:@cardBg;
-        background-image: @navPattern, radial-gradient(top left, circle cover, @brightCard, @cardBg);
-        background-image: @navPattern, -o-radial-gradient(top left, circle cover, @brightCard, @cardBg);
-        background-image: @navPattern, -ms-radial-gradient(top left, circle cover, @brightCard, @cardBg);
-        background-image: @navPattern, -moz-radial-gradient(top left, circle cover, @brightCard, @cardBg);
-        background-image: @navPattern, -webkit-radial-gradient(top left, circle cover, @brightCard, @cardBg);
-        div a {
-            text-decoration: none;
-            color: #9DA4AA;
-            &:hover {
-                color:#ffffff;
+        // background-image:@cardBg;
+        // background-image: @navPattern, radial-gradient(top left, circle cover, @brightCard, @cardBg);
+        // background-image: @navPattern, -o-radial-gradient(top left, circle cover, @brightCard, @cardBg);
+        // background-image: @navPattern, -ms-radial-gradient(top left, circle cover, @brightCard, @cardBg);
+        // background-image: @navPattern, -moz-radial-gradient(top left, circle cover, @brightCard, @cardBg);
+        // background-image: @navPattern, -webkit-radial-gradient(top left, circle cover, @brightCard, @cardBg);
+        div {
+          &#prev {
+            a {
+              color: @dotpOrange;
             }
+          }
+          &#next {
+            a {
+              color: #3e659e;
+            }
+          }
+          a {
+            text-decoration: none;
             i {
                 position: absolute;
             }
+          }
         }
         #prev {
             position: relative;
@@ -160,7 +189,7 @@
             &:hover {
                 cursor: pointer;
                 .prev-text {
-                    transition: @transition;
+                    //transition: @transition;
                 }
                 i {
                     animation: @left-bump;
@@ -187,7 +216,7 @@
             &:hover {
                 cursor: pointer;
                 .next-text {
-                    transition: @transition;
+                    //transition: @transition;
                 }
                 i {
                     animation: @right-bump;

@@ -33,6 +33,13 @@
         }
         li {
             position: relative;
+						margin-bottom: 50px;
+						border:3px solid black;
+						border-bottom: 5px solid black;
+						border-left: 5px solid black;
+						border-top-left-radius: 6px;
+						border-bottom-right-radius: 6px;
+						border-bottom-left-radius: 2px;
             &:first-child {
                 margin-top:40px;
             }
@@ -42,25 +49,24 @@
             .podcast-container {
                 color: @navFontColor;
                 font-family: @main-font-family;
-                background: #101116;
+                background: @navElemColor;
                 background-image:@cardBg;
-                padding:20px;
-                margin-top: 10px;
+                padding:15px;
                 position: relative;
-                background-image: @navPattern, radial-gradient(top left, circle cover, @brightCard, @cardBg);
-                background-image: @navPattern, -o-radial-gradient(top left, circle cover, @brightCard, @cardBg);
-                background-image: @navPattern, -ms-radial-gradient(top left, circle cover, @brightCard, @cardBg);
-                background-image: @navPattern, -moz-radial-gradient(top left, circle cover, @brightCard, @cardBg);
-                background-image: @navPattern, -webkit-radial-gradient(top left, circle cover, @brightCard, @cardBg);
+                // background-image: @navPattern, radial-gradient(top left, circle cover, @brightCard, @cardBg);
+                // background-image: @navPattern, -o-radial-gradient(top left, circle cover, @brightCard, @cardBg);
+                // background-image: @navPattern, -ms-radial-gradient(top left, circle cover, @brightCard, @cardBg);
+                // background-image: @navPattern, -moz-radial-gradient(top left, circle cover, @brightCard, @cardBg);
+                // background-image: @navPattern, -webkit-radial-gradient(top left, circle cover, @brightCard, @cardBg);
 
                 &:before, &:after {
                   content: "";
                   position: absolute;
-                  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#5F5F67), to(transparent));
-                  background-image: -webkit-linear-gradient(#5F5F67, transparent);
-                  background-image: -moz-linear-gradient(#5F5F67, transparent);
-                  background-image: -o-linear-gradient(#5F5F67, transparent);
-                  background-image: linear-gradient(#5F5F67, transparent);
+                  // background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#5F5F67), to(transparent));
+                  // background-image: -webkit-linear-gradient(#5F5F67, transparent);
+                  // background-image: -moz-linear-gradient(#5F5F67, transparent);
+                  // background-image: -o-linear-gradient(#5F5F67, transparent);
+                  // background-image: linear-gradient(#5F5F67, transparent);
                   top: -1px;
                   bottom: -1px;
                   width: 1px;
@@ -74,11 +80,11 @@
                   top: -1px;
                   width: 100%;
                   height: 1px;
-                  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#5F5F67), to(transparent));
-                  background-image: -webkit-linear-gradient(to right, #5F5F67, transparent);
-                  background-image: -moz-linear-gradient(to right, #5F5F67, transparent);
-                  background-image: -o-linear-gradient(to right, #5F5F67, transparent);
-                  background-image: linear-gradient(to right, #5F5F67, transparent);
+                  // background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#5F5F67), to(transparent));
+                  // background-image: -webkit-linear-gradient(to right, #5F5F67, transparent);
+                  // background-image: -moz-linear-gradient(to right, #5F5F67, transparent);
+                  // background-image: -o-linear-gradient(to right, #5F5F67, transparent);
+                  // background-image: linear-gradient(to right, #5F5F67, transparent);
                 }
 
                 .publish-date {
@@ -88,15 +94,15 @@
                     opacity: 0.3;
                     -webkit-box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,1);
                     -moz-box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,1);
-                    box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,1);
+                    //box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,1);
                     border-top: 1px solid #030303;
                     border-bottom: 1px solid #777777;
                 }
                 .episode-image {
                     img {
                         position: absolute;
-                        top: 5px;
-                        right: 10px;
+                        top: -25px;
+                        right: -25px;
                         border-radius: 50%;
                         border: 2px solid #565656;
                         width: 65px;
@@ -108,28 +114,31 @@
                     transition: @transition;
                     padding: 0;
                     margin:0;
-                    margin-top:15px;
+                    //margin-top:15px;
+										margin-right:75px;
                     &:hover {
                         transition: @transition;
                         cursor: pointer;
-                        text-decoration: underline;
                     }
                     a {
 
                         text-decoration: none;
                         color: inherit;
-                        color: #ffffff;
+                        color: #000;
+
+												&:hover {
+													text-decoration: none;
+												}
                     }
                 }
             }
             .podcast-summary {
                 color: @navFontColor;
                 font-family: @main-font-family;
-                background: #101116;
-                background-image:@navPattern;
-                -webkit-box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,1);
-                -moz-box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,1);
-                box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,1);
+                background: @navElemColor;
+                // -webkit-box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,1);
+                // -moz-box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,1);
+                // box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,1);
                 padding:20px;
                 position: relative;
                 // background-image: @navPattern, radial-gradient(top left, circle cover, @brightCard, @cardBg);
@@ -142,21 +151,38 @@
                     margin: 0;
                     word-wrap:break-word;
                 }
+
+								div.left-accent {
+									width: 50px;
+									height: 120px;
+									background: @dotpRed;
+									position: absolute;
+									left: -55px;
+									top: 30px;
+								}
+								div.right-accent {
+									width: 50px;
+									height: 120px;
+									background: @dotpRed;
+									position: absolute;
+									right: -53px;
+									top: 30px;
+								}
             }
             .podcast-actions {
-                color: #ffffff;
+                color: @navFontColor;
                 font-family: @main-font-family;
-                background: #101116;
+                background: @navElemColor;
                 background-image:@cardBg;
-                margin-bottom: 50px;
+                //margin-bottom: 50px;
                 position: relative;
                 display: flex;
                 text-align: center;
-                background-image: @navPattern, radial-gradient(top left, circle cover, @brightCard, @cardBg);
-                background-image: @navPattern, -o-radial-gradient(top left, circle cover, @brightCard, @cardBg);
-                background-image: @navPattern, -ms-radial-gradient(top left, circle cover, @brightCard, @cardBg);
-                background-image: @navPattern, -moz-radial-gradient(top left, circle cover, @brightCard, @cardBg);
-                background-image: @navPattern, -webkit-radial-gradient(top left, circle cover, @brightCard, @cardBg);
+                // background-image: @navPattern, radial-gradient(top left, circle cover, @brightCard, @cardBg);
+                // background-image: @navPattern, -o-radial-gradient(top left, circle cover, @brightCard, @cardBg);
+                // background-image: @navPattern, -ms-radial-gradient(top left, circle cover, @brightCard, @cardBg);
+                // background-image: @navPattern, -moz-radial-gradient(top left, circle cover, @brightCard, @cardBg);
+                // background-image: @navPattern, -webkit-radial-gradient(top left, circle cover, @brightCard, @cardBg);
                 .play-text, .share-text, .dl-text {
                     opacity: 0;
                 }
@@ -166,19 +192,20 @@
                     position: relative;
                     text-decoration: none;
                     color: inherit;
+                    border-top: 1px solid #000000;
                     border-right: 1px solid #000000;
-                    border-left: 1px solid #5c5c5c;
-                    border-bottom: @navBottomBorder;
 
                     &:hover {
                         cursor: pointer;
                         i {
                             transition: @transition;
-                            top: 5px;
+                            top: 10px;
                         }
                         .play-text {
                             opacity: 1;
                             transition: @transition;
+														top:10px;
+														position: relative;
                         }
                     }
                     i {
@@ -195,18 +222,19 @@
                     position: relative;
                     text-decoration: none;
                     color: inherit;
-                    border-left: 1px solid #5c5c5c;
-                    border-right: 1px solid #000000;
-                    border-bottom: @navBottomBorder;
+                    //border-left: 1px solid #5c5c5c;
+										border-top: 1px solid #000;
                     &:hover {
                         cursor: pointer;
                         i {
                             transition: @transition;
-                            top: 5px;
+                            top: 10px;
                         }
                         .dl-text {
                             opacity: 1;
                             transition: @transition;
+														top: 10px;
+														position: relative;
                         }
                     }
                     i {

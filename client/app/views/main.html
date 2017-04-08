@@ -2,14 +2,17 @@
     <ul>
         <li ng-repeat="episode in vm.feed.episodes">
             <div class="podcast-container">
-                <div class="publish-date"><span class="episode-date">{{episode.date | date:'mediumDate' }}<span></div>
-                <div class="episode-image"><img ng-src="{{vm.getImage(episode.date)}}" alt=""></div>
-                <h2>
-                    <a ng-href="/episode/{{episode.guid}}">{{episode.title}}</a>
-                </h2>
+              <h2>
+                  <a ng-href="/episode/{{episode.guid}}">{{episode.title}}</a>
+              </h2>
+              <!-- <div class="publish-date"><span class="episode-date">{{episode.date | date:'mediumDate' }}<span></div> -->
+              <div class="episode-image"><img ng-src="{{vm.getImage(episode.date)}}" alt=""></div>
+
             </div>
             <div class="podcast-summary">
+              <div class="left-accent"></div>
                 <p class="episode-description">{{vm.stripHtml(episode.summary)}}</p>
+              <div class="right-accent"></div>
             </div>
             <div class="podcast-actions">
                 <a class="play-control" ng-click="vm.startPodcast(episode)">
