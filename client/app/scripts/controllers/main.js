@@ -33,12 +33,22 @@ angular.module('clientApp')
     function getImage(date) {
         var dateObj = new Date(date);
         var day = dateObj.getDay();
-        if (day === 2) {
-            return '../images/tues.png';
+        console.log(day);
+        if (day === 0) {
+            return '../images/DotP_Icon-01.png';
+        } else if (day === 1) {
+            return '../images/DotP_Icon-02.png';
+        } else if (day === 2) {
+            return '../images/DotP_Icon-03.png';
+        } else if (day === 3) {
+            return '../images/DotP_Icon-04.png';
         } else if (day === 4) {
-            return '../images/thurs.png';
-        } else {
-            return '../images/generic.png';
+            return '../images/DotP_Icon-05.png';
+        } else if (day === 5) {
+            return '../images/DotP_Icon-06.png';
+        }
+        else {
+            return '../images/DotP_Icon-01.png';
         }
     }
 

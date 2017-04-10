@@ -18,6 +18,12 @@
                 transform: skewX(0);
                 height:100%;
                 border-bottom: none;
+                .patreon-container {
+                  transform: skewX(0);
+                }
+                .pvgna-container {
+                  transform: skewX(0);
+                }
                 .power {
                     transform: skewX(0);
                 }
@@ -136,13 +142,15 @@
                 transition: background .2s ease, color .2s ease;
                 letter-spacing: .1em;
 
+                &.title-bar-nav > div {
+                  border: 1px solid black;
+                }
 
                 & > div {
                   flex: 1;
                   //border: 1px solid black;
                   //border-radius: 3px;
                   background-color: white;
-                  border: 1px solid black;
 
                   &#dotp-logo {
                     transform: skewX(40deg);
@@ -154,6 +162,11 @@
                       display: block;
                       top: -27px;
                       position: relative;
+
+                      @media @smartphones {
+                        margin: 0;
+                        left: 20px;
+                      }
                     }
                   }
 
@@ -180,6 +193,14 @@
                     padding: @navPadding;
                     text-decoration: none;
                     color:inherit;
+                    &.patreon {
+                      height: 100%;
+                      padding: 0;
+                    }
+                    &.pvgna {
+                      height: 100%;
+                      padding: 0;
+                    }
                     //border-bottom: 2px solid black;
                 }
             }
@@ -241,7 +262,7 @@
                     right: 0;
                     background: #26090B;
                     @media @smartphones {
-                        top:-1px;
+                        //top:-1px;
                     }
                     &:hover {
                         cursor: pointer;
@@ -258,8 +279,34 @@
                         margin: auto;
                         width: 15px;
                         height: 15px;
+                        top: 4px;
+                        padding-left: 4.5px;
                     }
 
+                }
+
+                .patreon-container {
+                  width: 50px;
+                  height: 100%;
+                  right: 50px;
+                  position: absolute;
+                  transform: skewX(40deg);
+
+                  @media @smartphones {
+                    right: 100px;
+                  }
+                }
+
+                .pvgna-container {
+                  width: 50px;
+                  height: 100%;
+                  right: 100px;
+                  position: absolute;
+                  transform: skewX(40deg);
+
+                  @media @smartphones {
+                    right: 150px;
+                  }
                 }
 
                 .hidden-login {

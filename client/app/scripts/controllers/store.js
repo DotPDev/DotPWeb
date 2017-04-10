@@ -133,7 +133,7 @@ angular.module('clientApp')
                 }).then(function (res) {
                     resetCheckout();
                     document.querySelector('#paypal-button').innerText = 'Payment Complete!';
-                    checkoutMessage = "Order Placed"
+                    $scope.checkoutMessage = "Order Placed";
                 });
            }
 
@@ -158,7 +158,7 @@ angular.module('clientApp')
           district: ''
         }
       };
-      $scope.buyer = ''
+      $scope.buyer = '';
       $scope.$digest();
     }
   });
