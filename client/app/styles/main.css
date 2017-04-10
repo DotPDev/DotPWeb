@@ -147,11 +147,14 @@ body {
   height: 100%;
   border-bottom: none;
 }
-#title-bar .nav.collapsed li:last-child .power {
+#title-bar .nav.collapsed li:last-child .patreon-container {
   transform: skewX(0);
 }
-#title-bar .nav.collapsed li:first-child {
-  min-width: 555px;
+#title-bar .nav.collapsed li:last-child .pvgna-container {
+  transform: skewX(0);
+}
+#title-bar .nav.collapsed li:last-child .power {
+  transform: skewX(0);
 }
 #title-bar .nav.collapsed li:first-child header {
   right: inherit;
@@ -260,10 +263,12 @@ body {
   background-color: black;
   height: 32px;
 }
+#title-bar nav .nav li.title-bar-nav > div {
+  border: 1px solid black;
+}
 #title-bar nav .nav li > div {
   flex: 1;
   background-color: white;
-  border: 1px solid black;
 }
 #title-bar nav .nav li > div#dotp-logo {
   transform: skewX(40deg);
@@ -275,6 +280,12 @@ body {
   display: block;
   top: -27px;
   position: relative;
+}
+@media only screen and (max-width: 830px) {
+  #title-bar nav .nav li > div#dotp-logo > img {
+    margin: 0;
+    left: 20px;
+  }
 }
 #title-bar nav .nav li > div.share-container {
   border: none;
@@ -295,6 +306,14 @@ body {
   padding: 0.2em;
   text-decoration: none;
   color: inherit;
+}
+#title-bar nav .nav li a.patreon {
+  height: 100%;
+  padding: 0;
+}
+#title-bar nav .nav li a.pvgna {
+  height: 100%;
+  padding: 0;
 }
 #title-bar nav .nav .active > div {
   background-color: #df5244;
@@ -323,9 +342,6 @@ body {
   background: #26090B;
 }
 @media only screen and (max-width: 830px) {
-  #title-bar nav .nav .action-wrapper .power {
-    top: -1px;
-  }
 }
 #title-bar nav .nav .action-wrapper .power:hover {
   cursor: pointer;
@@ -342,6 +358,32 @@ body {
   margin: auto;
   width: 15px;
   height: 15px;
+  top: 4px;
+  padding-left: 4.5px;
+}
+#title-bar nav .nav .action-wrapper .patreon-container {
+  width: 50px;
+  height: 100%;
+  right: 50px;
+  position: absolute;
+  transform: skewX(40deg);
+}
+@media only screen and (max-width: 830px) {
+  #title-bar nav .nav .action-wrapper .patreon-container {
+    right: 100px;
+  }
+}
+#title-bar nav .nav .action-wrapper .pvgna-container {
+  width: 50px;
+  height: 100%;
+  right: 100px;
+  position: absolute;
+  transform: skewX(40deg);
+}
+@media only screen and (max-width: 830px) {
+  #title-bar nav .nav .action-wrapper .pvgna-container {
+    right: 150px;
+  }
 }
 #title-bar nav .nav .action-wrapper .hidden-login {
   display: none;
@@ -529,7 +571,7 @@ body {
 }
 @media only screen and (max-width: 830px) {
   .player-wrapper .player {
-    background: #101116;
+    background: #fff;
     border-top: 1px solid #5F5F67;
   }
 }
@@ -708,7 +750,8 @@ body {
 }
 .social-container .link-wrapper li a {
   height: 100%;
-  width: 80px;
+  width: 120px;
+  text-align: center;
   display: block;
   margin: 0 auto;
   padding-left: 5px;
@@ -784,6 +827,27 @@ body {
   background-color: #4e337f;
   transition: all 0.2s ease-in-out;
 }
+i.patreon-icon.patreon-nav {
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: inline-block;
+  width: 1em;
+  padding-left: 0;
+  top: 6px;
+  margin: auto;
+  text-align: center;
+}
+i.pvgna-icon.pvgna-nav {
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: inline-block;
+  width: 50px;
+  padding-left: 0;
+  margin: auto;
+  text-align: center;
+}
 .share-container {
   transform: skewx(40deg);
   width: 50px;
@@ -799,7 +863,6 @@ body {
   .share-container {
     right: 50px;
     transform: skewx(0deg);
-    top: -1px;
   }
 }
 .share-container:hover {
@@ -821,7 +884,7 @@ body {
   right: 0;
   margin: auto;
   width: 15px;
-  height: 15px;
+  height: 16px;
 }
 .discord-icon {
   width: 10px;
@@ -848,14 +911,37 @@ body {
 }
 .patreon-icon:after {
   background-image: url(../images/patreonLogo.png);
-  background-size: 1em 1em;
-  width: 1em;
-  height: 1em;
+  background-size: 15px 15px;
+  width: 15px;
+  height: 15px;
   display: inline-block;
   content: "";
   top: 0px;
   position: absolute;
   left: 0;
+}
+.pvgna-icon {
+  width: 10px;
+  height: 10px;
+  position: relative;
+  padding-left: 20px;
+}
+.pvgna-icon:after {
+  background-image: url(../images/PVGNA-no-text.png);
+  background-size: 18px 18px;
+  width: 18px;
+  height: 18px;
+  content: "";
+  top: 3px;
+  position: absolute;
+  left: 0;
+  background-color: #1a263a;
+  padding: 3px;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  border-radius: 50%;
+  right: 0;
+  margin: auto;
 }
 .about-wrapper {
   height: 100%;
@@ -980,6 +1066,7 @@ body {
 }
 .main-wrapper {
   color: #1b1b1b;
+  padding-bottom: 50px;
 }
 .main-wrapper a {
   color: #5c5cff;
@@ -1059,9 +1146,8 @@ body {
   top: -25px;
   right: -25px;
   border-radius: 50%;
-  border: 2px solid #565656;
-  width: 65px;
-  height: 65px;
+  width: 69px;
+  height: 69px;
   overflow: hidden;
 }
 .main-wrapper ul li .podcast-container h2 {

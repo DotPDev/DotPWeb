@@ -23,44 +23,19 @@
         </li> -->
     </ul>
     <ul class="nav" ng-class="{ 'collapsed': vm.isCollapsed }">
-        <li class="title-bar-spacer">
-          <div id="dotp-logo">
-            <img src='../images/dotp-logo.svg'/>
-          </div>
-        </li>
-        <li class="title-bar-nav">
-            <!-- <header>
-                <div class="left-stone">&nbsp;</div>
-                <div class="right-stone">&nbsp;</div>
-                <div class="center-stone">
-                    <div class="center-left">&nbsp;</div>
-                    <div class="center-right">&nbsp;</div>
-                    <a ui-sref="root.dashboard" ng-click="vm.slideNavPanel = false">
-                        <img class="logo" src="../images/newdotp.png" alt="">
-                    </a>
-                </div>
-            </header> -->
-            <div ui-sref-active="active" >
-              <a class="" ui-sref="root.dashboard" ng-click="vm.slideNavPanel = false">
-                <span>Episodes</span>
-              </a>
-              <div></div>
-            </div>
+      <li class="title-bar-spacer">
+        <div id="dotp-logo">
+          <img src='../images/dotp-logo.svg'/>
+        </div>
+      </li>
+      <li class="title-bar-nav">
+        <div ui-sref-active="active" >
+          <a class="" ui-sref="root.dashboard" ng-click="vm.slideNavPanel = false">
+            <span>Episodes</span>
+          </a>
+          <div></div>
+        </div>
 
-            <!-- <a class="dotpeeps" ui-sref="root.dashboard" ng-click="vm.slideNavPanel = false">
-                <span class="defense">Defense</span>
-                <div class="small-header">
-                    <span class="defense-small">of</span>
-                    <span class="defense-small">the</span>
-                </div>
-                <span class="patience">Patience</span>
-            </a> -->
-
-
-        <!-- </li> -->
-        <!-- <li ui-sref-active="active">
-            <a ui-sref="root.dotpeeps"><span>dotpeeps</span></a>
-        </li> -->
         <div ui-sref-active="active">
             <a ui-sref="root.ladder">
               <span>ladder</span>
@@ -80,20 +55,30 @@
             <div></div>
         </div>
       </li>
-        <li class="action-wrapper">
-            <div class="power" ng-if="vm.isCollapsed" ng-click="vm.clickPower()">
-                <i class="fa fa-power-off"></i>
-            </div>
-            <div class="share-container" ui-sref-active="active">
-                <a class="share-icon" ui-sref="root.social">
-                    <i class="fa fa-share-alt"></i>
-                </a>
-            </div>
-            <!-- <div class="hidden-login" ng-class="{ 'show-login': vm.isShowingLogin }">
-                <a ng-if="!vm.user" ng-click="vm.goToLogin()" ui-sref="root.login"><span>Login</span></a>
-                <a ng-if="vm.user" ng-click="vm.goToLogin()" ui-sref="root.login"><span>{{vm.user.displayName || vm.user.email}}</span></a>
-                <a ng-if="vm.user" ng-click="vm.signOut()" ui-sref="root.dashboard"><span>Sign Out</span></a>
-            </div> -->
-        </li>
+      <li class="action-wrapper">
+        <div class="power" ng-if="vm.isCollapsed" ng-click="vm.clickPower()">
+            <i class="fa fa-power-off"></i>
+        </div>
+        <div class="share-container" ui-sref-active="active">
+            <a class="share-icon" ui-sref="root.social">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </div>
+        <div class="patreon-container">
+            <a class="patreon" href="https://www.patreon.com/defenseofthepatience" target="_blank">
+                <i class="patreon-icon patreon-nav"></i>
+            </a>
+        </div>
+        <div class="pvgna-container">
+            <a class="pvgna" href="https://pvgna.com/?ref=dotp" target="_blank">
+                <i class="pvgna-icon pvgna-nav"></i>
+            </a>
+        </div>
+        <!-- <div class="hidden-login" ng-class="{ 'show-login': vm.isShowingLogin }">
+            <a ng-if="!vm.user" ng-click="vm.goToLogin()" ui-sref="root.login"><span>Login</span></a>
+            <a ng-if="vm.user" ng-click="vm.goToLogin()" ui-sref="root.login"><span>{{vm.user.displayName || vm.user.email}}</span></a>
+            <a ng-if="vm.user" ng-click="vm.signOut()" ui-sref="root.dashboard"><span>Sign Out</span></a>
+        </div> -->
+      </li>
     </ul>
 </nav>
