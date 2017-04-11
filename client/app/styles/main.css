@@ -171,7 +171,6 @@ body {
 #title-bar .collapsed-nav.is-showing-nav li {
   flex: 1;
   font-size: 1em;
-  text-shadow: -1px 2px 3px #000000;
   text-transform: uppercase;
   border-right: 1px solid #000000;
   border-bottom: 1px solid #5f5f67;
@@ -182,7 +181,7 @@ body {
 #title-bar .collapsed-nav.is-showing-nav li a {
   display: block;
   text-decoration: none;
-  color: #1b1b1b;
+  color: #000;
   height: 100%;
   position: absolute;
   top: 0;
@@ -213,7 +212,7 @@ body {
 #title-bar .collapsed-nav {
   transition: all 0.2s ease-in-out;
   width: 0%;
-  height: calc(100% - 50px);
+  height: calc(100% - 60px);
   position: fixed;
   top: 0;
   right: -100%;
@@ -222,13 +221,8 @@ body {
   flex-direction: column;
   padding: 0;
   margin: 0;
-  top: 50px;
-  background-image: #101116;
-  background-image: url("https://www.transparenttextures.com/patterns/assault.png"), radial-gradient(top left, circle cover, #252834, #101116);
-  background-image: url("https://www.transparenttextures.com/patterns/assault.png"), -o-radial-gradient(top left, circle cover, #252834, #101116);
-  background-image: url("https://www.transparenttextures.com/patterns/assault.png"), -ms-radial-gradient(top left, circle cover, #252834, #101116);
-  background-image: url("https://www.transparenttextures.com/patterns/assault.png"), -moz-radial-gradient(top left, circle cover, #252834, #101116);
-  background-image: url("https://www.transparenttextures.com/patterns/assault.png"), -webkit-radial-gradient(top left, circle cover, #252834, #101116);
+  top: 60px;
+  background-color: #fff;
 }
 #title-bar nav {
   background: #fff;
