@@ -61,6 +61,8 @@ body {
   padding-top: 20px;
   width: 100%;
   height: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   overflow: auto;
 }
 .header {
@@ -172,22 +174,26 @@ body {
   flex: 1;
   font-size: 1em;
   text-transform: uppercase;
-  border-right: 1px solid #000000;
-  border-bottom: 1px solid #5f5f67;
   transition: background .2s ease, color .2s ease;
   letter-spacing: .1em;
   position: relative;
+}
+#title-bar .collapsed-nav.is-showing-nav li:last-child a {
+  border-bottom: 4px solid black;
+  height: calc(100% - 8px);
 }
 #title-bar .collapsed-nav.is-showing-nav li a {
   display: block;
   text-decoration: none;
   color: #000;
-  height: 100%;
+  height: calc(100% - 4px);
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: calc(100% - 4px);
   transition: all 0.2s ease-in-out;
+  border: 4px solid black;
+  border-bottom: none;
 }
 #title-bar .collapsed-nav.is-showing-nav li a:hover {
   cursor: pointer;
@@ -524,7 +530,7 @@ body {
   height: 0%;
   height: 50px;
   background-color: #fff;
-  border-top: 1px solid black;
+  border-top: 5px solid black;
 }
 .player-wrapper .podcast-title {
   position: absolute;
