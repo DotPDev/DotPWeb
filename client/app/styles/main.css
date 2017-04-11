@@ -180,17 +180,17 @@ body {
 }
 #title-bar .collapsed-nav.is-showing-nav li:last-child a {
   border-bottom: 4px solid black;
-  height: calc(92%);
+  height: calc(100% - 8px);
 }
 #title-bar .collapsed-nav.is-showing-nav li a {
   display: block;
   text-decoration: none;
   color: #000;
-  height: calc(96%);
+  height: calc(100% - 4px);
   position: absolute;
   top: 0;
   left: 0;
-  width: calc(96%);
+  width: calc(100% - 4px);
   transition: all 0.2s ease-in-out;
   border: 4px solid black;
   border-bottom: none;
