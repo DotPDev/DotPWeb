@@ -8,7 +8,7 @@ const paypalObjectSvc = require('../services/paypalObjectSvc')
 
 const TOKEN = "access_token$production$y26bhr2tmk88zrtx$18bab4b85418a871470a1cc18c31af25"
 
-let experience_profile_id = 'XP-B8Q8-KRKB-ASVE-ZFQQ';
+let experience_profile_id = '';
 
 let PP_ID = 'AeLvUGTnJOgmOHM_yTXYoKAz7zqbn9Rn08J1BQKUDVnIQKLgncdi-2nKwQ6r4uokHnjW0gAs96ybw9XA'
 let PP_SECRET = 'EJivT9kSujVFY6IswykrNb8cwMCObI8ATZK5ToJB45TkjKlxlnKRA-37XfmjA5UvtQ6Exq495SNE4u7r'

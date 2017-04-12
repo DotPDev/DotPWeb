@@ -71,7 +71,7 @@ function buildPaymentProfile() {
       "name": profile_name,
       "presentation": {
           "brand_name": "Defense of the Patience",
-          "logo_image": "https://ssl-static.libsyn.com/p/assets/e/a/d/1/ead16e847e4b4e85/height_90_width_90_Logo_1390x1392.jpg",
+          //"logo_image": "https://staging-defenseofthepatience.herokuapp.com/images/dotp-logo.svg",
           "locale_code": "US"
       },
       "input_fields": {
@@ -126,7 +126,7 @@ function buildPaymentObject(printfulOrder) {
         //'experience_profile_id': 'XP-2US8-UC7F-3AKP-52BS'
 
         //Deadman Dev Experience -
-        'experience_profile_id': 'XP-B8Q8-KRKB-ASVE-ZFQQ'
+        //'experience_profile_id': 'XP-B8Q8-KRKB-ASVE-ZFQQ'
     });
 
     return payReq;
