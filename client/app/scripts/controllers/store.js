@@ -8,24 +8,32 @@
  * Controller of the clientApp
  */
 angular.module('clientApp')
-  .controller('StoreCtrl', function ($scope, firebaseSvc, $http) {
+  .controller('StoreCtrl', function ($scope, firebaseSvc, $http, cart) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
       'Karma'
     ];
 
+    console.log(cart.getCartItems());
+
     var vm = this;
     //vm.renderButton = renderButton;
     vm.cart = {};
-    vm.cart.order = {};
+    vm.cart.price = 0;
     vm.cart.items = [];
+    vm.emptyCart = emptyCart;
     $scope.isCheckingOut = false;
+    $scope.isManagingCart = false;
     vm.startCheckOut = startCheckOut;
+    vm.closeCheckOut = closeCheckOut;
     vm.addToCart = addToCart;
+    vm.openCart = openCart;
+    vm.closeCart = closeCart;
     $scope.validationMessage = '';
     $scope.checkoutMessage = '';
     $scope.data = {};
+    vm.removeFromCart = removeFromCart;
     $scope.data.address = {
       name: '',
       place: '',
@@ -44,12 +52,21 @@ angular.module('clientApp')
     // jscs:disable
 
     function startCheckOut() {
+      var paypalButton = document.getElementById("paypal-button");
+      while (paypalButton.firstChild) {
+        paypalButton.removeChild(paypalButton.firstChild);
+      }
+
       if (vm.cart.items.length) {
         $scope.isCheckingOut = true;
         renderButton();
       } else {
         $scope.validationMessage = " - No items in cart.";
       }
+    }
+
+    function closeCheckOut() {
+      $scope.isCheckingOut = false;
     }
 
     //TODO - move to data creation services
@@ -63,11 +80,31 @@ angular.module('clientApp')
               country_code: $scope.data.address.components.countryCode,
               zip: $scope.data.address.components.postCode
           },
-          items: vm.cart.items
+
+          //TODO - Cart Service - Get Items
+          items: cart.getCartItems()
       });
     }
 
     // jscs:enable
+
+    function openCart() {
+      $scope.isManagingCart = true;
+      $scope.isCheckingOut = false;
+    }
+
+    function closeCart() {
+      $scope.isManagingCart = false;
+      $scope.isCheckingOut = false;
+    }
+
+    function emptyCart() {
+      cart.emptyCart();
+      vm.cart.items = cart.getCartItems();
+      vm.cart.price = cart.getTotalPrice();
+    }
+
+
 
     vm.fakeStoreData = [
       {
@@ -84,16 +121,26 @@ angular.module('clientApp')
       }
     ];
 
+    //TODO - Cart Service - Add to cart
     function addToCart(product) {
-      console.log(product);
         $scope.validationMessage = '';
-        vm.cart.items.push({
-          variant_id: product.chosenSize,
+        cart.addToCart({
+          variant_id: product.chosenSize.variant_id,
+          size: product.chosenSize.size,
           name: product.name,
           retail_price: product.retail_price,
           quantity: 1,
           files: product.files,
         });
+        //TODO - Remove this after done with cart svc
+        vm.cart.items = cart.getCartItems();
+        vm.cart.price = cart.getTotalPrice();
+    }
+
+    function removeFromCart(i) {
+      cart.removeItem(vm.cart.items, i);
+      vm.cart.items = cart.getCartItems();
+      vm.cart.price = cart.getTotalPrice();
     }
 
     function renderButton() {
@@ -142,7 +189,9 @@ angular.module('clientApp')
 
     function resetCheckout() {
       vm.cart.items = [];
+      cart.emptyCart();
       $scope.isCheckingOut = false;
+      $scope.isManagingCart = false;
       $scope.data.address = {
         name: '',
         place: '',
