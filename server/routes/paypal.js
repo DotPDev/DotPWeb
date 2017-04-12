@@ -20,11 +20,11 @@ function superLog(logThis) {
   }
 }
 
-superLog(process.env.PP_ID);
-superLog(process.env.PP_SECRET);
-superLog(process.env.PP_ENV);
+superLog(process.env.PP_ID)
+superLog(process.env.PP_SECRET)
+superLog(process.env.PP_ENV)
 
-console.log
+console.log(process.env)
 if (process.env && process.env.PP_ID && process.env.PP_SECRET && process.env.PP_ENV) {
   PP_ID = process.env.PP_ID
   PP_SECRET = process.env.PP_SECRET
