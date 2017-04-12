@@ -9,7 +9,7 @@ const devDataSvc = require('../services/devDataSvc')
 
 let KEY = "cbjsvbwl-3vya-bqq8:3hve-4mjkonkv4acw"
 
-if (process && process.env & process.env.PRINTFUL_KEY) {
+if (process && process.env && process.env.PRINTFUL_KEY) {
   console.log("setting printful key")
   KEY = process.env.PRINTFUL_KEY
 }
