@@ -14,18 +14,8 @@ let PP_ID = 'AeLvUGTnJOgmOHM_yTXYoKAz7zqbn9Rn08J1BQKUDVnIQKLgncdi-2nKwQ6r4uokHnj
 let PP_SECRET = 'EJivT9kSujVFY6IswykrNb8cwMCObI8ATZK5ToJB45TkjKlxlnKRA-37XfmjA5UvtQ6Exq495SNE4u7r'
 let PP_ENV = 'sandbox'
 
-function superLog(logThis) {
-  if (process && process.env && logThis) {
-    console.log(logThis)
-  }
-}
-
-superLog(process.env.PP_ID)
-superLog(process.env.PP_SECRET)
-superLog(process.env.PP_ENV)
-
-console.log(process.env)
 if (process.env && process.env.PP_ID && process.env.PP_SECRET && process.env.PP_ENV) {
+  console.log("setting paypal keys")
   PP_ID = process.env.PP_ID
   PP_SECRET = process.env.PP_SECRET
   PP_ENV = process.env.PP_ENV
