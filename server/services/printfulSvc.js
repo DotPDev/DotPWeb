@@ -7,9 +7,12 @@ const PrintfulClient = require('../printfulclient.js')
 
 const devDataSvc = require('../services/devDataSvc')
 
-const KEY = "cbjsvbwl-3vya-bqq8:3hve-4mjkonkv4acw"
-const ENCODED_KEY = "Y2Jqc3Zid2wtM3Z5YS1icXE4OjNodmUtNG1qa29ua3Y0YWN3"
+let KEY = "cbjsvbwl-3vya-bqq8:3hve-4mjkonkv4acw"
 
+if (process && process.env & process.env.PRINTFUL_KEY) {
+  console.log("setting printful key")
+  KEY = process.env.PRINTFUL_KEY
+}
 var ok_callback = function(data, info){
     console.log('SUCCESS');
     console.log(data);
