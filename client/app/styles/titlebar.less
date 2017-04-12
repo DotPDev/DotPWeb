@@ -140,6 +140,14 @@
                 border-radius: 3px;
                 background-color: black;
                 height: 32px;
+
+                & > div {
+                    border: 1px solid black;
+
+                    &.active {
+                      background-color: @dotpRed
+                    }
+                }
               }
                 flex: 2;
                 display: flex;
@@ -150,9 +158,6 @@
                 transition: background .2s ease, color .2s ease;
                 letter-spacing: .1em;
 
-                &.title-bar-nav > div {
-                  border: 1px solid black;
-                }
 
                 & > div {
                   flex: 1;
@@ -201,6 +206,8 @@
                     padding: @navPadding;
                     text-decoration: none;
                     color:inherit;
+                    background-color: #fff;
+                    border-bottom: 1.5px solid black;
                     &.patreon {
                       height: 100%;
                       padding: 0;

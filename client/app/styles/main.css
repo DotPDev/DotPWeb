@@ -266,6 +266,9 @@ body {
 #title-bar nav .nav li.title-bar-nav > div {
   border: 1px solid black;
 }
+#title-bar nav .nav li.title-bar-nav > div.active {
+  background-color: #df5244;
+}
 #title-bar nav .nav li > div {
   flex: 1;
   background-color: white;
@@ -306,6 +309,8 @@ body {
   padding: 0.2em;
   text-decoration: none;
   color: inherit;
+  background-color: #fff;
+  border-bottom: 1.5px solid black;
 }
 #title-bar nav .nav li a.patreon {
   height: 100%;
