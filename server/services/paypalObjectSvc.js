@@ -122,8 +122,10 @@ function buildPaymentObject(printfulOrder) {
             "description": "Thank you for supporting Defense of the Patience!"
         }],
 
+        if (process && process.env && process.env.PP_EXP_ID) {
         // DotP Dev Experience -
-        //'experience_profile_id': 'XP-2US8-UC7F-3AKP-52BS'
+        'experience_profile_id': 'XP-BKWF-4Z5R-MLZJ-QPE6'
+        }
 
         //Deadman Dev Experience -
         //'experience_profile_id': 'XP-B8Q8-KRKB-ASVE-ZFQQ'
