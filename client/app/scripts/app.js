@@ -181,7 +181,7 @@ angular
     $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
         googleAnalytics.trackPage($location.path());
         $rootScope.metaservice = MetaService;
-        $rootScope.metaservice.set(toState.data.browserTitle, toState.data.description, "Keywords");
+        $rootScope.metaservice.set(toState.data.browserTitle, toState.data.description, "Dota 2, Dota 2 Podcast, DotP, Defense of the Patience, Defense of the Ancients, Defense of the Ancients Podcast, Dotp.Proud, Proud, DotP.Roland, Roland, DotP.Ursinity, Ursinity, DotP.Cyphus, Cyphus");
     });
 
 });
