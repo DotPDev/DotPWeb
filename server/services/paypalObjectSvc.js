@@ -45,6 +45,11 @@
 //   shipments: [],
 //   gift: null,
 //   packing_slip: null }
+let experience_id = ''
+if (process && process.env && process.env.PP_EXP_ID) {
+// DotP Dev Experience -
+  experience_id = 'XP-BKWF-4Z5R-MLZJ-QPE6'
+}
 
 function buildExecuteObject(payment) {
   var execute_payment_json = {
@@ -122,10 +127,8 @@ function buildPaymentObject(printfulOrder) {
             "description": "Thank you for supporting Defense of the Patience!"
         }],
 
-        if (process && process.env && process.env.PP_EXP_ID) {
         // DotP Dev Experience -
-        'experience_profile_id': 'XP-BKWF-4Z5R-MLZJ-QPE6'
-        }
+        'experience_profile_id': experience_id
 
         //Deadman Dev Experience -
         //'experience_profile_id': 'XP-B8Q8-KRKB-ASVE-ZFQQ'
