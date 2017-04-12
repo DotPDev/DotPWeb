@@ -10,10 +10,20 @@ const TOKEN = "access_token$production$y26bhr2tmk88zrtx$18bab4b85418a871470a1cc1
 
 let experience_profile_id = 'XP-B8Q8-KRKB-ASVE-ZFQQ';
 
+let PP_ID = 'AeLvUGTnJOgmOHM_yTXYoKAz7zqbn9Rn08J1BQKUDVnIQKLgncdi-2nKwQ6r4uokHnjW0gAs96ybw9XA'
+let PP_SECRET = 'EJivT9kSujVFY6IswykrNb8cwMCObI8ATZK5ToJB45TkjKlxlnKRA-37XfmjA5UvtQ6Exq495SNE4u7r'
+let PP_ENV = 'sandbox'
+
+if (process.env && process.env.PP_ID && process.env.PP_SECRET && process.env.PP_ENV) {
+  PP_ID = process.env.PP_ID
+  PP_SECRET = process.env.PP_SECRET
+  PP_ENV = process.env.PP_ENV
+}
+
 paypal.configure({
-    'mode': 'sandbox', //sandbox or live
-    'client_id': 'AeLvUGTnJOgmOHM_yTXYoKAz7zqbn9Rn08J1BQKUDVnIQKLgncdi-2nKwQ6r4uokHnjW0gAs96ybw9XA',
-    'client_secret': 'EJivT9kSujVFY6IswykrNb8cwMCObI8ATZK5ToJB45TkjKlxlnKRA-37XfmjA5UvtQ6Exq495SNE4u7r'
+    'mode': PP_ENV, //sandbox or live
+    'client_id': PP_ID,
+    'client_secret': PP_SECRET
 })
 
 if (!experience_profile_id) {

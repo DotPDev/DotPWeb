@@ -33,7 +33,7 @@ angular.module('clientApp')
     function getImage(date) {
         var dateObj = new Date(date);
         var day = dateObj.getDay();
-        console.log(day);
+        console.log(date);
         if (day === 0) {
             return '../images/DotP_Icon-01.png';
         } else if (day === 1) {
