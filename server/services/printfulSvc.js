@@ -36,12 +36,6 @@ var error_callback = function(message, info){
 ///Construct client
 var pf = new PrintfulClient(KEY);
 
-var options = {
-  url: 'https://api.printful.com/',
-  headers: {
-    'Authorization': 'Basic ' + ENCODED_KEY
-  }
-};
 //doRequest()
 
 
