@@ -192,6 +192,8 @@ angular.module('clientApp')
       cart.emptyCart();
       $scope.isCheckingOut = false;
       $scope.isManagingCart = false;
+      vm.cart.items = cart.getCartItems();
+      vm.cart.price = cart.getTotalPrice();
       $scope.data.address = {
         name: '',
         place: '',
