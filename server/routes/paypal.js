@@ -14,6 +14,7 @@ let PP_ID = 'AeLvUGTnJOgmOHM_yTXYoKAz7zqbn9Rn08J1BQKUDVnIQKLgncdi-2nKwQ6r4uokHnj
 let PP_SECRET = 'EJivT9kSujVFY6IswykrNb8cwMCObI8ATZK5ToJB45TkjKlxlnKRA-37XfmjA5UvtQ6Exq495SNE4u7r'
 let PP_ENV = 'sandbox'
 
+console.log("trying to set paypal keys")
 if (process.env && process.env.PP_ID && process.env.PP_SECRET && process.env.PP_ENV) {
   console.log("setting paypal keys")
   PP_ID = process.env.PP_ID
@@ -42,6 +43,8 @@ if (!experience_profile_id) {
 router.post('/create', function(req, res) {
   console.log(req.body)
     printfulSvc.createOrder(JSON.parse(req.body.data)).then((data, info) => {
+      console.log(data)
+      console.log(info)
       const order = paypalObjectSvc.buildPaymentObject(data)
       paypal.payment.create(order, function(error, payment) {
           if (error) {

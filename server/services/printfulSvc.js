@@ -50,10 +50,15 @@ function doRequest() {
 function createOrder(orderInfo) {
   return new Promise(function (fulfill, reject){
 
+      console.log("======1 ORDER INFO 1======");
+    console.log(orderInfo)
+      console.log("======1 ORDER INFO 1======");
       if (!orderInfo) {
           orderInfo = devDataSvc.printfulOrder
       }
-
+        console.log("======2 ORDER INFO 2======");
+      console.log(orderInfo)
+        console.log("======2 ORDER INFO 2======");
       pf.post('orders', orderInfo)
         .success(function(data, info) {
           console.log("======printful======");
@@ -174,6 +179,62 @@ function createOrder(orderInfo) {
     }).success(ok_callback).error(error_callback);
 */
 
+//const storeItems = [
+  // {
+  //   name: 'DotP T-Shirt', //Display name
+  //   retail_price: '19.99', //Retail price for packing slip
+  //   quantity: 1,
+  //   files: [
+  //     {url: 'https://d1yg28hrivmbqm.cloudfront.net/files/083/0839977f59f96553d1fe47bce3d50b5a_preview.png'},
+  //     {type: 'preview', url: 'https://d1yg28hrivmbqm.cloudfront.net/files/1f1/1f10966e40bd27388eeae9a5352d7fbf_preview.png'}
+  //   ],
+  //   sizes: [{size: "Small", variant_id: "6584"}, {size: "Medium", variant_id: "6585"}, {size: "Large", variant_id: "6586"}, {size: "X-Large", variant_id: "6587"}],
+  //   chosen_size: "6584"
+  // },
+  // {
+  //   type: "clothing",
+  //   name: "Men's DotP Beefy-T",
+  //   retail_price: '30.00',
+  //   quantity: 1,
+  //   //TODO - GET Beefy-T MOCKUPS
+  //   files: [],
+  //   sizes: [{size: "Small", variant_id: "5407"}, {size: "Medium", variant_id: "5408"}, {size: "Large", variant_id: "5409"}, {size: "XL", variant_id: "5410"}, {size: "2XL", variant_id: "5411"}, {size: "3XL", variant_id: "5412"}, {size: "4XL", variant_id: "5413"}, {size: "5XL", variant_id: "5414"}, {size: "6XL", variant_id: "5415"}],
+  //   chosen_size: {size: "Small", variant_id: "5407"}
+  // },{
+  //   type: "clothing",
+  //   name: "Ladies' Deep V DotP T-Shirt",
+  //   retail_price: '30.00'
+  //   quantity: 1,
+  //   //TODO - get Deep V MOCKUPS
+  //   files: [],
+  //   sizes: [{size: "Small", variant_id: "6243"}, {size: "Medium", variant_id: "6244"}, {size: "Large", variant_id: "6245"}, {size: "XL", variant_id: "6246"}],
+  //   chosen_size: {size: "Small", variant_id: "6243"}
+  // },{
+  //   type: "clothing",
+  //   name: "E'rybody DotP Hoodie",
+  //   retail_price: '35.00',
+  //   quantity: 1,
+  //   //TODO - get hoodie MOCKUPS
+  //   files: [],
+  //   sizes: [{size: "Small", variant_id: "5530"}, {size: "Medium", variant_id: "5531"}, {size: "Large", variant_id: "5532"}, {size: "XL", variant_id: "5533"}, {size: "2XL", variant_id: "5534"}, {size: "3XL", variant_id: "5535"}, {size: "4XL", variant_id: "5536"}, {size: "5XL", variant_id: "5537"}],
+  // },{
+  //   type: "hat",
+  //   variant_id: "7854",
+  //   name: "DotP Baseball Cap",
+  //   retail_price: '30.00',
+  //   quantity: 1,
+  //   //TODO - get DotP Cap MOCKUPS
+  //   files: []
+  // },{
+  //   type: "Mug",
+  //   name: "DotP Coffee Mug",
+  //   retail_price: '15.00',
+  //   quantity: 1,
+  //   //TODO - get DotP Mug MOCKUPS
+  //   files: [],
+  //   sizes: [{size: "11oz", variant_id: "1320"}, {size: "15oz", variant_id: "4830"}]
+  // }
+//]
 
 
 module.exports = {
