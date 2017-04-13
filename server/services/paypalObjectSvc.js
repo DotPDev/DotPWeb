@@ -45,10 +45,10 @@
 //   shipments: [],
 //   gift: null,
 //   packing_slip: null }
-let experience_id = ''
+let experience_id = 'XP-B8Q8-KRKB-ASVE-ZFQQ'
 if (process && process.env && process.env.PP_EXP_ID) {
 // DotP Dev Experience -
-  experience_id = 'XP-BKWF-4Z5R-MLZJ-QPE6'
+  experience_id = process.env.PP_EXP_ID
 }
 
 function buildExecuteObject(payment) {

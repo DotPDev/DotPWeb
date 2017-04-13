@@ -31,7 +31,7 @@
 				<img ng-src="{{::product.files[1].url}}" />
 				<div class="product-specs">
 					<div class="product-name">{{::product.name}}</div>
-					<div class="product-text">
+					<div class="product-text"  ng-if="!(product.type === 'hat')">
 						Size:
 						<select ng-init="product.chosenSize = product.sizes[0]" ng-model="product.chosenSize" ng-options="choice as choice.size for choice in product.sizes">
 						</select>
@@ -43,6 +43,7 @@
 					</div>
 				</div>
 			</div>
+		</br>
 			<div ng-click="vm.startCheckOut()" ng-class="{'hidden': isCheckingOut}" class="open-checkout">
 				<i class="fa fa-credit-card" aria-hidden="true"></i>
 				Check Out{{validationMessage}}
