@@ -39,13 +39,86 @@
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyD3M1UXHXtbvqFmLLWomtmfH7kgcqumea8"></script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <base href="/" />
+    <style id="shadows">
+      .shadowed {
+        filter: drop-shadow(2px 2px 4px black);
+      }
+      #fog {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        z-index: 900;
+        pointer-events: none;
+        transition: radial-gradient 2s;
+        background-image: radial-gradient(15px at 50% 50%, rgba(68, 71, 33, 0.29) 125px, rgba(0, 0, 0, 0.6) 250px, rgba(0, 0, 0, 0.8) 350px, rgba(0, 0, 0, 0.9) 600px);
+      }
+    </style>
+    <script>
+    var shadowHandler = (function() {
+      var lightPerformanceIndex = 0,
+        lightPerformanceLimit = 7,
+        shadowLengthVariant = 20;
+
+      function lg(s) {
+        console.log(s);
+      }
+
+      function executeMovement(e) {
+          var xShadow = (((window.innerWidth / 2) - e.clientX - 8)/shadowLengthVariant);
+          var yShadow = (((window.innerHeight / 2) - e.clientY)/shadowLengthVariant);
+          var newStyle = "radial-gradient(150px at " + e.clientX +  "px " +  e.clientY + "px, rgba(68, 71, 33, 0.29) 125px, rgba(0, 0, 0, 0.6) 250px, rgba(0, 0, 0, 0.9) 600px)";
+          var newFilter = "drop-shadow(" + xShadow + "px " + yShadow + "px " + "4" + "px black)";
+          //lg(newFilter);
+          //lg(document.getElementById("theStyle").sheet.cssRules[0].style['filter']);
+          var shadows = document.getElementById("shadows").sheet;
+          shadows.cssRules[0].style['filter'] = newFilter;
+          shadows.cssRules[1].style['background-image'] = newStyle;
+      }
+
+      function updateTracking() {
+        lightPerformanceIndex++
+      }
+
+      function shouldThrottle() {
+        if (lightPerformanceIndex % lightPerformanceLimit !== 0) {
+          lightPerformanceIndex++;
+          return true;
+        }
+        lightPerformanceIndex = 0;
+        return false;
+      }
+
+
+        function changeShadowLength(num) {
+              shadowLengthVariant = num;
+        }
+
+        return {
+            executeMovement: executeMovement,
+            shouldThrottle: shouldThrottle,
+            changeShadowLength: changeShadowLength
+        }
+
+
+     })();
+     function handleMouseMove(e) {
+         if(!shadowHandler.shouldThrottle()){
+             shadowHandler.executeMovement(e);
+           }
+         //lg("window width: " + window.innerWidth);
+         //lg("mouse: " + e.clientX + " " + e.clientY);
+         //lg("w/m: " + ((window.innerWidth / 2) - e.clientX - 8));
+         //lg("w/m: " + ((window.innerWidth / 2) - e.clientX - 8)/30);
+     }
+    </script>
 </head>
 <body>
     <!--[if lte IE 8]>
     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <div class="wrapper">
+    <div class="wrapper" onmousemove="handleMouseMove(event)">
+      <div id="fog"></div>
         <!-- Add your site or application content here -->
         <div id="title-bar" ui-view="titlebar"></div>
         <div id="content-main" ui-view="container"></div>
