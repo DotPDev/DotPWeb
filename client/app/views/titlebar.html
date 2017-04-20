@@ -1,5 +1,5 @@
 <nav role="navigation">
-    <ul class="collapsed-nav" ng-class="{ 'is-showing-nav': vm.slideNavPanel }">
+    <!-- <ul class="collapsed-nav" ng-class="{ 'is-showing-nav': vm.slideNavPanel }">
         <li ui-sref-active="active" ng-click="vm.slideNavPanel = false">
             <a ui-sref="root.dashboard"><span>episodes</span></a>
         </li>
@@ -12,7 +12,7 @@
         <li ui-sref-active="active" ng-click="vm.slideNavPanel = false">
             <a ui-sref="root.about"><span>about</span></a>
         </li>
-        <!-- <li ui-sref-active="active" ng-if="!vm.user" ui-sref="root.login" ng-click="vm.slideNavPanel = false">
+        <li ui-sref-active="active" ng-if="!vm.user" ui-sref="root.login" ng-click="vm.slideNavPanel = false">
             <a ng-click="vm.goToLogin()" ui-sref="root.login"><span>Login</span></a>
         </li>
         <li ui-sref-active="active" ng-if="vm.user" ng-click="vm.slideNavPanel = false">
@@ -21,8 +21,8 @@
         <li ui-sref-active="active" ng-if="vm.user" ng-click="vm.slideNavPanel = false">
             <a ng-click="vm.signOut()" ui-sref="root.dashboard"><span>Sign Out</span></a>
         </li> -->
-    </ul>
-    <ul class="nav" ng-class="{ 'collapsed': vm.isCollapsed }">
+    <!-- </ul> -->
+    <!-- <ul class="nav" ng-class="{ 'collapsed': vm.isCollapsed }">
       <li class="title-bar-spacer">
         <div id="dotp-logo">
           <img src='../images/dotp-logo.svg'/>
@@ -79,6 +79,6 @@
             <a ng-if="vm.user" ng-click="vm.goToLogin()" ui-sref="root.login"><span>{{vm.user.displayName || vm.user.email}}</span></a>
             <a ng-if="vm.user" ng-click="vm.signOut()" ui-sref="root.dashboard"><span>Sign Out</span></a>
         </div> -->
-      </li>
-    </ul>
+      <!-- </li>
+    </ul> -->
 </nav>

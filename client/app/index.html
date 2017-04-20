@@ -39,40 +39,61 @@
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyD3M1UXHXtbvqFmLLWomtmfH7kgcqumea8"></script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <base href="/" />
-    <style id="shadows">
+    <!--<style id="shadows">
       .shadowed {
+        -webkit-transform: translateZ(0);
+        -mos-transform: translateZ(0);
+        -o-transform: translateZ(0);
+        transform: translateZ(0);
+        transition: filter 2s;
         filter: drop-shadow(2px 2px 4px black);
       }
       #fog {
+        -webkit-transform: translateZ(0);
+        -mos-transform: translateZ(0);
+        -o-transform: translateZ(0);
+        transform: translateZ(0);
         position: absolute;
-        height: 100%;
-        width: 100%;
+        top: -50%;
+        left: -50%;
+        height: 200%;
+        width: 200%;
         z-index: 900;
         pointer-events: none;
-        transition: radial-gradient 2s;
+        transition: transform 2s;
         background-image: radial-gradient(15px at 50% 50%, rgba(68, 71, 33, 0.29) 125px, rgba(0, 0, 0, 0.6) 250px, rgba(0, 0, 0, 0.8) 350px, rgba(0, 0, 0, 0.9) 600px);
       }
     </style>
     <script>
     var shadowHandler = (function() {
-      var lightPerformanceIndex = 0,
-        lightPerformanceLimit = 7,
+      var lightPerformanceIndex = 1,
+        lightPerformanceLimit = 1,
         shadowLengthVariant = 20;
+        var movementTimeout;
 
       function lg(s) {
         console.log(s);
       }
 
       function executeMovement(e) {
-          var xShadow = (((window.innerWidth / 2) - e.clientX - 8)/shadowLengthVariant);
-          var yShadow = (((window.innerHeight / 2) - e.clientY)/shadowLengthVariant);
-          var newStyle = "radial-gradient(150px at " + e.clientX +  "px " +  e.clientY + "px, rgba(68, 71, 33, 0.29) 125px, rgba(0, 0, 0, 0.6) 250px, rgba(0, 0, 0, 0.9) 600px)";
+        if (movementTimeout) {
+          clearTimeout(movementTimeout);
+        }
+        movementTimeout = setTimeout(function(){
+          var xOffset = ((window.innerWidth / 2) - e.clientX - 8);
+          var yOffset = ((window.innerHeight / 2) - e.clientY);
+          var xShadow = (xOffset/shadowLengthVariant);
+          var yShadow = (yOffset/shadowLengthVariant);
+          var newStyle = "radial-gradient(150px at " + e.clientX +  "px " +  e.clientY + "px, rgba(68, 71, 33, 0.29) 125px, rgba(0, 0, 0, 0.9) 600px)";
           var newFilter = "drop-shadow(" + xShadow + "px " + yShadow + "px " + "4" + "px black)";
+          var offset = "translate(" + (0 - xOffset) + "px, " + (0 - yOffset) + "px)";
           //lg(newFilter);
           //lg(document.getElementById("theStyle").sheet.cssRules[0].style['filter']);
           var shadows = document.getElementById("shadows").sheet;
           shadows.cssRules[0].style['filter'] = newFilter;
-          shadows.cssRules[1].style['background-image'] = newStyle;
+          shadows.cssRules[1].style['transform'] = offset;
+        }, 500);
+
       }
 
       function updateTracking() {
@@ -84,7 +105,7 @@
           lightPerformanceIndex++;
           return true;
         }
-        lightPerformanceIndex = 0;
+        lightPerformanceIndex = 1;
         return false;
       }
 
@@ -103,6 +124,7 @@
      })();
      function handleMouseMove(e) {
          if(!shadowHandler.shouldThrottle()){
+           console.log("executing Movement");
              shadowHandler.executeMovement(e);
            }
          //lg("window width: " + window.innerWidth);
@@ -110,26 +132,125 @@
          //lg("w/m: " + ((window.innerWidth / 2) - e.clientX - 8));
          //lg("w/m: " + ((window.innerWidth / 2) - e.clientX - 8)/30);
      }
-    </script>
+   </script>-->
 </head>
 <body>
     <!--[if lte IE 8]>
     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-
+<!--
     <div class="wrapper" onmousemove="handleMouseMove(event)">
       <div id="fog"></div>
         <!-- Add your site or application content here -->
         <div id="title-bar" ui-view="titlebar"></div>
-        <div id="content-main" ui-view="container"></div>
+        <div id="content-main" ui-view="container">
+        </div>
+
+        <div id="floating-elements">
+          <img id="dotp-logo" src="/images/dotp-logo.svg" />
+          <!-- Tide Animation Directive -->
+          <div id="tide-container">
+            <div id="tentacle-left" src="/images/tidehunter.png"></div>
+            <div id="tentacle-mid" src="/images/tidehunter.png"></div>
+            <div id="tentacle-right" src="/images/tidehunter.png"></div>
+            <script>
+
+            var tideHandler = (function() {
+              var ravageHandlers = {
+                first: '',
+                second: '',
+                third: '',
+                logo: ''
+              },
+              right = document.getElementById("tentacle-right"),
+              middle = document.getElementById("tentacle-mid"),
+              left = document.getElementById("tentacle-left"),
+              logo = document.getElementById("dotp-logo");
+
+              function rightRavage() {
+                right.className = "ravage";
+              }
+
+              function rightClear() {
+                right.className = "";
+              }
+
+              function midRavage() {
+                middle.className = "ravage";
+              }
+
+              function midClear() {
+                middle.className = "";
+              }
+
+              function leftRavage() {
+                left.className = "ravage";
+              }
+
+              function leftClear() {
+                left.className = "";
+              }
+
+              function ravageLogo() {
+                logo.className = "ravaged";
+              }
+
+              function unravageLogo() {
+                logo.className = "";
+              }
+
+              function ravage(e) {
+
+                clearTimeout(ravageHandlers.first);
+                clearTimeout(ravageHandlers.second);
+                clearTimeout(ravageHandlers.third);
+                clearTimeout(ravageHandlers.logo);
+
+                rightClear();
+                midClear();
+                leftClear();
+                unravageLogo();
+
+                rightRavage();
+
+                ravageHandlers.first = setTimeout(function(){
+                  midRavage();
+                  setTimeout(rightClear, 200);
+                }, 300);
+
+                ravageHandlers.second = setTimeout(function(){
+                  leftRavage();
+                  setTimeout(midClear, 200);
+                }, 600);
+
+                ravageHandlers.third = setTimeout(function(){
+                  //Logo GOGO
+                  setTimeout(leftClear, 200);
+                }, 900);
+
+                ravageHandlers.logo = setTimeout(function(){
+                  ravageLogo();
+                }, 600);
+
+
+              }
+
+              return  {
+                ravage: ravage
+              }
+            })();
+            </script>
+            <img id="watermelon" src="/images/watermelon.png" onclick="tideHandler.ravage(event)"/>
+          </div>
+        </div>
 
         <!-- <div class="footer">
             <div class="container">
                 <p><i class="fa fa-heart"></i> from the Yeoman team</p>
             </div>
         </div> -->
-        <player></player>
-    </div>
+        <!--<player></player>
+    </div> -->
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->

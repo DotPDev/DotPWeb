@@ -1,303 +1,100 @@
 @import 'vars.less';
-@import 'global.less';
+// @import 'global.less';
 @import 'titlebar.less';
-@import 'ladder.less';
-@import 'player.less';
-@import 'social.less';
-@import 'about.less';
-@import 'store.less';
+// @import 'ladder.less';
+// @import 'player.less';
+// @import 'social.less';
+// @import 'about.less';
+// @import 'store.less';
 
-.button {
-  display: inline-block;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  padding: 10px;
-  border: none;
-  font: normal 48px/normal "Warnes", Helvetica, sans-serif;
-  color: rgba(255,255,255,1);
-  text-decoration: normal;
-  text-align: center;
-  -o-text-overflow: clip;
-  text-overflow: clip;
-  white-space: pre;
-  text-shadow: 0 0 10px rgba(255,255,255,1) , 0 0 20px rgba(255,255,255,1) , 0 0 30px rgba(255,255,255,1) , 0 0 40px #ff00de , 0 0 70px #ff00de , 0 0 80px #ff00de , 0 0 100px #ff00de ;
-  -webkit-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
-  -moz-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
-  -o-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
-  transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
 }
 
-.button:hover {
-  text-shadow: 0 0 10px rgba(255,255,255,1) , 0 0 20px rgba(255,255,255,1) , 0 0 30px rgba(255,255,255,1) , 0 0 40px #00ffff , 0 0 70px #00ffff , 0 0 80px #00ffff , 0 0 100px #00ffff ;
+#floating-elements {
+  position:absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 200;
+  pointer-events: none;
+  & > img#dotp-logo {
+    width: 30%;
+    min-width: 150px;
+    bottom: 10%;
+    position: absolute;
+    transition: bottom 0.7s cubic-bezier(0.49, 2.33, 0.75, -0.77), width 0.9s cubic-bezier(0.06, 1, 0.94, 0.78);
+    transition: bottom 0.7s cubic-bezier(0.07, 2.50, 0.29, -1.02), width 0.9s cubic-bezier(0.06, 1, 0.94, 0.78);
+
+    &.ravaged {
+      bottom: calc(~'100% - 93px');
+      width: 127px;
+      min-width: 127px;
+    }
+  }
+
+  & > div#tide-container {
+    position: absolute;
+    width: 87%;
+    height: 90%;
+    overflow: visible;
+    bottom: 9%;
+    right: 0;
+    pointer-events: none;
+    display: flex;
+    align-items: flex-end;
+
+    & > div {
+      height: 0;
+      bottom: 0;
+      flex: 1;
+      background: url('/images/tidehunter.png');
+      background-repeat: no-repeat;
+
+      transition: height 0.3s cubic-bezier(0, 1.01, 0.56, 0.86);
+
+      &.ravage {
+        height: 60%;
+      }
+    }
+    & > img {
+      position
+      height: 0px;
+      bottom: 0;
+      //flex: 1;
+
+      &#watermelon {
+        height: 60px;
+        pointer-events: all;
+      }
+    }
+  }
 }
 
-.main-wrapper {
-	color: @navFontColor;
-	padding-bottom: 50px;
+#main-wrapper {
 
-    a {
-        color: #5c5cff;
-        text-decoration: none;
+  height: 100%;
+  width: 100%;
+  position: absolute;
 
-        &:visited {
-            color: #8159a6;
-        }
-    }
+  & > #landing-foreground {
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2
+  }
 
-    ul {
-        transition: @transition;
-        width: 80%;
-        max-width:600px;
-        margin: 0 auto;
-        display: block;
-        list-style:none;
-        padding:0;
-        @media @smartphones {
-            width: 90%;
-            transition: @transition;
-        }
-        li {
-            position: relative;
-						margin-bottom: 50px;
-						border:3px solid black;
-						border-bottom: 5px solid black;
-						border-left: 5px solid black;
-						border-top-left-radius: 6px;
-						border-bottom-right-radius: 6px;
-						border-bottom-left-radius: 2px;
-            &:first-child {
-                margin-top:40px;
-            }
-            &:last-child {
-                margin-bottom:130px;
-            }
-            .podcast-container {
-                color: @navFontColor;
-                font-family: @main-font-family;
-                background: @navElemColor;
-                background-image:@cardBg;
-                padding:15px;
-                position: relative;
-                // background-image: @navPattern, radial-gradient(top left, circle cover, @brightCard, @cardBg);
-                // background-image: @navPattern, -o-radial-gradient(top left, circle cover, @brightCard, @cardBg);
-                // background-image: @navPattern, -ms-radial-gradient(top left, circle cover, @brightCard, @cardBg);
-                // background-image: @navPattern, -moz-radial-gradient(top left, circle cover, @brightCard, @cardBg);
-                // background-image: @navPattern, -webkit-radial-gradient(top left, circle cover, @brightCard, @cardBg);
-
-                &:before, &:after {
-                  content: "";
-                  position: absolute;
-                  // background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#5F5F67), to(transparent));
-                  // background-image: -webkit-linear-gradient(#5F5F67, transparent);
-                  // background-image: -moz-linear-gradient(#5F5F67, transparent);
-                  // background-image: -o-linear-gradient(#5F5F67, transparent);
-                  // background-image: linear-gradient(#5F5F67, transparent);
-                  top: -1px;
-                  bottom: -1px;
-                  width: 1px;
-                }
-                &:before {
-                  left: -1px;
-                }
-
-                &:after {
-                  right: 0;
-                  top: -1px;
-                  width: 100%;
-                  height: 1px;
-                  // background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#5F5F67), to(transparent));
-                  // background-image: -webkit-linear-gradient(to right, #5F5F67, transparent);
-                  // background-image: -moz-linear-gradient(to right, #5F5F67, transparent);
-                  // background-image: -o-linear-gradient(to right, #5F5F67, transparent);
-                  // background-image: linear-gradient(to right, #5F5F67, transparent);
-                }
-
-                .publish-date {
-                    color: #ffffff;
-                    padding:10px;
-                    background: @cardBg;
-                    opacity: 0.3;
-                    -webkit-box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,1);
-                    -moz-box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,1);
-                    //box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,1);
-                    border-top: 1px solid #030303;
-                    border-bottom: 1px solid #777777;
-                }
-                .episode-image {
-                    img {
-                        position: absolute;
-                        top: -25px;
-                        right: -25px;
-                        border-radius: 50%;
-                        width: 69px;
-                        height: 69px;
-                        overflow: hidden;
-                    }
-                }
-                h2 {
-                    transition: @transition;
-                    padding: 0;
-                    margin:0;
-                    //margin-top:15px;
-										margin-right:75px;
-                    &:hover {
-                        transition: @transition;
-                        cursor: pointer;
-                    }
-                    a {
-
-                        text-decoration: none;
-                        color: inherit;
-                        color: #000;
-
-												&:hover {
-													text-decoration: none;
-												}
-                    }
-                }
-            }
-            .podcast-summary {
-                color: @navFontColor;
-                font-family: @main-font-family;
-                background: @navElemColor;
-                // -webkit-box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,1);
-                // -moz-box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,1);
-                // box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,1);
-                padding:20px;
-                position: relative;
-                // background-image: @navPattern, radial-gradient(top left, circle cover, @brightCard, @cardBg);
-                // background-image: @navPattern, -o-radial-gradient(top left, circle cover, @brightCard, @cardBg);
-                // background-image: @navPattern, -ms-radial-gradient(top left, circle cover, @brightCard, @cardBg);
-                // background-image: @navPattern, -moz-radial-gradient(top left, circle cover, @brightCard, @cardBg);
-                // background-image: @navPattern, -webkit-radial-gradient(top left, circle cover, @brightCard, @cardBg);
-                p {
-                    padding: 0;
-                    margin: 0;
-                    word-wrap:break-word;
-                }
-
-								div.left-accent {
-									width: 50px;
-									height: 120px;
-									background: @dotpRed;
-									position: absolute;
-									left: -55px;
-									top: 30px;
-								}
-								div.right-accent {
-									width: 50px;
-									height: 120px;
-									background: @dotpRed;
-									position: absolute;
-									right: -53px;
-									top: 30px;
-								}
-            }
-            .podcast-actions {
-                color: @navFontColor;
-                font-family: @main-font-family;
-                background: @navElemColor;
-                background-image:@cardBg;
-                //margin-bottom: 50px;
-                position: relative;
-                display: flex;
-                text-align: center;
-                // background-image: @navPattern, radial-gradient(top left, circle cover, @brightCard, @cardBg);
-                // background-image: @navPattern, -o-radial-gradient(top left, circle cover, @brightCard, @cardBg);
-                // background-image: @navPattern, -ms-radial-gradient(top left, circle cover, @brightCard, @cardBg);
-                // background-image: @navPattern, -moz-radial-gradient(top left, circle cover, @brightCard, @cardBg);
-                // background-image: @navPattern, -webkit-radial-gradient(top left, circle cover, @brightCard, @cardBg);
-                .play-text, .share-text, .dl-text {
-                    opacity: 0;
-                }
-                .play-control {
-                    padding:20px;
-                    flex: 1;
-                    position: relative;
-                    text-decoration: none;
-                    color: inherit;
-                    border-top: 1px solid #000000;
-                    border-right: 1px solid #000000;
-
-                    &:hover {
-                        cursor: pointer;
-                        i {
-                            transition: @transition;
-                            top: 10px;
-                        }
-                        .play-text {
-                            opacity: 1;
-                            transition: @transition;
-														top:10px;
-														position: relative;
-                        }
-                    }
-                    i {
-                        transition: @transition;
-                        position: absolute;
-                        top: 20px;
-                        left: 0;
-                        right: 0;
-                    }
-                }
-                .download-control {
-                    padding:20px;
-                    flex: 1;
-                    position: relative;
-                    text-decoration: none;
-                    color: inherit;
-                    //border-left: 1px solid #5c5c5c;
-										border-top: 1px solid #000;
-                    &:hover {
-                        cursor: pointer;
-                        i {
-                            transition: @transition;
-                            top: 10px;
-                        }
-                        .dl-text {
-                            opacity: 1;
-                            transition: @transition;
-														top: 10px;
-														position: relative;
-                        }
-                    }
-                    i {
-                        transition: @transition;
-                        position: absolute;
-                        top: 20px;
-                        left: 0;
-                        right: 0;
-                    }
-                }
-                .share-control {
-                    padding:20px;
-                    flex: 1;
-                    position: relative;
-                    border-left: 1px solid #5c5c5c;
-                    border-right: 1px solid #5c5c5c;
-                    border-bottom: @navBottomBorder;
-
-                    &:hover {
-                        cursor: pointer;
-                        i {
-                            transition: @transition;
-                            top: 5px;
-                        }
-                        .share-text {
-                            opacity: 1;
-                            transition: @transition;
-                        }
-                    }
-                    i {
-                        transition: @transition;
-                        position: absolute;
-                        top: 20px;
-                        left: 0;
-                        right: 0;
-                    }
-                }
-            }
-        }
-    }
+  & > #landing-background {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
 }
