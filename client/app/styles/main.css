@@ -202,6 +202,72 @@
 #title-bar nav .nav .action-wrapper .show-login {
   display: block!important;
 }
+#dotp-loader-container {
+  pointer-events: none;
+  z-index: 101;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+#dotp-loader-container > div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 200;
+  transition: all 0.5s linear;
+}
+#dotp-loader-container > div#dotp-loader-transparent {
+  background: url('/images/dotp-logo-loader.png');
+  transition: all 1s cubic-bezier(0.55, 0.06, 0.68, 0.19);
+  transition-delay: 0.5s;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20%;
+}
+#dotp-loader-container > div#dotp-loader-transparent > #loader-left {
+  width: 40%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  background: #000;
+  transition: all 1s cubic-bezier(0.55, 0.06, 0.68, 0.19);
+  transition-delay: 0.6s;
+}
+#dotp-loader-container > div#dotp-loader-transparent > #loader-right {
+  width: 40%;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  background: #000;
+  transition: all 1s cubic-bezier(0.55, 0.06, 0.68, 0.19);
+  transition-delay: 0.6s;
+}
+#dotp-loader-container > div#dotp-loader {
+  background: url('/images/dotp-logo.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20%;
+}
+#dotp-loader-container.reset {
+  transition: none !important;
+  opacity: 0;
+}
+#dotp-loader-container.reset > div {
+  transition: none !important;
+}
+#dotp-loader-container.loading > div#dotp-loader-transparent {
+  background-size: 200000px;
+  background-position: calc(50% - 9000px);
+}
+#dotp-loader-container.loading > div#dotp-loader-transparent > #loader-left {
+  width: 0%;
+}
+#dotp-loader-container.loading > div#dotp-loader-transparent > #loader-right {
+  width: 0%;
+}
+#dotp-loader-container.loading > div#dotp-loader {
+  opacity: 0;
+}
 body {
   height: 100%;
   width: 100%;
@@ -265,7 +331,7 @@ body {
 #main-wrapper > #landing-foreground {
   width: 100%;
   height: 100%;
-  background-color: #000;
+  background-color: #f0f;
   position: absolute;
   top: 0;
   left: 0;
