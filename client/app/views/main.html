@@ -1,33 +1,8 @@
-<div class="main-wrapper">
-    <ul>
-        <li ng-repeat="episode in vm.feed.episodes" class="shadowed">
-            <div class="podcast-container">
-              <h2>
-                  <a ng-href="/episode/{{episode.guid}}">{{episode.title}}</a>
-              </h2>
-              <!-- <div class="publish-date"><span class="episode-date">{{episode.date | date:'mediumDate' }}<span></div> -->
-              <div class="episode-image"><img ng-src="{{vm.getImage(episode.date)}}" alt=""></div>
+<div id="main-wrapper">
+      <div id="landing-foreground">
 
-            </div>
-            <div class="podcast-summary">
-              <div class="left-accent"></div>
-                <p class="episode-description">{{vm.stripHtml(episode.summary)}}</p>
-              <div class="right-accent"></div>
-            </div>
-            <div class="podcast-actions">
-                <a class="play-control" ng-click="vm.startPodcast(episode)">
-                    <i class="fa fa-play"></i>
-                    <span class="play-text">Play</span>
-                </a>
-                <a ng-href="{{episode.link}}" class="download-control" download="{{episode.guid}}">
-                    <i class="fa fa-cloud-download"></i>
-                    <span class="dl-text">Download</span>
-                </a>
-                <!-- <div class="share-control">
-                    <i class="fa fa-share-alt"></i>
-                    <span class="share-text">Share</span>
-                </div> -->
-            </div>
-        </li>
-    </ul>
+      </div>
+      <div id="landing-background">
+
+      </div>
 </div>

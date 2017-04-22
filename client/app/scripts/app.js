@@ -44,6 +44,11 @@ angular
                 controller: 'TitlebarCtrl',
                 controllerAs: 'vm'
             },
+            'dotp-loader@': {
+                templateUrl: 'views/dotp-loader.html',
+                controller: 'DotpLoaderCtrl',
+                controllerAs: 'vm'
+            }
         }
     });
     $stateProvider.state('root.dashboard', {
@@ -57,8 +62,8 @@ angular
         },
         views: {
             'container@': {
-                templateUrl: 'views/main.html',
-                controller: 'MainCtrl',
+                templateUrl: 'views/about.html',
+                controller: 'AboutCtrl',
                 controllerAs: 'vm'
             }
         }
