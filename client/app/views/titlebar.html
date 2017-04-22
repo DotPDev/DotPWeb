@@ -22,14 +22,14 @@
             <a ng-click="vm.signOut()" ui-sref="root.dashboard"><span>Sign Out</span></a>
         </li> -->
     <!-- </ul> -->
-    <!-- <ul class="nav" ng-class="{ 'collapsed': vm.isCollapsed }">
+    <ul class="nav" ng-class="{ 'collapsed': vm.isCollapsed }">
       <li class="title-bar-spacer">
         <div id="dotp-logo">
           <img src='../images/dotp-logo.svg'/>
         </div>
       </li>
       <li class="title-bar-nav">
-        <div ui-sref-active="active" >
+        <!-- <div ui-sref-active="active" >
           <a class="" ui-sref="root.dashboard" ng-click="vm.slideNavPanel = false">
             <span>Episodes</span>
           </a>
@@ -53,10 +53,10 @@
               <span>about</span>
             </a>
             <div></div>
-        </div>
+        </div> -->
       </li>
       <li class="action-wrapper">
-        <div class="power" ng-if="vm.isCollapsed" ng-click="vm.clickPower()">
+        <!-- <div class="power" ng-if="vm.isCollapsed" ng-click="vm.clickPower()">
             <i class="fa fa-power-off"></i>
         </div>
         <div class="share-container" ui-sref-active="active">
@@ -74,11 +74,11 @@
                 <i class="pvgna-icon pvgna-nav"></i>
             </a>
         </div>
-        <!-- <div class="hidden-login" ng-class="{ 'show-login': vm.isShowingLogin }">
+        <div class="hidden-login" ng-class="{ 'show-login': vm.isShowingLogin }">
             <a ng-if="!vm.user" ng-click="vm.goToLogin()" ui-sref="root.login"><span>Login</span></a>
             <a ng-if="vm.user" ng-click="vm.goToLogin()" ui-sref="root.login"><span>{{vm.user.displayName || vm.user.email}}</span></a>
             <a ng-if="vm.user" ng-click="vm.signOut()" ui-sref="root.dashboard"><span>Sign Out</span></a>
         </div> -->
-      <!-- </li>
-    </ul> -->
+      </li>
+    </ul>
 </nav>

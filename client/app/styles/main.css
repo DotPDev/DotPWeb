@@ -35,7 +35,6 @@
   list-style: none;
   padding: 0;
   margin: 0;
-  margin-top: 30px;
   height: 30px;
   position: relative;
   display: flex;
@@ -46,7 +45,6 @@
   position: relative;
   font-size: 1em;
   text-transform: uppercase;
-  transform: skewx(-40deg);
   transition: background .2s ease, color .2s ease;
   letter-spacing: .1em;
 }
@@ -55,9 +53,6 @@
   border: none;
 }
 #title-bar nav .nav li.title-bar-nav {
-  border: 2px solid black;
-  border-radius: 3px;
-  background-color: black;
   height: 32px;
 }
 #title-bar nav .nav li.title-bar-nav > div {
@@ -71,7 +66,6 @@
   background-color: white;
 }
 #title-bar nav .nav li > div#dotp-logo {
-  transform: skewX(40deg);
   border: none;
 }
 #title-bar nav .nav li > div#dotp-logo > img {
@@ -80,6 +74,7 @@
   display: block;
   top: -27px;
   position: relative;
+  filter: drop-shadow(2px -4px 3px #476fa7) drop-shadow(-2px 4px 3px #f47522);
 }
 @media only screen and (max-width: 830px) {
   #title-bar nav .nav li > div#dotp-logo > img {
@@ -128,7 +123,6 @@
   display: block;
   font-family: sans-serif;
   color: #1b1b1b;
-  transform: skewx(40deg);
   text-align: center;
   transition: all 0.2s ease-in-out;
 }
@@ -136,7 +130,6 @@
   z-index: 20;
 }
 #title-bar nav .nav .action-wrapper .power {
-  transform: skewx(40deg);
   width: 50px;
   height: 100%;
   position: absolute;
@@ -168,7 +161,6 @@
   height: 100%;
   right: 50px;
   position: absolute;
-  transform: skewX(40deg);
 }
 @media only screen and (max-width: 830px) {
   #title-bar nav .nav .action-wrapper .patreon-container {
@@ -180,7 +172,6 @@
   height: 100%;
   right: 100px;
   position: absolute;
-  transform: skewX(40deg);
 }
 @media only screen and (max-width: 830px) {
   #title-bar nav .nav .action-wrapper .pvgna-container {
@@ -191,7 +182,6 @@
   display: none;
   position: absolute;
   top: 50px;
-  transform: skewx(20deg);
   right: -18px;
   width: 200px;
   background: #26090B;
@@ -203,11 +193,12 @@
   display: block!important;
 }
 #dotp-loader-container {
-  pointer-events: none;
   z-index: 101;
   position: absolute;
   width: 100%;
   height: 100%;
+  opacity: 1;
+  transition: opacity 0.5s ease;
 }
 #dotp-loader-container > div {
   position: absolute;
@@ -215,6 +206,7 @@
   height: 100%;
   z-index: 200;
   transition: all 0.5s linear;
+  opacity: 1;
 }
 #dotp-loader-container > div#dotp-loader-transparent {
   background: url('/images/dotp-logo-loader.png');
@@ -223,6 +215,12 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: 20%;
+  opacity: 1;
+}
+@media only screen and (max-width: 830px) {
+  #dotp-loader-container > div#dotp-loader-transparent {
+    background-size: 60%;
+  }
 }
 #dotp-loader-container > div#dotp-loader-transparent > #loader-left {
   width: 40%;
@@ -233,6 +231,11 @@
   transition: all 1s cubic-bezier(0.55, 0.06, 0.68, 0.19);
   transition-delay: 0.6s;
 }
+@media only screen and (max-width: 830px) {
+  #dotp-loader-container > div#dotp-loader-transparent > #loader-left {
+    width: 20%;
+  }
+}
 #dotp-loader-container > div#dotp-loader-transparent > #loader-right {
   width: 40%;
   height: 100%;
@@ -242,17 +245,29 @@
   transition: all 1s cubic-bezier(0.55, 0.06, 0.68, 0.19);
   transition-delay: 0.6s;
 }
+@media only screen and (max-width: 830px) {
+  #dotp-loader-container > div#dotp-loader-transparent > #loader-right {
+    width: 20%;
+  }
+}
 #dotp-loader-container > div#dotp-loader {
   background: url('/images/dotp-logo.svg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: 20%;
+  filter: drop-shadow(4px -8px 10px #476fa7) drop-shadow(-4px 8px 10px #f47522);
+}
+@media only screen and (max-width: 830px) {
+  #dotp-loader-container > div#dotp-loader {
+    background-size: 60%;
+  }
 }
 #dotp-loader-container.reset {
-  transition: none !important;
+  pointer-events: none;
   opacity: 0;
+  transition: opacity 0.5s ease;
 }
-#dotp-loader-container.reset > div {
+#dotp-loader-container.reset.loading {
   transition: none !important;
 }
 #dotp-loader-container.loading > div#dotp-loader-transparent {
@@ -268,10 +283,62 @@
 #dotp-loader-container.loading > div#dotp-loader {
   opacity: 0;
 }
+#about-wrapper {
+  height: 100%;
+  overflow: hidden;
+}
+#about-wrapper > nav {
+  height: 100%;
+  width: 60px;
+  position: absolute;
+  z-index: 4;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 100px;
+  box-sizing: border-box;
+}
+#about-wrapper > nav > div {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  overflow: hidden;
+  color: white;
+  margin: 2px;
+}
+#about-wrapper > nav > div.about-nav {
+  background: black;
+}
+#about-wrapper > nav > div.about-nav.active {
+  filter: drop-shadow(2px -4px 3px #476fa7) drop-shadow(-2px 4px 3px #f47522);
+}
+#about-wrapper > .about-page {
+  height: 100%;
+  width: 100%;
+  background-color: #6c6c6c;
+  padding: 100px;
+  box-sizing: border-box;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  position: absolute;
+  top: 0;
+}
+#about-wrapper > .about-page.active {
+  opacity: 1;
+}
+html,
 body {
   height: 100%;
   width: 100%;
   margin: 0;
+}
+#content-main {
+  height: 100%;
+  width: 100%;
+  position: absolute;
 }
 #floating-elements {
   position: absolute;
@@ -331,7 +398,7 @@ body {
 #main-wrapper > #landing-foreground {
   width: 100%;
   height: 100%;
-  background-color: #f0f;
+  background: radial-gradient(100px rgba(68, 71, 33, 0.29), rgba(0, 0, 0, 0.9) 600px);
   position: absolute;
   top: 0;
   left: 0;

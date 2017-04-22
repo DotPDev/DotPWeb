@@ -15,17 +15,13 @@
     //             position: absolute;
     //             right: 0;
     //             top: 0;
-    //             transform: skewX(0);
     //             height:100%;
     //             border-bottom: none;
     //             .patreon-container {
-    //               transform: skewX(0);
     //             }
     //             .pvgna-container {
-    //               transform: skewX(0);
     //             }
     //             .power {
-    //                 transform: skewX(0);
     //             }
     //         }
     //         &:first-child {
@@ -124,7 +120,7 @@
             list-style: none;
             padding: 0;
             margin: 0;
-            margin-top: 30px;
+            //margin-top: 30px;
             height: 30px;
             position: relative;
             display: flex;
@@ -137,9 +133,6 @@
                 border: none;
               }
               &.title-bar-nav {
-                border: 2px solid black;
-                border-radius: 3px;
-                background-color: black;
                 height: 32px;
 
                 & > div {
@@ -155,7 +148,6 @@
                 position: relative;
                 font-size: @navFontSize;
                 text-transform: uppercase;
-                transform: skewx(-@skewAngle);
                 transition: background .2s ease, color .2s ease;
                 letter-spacing: .1em;
 
@@ -167,7 +159,6 @@
                   background-color: white;
 
                   &#dotp-logo {
-                    transform: skewX(40deg);
                     border: none;
 
                     & > img {
@@ -176,6 +167,7 @@
                       display: block;
                       top: -27px;
                       position: relative;
+                      filter: drop-shadow(2px -4px 3px #476fa7) drop-shadow(-2px 4px 3px #f47522);
 
                       @media @smartphones {
                         margin: 0;
@@ -264,14 +256,12 @@
                 display: block;
                 font-family: @main-font-family;
                 color: @navFontColor;
-                transform: skewx(@skewAngle);
                 text-align: center;
                 transition: @transition;
             }
             .action-wrapper {
                 z-index: 20;
                 .power {
-                    transform: skewx(@skewAngle);
                     width: 50px;
                     height: 100%;
                     position: absolute;
@@ -306,7 +296,6 @@
                   height: 100%;
                   right: 50px;
                   position: absolute;
-                  transform: skewX(40deg);
 
                   @media @smartphones {
                     right: 100px;
@@ -318,7 +307,6 @@
                   height: 100%;
                   right: 100px;
                   position: absolute;
-                  transform: skewX(40deg);
 
                   @media @smartphones {
                     right: 150px;
@@ -329,7 +317,6 @@
                     display:none;
                     position: absolute;
                     top: 50px;
-                    transform: skewx(20deg);
                     right: -18px;
                     width: 200px;
                     background: #26090B;

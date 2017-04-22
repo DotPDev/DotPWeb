@@ -1,68 +1,53 @@
-.about-wrapper {
+#about-wrapper {
     height: 100%;
-    padding: 20px;
-    width: 80%;
-    max-width: 600px;
-    margin: 0 auto;
-    margin-bottom:@margin-bottom;
-    .hosts-section {
-        ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            div {
-                position: relative;
-                padding-top: 80px;
-                padding-bottom: 1%;
-                margin-top: 30px;
-                .cyphus, .roland {
-                    font-size: 1.2em;
-                    color: #fff;
-                    position: absolute;
-                    right: 0;
-                    top: 5%;
-                    left: 0;
-                    margin: auto;
-                    text-align: center;
-                    @media @smartphones {
+    overflow: hidden;
 
-                    }
-                }
-                .host-pic {
-                    position: absolute;
-                    right:25%;
-                    top: -3%;
-                    width: 100px;
-                    height: 100px;
-                    border-radius: 50%;
-                    border-color: rgba(0, 0, 0, 0.3);
-                    @media @smartphones {
-                        right: 20%;
-                    }
-                }
-            }
-            div.cyphus-container .cyphus {
-                @media @smartphones {
-                    text-align: left;
-                    padding-left: 20%;
-                }
-            }
-            div.roland-container {
-                margin-bottom: 100px;
-                .roland {
-                    @media @smartphones {
-                        text-align: right;
-                        padding-right: 20%;
-                    }
-                }
-            }
-            div.roland-container .host-pic {
-                left: 25%;
-                right: 0;
-                @media @smartphones {
-                    left: 20%;
-                }
-            }
+    & > nav {
+      height:100%;
+      width: 60px;
+      position: absolute;
+      z-index: 4;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 100px;
+      box-sizing: border-box;
+
+      & > div {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width:100%;
+        overflow:hidden;
+        color:white;
+        margin:2px;
+
+        &.about-nav {
+          background:black;
+
+          &.active {
+            filter: drop-shadow(2px -4px 3px #476fa7) drop-shadow(-2px 4px 3px #f47522);
+          }
         }
+      }
     }
+
+    & > .about-page {
+      height: 100%;
+      width: 100%;
+      background-color:#6c6c6c;
+      padding: 100px;
+      box-sizing: border-box;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      position: absolute;
+      top: 0;
+
+      &.active {
+        opacity: 1;
+      }
+    }
+
 }

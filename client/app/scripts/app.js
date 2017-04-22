@@ -46,7 +46,7 @@ angular
             },
             'dotp-loader@': {
                 templateUrl: 'views/dotp-loader.html',
-                controller: 'TitlebarCtrl',
+                controller: 'DotpLoaderCtrl',
                 controllerAs: 'vm'
             }
         }
@@ -62,8 +62,8 @@ angular
         },
         views: {
             'container@': {
-                templateUrl: 'views/main.html',
-                controller: 'MainCtrl',
+                templateUrl: 'views/about.html',
+                controller: 'AboutCtrl',
                 controllerAs: 'vm'
             }
         }
