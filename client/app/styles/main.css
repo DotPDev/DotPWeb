@@ -129,13 +129,6 @@
 #title-bar nav .nav .action-wrapper {
   z-index: 20;
 }
-#title-bar nav .nav .action-wrapper .hamburger {
-  width: 30px;
-  right: 0;
-  position: absolute;
-  height: 30px;
-  font-size: 26px;
-}
 #title-bar nav .nav .action-wrapper .power {
   width: 50px;
   height: 100%;
@@ -295,64 +288,32 @@
   overflow: hidden;
 }
 #about-wrapper > nav {
-  height: 400px;
+  height: 100%;
   width: 60px;
   position: absolute;
   z-index: 4;
   left: 0;
+  display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 100px;
   box-sizing: border-box;
 }
-#about-wrapper > nav #hexagon {
-  width: 50px;
-  height: 55px;
-  background: red;
-  position: relative;
-}
-#about-wrapper > nav #hexagon:before {
-  content: "";
-  position: absolute;
-  top: -20px;
-  left: 0;
-  width: 0;
-  height: 0;
-  border-left: 20px solid transparent;
-  border-right: 20px solid transparent;
-  border-bottom: 15px solid red;
-}
-#about-wrapper > nav #hexagon:after {
-  content: "";
-  position: absolute;
-  bottom: -20px;
-  left: 0;
-  width: 0;
-  height: 0;
-  border-left: 20px solid transparent;
-  border-right: 20px solid transparent;
-  border-top: 15px solid red;
-}
 #about-wrapper > nav > div {
+  flex: 1;
+  display: flex;
   align-items: center;
   justify-content: center;
-  width: 60px;
-  height: 60px;
+  width: 100%;
   overflow: hidden;
   color: white;
+  margin: 2px;
 }
-#about-wrapper > nav > div .diamond {
-  height: 71%;
-  width: 71%;
-  background: #fff;
-  transform: rotateZ(45deg);
-  margin: 0 auto;
-  top: 8px;
-  position: relative;
+#about-wrapper > nav > div.about-nav {
+  background: black;
 }
 #about-wrapper > nav > div.about-nav.active {
-  filter: drop-shadow(2px -2px 2px #476fa7) drop-shadow(-2px 2px 2px #f47522);
-  overflow: visible;
+  filter: drop-shadow(2px -4px 3px #476fa7) drop-shadow(-2px 4px 3px #f47522);
 }
 #about-wrapper > .about-page {
   height: 100%;
@@ -364,19 +325,15 @@
   transition: opacity 0.5s ease;
   position: absolute;
   top: 0;
-  overflow-y: auto;
-  pointer-events: none;
 }
 #about-wrapper > .about-page.active {
   opacity: 1;
-  pointer-events: all;
 }
 html,
 body {
   height: 100%;
   width: 100%;
   margin: 0;
-  font-family: 'Work Sans', sans-serif;
 }
 #content-main {
   height: 100%;
