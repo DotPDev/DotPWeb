@@ -128,89 +128,89 @@
             // -moz-box-shadow: 0px 10px 24px -1px rgba(8,13,19,0.8);
             // box-shadow: 0px 10px 24px -1px rgba(8,13,19,0.8);
             li {
+              flex: 2;
+
               &.title-bar-spacer {
                 flex-grow: 1;
                 border: none;
               }
-              &.title-bar-nav {
-                height: 32px;
-
-                & > div {
-                    border: 1px solid black;
-
-                    &.active {
-                      background-color: @dotpRed
-                    }
-                }
+              &.icons {
+                flex: 1;
               }
-                flex: 2;
-                display: flex;
-                position: relative;
-                font-size: @navFontSize;
-                text-transform: uppercase;
-                transition: background .2s ease, color .2s ease;
-                letter-spacing: .1em;
 
 
-                & > div {
-                  flex: 1;
-                  //border: 1px solid black;
-                  //border-radius: 3px;
-                  background-color: white;
+              & > div {
+                flex: 1;
 
-                  &#dotp-logo {
-                    border: none;
-
-                    & > img {
-                      width: 120px;
-                      margin: 0 auto;
-                      display: block;
-                      top: -27px;
-                      position: relative;
-                      filter: drop-shadow(2px -4px 3px #476fa7) drop-shadow(-2px 4px 3px #f47522);
-
-                      @media @smartphones {
-                        margin: 0;
-                        left: 20px;
-                      }
-                    }
-                  }
-
-                  &.share-container {
-                    border: none;
-                  }
+                &#social-icons {
+                  display: block;
+                  margin: 0 auto;
+                  width: 6.5em;
+                  height: 100%;
 
                   & > div {
-                      height: 5px;
-                      border-top: 1.5px solid black;
-                  }
+                      width: 2em;
+                      display: inline-block;
+                      text-align: center;
+                      height: 100%;
 
-                  &:hover > div {
-                    transition: @transition;
-                    background-color: @dotpRedHover;
-                  }
-                  &.active:hover > div {
-                    background-color: @dotpRed;
+                      & > a {
+                        height:100%;
+                        width:100%;
+                        display:flex;
+                        align-items: center;
+                        text-decoration: none;
+                        text-align: center;
+                        justify-content: center;
+                        color: #4c8cc0;
+
+                        & > i {
+                          font-size: 20px;
+                        }
+                      }
                   }
                 }
 
-                a {
+                &#dotp-logo {
+                  border: none;
+
+                  & > img {
+                    width: 120px;
+                    margin: 0 auto;
                     display: block;
-                    padding: @navPadding;
-                    text-decoration: none;
-                    color:inherit;
-                    background-color: #fff;
-                    border-bottom: 1.5px solid black;
-                    &.patreon {
-                      height: 100%;
-                      padding: 0;
+                    top: -27px;
+                    position: relative;
+                    filter: drop-shadow(2px -4px 3px #476fa7) drop-shadow(-2px 4px 3px #f47522);
+
+                    @media @smartphones {
+                      margin: 0;
+                      left: 0;
+                      width: 90px;
+                      top: -17px;
+
                     }
-                    &.pvgna {
-                      height: 100%;
-                      padding: 0;
-                    }
-                    //border-bottom: 2px solid black;
+                  }
                 }
+
+              }
+
+                // a {
+                //     display: block;
+                //     padding: @navPadding;
+                //     text-decoration: none;
+                //     color:inherit;
+                //     background-color: #fff;
+                //     border-bottom: 1.5px solid black;
+                //     &.patreon {
+                //       height: 100%;
+                //       padding: 0;
+                //     }
+                //     &.pvgna {
+                //       height: 100%;
+                //       padding: 0;
+                //     }
+                //     //border-bottom: 2px solid black;
+                // }
             }
             // .dotpeeps {
             //     width: 42%;
@@ -243,93 +243,7 @@
             //         color:#fff;
             //     }
             // }
-            .active {
-              & > div {
-                background-color: @dotpRed;
-              }
-            }
-            .action-wrapper {
-                flex-grow: 1;
-                border-right:none;
-            }
-            span {
-                display: block;
-                font-family: @main-font-family;
-                color: @navFontColor;
-                text-align: center;
-                transition: @transition;
-            }
-            .action-wrapper {
-                z-index: 20;
-                .power {
-                    width: 50px;
-                    height: 100%;
-                    position: absolute;
-                    right: 0;
-                    background: #26090B;
-                    @media @smartphones {
-                        //top:-1px;
-                    }
-                    &:hover {
-                        cursor: pointer;
-                    }
-                    .fa-power-off:before {
-                        background: #B95B2A;
-                        border-radius: 50%;
-                        color: #000;
-                        padding: 3px;
-                        text-shadow: none;
-                        position: absolute;
-                        left: 1px;
-                        right: 0;
-                        margin: auto;
-                        width: 15px;
-                        height: 15px;
-                        top: 4px;
-                        padding-left: 4.5px;
-                    }
 
-                }
-
-                .patreon-container {
-                  width: 50px;
-                  height: 100%;
-                  right: 50px;
-                  position: absolute;
-
-                  @media @smartphones {
-                    right: 100px;
-                  }
-                }
-
-                .pvgna-container {
-                  width: 50px;
-                  height: 100%;
-                  right: 100px;
-                  position: absolute;
-
-                  @media @smartphones {
-                    right: 150px;
-                  }
-                }
-
-                .hidden-login {
-                    display:none;
-                    position: absolute;
-                    top: 50px;
-                    right: -18px;
-                    width: 200px;
-                    background: #26090B;
-                    a {
-                        span {
-                            transform: none!important;
-                        }
-                    }
-                }
-                .show-login {
-                    display: block!important;
-                }
-            }
         }
     }
 }
