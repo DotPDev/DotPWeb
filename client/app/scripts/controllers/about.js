@@ -8,29 +8,10 @@
  * Controller of the clientApp
  */
 angular.module('clientApp')
-  .controller('AboutCtrl', function ($scope) {
+  .controller('AboutCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
       'Karma'
     ];
-
-    var vm = this;
-    vm.selectedSection = 'dotp';
-
-    function navigateAbout(str) {
-      console.log(str);
-      vm.selectedSection = str;
-    }
-
-    function getActiveState(str) {
-      if (str == vm.selectedSection) {
-        return 'active'
-      }
-    }
-
-    return {
-      getActiveState: getActiveState,
-      navigateAbout: navigateAbout
-    }
   });
