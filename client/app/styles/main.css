@@ -41,29 +41,59 @@
 }
 #title-bar nav .nav li {
   flex: 2;
-  display: flex;
-  position: relative;
-  font-size: 1em;
-  text-transform: uppercase;
-  transition: background .2s ease, color .2s ease;
-  letter-spacing: .1em;
 }
 #title-bar nav .nav li.title-bar-spacer {
   flex-grow: 1;
   border: none;
 }
 #title-bar nav .nav li.title-bar-nav {
-  height: 32px;
+  display: flex;
 }
 #title-bar nav .nav li.title-bar-nav > div {
-  border: 1px solid black;
+  flex: 1;
 }
-#title-bar nav .nav li.title-bar-nav > div.active {
-  background-color: #df5244;
+#title-bar nav .nav li.title-bar-nav > div.active > a {
+  text-shadow: -2px 2px 4px #df5244, 2px -2px 4px #df5244, 2px 2px 4px #df5244, -2px -2px 4px #df5244;
+}
+#title-bar nav .nav li.title-bar-nav > div > a {
+  transition: text-shadow 0.5s linear;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-weight: bold;
+}
+#title-bar nav .nav li.icons {
+  flex: 1;
 }
 #title-bar nav .nav li > div {
   flex: 1;
-  background-color: white;
+}
+#title-bar nav .nav li > div#social-icons {
+  display: block;
+  margin: 0 auto;
+  width: 7em;
+  height: 100%;
+}
+#title-bar nav .nav li > div#social-icons > div {
+  width: 2em;
+  display: inline-block;
+  text-align: center;
+  height: 100%;
+}
+#title-bar nav .nav li > div#social-icons > div > a {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  text-align: center;
+  justify-content: center;
+  color: #4c8cc0;
+}
+#title-bar nav .nav li > div#social-icons > div > a > i {
+  font-size: 20px;
 }
 #title-bar nav .nav li > div#dotp-logo {
   border: none;
@@ -79,38 +109,10 @@
 @media only screen and (max-width: 830px) {
   #title-bar nav .nav li > div#dotp-logo > img {
     margin: 0;
-    left: 20px;
+    left: 0;
+    width: 90px;
+    top: -17px;
   }
-}
-#title-bar nav .nav li > div.share-container {
-  border: none;
-}
-#title-bar nav .nav li > div > div {
-  height: 5px;
-  border-top: 1.5px solid black;
-}
-#title-bar nav .nav li > div:hover > div {
-  transition: all 0.2s ease-in-out;
-  background-color: rgba(221, 73, 61, 0.55);
-}
-#title-bar nav .nav li > div.active:hover > div {
-  background-color: #df5244;
-}
-#title-bar nav .nav li a {
-  display: block;
-  padding: 0.2em;
-  text-decoration: none;
-  color: inherit;
-  background-color: #fff;
-  border-bottom: 1.5px solid black;
-}
-#title-bar nav .nav li a.patreon {
-  height: 100%;
-  padding: 0;
-}
-#title-bar nav .nav li a.pvgna {
-  height: 100%;
-  padding: 0;
 }
 #title-bar nav .nav .active > div {
   background-color: #df5244;
@@ -121,10 +123,8 @@
 }
 #title-bar nav .nav span {
   display: block;
-  font-family: sans-serif;
+  font-family: 'Work Sans', sans-serif;
   color: #1b1b1b;
-  text-align: center;
-  transition: all 0.2s ease-in-out;
 }
 #title-bar nav .nav .action-wrapper {
   z-index: 20;
@@ -169,36 +169,6 @@
   right: 50px;
   position: absolute;
 }
-@media only screen and (max-width: 830px) {
-  #title-bar nav .nav .action-wrapper .patreon-container {
-    right: 100px;
-  }
-}
-#title-bar nav .nav .action-wrapper .pvgna-container {
-  width: 50px;
-  height: 100%;
-  right: 100px;
-  position: absolute;
-}
-@media only screen and (max-width: 830px) {
-  #title-bar nav .nav .action-wrapper .pvgna-container {
-    right: 150px;
-  }
-}
-#title-bar nav .nav .action-wrapper .hidden-login {
-  display: none;
-  position: absolute;
-  top: 50px;
-  right: -18px;
-  width: 200px;
-  background: #26090B;
-}
-#title-bar nav .nav .action-wrapper .hidden-login a span {
-  transform: none!important;
-}
-#title-bar nav .nav .action-wrapper .show-login {
-  display: block!important;
-}
 #dotp-loader-container {
   z-index: 101;
   position: absolute;
@@ -217,7 +187,7 @@
 }
 #dotp-loader-container > div#dotp-loader-transparent {
   background: url('/images/dotp-logo-loader.png');
-  transition: all 1s cubic-bezier(0.55, 0.06, 0.68, 0.19);
+  transition: all 1s cubic-bezier(1, 0.23, 1, 0.03);
   transition-delay: 0.5s;
   background-repeat: no-repeat;
   background-position: center;
@@ -235,8 +205,8 @@
   position: absolute;
   left: 0;
   background: #000;
-  transition: all 1s cubic-bezier(0.55, 0.06, 0.68, 0.19);
-  transition-delay: 0.6s;
+  transition: all 0.9s cubic-bezier(0, 0.98, 0, 1.45);
+  transition-delay: 0.5s;
 }
 @media only screen and (max-width: 830px) {
   #dotp-loader-container > div#dotp-loader-transparent > #loader-left {
@@ -249,8 +219,8 @@
   position: absolute;
   right: 0;
   background: #000;
-  transition: all 1s cubic-bezier(0.55, 0.06, 0.68, 0.19);
-  transition-delay: 0.6s;
+  transition: all 0.9s cubic-bezier(0, 0.98, 0, 1.45);
+  transition-delay: 0.5s;
 }
 @media only screen and (max-width: 830px) {
   #dotp-loader-container > div#dotp-loader-transparent > #loader-right {
@@ -305,33 +275,10 @@
   padding-top: 100px;
   box-sizing: border-box;
 }
-#about-wrapper > nav #hexagon {
-  width: 50px;
-  height: 55px;
-  background: red;
-  position: relative;
-}
-#about-wrapper > nav #hexagon:before {
-  content: "";
-  position: absolute;
-  top: -20px;
-  left: 0;
-  width: 0;
-  height: 0;
-  border-left: 20px solid transparent;
-  border-right: 20px solid transparent;
-  border-bottom: 15px solid red;
-}
-#about-wrapper > nav #hexagon:after {
-  content: "";
-  position: absolute;
-  bottom: -20px;
-  left: 0;
-  width: 0;
-  height: 0;
-  border-left: 20px solid transparent;
-  border-right: 20px solid transparent;
-  border-top: 15px solid red;
+@media only screen and (max-width: 830px) {
+  #about-wrapper > nav {
+    width: 40px;
+  }
 }
 #about-wrapper > nav > div {
   align-items: center;
@@ -340,6 +287,12 @@
   height: 60px;
   overflow: hidden;
   color: white;
+}
+@media only screen and (max-width: 830px) {
+  #about-wrapper > nav > div {
+    width: 40px;
+    height: 40px;
+  }
 }
 #about-wrapper > nav > div .diamond {
   height: 71%;
@@ -350,6 +303,12 @@
   top: 8px;
   position: relative;
 }
+@media only screen and (max-width: 830px) {
+  #about-wrapper > nav > div .diamond {
+    height: 68%;
+    width: 68%;
+  }
+}
 #about-wrapper > nav > div.about-nav.active {
   filter: drop-shadow(2px -2px 2px #476fa7) drop-shadow(-2px 2px 2px #f47522);
   overflow: visible;
@@ -358,14 +317,56 @@
   height: 100%;
   width: 100%;
   background-color: #6c6c6c;
-  padding: 100px;
+  padding: 100px 10px 10px 100px;
   box-sizing: border-box;
   opacity: 0;
   transition: opacity 0.5s ease;
   position: absolute;
   top: 0;
-  overflow-y: auto;
+  overflow-y: hidden;
   pointer-events: none;
+}
+@media only screen and (max-width: 830px) {
+  #about-wrapper > .about-page {
+    padding: 80px 10px 10px 50px;
+  }
+}
+#about-wrapper > .about-page > div.about-content {
+  overflow-y: auto;
+  display: flex;
+  height: 100%;
+}
+@media only screen and (max-width: 830px) {
+  #about-wrapper > .about-page > div.about-content {
+    height: 100%;
+    display: block;
+  }
+}
+#about-wrapper > .about-page > div.about-content > div {
+  justify-content: center;
+  display: flex;
+  float: left;
+  width: 40vw;
+}
+@media only screen and (max-width: 830px) {
+  #about-wrapper > .about-page > div.about-content > div {
+    width: 80vw;
+    display: block;
+  }
+}
+@media only screen and (max-width: 830px) {
+  #about-wrapper > .about-page > div.about-content > div > img {
+    width: 100%;
+  }
+}
+#about-wrapper > .about-page > div.about-content > div.about-left {
+  display: block;
+}
+#about-wrapper > .about-page > div.about-content > div.about-right {
+  flex: 2;
+}
+#about-wrapper > .about-page > div.about-content > div.about-right > p {
+  padding: 20px;
 }
 #about-wrapper > .about-page.active {
   opacity: 1;
