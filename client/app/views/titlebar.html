@@ -29,6 +29,27 @@
         </div>
       </li>
       <li class="title-bar-nav">
+        <div ui-sref-active="active">
+          <a ui-sref="root.dashboard">
+            <span>About Us</span>
+          </a>
+          <div></div>
+      </div>
+        <div ui-sref-active="active">
+            <a ui-sref="root.ladder">
+              <span>Ladder</span>
+            </a>
+            <div></div>
+        </div>
+        <div ui-sref-active="active">
+            <a ui-sref="root.store">
+              <span>Store</span>
+            </a>
+            <div></div>
+        </div>
+      </li>
+      <li class="action-wrapper">
+
         <div id="social-icons">
           <div id="youtube">
             <a href="https://www.youtube.com" target="_blank">
@@ -46,39 +67,10 @@
             </a>
           </div>
         </div>
-        <!-- <div ui-sref-active="active" >
-          <a class="" ui-sref="root.dashboard" ng-click="vm.slideNavPanel = false">
-            <span>Episodes</span>
-          </a>
-          <div></div>
-        </div>
-
-        <div ui-sref-active="active">
-            <a ui-sref="root.ladder">
-              <span>ladder</span>
-            </a>
-            <div></div>
-        </div>
-        <div ui-sref-active="active">
-            <a ui-sref="root.store">
-              <span>store</span>
-            </a>
-            <div></div>
-        </div>
-        <div ui-sref-active="active">
-            <a ui-sref="root.about">
-              <span>about</span>
-            </a>
-            <div></div>
+        <!-- <div class="hamburger">
+            <i class="fa fa-bars"></i>
         </div> -->
-      </li>
-      <li class="icons">
-
-
-        <!-- <div class="power" ng-if="vm.isCollapsed" ng-click="vm.clickPower()">
-            <i class="fa fa-power-off"></i>
-        </div>
-        <div class="share-container" ui-sref-active="active">
+        <!-- <div class="share-container" ui-sref-active="active">
             <a class="share-icon" ui-sref="root.social">
                 <i class="fa fa-share-alt"></i>
             </a>

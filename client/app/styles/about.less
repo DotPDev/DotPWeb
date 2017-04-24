@@ -3,32 +3,52 @@
     overflow: hidden;
 
     & > nav {
-      height:100%;
+      height:400px;
       width: 60px;
+      @media @smartphones {
+        width: 40px;
+      }
       position: absolute;
       z-index: 4;
       left: 0;
-      display: flex;
+      //display: flex;
       flex-direction: column;
       align-items: center;
       padding-top: 100px;
       box-sizing: border-box;
-
       & > div {
-        flex: 1;
-        display: flex;
         align-items: center;
         justify-content: center;
-        width:100%;
+        width:60px;
+        height:60px;
         overflow:hidden;
         color:white;
-        margin:2px;
+        //border-radius: 50%;
+        @media @smartphones {
 
+          width:40px;
+          height:40px;
+        }
+
+        & .diamond {
+            height: 71%;
+            width: 71%;
+            @media @smartphones {
+              height: 68%;
+              width: 68%;
+            }
+            background: #fff;
+            transform: rotateZ(45deg);
+            margin: 0 auto;
+            top: 8px;
+            position: relative;
+
+        }
         &.about-nav {
-          background:black;
 
           &.active {
-            filter: drop-shadow(2px -4px 3px #476fa7) drop-shadow(-2px 4px 3px #f47522);
+            filter: drop-shadow(2px -2px 2px #476fa7) drop-shadow(-2px 2px 2px #f47522);
+            overflow: visible;
           }
         }
       }
@@ -38,7 +58,7 @@
       height: 100%;
       width: 100%;
       background-color:#6c6c6c;
-      padding: 100px;
+      padding: 100px 10px 10px 100px;
       @media @smartphones {
         padding: 80px 10px 10px 50px;
       }
@@ -47,9 +67,54 @@
       transition: opacity 0.5s ease;
       position: absolute;
       top: 0;
+      overflow-y:hidden;
+      pointer-events: none;
+
+      & > div.about-content {
+        overflow-y: auto;
+        display: flex;
+        height: 100%;
+
+        @media @smartphones {
+          height: 100%;
+          display: block;
+        }
+
+        & > div {
+          //flex: 1;
+          justify-content: center;
+          display: flex;
+          float: left;
+          width: 40vw;
+
+          @media @smartphones {
+            width: 80vw;
+            display: block;
+          }
+
+          & > img {
+            @media @smartphones {
+              width: 100%;
+            }
+          }
+
+          &.about-left {
+            display: block;
+          }
+
+          &.about-right {
+            flex: 2;
+
+            & > p {
+              padding: 20px;
+            }
+          }
+        }
+      }
 
       &.active {
         opacity: 1;
+        pointer-events: all;
       }
     }
 
