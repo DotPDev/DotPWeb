@@ -1,10 +1,18 @@
 #dotp-loader-container {
+
   z-index: 101;
   position: absolute;
   width: 100%;
   height: 100%;
   opacity: 1;
-  transition: opacity 0.5s ease;
+  transition: none;
+
+  &.ng-scope {
+    & #loader-left, #loader-right {
+      transition-delay: 0;
+      transition: none;
+    }
+  }
 
   & > div {
     position:absolute;
@@ -33,8 +41,7 @@
         position: absolute;
         left:0;
         background:#000;
-        // transition: all 1s cubic-bezier(0,1.05,0,.99);
-        transition: all 0.9s cubic-bezier(0,.98,0,1.45);
+        transition: all 1s cubic-bezier(0.63, 1.24, 0, 1.05);
         transition-delay:0.5s;
 
         @media @smartphones {
@@ -48,8 +55,7 @@
         position: absolute;
         right:0;
         background:#000;
-        // transition: all 1s cubic-bezier(0,1.05,0,.99);
-        transition: all 0.9s cubic-bezier(0,.98,0,1.45);
+        transition: all 1s cubic-bezier(0.63, 1.24, 0, 1.05);
         transition-delay:0.5s;
 
         @media @smartphones {
@@ -75,12 +81,32 @@
   &.reset{
     pointer-events: none;
     opacity: 0;
-    transition: opacity 0.5s ease;
-    &.loading {
-        transition: none !important;
-    }
+    transition: none;
+
 
     & > div {
+      &#dotp-loader-transparent {
+        opacity: 1;
+        transition: none !important;
+      }
+    }
+
+    & #loader-left {
+      width: 40%;
+      transition: none !important;
+
+      @media @smartphones {
+        width: 20%;
+      }
+    }
+
+    & #loader-right {
+      width: 40%;
+      transition: none !important;
+
+      @media @smartphones {
+        width: 20%;
+      }
     }
   }
 
