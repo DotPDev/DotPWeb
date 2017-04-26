@@ -20,6 +20,13 @@ angular.module('clientApp')
     vm.getImage = getImage;
     vm.startPodcast = startPodcast;
 
+    vm.isOpen = false;
+    vm.handleClick = handleClick;
+
+    function handleClick() {
+      vm.isOpen = !vm.isOpen;
+    }
+
     function init() {
         vm.page = parseInt(utils.getParameterByName('page'));
 
