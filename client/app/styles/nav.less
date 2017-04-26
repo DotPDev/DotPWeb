@@ -51,7 +51,7 @@ header#nav, header#share {
     position: fixed;
     top: 22px;
     @media @smartphones {
-        right: 40px;
+        right: 10px;
     }
     border: 1px solid #665f54;
     background: #df5244;
@@ -114,6 +114,7 @@ header#nav, header#share {
                     color: #476fa7;
                     line-height: 30px;
                     text-decoration: none;
+                    width: 100%;
                 }
             }
         }
@@ -208,12 +209,14 @@ header#nav, header#share {
         width: 420px;
         height: 300px;
         background: #476fa7;
+        z-index: 501;
         @media @smartphones {
             height: calc(~'100% - 30px');
             width: calc(~'100% - 60px');
         }
 
         & > div {
+          z-index: 501;
           & > nav {
             opacity: 1;
             pointer-events: all;
@@ -258,13 +261,14 @@ header#nav, header#share {
         width: 200px;
         height: 100px;
         background: #f47522;
+        z-index: 501;
         @media @smartphones {
             height: 100px;
             width: 200px;
         }
 
         & > div {
-
+          z-index: 501;
           & > div#share {
             height: 46px;
           }
