@@ -205,7 +205,12 @@
   width: 100%;
   height: 100%;
   opacity: 1;
-  transition: opacity 0.5s ease;
+  transition: none;
+}
+#dotp-loader-container.ng-scope #loader-left,
+#dotp-loader-container.ng-scope #loader-right {
+  transition-delay: 0;
+  transition: none;
 }
 #dotp-loader-container > div {
   position: absolute;
@@ -235,8 +240,8 @@
   position: absolute;
   left: 0;
   background: #000;
-  transition: all 1s cubic-bezier(0.55, 0.06, 0.68, 0.19);
-  transition-delay: 0.6s;
+  transition: all 1s cubic-bezier(0.63, 1.24, 0, 1.05);
+  transition-delay: 0.5s;
 }
 @media only screen and (max-width: 830px) {
   #dotp-loader-container > div#dotp-loader-transparent > #loader-left {
@@ -249,7 +254,7 @@
   position: absolute;
   right: 0;
   background: #000;
-  transition: all 1s cubic-bezier(0.55, 0.06, 0.68, 0.19);
+  transition: all 1s cubic-bezier(0.63, 1.24, 0, 1.05);
   transition-delay: 0.6s;
 }
 @media only screen and (max-width: 830px) {
@@ -272,10 +277,29 @@
 #dotp-loader-container.reset {
   pointer-events: none;
   opacity: 0;
-  transition: opacity 0.5s ease;
+  transition: none;
 }
-#dotp-loader-container.reset.loading {
+#dotp-loader-container.reset > div#dotp-loader-transparent {
+  opacity: 1;
   transition: none !important;
+}
+#dotp-loader-container.reset #loader-left {
+  width: 40%;
+  transition: none !important;
+}
+@media only screen and (max-width: 830px) {
+  #dotp-loader-container.reset #loader-left {
+    width: 20%;
+  }
+}
+#dotp-loader-container.reset #loader-right {
+  width: 40%;
+  transition: none !important;
+}
+@media only screen and (max-width: 830px) {
+  #dotp-loader-container.reset #loader-right {
+    width: 20%;
+  }
 }
 #dotp-loader-container.loading > div#dotp-loader-transparent {
   background-size: 200000px;
@@ -370,6 +394,309 @@
 #about-wrapper > .about-page.active {
   opacity: 1;
   pointer-events: all;
+}
+header#share {
+  right: 150px;
+}
+header#nav {
+  right: 50px;
+}
+div#share {
+  position: absolute;
+  top: 55px;
+  left: 0;
+  width: 100%;
+  height: 0px;
+  overflow: hidden;
+  transition: height 0.75s ease;
+}
+div#share > ul {
+  list-style: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+div#share > ul > li {
+  height: 46px;
+  width: 45px;
+  display: inline-block;
+}
+div#share > ul > li > a {
+  width: 100%;
+  background-color: inherit !important;
+  font-size: 20px;
+  text-align: center;
+  color: #fae207 !important;
+}
+header#nav,
+header#share {
+  -webkit-transition-duration: .75s;
+  -webkit-transition-property: width,height;
+  -webkit-transition-delay: 0s;
+  -webkit-transition-timing-function: 'ease-in-out';
+  transition-duration: .75s;
+  transition-property: width,height;
+  transition-delay: 0s;
+  transition-timing-function: 'ease-in-out';
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  position: fixed;
+  top: 22px;
+  border: 1px solid #665f54;
+  background: #df5244;
+  width: 120px;
+  height: 55px;
+  z-index: 500;
+}
+@media only screen and (max-width: 830px) {
+  header#nav,
+  header#share {
+    right: 40px;
+  }
+}
+header#nav > div,
+header#share > div {
+  overflow: hidden;
+  position: absolute;
+  top: -10px;
+  border: 1px solid #cfd1d0;
+  background: #1a1113;
+  width: 100%;
+  height: 100%;
+}
+header#nav > div#menu,
+header#share > div#menu {
+  right: -10px;
+}
+header#nav > div#share,
+header#share > div#share {
+  left: -10px;
+}
+header#nav > div nav,
+header#share > div nav {
+  position: absolute;
+  left: 0;
+  top: 100px;
+  width: 420px;
+}
+@media only screen and (max-width: 830px) {
+  header#nav > div nav,
+  header#share > div nav {
+    opacity: 0;
+    transition: opacity 0.75s ease;
+    pointer-events: none;
+    top: 60px;
+    width: 100%;
+  }
+}
+header#nav > div nav li,
+header#share > div nav li {
+  text-align: center;
+  padding-top: 20px;
+}
+header#nav > div nav li + li,
+header#share > div nav li + li {
+  padding-top: 25px;
+}
+header#nav > div nav li a,
+header#share > div nav li a {
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: .4em;
+  color: #cfd1d0;
+  line-height: 30px;
+  text-decoration: none;
+}
+header#nav > div a.btn-toggle,
+header#share > div a.btn-toggle {
+  background-color: #1a1113;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 55px;
+  height: 55px;
+  padding: 0;
+  border: none;
+}
+header#nav > div a.btn-toggle.share,
+header#share > div a.btn-toggle.share {
+  left: 0;
+}
+header#nav > div a.btn-toggle.share > span,
+header#share > div a.btn-toggle.share > span {
+  background: #f47522;
+}
+header#nav > div a.btn-toggle.share > span:nth-child(1),
+header#share > div a.btn-toggle.share > span:nth-child(1) {
+  top: 18px;
+  width: 4px;
+  height: 4px;
+  left: 16px;
+}
+header#nav > div a.btn-toggle.share > span:nth-child(2),
+header#share > div a.btn-toggle.share > span:nth-child(2) {
+  transform: rotateZ(33deg);
+  width: 20px;
+  top: 24px;
+  left: 17px;
+}
+header#nav > div a.btn-toggle.share > span:nth-child(3),
+header#share > div a.btn-toggle.share > span:nth-child(3) {
+  width: 4px;
+  height: 4px;
+  right: 16px;
+}
+header#nav > div a.btn-toggle.share > span:nth-child(4),
+header#share > div a.btn-toggle.share > span:nth-child(4) {
+  transform: rotateZ(-33deg);
+  width: 20px;
+  top: 34px;
+  right: 18px;
+}
+header#nav > div a.btn-toggle.share > span:nth-child(5),
+header#share > div a.btn-toggle.share > span:nth-child(5) {
+  top: 37px;
+  width: 4px;
+  height: 4px;
+  left: 16px;
+}
+header#nav > div a.btn-toggle > span,
+header#share > div a.btn-toggle > span {
+  -webkit-transition-duration: .45s;
+  -webkit-transition-property: transform,opacity;
+  -webkit-transition-delay: 0s;
+  -webkit-transition-timing-function: 'ease-in-out';
+  transition-duration: .45s;
+  transition-property: all;
+  transition-delay: 0s;
+  transition-timing-function: 'ease-in-out';
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform-origin: 50% 50%;
+  -webkit-transform-origin: 50% 50%;
+  display: block;
+  position: absolute;
+  right: 13px;
+  top: 28px;
+  background: #476fa7;
+  width: 30px;
+  height: 1px;
+}
+header#nav > div a.btn-toggle > span:nth-child(1),
+header#share > div a.btn-toggle > span:nth-child(1) {
+  top: 20px;
+}
+header#nav > div a.btn-toggle > span:nth-child(4),
+header#share > div a.btn-toggle > span:nth-child(4) {
+  top: 36px;
+}
+header#nav.opened,
+header#share.opened {
+  width: 420px;
+  height: 300px;
+  background: #476fa7;
+}
+@media only screen and (max-width: 830px) {
+  header#nav.opened,
+  header#share.opened {
+    height: calc(100% - 30px);
+    width: calc(100% - 60px);
+  }
+}
+header#nav.opened > div > nav,
+header#share.opened > div > nav {
+  opacity: 1;
+  pointer-events: all;
+}
+header#nav.opened > div .btn-toggle.share,
+header#share.opened > div .btn-toggle.share {
+  opacity: 0;
+  pointer-events: none;
+}
+header#nav.opened > div .btn-toggle span:nth-child(1),
+header#share.opened > div .btn-toggle span:nth-child(1) {
+  right: 28px;
+  width: 0px;
+}
+header#nav.opened > div .btn-toggle span:nth-child(4),
+header#share.opened > div .btn-toggle span:nth-child(4) {
+  right: 28px;
+  width: 0px;
+}
+header#nav.opened > div .btn-toggle span:nth-child(2),
+header#share.opened > div .btn-toggle span:nth-child(2) {
+  transform: rotatez(-135deg);
+  -webkit-transform: rotatez(-135deg);
+  background-color: #df5244;
+}
+header#nav.opened > div .btn-toggle span:nth-child(3),
+header#share.opened > div .btn-toggle span:nth-child(3) {
+  transform: rotatez(135deg);
+  -webkit-transform: rotatez(135deg);
+  background-color: #df5244;
+}
+header#nav.shared,
+header#share.shared {
+  width: 200px;
+  height: 100px;
+  background: #f47522;
+}
+@media only screen and (max-width: 830px) {
+  header#nav.shared,
+  header#share.shared {
+    height: 100px;
+    width: 200px;
+  }
+}
+header#nav.shared > div > div#share,
+header#share.shared > div > div#share {
+  height: 46px;
+}
+header#nav.shared > div .btn-toggle.open,
+header#share.shared > div .btn-toggle.open {
+  opacity: 0;
+  pointer-events: none;
+}
+header#nav.shared > div .btn-toggle.share > span:nth-child(1),
+header#share.shared > div .btn-toggle.share > span:nth-child(1) {
+  opacity: 0;
+}
+header#nav.shared > div .btn-toggle.share > span:nth-child(2),
+header#share.shared > div .btn-toggle.share > span:nth-child(2) {
+  transform: rotateZ(-135deg);
+  width: 30px;
+  left: 13px;
+  top: 28px;
+}
+header#nav.shared > div .btn-toggle.share > span:nth-child(3),
+header#share.shared > div .btn-toggle.share > span:nth-child(3) {
+  opacity: 0;
+}
+header#nav.shared > div .btn-toggle.share > span:nth-child(4),
+header#share.shared > div .btn-toggle.share > span:nth-child(4) {
+  transform: rotateZ(135deg);
+  width: 30px;
+  right: 13px;
+  top: 28px;
+}
+header#nav.shared > div .btn-toggle.share > span:nth-child(5),
+header#share.shared > div .btn-toggle.share > span:nth-child(5) {
+  opacity: 0;
+}
+a,
+a span {
+  -webkit-transition-duration: .45s;
+  -webkit-transition-property: color, border-color, background-color, opacity;
+  -webkit-transition-delay: 0s;
+  -webkit-transition-timing-function: 'ease-in-out';
+  transition-duration: .45s;
+  transition-property: color, border-color, background-color, opacity;
+  transition-delay: 0s;
+  transition-timing-function: 'ease-in-out';
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 html,
 body {
