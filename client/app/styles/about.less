@@ -1,6 +1,24 @@
+.about-page::-webkit-scrollbar {
+    width: 1em;
+}
+
+.about-page::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+.about-page::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+
 #about-wrapper {
     height: 100%;
     overflow: hidden;
+    background-color: #1a1113;
+
+    h1 {
+      //float: left;
+    }
 
     & > nav {
       height:400px;
@@ -38,11 +56,23 @@
               width: 68%;
             }
             background: #fff;
-            transform: rotateZ(45deg);
+            transform: rotateZ(-45deg);
+            color: #000;
+            font-size: 12px;
             margin: 0 auto;
             top: 8px;
             position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
 
+            &.smaller {
+              font-size: 9px;
+            }
+
+            & span {
+              transform: rotateZ(45deg);
+            }
         }
         &.about-nav {
 
@@ -57,7 +87,8 @@
     & > .about-page {
       height: 100%;
       width: 100%;
-      background-color:#6c6c6c;
+      background-color:#1a1113;
+      color: #818f86;
       padding: 100px 10px 10px 100px;
       @media @smartphones {
         padding: 80px 10px 10px 50px;
@@ -73,10 +104,10 @@
       & > div.about-content {
         overflow-y: auto;
         display: flex;
-        height: 100%;
+        //height: calc(~'100% - 100px');
 
         @media @smartphones {
-          height: 100%;
+          //height: 100%;
           display: block;
         }
 
@@ -85,7 +116,7 @@
           justify-content: center;
           display: flex;
           float: left;
-          width: 40vw;
+          //width: 40vw;
 
           @media @smartphones {
             width: 80vw;
@@ -93,6 +124,7 @@
           }
 
           & > img {
+            margin-top: 40px;
             @media @smartphones {
               width: 100%;
             }
