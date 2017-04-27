@@ -35,4 +35,6 @@ angular.module('clientApp')
     	}
     }
 
+    Ps.initialize($("#ladder-wrapper")[0]);
+
   });
