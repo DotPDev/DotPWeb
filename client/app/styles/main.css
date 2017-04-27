@@ -284,9 +284,20 @@
 #dotp-loader-container.loading > div#dotp-loader {
   opacity: 0;
 }
+.about-page::-webkit-scrollbar {
+  width: 1em;
+}
+.about-page::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+.about-page::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
 #about-wrapper {
   height: 100%;
   overflow: hidden;
+  background-color: #1a1113;
 }
 #about-wrapper > nav {
   height: 400px;
@@ -322,16 +333,27 @@
   height: 71%;
   width: 71%;
   background: #fff;
-  transform: rotateZ(45deg);
+  transform: rotateZ(-45deg);
+  color: #000;
+  font-size: 12px;
   margin: 0 auto;
   top: 8px;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 @media only screen and (max-width: 830px) {
   #about-wrapper > nav > div .diamond {
     height: 68%;
     width: 68%;
   }
+}
+#about-wrapper > nav > div .diamond.smaller {
+  font-size: 9px;
+}
+#about-wrapper > nav > div .diamond span {
+  transform: rotateZ(45deg);
 }
 #about-wrapper > nav > div.about-nav.active {
   filter: drop-shadow(2px -2px 2px #476fa7) drop-shadow(-2px 2px 2px #f47522);
@@ -340,7 +362,8 @@
 #about-wrapper > .about-page {
   height: 100%;
   width: 100%;
-  background-color: #6c6c6c;
+  background-color: #1a1113;
+  color: #818f86;
   padding: 100px 10px 10px 100px;
   box-sizing: border-box;
   opacity: 0;
@@ -358,11 +381,9 @@
 #about-wrapper > .about-page > div.about-content {
   overflow-y: auto;
   display: flex;
-  height: 100%;
 }
 @media only screen and (max-width: 830px) {
   #about-wrapper > .about-page > div.about-content {
-    height: 100%;
     display: block;
   }
 }
@@ -370,13 +391,15 @@
   justify-content: center;
   display: flex;
   float: left;
-  width: 40vw;
 }
 @media only screen and (max-width: 830px) {
   #about-wrapper > .about-page > div.about-content > div {
     width: 80vw;
     display: block;
   }
+}
+#about-wrapper > .about-page > div.about-content > div > img {
+  margin-top: 40px;
 }
 @media only screen and (max-width: 830px) {
   #about-wrapper > .about-page > div.about-content > div > img {
@@ -983,6 +1006,96 @@ a#feed-icon .waves .wave:nth-child(4) {
 }
 #episodes-wrapper > div a.btn-toggle > span:nth-child(4) {
   top: 36px;
+}
+div.social-links {
+  width: 100%;
+  height: 2em;
+}
+div.social-links ul {
+  list-style: none;
+  padding: 0;
+  width: 50%;
+  display: flex;
+}
+div.social-links ul li {
+  margin-left: 10px;
+  font-size: 2em;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  width: 6em;
+}
+div.social-links ul li a {
+  color: #fae207;
+  text-decoration: none;
+  height: 100%;
+  display: flex;
+  width: 1em;
+  justify-content: center;
+}
+div.social-links ul li a i {
+  transition: all 0.1s linear;
+}
+div.social-links ul li a:hover i {
+  transform: translateY(-3px);
+  filter: drop-shadow(-4px 3px 1px #476fa7);
+}
+div.social-links i.patreon-icon.patreon-nav {
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: inline-block;
+  width: 1em;
+  padding-left: 0;
+  top: 6px;
+  margin: auto;
+  text-align: center;
+}
+div.social-links .patreon-icon {
+  width: 10px;
+  height: 10px;
+  position: relative;
+  padding-left: 20px;
+}
+div.social-links .patreon-icon:after {
+  background-image: url(../images/patreonLogo-yellow.png);
+  background-size: 1em;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  content: "";
+  top: 0px;
+  position: absolute;
+  left: 0;
+}
+div.social-links .discord-icon {
+  width: 10px;
+  height: 10px;
+  position: relative;
+  padding-left: 20px;
+}
+div.social-links .discord-icon:after {
+  background-image: url(../images/discordLogo.png);
+  background-size: 1em 1em;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  content: "";
+  top: 0px;
+  position: absolute;
+  left: 0;
+}
+div.social-links .reddit {
+  background-color: #eff7ff;
+  color: #000000;
+  border-color: rgba(0, 0, 0, 0.2) !important;
+}
+div.social-links .reddit:hover {
+  background-color: #bcddff;
+  transition: all 0.2s ease-in-out;
+}
+.ps-scrollbar-y-rail {
+  margin-top: 100px;
 }
 html,
 body {

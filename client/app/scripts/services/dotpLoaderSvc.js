@@ -28,5 +28,5 @@ function startLoader() {
 
   return {
     startLoader: startLoader
-  }
+  };
 });

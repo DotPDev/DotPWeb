@@ -1,0 +1,9 @@
+<div class="social-links">
+  <ul>
+    <li ng-repeat="link in vm.links">
+      <a ng-class="link.type" ng-href="{{::link.url}}" target="_blank">
+          <i ng-class="vm.getClass(link.type)"></i>
+      </a>
+    </li>
+  </ul>
+</div>
