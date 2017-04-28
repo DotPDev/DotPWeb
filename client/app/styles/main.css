@@ -191,7 +191,7 @@
   opacity: 1;
 }
 #dotp-loader-container > div#dotp-loader-transparent {
-  background: url('/images/dotp-logo-loader.png');
+  background: url('/images/dotp-logo-loader-small.png');
   transition: all 1s cubic-bezier(1, 0.23, 1, 0.03);
   transition-delay: 0.5s;
   background-repeat: no-repeat;
@@ -347,10 +347,16 @@
   #about-wrapper > nav > div .diamond {
     height: 68%;
     width: 68%;
+    font-size: 8px;
   }
 }
 #about-wrapper > nav > div .diamond.smaller {
   font-size: 9px;
+}
+@media only screen and (max-width: 830px) {
+  #about-wrapper > nav > div .diamond.smaller {
+    font-size: 6px;
+  }
 }
 #about-wrapper > nav > div .diamond span {
   transform: rotateZ(45deg);
@@ -363,7 +369,7 @@
   height: 100%;
   width: 100%;
   background-color: #1a1113;
-  color: #818f86;
+  color: #f7f5f6;
   padding: 100px 10px 10px 100px;
   box-sizing: border-box;
   opacity: 0;
@@ -378,6 +384,22 @@
     padding: 80px 10px 10px 50px;
   }
 }
+#about-wrapper > .about-page p {
+  padding-top: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+  font-size: 1.2em;
+  filter: drop-shadow(2px 2px 3px #df5244);
+}
+@media only screen and (max-width: 830px) {
+  #about-wrapper > .about-page p {
+    padding: 15px;
+    font-size: 1em;
+  }
+}
+#about-wrapper > .about-page h1 {
+  filter: drop-shadow(-2px 1px 1px #476fa7) drop-shadow(-1px 2px 1px #df5244);
+}
 #about-wrapper > .about-page > div.about-content {
   overflow-y: auto;
   display: flex;
@@ -389,17 +411,21 @@
 }
 #about-wrapper > .about-page > div.about-content > div {
   justify-content: center;
-  display: flex;
   float: left;
 }
 @media only screen and (max-width: 830px) {
   #about-wrapper > .about-page > div.about-content > div {
-    width: 80vw;
     display: block;
   }
 }
 #about-wrapper > .about-page > div.about-content > div > img {
   margin-top: 40px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  max-width: 460px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-bottom: 10px;
 }
 @media only screen and (max-width: 830px) {
   #about-wrapper > .about-page > div.about-content > div > img {
@@ -408,12 +434,10 @@
 }
 #about-wrapper > .about-page > div.about-content > div.about-left {
   display: block;
+  filter: drop-shadow(3px -3px 3px #476fa7) drop-shadow(-3px 3px 3px #f47522);
 }
 #about-wrapper > .about-page > div.about-content > div.about-right {
   flex: 2;
-}
-#about-wrapper > .about-page > div.about-content > div.about-right > p {
-  padding: 20px;
 }
 #about-wrapper > .about-page.active {
   opacity: 1;
@@ -1016,6 +1040,12 @@ div.social-links ul {
   padding: 0;
   width: 50%;
   display: flex;
+  margin: 0 auto;
+}
+@media only screen and (max-width: 830px) {
+  div.social-links ul {
+    width: 100%;
+  }
 }
 div.social-links ul li {
   margin-left: 10px;
@@ -1032,6 +1062,7 @@ div.social-links ul li a {
   display: flex;
   width: 1em;
   justify-content: center;
+  margin: 0 auto;
 }
 div.social-links ul li a i {
   transition: all 0.1s linear;
@@ -1094,6 +1125,63 @@ div.social-links .reddit:hover {
   background-color: #bcddff;
   transition: all 0.2s ease-in-out;
 }
+.shimmer {
+  text-align: center;
+  color: #f7f5f6cc;
+  background: -webkit-gradient(linear, left top, right top, from(#fae207), to(#fae207), color-stop(0.5, #fff));
+  background: -moz-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
+  background: gradient(linear, left top, right top, from(#fae207), to(#fae207), color-stop(0.5, #55bdea));
+  -webkit-background-size: 125px 100%;
+  -moz-background-size: 125px 100%;
+  background-size: 125px 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  -webkit-animation-name: shimmer;
+  -moz-animation-name: shimmer;
+  animation-name: shimmer;
+  -webkit-animation-duration: 4s;
+  -moz-animation-duration: 4s;
+  animation-duration: 4s;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-color: #000;
+}
+@-moz-keyframes shimmer {
+  0% {
+    background-position: top left;
+  }
+  100% {
+    background-position: top right;
+  }
+}
+@-webkit-keyframes shimmer {
+  0% {
+    background-position: top left;
+  }
+  100% {
+    background-position: top right;
+  }
+}
+@-o-keyframes shimmer {
+  0% {
+    background-position: top left;
+  }
+  100% {
+    background-position: top right;
+  }
+}
+@keyframes shimmer {
+  0% {
+    background-position: top left;
+  }
+  100% {
+    background-position: top right;
+  }
+}
 .ps-scrollbar-y-rail {
   margin-top: 100px;
 }
@@ -1103,6 +1191,7 @@ body {
   width: 100%;
   margin: 0;
   font-family: 'Work Sans', sans-serif;
+  color: #f7f5f6;
 }
 #content-main {
   height: 100%;

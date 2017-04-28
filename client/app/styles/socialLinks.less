@@ -6,6 +6,10 @@ div.social-links {
     padding: 0;
     width: 50%;
     display: flex;
+    margin: 0 auto;
+    @media @smartphones {
+      width: 100%;
+    }
     li {
       margin-left:10px;
       font-size: 2em;
@@ -22,6 +26,7 @@ div.social-links {
         display: flex;
         width: 1em;
         justify-content: center;
+        margin: 0 auto;
 
         i {
           transition: all 0.1s linear;
