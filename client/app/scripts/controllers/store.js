@@ -25,6 +25,8 @@ angular.module('clientApp')
     vm.emptyCart = emptyCart;
     $scope.isCheckingOut = false;
     $scope.isManagingCart = false;
+    $scope.isItemSelected = false;
+    $scope.handleProductClick = handleProductClick;
     vm.startCheckOut = startCheckOut;
     vm.closeCheckOut = closeCheckOut;
     vm.addToCart = addToCart;
@@ -49,6 +51,15 @@ angular.module('clientApp')
         district: ''
       }
     };
+
+    function handleProductClick($event) {
+      if (!$scope.isItemSelected) {
+        $event.currentTarget.className += ' selected-item';
+      } else {
+        $event.currentTarget.className = 'product float-left ng-scope';
+      }
+      $scope.isItemSelected = !$scope.isItemSelected;
+    }
     // jscs:disable
 
     function startCheckOut() {
@@ -293,4 +304,11 @@ angular.module('clientApp')
       $scope.buyer = '';
       $scope.$digest();
     }
+
+    function handleScrollBars() {
+      var scrollable = document.getElementById("store-wrapper");
+      Ps.initialize(scrollable);
+    }
+
+    handleScrollBars();
   });

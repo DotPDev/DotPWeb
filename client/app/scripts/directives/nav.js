@@ -25,6 +25,8 @@
 
      function animateNav(str) {
        DotpLoaderSvc.startLoader();
+       vm.isNavOpen = false;
+       vm.isShareOpen = false;
      }
 
  })
