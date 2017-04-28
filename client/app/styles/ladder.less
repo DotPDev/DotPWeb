@@ -30,6 +30,13 @@
     font-family: @main-font-family;
     color: @records-color;
     margin-bottom: @margin-bottom;
+    width: 86%;
+    box-sizing: border-box;
+
+    @media @smartphones {
+        width: 90%;
+        padding-left: 0;
+    }
 
     li {
       background-color: #fff;

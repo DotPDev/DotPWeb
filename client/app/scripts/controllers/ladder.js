@@ -35,6 +35,11 @@ angular.module('clientApp')
     	}
     }
 
-    Ps.initialize($("#ladder-wrapper")[0]);
+    function handleScrollBars() {
+      var scrollable = document.getElementById('ladder-content');
+        Ps.initialize(scrollable);
+    }
+
+    handleScrollBars();
 
   });

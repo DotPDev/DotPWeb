@@ -310,6 +310,14 @@
   font-family: 'Work Sans', sans-serif;
   color: #476fa7;
   margin-bottom: 125px;
+  width: 86%;
+  box-sizing: border-box;
+}
+@media only screen and (max-width: 830px) {
+  .main-wrapper ul#ladder-records {
+    width: 90%;
+    padding-left: 0;
+  }
 }
 .main-wrapper ul#ladder-records li {
   background-color: #fff;
@@ -356,6 +364,31 @@
   height: 100%;
   overflow: hidden;
   background-color: #1a1113;
+}
+#about-wrapper h1,
+#ladder-wrapper h1,
+#about-wrapper h2,
+#ladder-wrapper h2 {
+  filter: drop-shadow(-2px 2px 0px #1a1113) drop-shadow(-2px 2px 2px #df5244);
+}
+#about-wrapper h2,
+#ladder-wrapper h2 {
+  filter: drop-shadow(-1px 1px 0px #1a1113) drop-shadow(-2px 2px 1px #98342a);
+}
+#about-wrapper p,
+#ladder-wrapper p {
+  padding-top: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+  font-size: 1em;
+  filter: drop-shadow(-2px 1px 0px #1a1113) drop-shadow(0px 0px 1px #df5244);
+}
+@media only screen and (max-width: 830px) {
+  #about-wrapper p,
+  #ladder-wrapper p {
+    padding: 15px;
+    font-size: 1em;
+  }
 }
 #about-wrapper > nav,
 #ladder-wrapper > nav {
@@ -418,14 +451,14 @@
 #ladder-wrapper > nav > div .diamond.smaller {
   font-size: 9px;
 }
-#about-wrapper > nav > div .diamond span,
-#ladder-wrapper > nav > div .diamond span {
 @media only screen and (max-width: 830px) {
-  #about-wrapper > nav > div .diamond.smaller {
+  #about-wrapper > nav > div .diamond.smaller,
+  #ladder-wrapper > nav > div .diamond.smaller {
     font-size: 6px;
   }
 }
-#about-wrapper > nav > div .diamond span {
+#about-wrapper > nav > div .diamond span,
+#ladder-wrapper > nav > div .diamond span {
   transform: rotateZ(45deg);
 }
 #about-wrapper > nav > div.about-nav.active,
@@ -433,12 +466,13 @@
   filter: drop-shadow(2px -2px 2px #476fa7) drop-shadow(-2px 2px 2px #f47522);
   overflow: visible;
 }
-#about-wrapper > .about-page,
-#ladder-wrapper > .about-page {
+#about-wrapper > div,
+#ladder-wrapper > div {
   height: 100%;
   width: 100%;
   background-color: #1a1113;
   color: #f7f5f6;
+  font-size: 1.5em;
   padding: 100px 10px 10px 100px;
   box-sizing: border-box;
   opacity: 0;
@@ -446,56 +480,49 @@
   position: absolute;
   top: 0;
   overflow-y: hidden;
-  pointer-events: none;
-
+}
 @media only screen and (max-width: 830px) {
-  #about-wrapper > .about-page,
-  #ladder-wrapper > .about-page {
+  #about-wrapper > div,
+  #ladder-wrapper > div {
+    font-size: 1em;
     padding: 80px 10px 10px 50px;
   }
 }
+#about-wrapper > div#ladder-content,
+#ladder-wrapper > div#ladder-content {
+  opacity: 1;
+  width: auto;
+  padding: 0;
+  padding-top: 100px;
 }
-#about-wrapper > .about-page p {
-  padding-top: 20px;
-  padding-left: 40px;
-  padding-right: 40px;
-  font-size: 1.2em;
-  filter: drop-shadow(2px 2px 3px #df5244);
+#about-wrapper > div.about-page,
+#ladder-wrapper > div.about-page {
+  pointer-events: none;
 }
-@media only screen and (max-width: 830px) {
-  #about-wrapper > .about-page p {
-    padding: 15px;
-    font-size: 1em;
-  }
-}
-#about-wrapper > .about-page h1 {
-  filter: drop-shadow(-2px 1px 1px #476fa7) drop-shadow(-1px 2px 1px #df5244);
-}
-
-#about-wrapper > .about-page > div.about-content,
-#ladder-wrapper > .about-page > div.about-content {
+#about-wrapper > div > div.about-content,
+#ladder-wrapper > div > div.about-content {
   overflow-y: auto;
   display: flex;
 }
 @media only screen and (max-width: 830px) {
-  #about-wrapper > .about-page > div.about-content,
-  #ladder-wrapper > .about-page > div.about-content {
+  #about-wrapper > div > div.about-content,
+  #ladder-wrapper > div > div.about-content {
     display: block;
   }
 }
-#about-wrapper > .about-page > div.about-content > div,
-#ladder-wrapper > .about-page > div.about-content > div {
+#about-wrapper > div > div.about-content > div,
+#ladder-wrapper > div > div.about-content > div {
   justify-content: center;
   float: left;
 }
 @media only screen and (max-width: 830px) {
-  #about-wrapper > .about-page > div.about-content > div,
-  #ladder-wrapper > .about-page > div.about-content > div {
+  #about-wrapper > div > div.about-content > div,
+  #ladder-wrapper > div > div.about-content > div {
     display: block;
   }
 }
-#about-wrapper > .about-page > div.about-content > div > img,
-#ladder-wrapper > .about-page > div.about-content > div > img {
+#about-wrapper > div > div.about-content > div > img,
+#ladder-wrapper > div > div.about-content > div > img {
   margin-top: 40px;
   border-radius: 50%;
   box-sizing: border-box;
@@ -505,26 +532,22 @@
   margin-bottom: 10px;
 }
 @media only screen and (max-width: 830px) {
-  #about-wrapper > .about-page > div.about-content > div > img,
-  #ladder-wrapper > .about-page > div.about-content > div > img {
+  #about-wrapper > div > div.about-content > div > img,
+  #ladder-wrapper > div > div.about-content > div > img {
     width: 100%;
   }
 }
-#about-wrapper > .about-page > div.about-content > div.about-left,
-#ladder-wrapper > .about-page > div.about-content > div.about-left {
+#about-wrapper > div > div.about-content > div.about-left,
+#ladder-wrapper > div > div.about-content > div.about-left {
   display: block;
   filter: drop-shadow(3px -3px 3px #476fa7) drop-shadow(-3px 3px 3px #f47522);
 }
-#about-wrapper > .about-page > div.about-content > div.about-right,
-#ladder-wrapper > .about-page > div.about-content > div.about-right {
+#about-wrapper > div > div.about-content > div.about-right,
+#ladder-wrapper > div > div.about-content > div.about-right {
   flex: 2;
 }
-#about-wrapper > .about-page > div.about-content > div.about-right > p,
-#ladder-wrapper > .about-page > div.about-content > div.about-right > p {
-  padding: 20px;
-}
-#about-wrapper > .about-page.active,
-#ladder-wrapper > .about-page.active {
+#about-wrapper > div.active,
+#ladder-wrapper > div.active {
   opacity: 1;
   pointer-events: all;
 }
