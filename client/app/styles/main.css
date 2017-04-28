@@ -284,6 +284,92 @@
 #dotp-loader-container.loading > div#dotp-loader {
   opacity: 0;
 }
+#ladder-wrapper {
+  height: calc(100% - 90px);
+  top: 90px;
+  width: 80%;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+#ladder-content {
+  background: orange;
+}
+#ladder-content p a {
+  color: #476fa7;
+  background: white;
+  border-radius: 2px;
+  padding-left: 5px;
+  padding-right: 5px;
+  filter: drop-shadow(-3px 3px 0px #476fa7);
+  white-space: nowrap;
+  text-decoration: none;
+  transition: filter 0.15s linear;
+}
+#ladder-content p a:visited {
+  color: #476fa7;
+}
+#ladder-content p a:hover {
+  transform: translateY(3px);
+  filter: drop-shadow(-3px 3px 0px #f47522);
+}
+.main-wrapper {
+  color: #818f86;
+}
+.main-wrapper > div {
+  transition: all 0.2s ease-in-out;
+  display: block;
+  padding: 0;
+}
+@media only screen and (max-width: 830px) {
+  .main-wrapper > div {
+    width: 90%;
+    transition: all 0.2s ease-in-out;
+  }
+}
+.main-wrapper ul#ladder-records {
+  text-align: center;
+  font-family: 'Work Sans', sans-serif;
+  color: #476fa7;
+  margin-bottom: 125px;
+  width: 86%;
+  box-sizing: border-box;
+}
+@media only screen and (max-width: 830px) {
+  .main-wrapper ul#ladder-records {
+    width: 90%;
+    padding-left: 0;
+  }
+}
+.main-wrapper ul#ladder-records li {
+  background-color: #fff;
+}
+.main-wrapper ul#ladder-records li:first-child {
+  margin-top: 0;
+}
+.main-wrapper ul#ladder-records .flex-parent {
+  display: flex;
+}
+.main-wrapper ul#ladder-records .records-column-main {
+  flex: 1;
+}
+.main-wrapper ul#ladder-records .records-column-alt {
+  display: flex;
+  flex: 1;
+}
+.main-wrapper ul#ladder-records .records-column {
+  flex: 1;
+}
+.main-wrapper ul#ladder-records .player {
+  padding: 5px;
+  margin: 2px;
+}
+.main-wrapper ul#ladder-records .name a {
+  text-decoration: none;
+  color: #476fa7;
+}
+.main-wrapper ul#ladder-records .records-highlight {
+  color: #f47522;
+}
 .about-page::-webkit-scrollbar {
   width: 1em;
 }
@@ -294,12 +380,39 @@
   background-color: darkgrey;
   outline: 1px solid slategrey;
 }
-#about-wrapper {
+#about-wrapper,
+#ladder-wrapper {
   height: 100%;
   overflow: hidden;
   background-color: #1a1113;
 }
-#about-wrapper > nav {
+#about-wrapper h1,
+#ladder-wrapper h1,
+#about-wrapper h2,
+#ladder-wrapper h2 {
+  filter: drop-shadow(-2px 2px 0px #1a1113) drop-shadow(-2px 2px 2px #df5244);
+}
+#about-wrapper h2,
+#ladder-wrapper h2 {
+  filter: drop-shadow(-1px 1px 0px #1a1113) drop-shadow(-2px 2px 1px #98342a);
+}
+#about-wrapper p,
+#ladder-wrapper p {
+  padding-top: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+  font-size: 1em;
+  filter: drop-shadow(-2px 1px 0px #1a1113) drop-shadow(0px 0px 1px #df5244);
+}
+@media only screen and (max-width: 830px) {
+  #about-wrapper p,
+  #ladder-wrapper p {
+    padding: 15px;
+    font-size: 1em;
+  }
+}
+#about-wrapper > nav,
+#ladder-wrapper > nav {
   height: 400px;
   width: 60px;
   position: absolute;
@@ -311,11 +424,13 @@
   box-sizing: border-box;
 }
 @media only screen and (max-width: 830px) {
-  #about-wrapper > nav {
+  #about-wrapper > nav,
+  #ladder-wrapper > nav {
     width: 40px;
   }
 }
-#about-wrapper > nav > div {
+#about-wrapper > nav > div,
+#ladder-wrapper > nav > div {
   align-items: center;
   justify-content: center;
   width: 60px;
@@ -324,12 +439,14 @@
   color: white;
 }
 @media only screen and (max-width: 830px) {
-  #about-wrapper > nav > div {
+  #about-wrapper > nav > div,
+  #ladder-wrapper > nav > div {
     width: 40px;
     height: 40px;
   }
 }
-#about-wrapper > nav > div .diamond {
+#about-wrapper > nav > div .diamond,
+#ladder-wrapper > nav > div .diamond {
   height: 71%;
   width: 71%;
   background: #fff;
@@ -344,32 +461,39 @@
   align-items: center;
 }
 @media only screen and (max-width: 830px) {
-  #about-wrapper > nav > div .diamond {
+  #about-wrapper > nav > div .diamond,
+  #ladder-wrapper > nav > div .diamond {
     height: 68%;
     width: 68%;
     font-size: 8px;
   }
 }
-#about-wrapper > nav > div .diamond.smaller {
+#about-wrapper > nav > div .diamond.smaller,
+#ladder-wrapper > nav > div .diamond.smaller {
   font-size: 9px;
 }
 @media only screen and (max-width: 830px) {
-  #about-wrapper > nav > div .diamond.smaller {
+  #about-wrapper > nav > div .diamond.smaller,
+  #ladder-wrapper > nav > div .diamond.smaller {
     font-size: 6px;
   }
 }
-#about-wrapper > nav > div .diamond span {
+#about-wrapper > nav > div .diamond span,
+#ladder-wrapper > nav > div .diamond span {
   transform: rotateZ(45deg);
 }
-#about-wrapper > nav > div.about-nav.active {
+#about-wrapper > nav > div.about-nav.active,
+#ladder-wrapper > nav > div.about-nav.active {
   filter: drop-shadow(2px -2px 2px #476fa7) drop-shadow(-2px 2px 2px #f47522);
   overflow: visible;
 }
-#about-wrapper > .about-page {
+#about-wrapper > div,
+#ladder-wrapper > div {
   height: 100%;
   width: 100%;
   background-color: #1a1113;
   color: #f7f5f6;
+  font-size: 1.5em;
   padding: 100px 10px 10px 100px;
   box-sizing: border-box;
   opacity: 0;
@@ -377,48 +501,49 @@
   position: absolute;
   top: 0;
   overflow-y: hidden;
-  pointer-events: none;
 }
 @media only screen and (max-width: 830px) {
-  #about-wrapper > .about-page {
+  #about-wrapper > div,
+  #ladder-wrapper > div {
+    font-size: 1em;
     padding: 80px 10px 10px 50px;
   }
 }
-#about-wrapper > .about-page p {
-  padding-top: 20px;
-  padding-left: 40px;
-  padding-right: 40px;
-  font-size: 1.2em;
-  filter: drop-shadow(2px 2px 3px #df5244);
+#about-wrapper > div#ladder-content,
+#ladder-wrapper > div#ladder-content {
+  opacity: 1;
+  width: auto;
+  padding: 0;
+  padding-top: 100px;
 }
-@media only screen and (max-width: 830px) {
-  #about-wrapper > .about-page p {
-    padding: 15px;
-    font-size: 1em;
-  }
+#about-wrapper > div.about-page,
+#ladder-wrapper > div.about-page {
+  pointer-events: none;
 }
-#about-wrapper > .about-page h1 {
-  filter: drop-shadow(-2px 1px 1px #476fa7) drop-shadow(-1px 2px 1px #df5244);
-}
-#about-wrapper > .about-page > div.about-content {
+#about-wrapper > div > div.about-content,
+#ladder-wrapper > div > div.about-content {
   overflow-y: auto;
   display: flex;
 }
 @media only screen and (max-width: 830px) {
-  #about-wrapper > .about-page > div.about-content {
+  #about-wrapper > div > div.about-content,
+  #ladder-wrapper > div > div.about-content {
     display: block;
   }
 }
-#about-wrapper > .about-page > div.about-content > div {
+#about-wrapper > div > div.about-content > div,
+#ladder-wrapper > div > div.about-content > div {
   justify-content: center;
   float: left;
 }
 @media only screen and (max-width: 830px) {
-  #about-wrapper > .about-page > div.about-content > div {
+  #about-wrapper > div > div.about-content > div,
+  #ladder-wrapper > div > div.about-content > div {
     display: block;
   }
 }
-#about-wrapper > .about-page > div.about-content > div > img {
+#about-wrapper > div > div.about-content > div > img,
+#ladder-wrapper > div > div.about-content > div > img {
   margin-top: 40px;
   border-radius: 50%;
   box-sizing: border-box;
@@ -428,18 +553,22 @@
   margin-bottom: 10px;
 }
 @media only screen and (max-width: 830px) {
-  #about-wrapper > .about-page > div.about-content > div > img {
+  #about-wrapper > div > div.about-content > div > img,
+  #ladder-wrapper > div > div.about-content > div > img {
     width: 100%;
   }
 }
-#about-wrapper > .about-page > div.about-content > div.about-left {
+#about-wrapper > div > div.about-content > div.about-left,
+#ladder-wrapper > div > div.about-content > div.about-left {
   display: block;
   filter: drop-shadow(3px -3px 3px #476fa7) drop-shadow(-3px 3px 3px #f47522);
 }
-#about-wrapper > .about-page > div.about-content > div.about-right {
+#about-wrapper > div > div.about-content > div.about-right,
+#ladder-wrapper > div > div.about-content > div.about-right {
   flex: 2;
 }
-#about-wrapper > .about-page.active {
+#about-wrapper > div.active,
+#ladder-wrapper > div.active {
   opacity: 1;
   pointer-events: all;
 }
@@ -1197,6 +1326,8 @@ body {
   height: 100%;
   width: 100%;
   position: absolute;
+  overflow: hidden;
+  background: #1a1113;
 }
 #floating-elements {
   position: absolute;

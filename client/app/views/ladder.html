@@ -1,16 +1,16 @@
-<!-- 
-<style>	
-	#ladder {	
-		font-family: "Impact",sans-serif;	 
-		border-collapse: collapse;	 	
-		width: 100%;	 	
-		text-align: center;	 	
-	}	 	
-	#ladder td { font-family: "Impact",sans-serif;	 
+<!--
+<style>
+	#ladder {
+		font-family: "Impact",sans-serif;
+		border-collapse: collapse;
+		width: 100%;
+		text-align: center;
+	}
+	#ladder td { font-family: "Impact",sans-serif;
 		font-size: 1.5em;
-		border: none;	 	
-	}	 	
-	#ladder tr:hover{background-color: #f5f5f5}	 
+		border: none;
+	}
+	#ladder tr:hover{background-color: #f5f5f5}
 	#ladder a:link    {color:#999999; background-color:transparent; text-decoration:none}
 	#ladder a:visited {color:#999999; background-color:transparent; text-decoration:none}
 	#ladder a:hover   {color:#999999; background-color:transparent; text-decoration:underline}
@@ -18,12 +18,12 @@
 }
 </style> -->
 
-<div class="main-wrapper">
-	<div>
+<div id="ladder-wrapper" class="main-wrapper">
+	<div id="ladder-content">
 		<h1>Rules</h1>
 			<h2>Format</h2>
 			<p>
-				Every week on Wednesday starting at 9:00pm Eastern Time(USA) there will be (up to) 9 games that count towards our ladder (3 concurrent lobbies with 3 games each). Lobby 3 will be reserved for high skill players(4k+) while lobbies 1 and 2 will be for under 4k players. Once you have played in a game each night you are required to defer your spot in the following games to other players unless no other players are waiting to play. 
+				Every week on Wednesday starting at 9:00pm Eastern Time(USA) there will be (up to) 9 games that count towards our ladder (3 concurrent lobbies with 3 games each). Lobby 3 will be reserved for high skill players(4k+) while lobbies 1 and 2 will be for under 4k players. Once you have played in a game each night you are required to defer your spot in the following games to other players unless no other players are waiting to play.
 			</p>
 			<h2>Game Ruleset</h2>
 			<p>
@@ -56,42 +56,44 @@
 				5 $20 steam gift cards and 1 $50 steam gift will be raffled off at the end of the season with “raffle tickets” being determined by the number of games you play.<br>
 				The person on top of the leaderboard at the end of each season will have a different color for their name on the leaderboard for following seasons.
 			</p>
+
+			<ul id="ladder-records">
+
+				<li class="records-header flex-parent">
+					<div id="players-header" class="records-column-main">
+						Players
+					</div>
+					<div class="records-column-alt">
+						<div id="wins-header" class="records-column">
+							Wins
+						</div>
+						<div id="losses-header" class="records-column">
+							Losses
+						</div>
+						<div id="players-header" class="records-column">
+							Points
+						</div>
+					</div>
+				</li>
+				<li ng-repeat="player in vm.ladder.players" style="font-family: 'Constantia, Arial, sans-serif'" class="player flex-parent">
+					<div class="name records-column-main">
+						<a style="color:{{::player.color}}" ng-href="http://www.dotabuff.com/players/{{::player.playerId}}">{{::player.nickName}}</a>
+					</div>
+					<div class="records-column-alt">
+						<div class="wins records-column records-highlight">
+							{{::player.wins}}
+						</div>
+						<div class="losses records-column">
+							{{::player.losses}}
+						</div>
+						<div class="points records-column">
+							{{::player.points}}
+						</div>
+					</div>
+				</li>
+			</ul>
 	</div>
-	<ul id="ladder-records">
-		
-		<li class="records-header flex-parent">
-			<div id="players-header" class="records-column-main">
-				Players
-			</div>
-			<div class="records-column-alt">
-				<div id="wins-header" class="records-column">
-					Wins
-				</div>
-				<div id="losses-header" class="records-column">
-					Losses
-				</div>
-				<div id="players-header" class="records-column">
-					Points
-				</div>
-			</div>
-		</li>
-		<li ng-repeat="player in vm.ladder.players" style="font-family: 'Constantia, Arial, sans-serif'" class="player flex-parent">
-			<div class="name records-column-main">
-				<a style="color:{{::player.color}}" ng-href="http://www.dotabuff.com/players/{{::player.playerId}}">{{::player.nickName}}</a>
-			</div>
-			<div class="records-column-alt">
-				<div class="wins records-column records-highlight">
-					{{::player.wins}}
-				</div>
-				<div class="losses records-column">
-					{{::player.losses}}
-				</div>
-				<div class="points records-column">
-					{{::player.points}}
-				</div>
-			</div>
-		</li>
-	</ul>
+
 	<!-- <div class="">
 		<div class="entry-content">
 
@@ -99,7 +101,7 @@
 				<h1>Rules</h1>
 				<p>
 					Format-<br>
-					Every week on Wednesday starting at 9:00pm Eastern Time(USA) there will be (up to) 9 games that count towards our ladder (3 concurrent lobbies with 3 games each). Lobby 3 will be reserved for high skill players(4k+) while lobbies 1 and 2 will be for under 4k players. Once you have played in a game each night you are required to defer your spot in the following games to other players unless no other players are waiting to play. 
+					Every week on Wednesday starting at 9:00pm Eastern Time(USA) there will be (up to) 9 games that count towards our ladder (3 concurrent lobbies with 3 games each). Lobby 3 will be reserved for high skill players(4k+) while lobbies 1 and 2 will be for under 4k players. Once you have played in a game each night you are required to defer your spot in the following games to other players unless no other players are waiting to play.
 				</p>
 				<p>
 					Game Ruleset-<br>
