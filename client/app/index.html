@@ -31,11 +31,12 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
-    <link rel='stylesheet' href='bower_components/videogular-themes-default/videogular.css' />
+    <link rel="stylesheet" href="bower_components/videogular-themes-default/videogular.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
+        <link rel='stylesheet' href='bower_components/perfect-scrollbar/css/perfect-scrollbar.css' />
     <!-- endbuild -->
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyD3M1UXHXtbvqFmLLWomtmfH7kgcqumea8"></script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -144,7 +145,7 @@
       <div id="fog"></div>
         <!-- Add your site or application content here -->
         <div id="title-bar" ui-view="titlebar"></div>
-        <div id="dotp-loader-container" ui-view="dotp-loader"></div>
+        <!-- <div id="dotp-loader-container" ui-view="dotp-loader"></div> -->
         <div id="content-main" ui-view="container">
         </div>
 
@@ -335,6 +336,5 @@
     <script src="scripts/directives/socialLinks.js"></script>
     <!-- endbuild -->
 
-    <link rel='stylesheet' href='bower_components/perfect-scrollbar/css/perfect-scrollbar.css' />
 </body>
 </html>

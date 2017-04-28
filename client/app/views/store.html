@@ -1,4 +1,4 @@
-<div class="main-wrapper">
+<div id="store-wrapper" class="main-wrapper limit-width-top-level">
 	<div id="dotp-store">
 		<h2>DotP Store{{checkoutMessage}}</h2>
 		<h5><span id="open-cart" ng-click="vm.openCart()"><i class="fa fa-shopping-cart" aria-hidden="true"></i> {{vm.cart.price | currency}}</span></h5>
@@ -22,13 +22,13 @@
 			<div id="paypal-button"></div>
 			<script src="https://www.paypalobjects.com/api/checkout.js"></script>
 		</div>
-		<div class="store-item" ng-class="{'hidden': isManagingCart|| isCheckingOut}">
+		<div class="store-item" ng-class="{'item-selected': isItemSelected, 'hidden': isManagingCart|| isCheckingOut}">
 			<div ng-click="vm.startCheckOut()" ng-class="{'hidden': isCheckingOut}" class="open-checkout">
 				<i class="fa fa-credit-card" aria-hidden="true"></i>
 				Check Out{{validationMessage}}
 			</div>
-			<div class="product" ng-repeat="product in vm.fakeStoreData track by $index">
-				<img ng-src="{{::product.files[1].url}}" />
+			<div class="product float-left" ng-repeat="product in vm.fakeStoreData track by $index" ng-click="handleProductClick($event)">
+				<img class="" ng-src="{{::product.files[1].url}}" />
 				<div class="product-specs">
 					<div class="product-name">{{::product.name}}</div>
 					<div class="product-text"  ng-if="!(product.type === 'hat')">
