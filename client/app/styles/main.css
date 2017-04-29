@@ -367,6 +367,258 @@
 .main-wrapper ul#ladder-records .records-highlight {
   color: #f47522;
 }
+.player-wrapper videogular vg-scrub-bar .container,
+.player-wrapper [videogular] vg-scrub-bar .container {
+  position: absolute;
+  width: 100%;
+  height: 15px;
+  padding-left: 0;
+  top: unset;
+}
+.player-wrapper videogular vg-scrub-bar,
+.player-wrapper [videogular] vg-scrub-bar {
+  width: auto;
+  cursor: pointer;
+  position: initial;
+  display: block;
+}
+.player-wrapper videogular vg-scrub-bar [role="slider"],
+.player-wrapper [videogular] vg-scrub-bar [role="slider"] {
+  height: 15px;
+  margin-top: 0;
+  margin-bottom: 0;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+.player-wrapper #control-top {
+  height: 15px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  z-index: 300;
+}
+.player-wrapper #control-mid {
+  height: 35px;
+  position: absolute;
+  bottom: top;
+  width: 100%;
+  z-index: 300;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.videogular-container {
+  transition: all 0.2s ease-in-out;
+  width: 100%;
+  height: 50px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media only screen and (max-width: 830px) {
+  .videogular-container {
+    transition: all 0.2s ease-in-out;
+    width: 100%!important;
+  }
+}
+.videogular-container vg-scrub-bar [role=slider] {
+  background: rgba(62, 101, 158, 0.6);
+}
+.videogular-container vg-scrub-bar-buffer {
+  background-color: #3e659e;
+  opacity: 1;
+}
+.videogular-container vg-scrub-bar-current-time {
+  background-color: #f36820;
+  z-index: 1000;
+}
+.videogular-container .audio {
+  height: 50px;
+  background: none!important;
+}
+.videogular-container .audio vg-volume:before {
+  content: '\f028';
+  font-family: FontAwesome;
+}
+.videogular-container .audio .verticalVolumeBar {
+  background: #fff;
+  border: 1px solid #000;
+}
+.videogular-container .audio .verticalVolumeBar .volumeBackground {
+  background: #888888;
+}
+.videogular-container .audio .verticalVolumeBar .volumeBackground .volumeValue {
+  background: #476fa7;
+}
+.videogular-container .audio .time-holder {
+  padding-left: 15px;
+  font-size: 15px;
+  width: 124px;
+}
+.videogular-container videogular vg-controls .controls-container,
+.videogular-container [videogular] vg-controls .controls-container {
+  background: none!important;
+}
+.videogular-container vg-play-pause-button .pause:before {
+  content: "\f04c";
+  font-family: FontAwesome;
+}
+.videogular-container vg-play-pause-button .play:before {
+  content: "\f04b";
+  font-family: FontAwesome;
+}
+.player-wrapper.open {
+  transition: all 0.2s ease-in-out;
+}
+.player-wrapper.open #paging {
+  display: none;
+}
+.player-wrapper {
+  transition: all 0.2s ease-in-out;
+  z-index: 20000;
+  width: 280px;
+  top: -5px;
+  height: 50px;
+  position: absolute;
+  left: 76px;
+  right: 0;
+  margin: 0 auto;
+}
+.player-wrapper .podcast-title {
+  position: absolute;
+  width: 100%;
+  height: 15px;
+  font-size: 13px;
+  bottom: 0;
+  box-sizing: border-box;
+  z-index: 400;
+  pointer-events: none;
+  color: white;
+}
+@media only screen and (max-width: 830px) {
+  .player-wrapper .podcast-title {
+    display: none;
+  }
+}
+.player-wrapper .podcast-title div {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.player-wrapper .player.show-player {
+  transition: all 0.2s ease-in-out;
+  display: inherit;
+}
+@media only screen and (max-width: 830px) {
+  .player-wrapper .player.show-player {
+    position: absolute;
+    width: 100%;
+    bottom: 50px;
+    height: 50px;
+  }
+}
+.player-wrapper .player {
+  transition: all 0.2s ease-in-out;
+  display: none;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  height: 100%;
+}
+.player-wrapper .player videogular vg-volume-bar {
+  top: 20px;
+}
+@media only screen and (max-width: 830px) {
+  .player-wrapper .player {
+    background: #fff;
+    border-top: 1px solid #5F5F67;
+  }
+}
+.player-wrapper #paging.is-playing {
+  transition: all 0.2s ease-in-out;
+  margin: 0 auto;
+  width: 20%;
+  left: 0;
+  right: 0;
+}
+@media only screen and (max-width: 830px) {
+  .player-wrapper #paging.is-playing {
+    width: 100%;
+  }
+}
+.player-wrapper #paging {
+  transition: all 0.2s ease-in-out;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: calc(100% - 17px);
+  height: 50px;
+  background: #fff;
+  border-top: 1px solid #5F5F67;
+  display: flex;
+}
+.player-wrapper #paging div#prev a {
+  color: #f36820;
+}
+.player-wrapper #paging div#next a {
+  color: #3e659e;
+}
+.player-wrapper #paging div a {
+  text-decoration: none;
+}
+.player-wrapper #paging div a i {
+  position: absolute;
+}
+.player-wrapper #paging #prev {
+  position: relative;
+  flex: 1;
+  text-align: right;
+}
+.player-wrapper #paging #prev:hover {
+  cursor: pointer;
+}
+.player-wrapper #paging #prev:hover i {
+  animation: left-bump 0.4s ease;
+  transition: all 0.2s ease-in-out;
+}
+.player-wrapper #paging #prev .prev-text {
+  transition: all 0.2s ease-in-out;
+  height: 100%;
+  width: 100%;
+  line-height: 50px;
+  margin-left: -40px;
+}
+.player-wrapper #paging #prev i {
+  transition: all 0.2s ease-in-out;
+  top: 9px;
+  right: 5px;
+}
+.player-wrapper #paging #next {
+  position: relative;
+  flex: 1;
+  text-align: left;
+}
+.player-wrapper #paging #next:hover {
+  cursor: pointer;
+}
+.player-wrapper #paging #next:hover i {
+  animation: right-bump 0.4s ease;
+  transition: all 0.2s ease-in-out;
+}
+.player-wrapper #paging #next .next-text {
+  transition: all 0.2s ease-in-out;
+  height: 100%;
+  width: 100%;
+  line-height: 50px;
+  margin-left: 40px;
+}
+.player-wrapper #paging #next i {
+  transition: all 0.2s ease-in-out;
+  top: 9px;
+  left: 5px;
+}
 .about-page::-webkit-scrollbar {
   width: 1em;
 }
@@ -596,13 +848,34 @@ div#cart-wrapper {
 }
 @media only screen and (max-width: 830px) {
   .main-wrapper > div#dotp-store .store-item {
-    min-height: 1800px;
+    min-height: 700px;
   }
 }
 .main-wrapper > div#dotp-store .store-item #store-spacer {
   height: 1022px;
   padding-left: 120px;
   padding-right: 120px;
+}
+@media only screen and (max-width: 830px) {
+  .main-wrapper > div#dotp-store .store-item #store-spacer {
+    min-height: 700px;
+  }
+}
+@media only screen and (max-width: 830px) {
+  .main-wrapper > div#dotp-store .store-item.item-selected {
+    min-height: 700px;
+  }
+}
+.main-wrapper > div#dotp-store .store-item.item-selected #store-spacer {
+  height: 1022px;
+  padding-left: 120px;
+  padding-right: 120px;
+}
+@media only screen and (max-width: 830px) {
+  .main-wrapper > div#dotp-store .store-item.item-selected #store-spacer {
+    min-height: 700px;
+    height: 700px;
+  }
 }
 .main-wrapper > div#dotp-store .store-item.item-selected > .product {
   opacity: 0;
@@ -614,13 +887,27 @@ div#cart-wrapper {
   opacity: 1;
   height: calc(100% - 120px);
 }
+@media only screen and (max-width: 830px) {
+  .main-wrapper > div#dotp-store .store-item.item-selected > .product.selected-item {
+    top: 50px;
+    max-height: 600px;
+  }
+}
 .main-wrapper > div#dotp-store .store-item.item-selected > .product.selected-item > .product-specs {
   height: 300px;
   opacity: 1;
 }
 .main-wrapper > div#dotp-store .store-item.item-selected > .product.selected-item > img {
-  width: 500px;
-  height: 500px;
+  width: 100%;
+  height: 100%;
+  max-width: 500px;
+  max-height: 500px;
+}
+@media only screen and (max-width: 830px) {
+  .main-wrapper > div#dotp-store .store-item.item-selected > .product.selected-item > img {
+    max-width: 240px;
+    max-height: 240px;
+  }
 }
 .main-wrapper > div#dotp-store li.cart-item {
   text-align: center;
@@ -697,20 +984,44 @@ div#cart-wrapper {
   opacity: 1;
   transition: all 0.4s ease;
 }
+@media only screen and (max-width: 830px) {
+  .product {
+    max-width: 280px;
+    max-height: 280px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+}
 .product.product-0 {
   top: 55px;
   left: 0;
   position: absolute;
+}
+@media only screen and (max-width: 830px) {
+  .product.product-0 {
+    top: 55px;
+  }
 }
 .product.product-1 {
   top: 55px;
   right: 0;
   position: absolute;
 }
+@media only screen and (max-width: 830px) {
+  .product.product-1 {
+    top: 365px;
+  }
+}
 .product.product-2 {
   bottom: 55px;
   left: 0;
   position: absolute;
+}
+@media only screen and (max-width: 830px) {
+  .product.product-2 {
+    top: 675px;
+  }
 }
 .product:hover {
   filter: drop-shadow(-8px 0px 4px #476fa7) drop-shadow(8px 0px 4px #476fa7);
@@ -725,6 +1036,7 @@ div#cart-wrapper {
   text-align: center;
   margin: 0 auto;
   width: 500px;
+  max-width: 100%;
   height: 0;
   display: flex;
   flex-direction: column;
@@ -754,8 +1066,8 @@ div#cart-wrapper {
 }
 @media only screen and (max-width: 830px) {
   .product img {
-    width: 300px;
-    height: 300px;
+    min-width: 240px;
+    min-height: 240px;
     margin: 0 auto;
   }
 }
@@ -1090,7 +1402,7 @@ a#feed-icon {
   height: 55px;
   position: absolute;
   left: 0;
-  bottom: 0;
+  top: 0;
   -webkit-backface-visibility: hidden;
   transition: all 300ms ease;
 }
@@ -1195,6 +1507,9 @@ a#feed-icon .waves .wave:nth-child(4) {
 #episodes-wrapper ul {
   list-style: none;
   padding-left: 0px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 #episodes-wrapper ul li {
   text-align: center;
@@ -1210,10 +1525,12 @@ a#feed-icon .waves .wave:nth-child(4) {
   background: #1a1113;
   width: 100%;
   height: 100%;
+  transition: all 0.5s ease;
 }
 #episodes-wrapper > div.opened {
   display: block;
   z-index: 501;
+  height: calc(100vh - 100px);
 }
 #episodes-wrapper > div.opened .circle {
   opacity: 0;
@@ -1521,6 +1838,7 @@ div.social-links .reddit:hover {
   .float-left {
     height: auto;
     width: 100%;
+    min-width: 200px;
     display: inline-block;
   }
 }

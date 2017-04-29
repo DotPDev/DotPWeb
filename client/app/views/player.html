@@ -11,15 +11,19 @@
         vg-type="audio">
       </vg-media>
       <vg-controls>
-        <vg-play-pause-button></vg-play-pause-button>
-        <vg-scrub-bar>
-          <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
-          <vg-scrub-bar-buffer></vg-scrub-bar-buffer>
-        </vg-scrub-bar>
-        <vg-time-display class="time-holder">{{ currentTime | playerDate }} / {{ totalTime | date:'hh:mm:ss': 'UTC' }}</vg-time-display>
-        <vg-volume>
-          <vg-volume-bar></vg-volume-bar>
-        </vg-volume>
+        <div id="control-top">
+          <vg-scrub-bar>
+            <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+            <vg-scrub-bar-buffer></vg-scrub-bar-buffer>
+          </vg-scrub-bar>
+        </div>
+        <div id="control-mid">
+          <vg-play-pause-button></vg-play-pause-button>
+          <vg-time-display class="time-holder">{{ currentTime | playerDate }} / {{ totalTime | date:'hh:mm:ss': 'UTC' }}</vg-time-display>
+          <vg-volume>
+            <vg-volume-bar></vg-volume-bar>
+          </vg-volume>
+        </div>
       </vg-controls>
     </videogular>
   </div>
