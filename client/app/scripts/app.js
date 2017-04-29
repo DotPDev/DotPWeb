@@ -159,6 +159,23 @@ angular
             }
         }
     });
+    $stateProvider.state('root.episodes', {
+        url: '/episodes',
+        resolve: {
+        },
+        data: {
+            pageName: 'EpisodesCtrl',
+            browserTitle: 'Episodes',
+            description: 'Defense of the Patience is a gaming podcast founded in July 2014. We began as humble, amateur Dota 2 podcast hosts, and have expanded to cover additional games with special bonus episodes while still featuring a solid lineup of shows devoted to Dota 2 featuring a wide array of talented Dota 2 players, amateurs and scene insiders alike.'
+        },
+        views: {
+            'container@': {
+                templateUrl: 'views/episodes.html',
+                controller: 'MainCtrl',
+                controllerAs: 'vm'
+            }
+        }
+    });
     $stateProvider.state('root.social', {
         url: '/social',
         resolve: {

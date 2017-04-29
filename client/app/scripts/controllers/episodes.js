@@ -8,7 +8,7 @@
 * Controller of the clientApp
 */
 angular.module('clientApp')
-.controller('MainCtrl', function ($scope, $http, $rootScope, feedManager, utils, uiState) {
+.controller('EpisodesCtrl', function ($scope, $http, $rootScope, feedManager, utils) {
     var vm = this;
     vm.feed = {};
     vm.page = 1;
@@ -16,23 +16,16 @@ angular.module('clientApp')
         next: "/",
         prev: "/"
     };
-    vm.states = {};
-    vm.states.podcastButton = "isPodcastOpen";
     vm.stripHtml = stripHtml;
     vm.getImage = getImage;
     vm.startPodcast = startPodcast;
 
     vm.isOpen = false;
     vm.handleClick = handleClick;
-    vm.getPodcastButtonState = getPodcastButtonState;
-
-    function getPodcastButtonState() {
-      console.log(uiState.getState(vm.states.podcastButton));
-      return uiState.getState(vm.states.podcastButton);
-    }
 
     function handleClick() {
-      uiState.toggleState(vm.states.podcastButton);
+      vm.isOpen = !vm.isOpen;
+        console.log(vm.isOpen);
     }
 
     vm.goNext = goNext;
@@ -55,7 +48,6 @@ angular.module('clientApp')
         }
         setPageLinks();
         getFeed();
-
     }
 
     function getImage(date) {
@@ -141,6 +133,7 @@ angular.module('clientApp')
         goPrev();
     });
 
+        Ps.initialize(document.getElementById("superEps"));
 
     init();
 });

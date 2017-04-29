@@ -72,6 +72,14 @@ function createOrder(orderInfo) {
 
 
 }
+
+function getOrder(orderId) {
+  return new Promise((fulfill, reject) => {
+
+        //Select order with ID 12345 (Replace with your order's ID)
+        pf.get('orders/' + orderId).success((data, info) => {fulfill(data)}).error((err) => {reject(err)})
+  })
+}
     //Get product list
     //pf.get('products').success(ok_callback).error(error_callback);
 
@@ -238,5 +246,6 @@ function createOrder(orderInfo) {
 
 
 module.exports = {
-  createOrder
+  createOrder,
+  getOrder
 }

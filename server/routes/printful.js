@@ -2,6 +2,7 @@ var express = require('express')
 var router = express.Router()
 var request = require('request')
 var PrintfulClient = require('../printfulclient.js')
+var pfSvc = require('../services/printfulSvc.js')
 
 var bodyParser = require("body-parser");
 
@@ -90,6 +91,10 @@ function createOrder(orderInfo) {
         orderInfo = defaultOrder;
     }
     pf.post('orders', orderInfo).success(ok_callback).error(error_callback);
+
+}
+
+function getOrder(orderId) {
 
 }
     //Get product list
@@ -206,8 +211,15 @@ router.get('/', function(req, res, next) {
     console.log(next)
   //doRequest()
 })
-router.post('/orders', function(req, res) {
-    console.log(req.body)
+router.get('/orders', function(req, res, next) {
+    console.log(req)
+    console.log(res)
+    console.log(next)
+  //doRequest()
+})
+router.get('/orders/:orderId', function(req, res) {
+    console.log(orderId)
+    pfSvc.getOrder(orderId).success((data) => {res.send(data)})
 })
 
 module.exports = router;

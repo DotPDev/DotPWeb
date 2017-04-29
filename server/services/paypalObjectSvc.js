@@ -90,6 +90,7 @@ function buildPaymentProfile() {
 
 function buildPaymentObject(printfulOrder) {
     // Build PayPal payment request
+    console.log(printfulOrder);
 
     const itemArray = printfulOrder.items.map(item => {
       return {
@@ -124,7 +125,7 @@ function buildPaymentObject(printfulOrder) {
                     "shipping_discount": printfulOrder.retail_costs.discont
                 }
             },
-            "description": "Thank you for supporting Defense of the Patience!"
+            "description": "Thank you for supporting Defense of the Patience! Your order number"
         }],
 
         // DotP Dev Experience -

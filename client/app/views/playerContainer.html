@@ -1,0 +1,18 @@
+<div id="episodes-wrapper">
+
+  <div ng-class="{ 'opened': vm.getPodcastButtonState() }">
+
+    <a id="feed-icon" ng-click="vm.handleClick()" alt="Woo RSS!">
+      <div class="circle"></div>
+      <div class="waves">
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+      </div>
+    </a>
+    <!-- <span id="latest-episode">Latest Episode:</br>vm.latestEpisode</span> -->
+  </div>
+</div>
+
+<player></player>
