@@ -116,6 +116,7 @@
 // Custom
 .player-wrapper.open {
     transition: @transition;
+    pointer-events: all;
 
     #paging {
         display: none;
@@ -123,6 +124,7 @@
 }
 
 .player-wrapper {
+  pointer-events: none;
     transition: @transition;
     z-index: 20000;
     width: 280px;
@@ -132,6 +134,22 @@
     left: 76px;
     right: 0;
     margin: 0 auto;
+
+    & videogular .iconButton, [videogular] .iconButton {
+      color: black;
+    }
+
+    & videogular vg-time-display, [videogular] vg-time-display {
+          @media @smartphones {
+            color: black;
+          }
+    }
+    @media @smartphones {
+        left: 0;
+        top: calc(~'100vh - 30px');
+        width: 100%;
+        color: black !important;
+    }
     // background-image:@cardBg;
     // background-image: @navPattern, radial-gradient(top left, circle cover, @brightCard, @cardBg);
     // background-image: @navPattern, -o-radial-gradient(top left, circle cover, @brightCard, @cardBg);
@@ -174,9 +192,17 @@
         width: 100%;
         bottom: 0;
         height: 100%;
+        pointer-events: none;
+
+        &.show-player {
+          pointer-events: all;
+        }
 
         & videogular vg-volume-bar {
           top: 20px;
+          @media @smartphones {
+            top: 0;
+          }
         }
         @media @smartphones {
             background: #fff;

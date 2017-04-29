@@ -1,6 +1,6 @@
-<div id="episodes-wrapper" ng-class="{ 'opened': vm.isOpen }">
+<div id="episodes-wrapper">
 
-  <div ng-class="{ 'opened': vm.isOpen }">
+  <div ng-class="{ 'opened': vm.getPodcastButtonState() }">
 
     <a id="feed-icon" ng-click="vm.handleClick()" alt="Woo RSS!">
       <div class="circle"></div>

@@ -16,8 +16,17 @@ angular.module('clientApp')
         meta: {}
     };
 
+    function resetFeed() {
+      feedData = {
+          episodes: [],
+          meta: {}
+      };
+    }
+
     function parseFeed(page) {
         if (feedData.episodes.length === 0) {
+
+          setTimeout(resetFeed,300000);
             return $http.get('/api/feed/').then(function(response) {
                 //TODO show a message indicating that we're getting data again.
                 if (response.message && response.message === 'service not loaded') {
@@ -33,12 +42,12 @@ angular.module('clientApp')
             });
         } else {
             var deferred = $q.defer();
-            // Mimicking $http.get's success 
+            // Mimicking $http.get's success
             deferred.resolve(getSlice(feedData, ((page * 5) - 5), (page * 5)));
-            
+
             return deferred.promise;
         }
-        
+
     }
 
     function getSlice(feedData, start, end) {

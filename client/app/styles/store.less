@@ -2,6 +2,19 @@ div#cart-wrapper {
   height: 100%;
   width: 100%;
   box-sizing: content-box;
+
+  ul {
+    list-style: none;
+    li {
+      padding: 5px;
+
+    }
+    @media @smartphones {
+      padding: 0;
+
+
+    }
+  }
 }
 
 .main-wrapper {
@@ -139,8 +152,7 @@ div#cart-wrapper {
           color: #476fa7;
           background: white;
           border-radius: 2px;
-          padding-left: 5px;
-          padding-right: 5px;
+          padding:5px;
           filter: drop-shadow(-3px 3px 0px #476fa7);
           white-space: nowrap;
           text-decoration: none;
@@ -155,6 +167,10 @@ div#cart-wrapper {
      .open-checkout {
        font-size: 2em;
        text-align: center;
+
+       @media @smartphones {
+         font-size: 1em;
+       }
      }
    }
 }
