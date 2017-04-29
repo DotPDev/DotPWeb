@@ -14,10 +14,16 @@
 }
 
 .float-left {
-  width: 50%;
+  width: calc(~'50% - 20px');
   min-width: 300px;
   box-sizing: border-box;
-  display: inline-flex;
+  display: flex;
   overflow: hidden;
   justify-content: center;
+  flex-direction: column;
+  @media @smartphones {
+    height: auto;
+    width: 100%;
+    display: inline-block;
+  }
 }

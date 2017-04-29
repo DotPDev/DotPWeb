@@ -23,10 +23,12 @@ angular.module('clientApp')
     vm.cart.price = 0;
     vm.cart.items = [];
     vm.emptyCart = emptyCart;
+    vm.selectedProduct = null;
     $scope.isCheckingOut = false;
     $scope.isManagingCart = false;
     $scope.isItemSelected = false;
     $scope.handleProductClick = handleProductClick;
+    $scope.getProductClass = getProductClass;
     vm.startCheckOut = startCheckOut;
     vm.closeCheckOut = closeCheckOut;
     vm.addToCart = addToCart;
@@ -52,11 +54,18 @@ angular.module('clientApp')
       }
     };
 
-    function handleProductClick($event) {
+    function getProductClass(i) {
+      return 'product-' + i;
+    }
+
+    function handleProductClick(i, $event) {
+      console.log($scope.isItemSelected);
+        console.log(i);
+          console.log($event);
       if (!$scope.isItemSelected) {
         $event.currentTarget.className += ' selected-item';
       } else {
-        $event.currentTarget.className = 'product float-left ng-scope';
+        $event.currentTarget.className = 'product float-left ng-scope product-' + i;
       }
       $scope.isItemSelected = !$scope.isItemSelected;
     }
