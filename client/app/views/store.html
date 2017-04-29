@@ -22,12 +22,16 @@
 			<div id="paypal-button"></div>
 			<script src="https://www.paypalobjects.com/api/checkout.js"></script>
 		</div>
+
 		<div class="store-item" ng-class="{'item-selected': isItemSelected, 'hidden': isManagingCart|| isCheckingOut}">
+
 			<div ng-click="vm.startCheckOut()" ng-class="{'hidden': isCheckingOut}" class="open-checkout">
 				<i class="fa fa-credit-card" aria-hidden="true"></i>
 				Check Out{{validationMessage}}
 			</div>
-			<div class="product float-left" ng-repeat="product in vm.fakeStoreData track by $index" ng-click="handleProductClick($event)">
+
+			<div id="store-spacer"></div>
+			<div class="product float-left" ng-repeat="product in vm.fakeStoreData track by $index" ng-click="handleProductClick($index, $event)" ng-class="getProductClass($index)">
 				<img class="" ng-src="{{::product.files[1].url}}" />
 				<div class="product-specs">
 					<div class="product-name">{{::product.name}}</div>
@@ -37,7 +41,7 @@
 						</select>
 					</div>
 					<div class="product-price">Price: {{::product.retail_price | currency}}</div>
-					<div class="product-add-to-cart" ng-click="vm.addToCart(product)">
+					<div class="product-add-to-cart linkify" ng-click="vm.addToCart(product)">
 						<i class="fa fa-cart-plus" aria-hidden="true"></i>
 						<span>Add to cart</span>
 					</div>
