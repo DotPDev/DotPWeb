@@ -1,119 +1,14 @@
 #title-bar {
-    position: absolute;
-    top:30px;
-    height: 30px;
+		position: absolute;
+    // top:45px;
+    height: 60px;
     width:100%;
     z-index: 100;
-    // .nav.collapsed {
-    //     min-width:330px;
-    //     li {
-    //         &:not(:first-child) {
-    //             display: none;
-    //         }
-    //         &:last-child {
-    //             display: inherit;
-    //             position: absolute;
-    //             right: 0;
-    //             top: 0;
-    //             height:100%;
-    //             border-bottom: none;
-    //             .patreon-container {
-    //             }
-    //             .pvgna-container {
-    //             }
-    //             .power {
-    //             }
-    //         }
-    //         &:first-child {
-    //             //min-width:555px;
-    //             header {
-    //                 right:inherit;
-    //                 left: 8px;
-    //             }
-    //         }
-    //     }
-    //     .dotpeeps {
-    //         width: 70%;
-    //     }
-    // }
-    // .collapsed-nav.is-showing-nav {
-    //     width: 100%;
-    //     right: 0;
-    //     transition: @transition;
-    //     li {
-    //         flex:1;
-    //         position: relative;
-    //         font-size: @navFontSize;
-    //         //text-shadow: @navFontTextShadow;
-    //         text-transform: uppercase;
-    //         transition: background .2s ease, color .2s ease;
-    //         letter-spacing: .1em;
-    //         position: relative;
-    //
-    //         &:last-child {
-    //           a {
-    //             border-bottom:4px solid black;
-    //             height: calc(~'100% - 8px');
-    //           }
-    //         }
-    //         a {
-    //             display: block;
-    //             text-decoration: none;
-    //             color: #000;
-    //             height: calc(~'100% - 4px');
-    //             width: calc(~'100% - 8px');
-    //             position: absolute;
-    //             top: 0;
-    //             left: 0;
-    //             transition: @transition;
-    //             border: 4px solid black;
-    //             border-bottom: none;
-    //             &:hover {
-    //                 cursor:pointer;
-    //                 color:#ffffff;
-    //                 transition: @transition;
-    //             }
-    //             span {
-    //                 position: absolute;
-    //                 top: 40%;
-    //                 left: 0;
-    //                 right: 0;
-    //                 margin: auto;
-    //                 text-align: center;
-    //             }
-    //         }
-    //     }
-    //     .power {
-    //         position: absolute;
-    //         width: 60px;
-    //         height: 60px;
-    //         top: 0;
-    //         right: 0;
-    //     }
-    // }
-    // .collapsed-nav {
-    //     transition: @transition;
-    //     width:0%;
-    //     height: calc(~'100% - 60px');
-    //     position: fixed;
-    //     top: 0;
-    //     right: -100%;
-    //     overflow:hidden;
-    //     display: flex;
-    //     flex-direction: column;
-    //     padding: 0;
-    //     margin: 0;
-    //     top: 60px;
-    //     background-color:#fff;
-    //     // background-image:@cardBg;
-    //     // background-image: @navPattern, radial-gradient(top left, circle cover, @brightCard, @cardBg);
-    //     // background-image: @navPattern, -o-radial-gradient(top left, circle cover, @brightCard, @cardBg);
-    //     // background-image: @navPattern, -ms-radial-gradient(top left, circle cover, @brightCard, @cardBg);
-    //     // background-image: @navPattern, -moz-radial-gradient(top left, circle cover, @brightCard, @cardBg);
-    //     // background-image: @navPattern, -webkit-radial-gradient(top left, circle cover, @brightCard, @cardBg);
-    // }
-    nav {
-        background: @navElemColor;
+    margin-bottom: 50px;
+    
+		nav {
+        background: black;
+        // border-top: 1px solid white;
         height:100%;
 
         .nav {
@@ -122,11 +17,9 @@
             margin: 0;
             //margin-top: 30px;
             height: 30px;
-            position: relative;
+            // position: relative;
             display: flex;
-            // -webkit-box-shadow: 0px 10px 24px -1px rgba(8,13,19,0.8);
-            // -moz-box-shadow: 0px 10px 24px -1px rgba(8,13,19,0.8);
-            // box-shadow: 0px 10px 24px -1px rgba(8,13,19,0.8);
+            
             li {
               flex: 2;
 
@@ -195,45 +88,43 @@
 
                 &#dotp-logo {
                   border: none;
-
                   & > img {
-                    width: 120px;
+                    width: 200px;
                     margin: 0 auto;
+                    margin-left: 10px;
                     display: block;
-                    top: -27px;
+                    top: 4px;
                     position: relative;
-                    filter: drop-shadow(2px -4px 3px #476fa7) drop-shadow(-2px 4px 3px #f47522);
+                    // filter: drop-shadow(2px -4px 3px #476fa7) drop-shadow(-2px 4px 3px #f47522);
                     z-index: 1;
 
-                    @media @smartphones {
-                      margin: 0;
-                      left: 0;
-                      width: 90px;
-                      top: -17px;
+                    // @media @smartphones {
+                    //   margin: 0;
+                    //   left: 0;
+                    //   width: 90px;
+                    //   top: -17px;
 
-                    }
+                    // }
                   }
                 }
 
               }
 
-                // a {
-                //     display: block;
-                //     padding: @navPadding;
-                //     text-decoration: none;
-                //     color:inherit;
-                //     background-color: #fff;
-                //     border-bottom: 1.5px solid black;
-                //     &.patreon {
-                //       height: 100%;
-                //       padding: 0;
-                //     }
-                //     &.pvgna {
-                //       height: 100%;
-                //       padding: 0;
-                //     }
-                //     //border-bottom: 2px solid black;
-                // }
+                a.nav-link {
+                    display: block;
+                    padding: @navPadding;
+                    text-decoration: none;
+                    color: @background-dark;
+                    font-size: 1.25em;
+                    &.patreon {
+                      height: 100%;
+                      padding: 0;
+                    }
+                    &.pvgna {
+                      height: 100%;
+                      padding: 0;
+                    }
+                }
             }
             // .dotpeeps {
             //     width: 42%;

@@ -117,7 +117,7 @@ div#superEps {
 
 
   div#episodes {
-    background: #1a1113;
+    background: @background-dark;
 
     & ul {
       padding: 0;
@@ -136,8 +136,7 @@ div#superEps {
         min-height: 200px;
         padding-bottom: 20px;
         padding-top: 20px;
-        border-bottom: 2px solid #df5244;
-
+        border-bottom: 2px solid @dotpRed;
         &:last-child {
           border-bottom: none;
         }
@@ -152,6 +151,7 @@ div#superEps {
             flex: 1;
             display: flex;
             flex-direction: column;
+            justify-content: center;
 
             & a {
               flex: 1;
@@ -159,6 +159,7 @@ div#superEps {
               display: flex;
               justify-content: center;
               align-items: center;
+              max-height: 50px;
             }
           }
         }
@@ -216,7 +217,7 @@ div#superEps {
     }
 }
 
-a#feed-icon{
+a#feed-icon {
   display:block;
   width:55px;
   height:55px;
@@ -225,23 +226,19 @@ a#feed-icon{
   top: 0;
   -webkit-backface-visibility: hidden;
   transition: all 300ms ease;
-
-
-
-  & .circle{
-    width:10px;
-    height:10px;
-    position:absolute;
-    bottom:5px;
-    left:5px;
-    background:#55bdea;
-    border-radius:15px;
-    z-index:7;
-    opacity: 1;
-    transition: all 0.75s ease;
+  
+  & .play-icon {
+		text-align: center;
+  	padding-top: 0.55em;
+  	padding-left: 0.10em;
   }
-
-  & .waves{
+	
+	i {
+		font-size: 2.5em;
+		color: white;
+	}
+  
+  & .waves {
     width:47px;
     height:47px;
     overflow:hidden;
@@ -250,18 +247,14 @@ a#feed-icon{
     left:5px;
     z-index:2;
 
-    .wave{
+    .wave {
       transition: all 0.75s ease;
       border-radius:50%;
       position:absolute;
 
       &:nth-child(odd){
-        background:#1a1113;
-        opacity: 1;
       }
       &:nth-child(even){
-        background:#55bdea;
-        opacity: 1;
       }
 
       &:nth-child(1){
@@ -290,14 +283,13 @@ a#feed-icon{
         height:110px;
         bottom:-55px;
         left:-55px;
-        z-index:1
+        z-index:1;
       }
     }
-  }
-
-
-
+	}
 }
+
+
 
 #episodes-wrapper {
   -webkit-transition-duration: .75s;
@@ -311,9 +303,9 @@ a#feed-icon{
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   position: absolute;
-  top: -18px;
+  top: 48px;
   border: 1px solid #665f54;
-  background: #df5244;
+  background: @dotpRed;
   width: 55px;
   @media @smartphones {
     width: 55px;
@@ -325,6 +317,7 @@ a#feed-icon{
   left: 0;
   right: 0;
 
+  
   span#latest-episode {
     left:60px;
     color: white;
@@ -362,13 +355,14 @@ a#feed-icon{
   }
 
 
+
   & > div {
     overflow: hidden;
     position: absolute;
     top: 10px;
     left: 10px;
-    border: 1px solid #476fa7;
-    background: #1a1113;
+    border: 1px solid @dotpRed;
+    background: black;
     width: 100%;
     height: 100%;
     transition: all 0.5s ease;
@@ -377,9 +371,9 @@ a#feed-icon{
       display:block;
       //z-index: 501;
       //height: calc(~'100vh - 100px');
-
-      & .circle {
-        opacity: 0;
+			
+      & i {
+        display: none;
       }
       & .wave {
         border-radius: 0;
@@ -392,7 +386,7 @@ a#feed-icon{
           height: 1px;
           left: 10px;
           bottom: 22px;
-          background: #df5244;
+          background: @dotpRed;
         }
         &:nth-child(2) {
           transform: rotateZ(135deg);
@@ -434,7 +428,7 @@ a#feed-icon{
           font-weight: 400;
           text-transform: uppercase;
           letter-spacing: .4em;
-          color: #476fa7;
+          color: @dotpRed;
           line-height: 30px;
           text-decoration: none;
           width: 100%;
@@ -443,7 +437,7 @@ a#feed-icon{
     }
 
     & a.btn-toggle {
-      background-color: #1a1113;
+      background-color: @background-dark;
       display: block;
       position: absolute;
       right: 0;
@@ -528,4 +522,14 @@ a#feed-icon{
     }
   }
 
+}
+
+form.form-inline {
+	padding-top: 35px;
+	
+	& > div {
+		width: 30%;
+		margin: 0 auto;
+
+	}
 }
