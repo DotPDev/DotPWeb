@@ -261,9 +261,10 @@ angular.module('clientApp')
     }
 
     function renderButton() {
-      var environment = "sandbox";
-      if (window.location.toString().toLowerCase() === "https://defenseofthepatience.herokuapp.com/store") {
-        environment = "live"
+      var windowLoc = window.location.toString().toLowerCase(),
+        environment = "sandbox";
+      if (windowLoc === "https://defenseofthepatience.herokuapp.com/store" || windowLoc === "http://defenseofthepatience.herokuapp.com/store" || windowLoc === "http://defenseofthepatience.com/store" || windowLoc === "https://defenseofthepatience.com/store") {
+        environment = "production"
       }
       paypal.Button.render({
 
