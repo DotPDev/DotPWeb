@@ -8,19 +8,19 @@
 * Service in the clientApp.
 */
 angular.module('clientApp')
-.service('uiState', function () {
+.factory('uiState', function () {
   var vm = this;
   vm.isPodcastOpen = false;
+  vm.isPodcastPlaying = false;
   vm.timeStamp = new Date();
 
   function getState(state) {
-    console.log(state);
-    console.log(vm[state]);
-    console.log(vm.timeStamp);
+    //console.log("state = " + state);
+    //console.log(vm[state]);
     if (vm && vm[state]) {
       return vm[state];
     }
-    return null;
+    return false;
   }
 
   function setState(state, value) {

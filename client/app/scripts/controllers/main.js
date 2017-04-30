@@ -18,21 +18,38 @@ angular.module('clientApp')
     };
     vm.states = {};
     vm.states.podcastButton = "isPodcastOpen";
+    vm.states.podcastPlaying = "isPodcastPlaying";
     vm.stripHtml = stripHtml;
     vm.getImage = getImage;
     vm.startPodcast = startPodcast;
 
     vm.isOpen = false;
+    vm.isPlaying = isPlaying;
     vm.handleClick = handleClick;
     vm.getPodcastButtonState = getPodcastButtonState;
 
     function getPodcastButtonState() {
-      console.log(uiState.getState(vm.states.podcastButton));
       return uiState.getState(vm.states.podcastButton);
     }
 
+    function isPlaying() {
+      return uiState.getState(vm.states.podcastPlaying);
+    }
+
     function handleClick() {
-      uiState.toggleState(vm.states.podcastButton);
+      if (!isPlaying()) {
+        startFirstPodcast();
+      } else {
+        stopPodcast();
+      }
+    }
+
+    function startFirstPodcast() {
+        $rootScope.$broadcast('player-play', vm.feed.episodes[0]);
+    }
+
+    function stopPodcast() {
+          $rootScope.$broadcast('player-stop');
     }
 
     vm.goNext = goNext;
@@ -61,7 +78,7 @@ angular.module('clientApp')
     function getImage(date) {
         var dateObj = new Date(date);
         var day = dateObj.getDay();
-        console.log(date);
+
         if (day === 0) {
             return '../images/DotP_Icon-01.png';
         } else if (day === 1) {
@@ -90,7 +107,6 @@ angular.module('clientApp')
     }
 
     function setPageLinks() {
-        console.log('in here');
         if (vm.page === 1) {
             vm.links.next = "/?page=" + (vm.page + 1);
             vm.links.prev = "/";
