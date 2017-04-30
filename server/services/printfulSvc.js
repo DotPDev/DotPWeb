@@ -49,28 +49,41 @@ function doRequest() {
 
 function createOrder(orderInfo) {
   return new Promise(function (fulfill, reject){
-
-      console.log("======1 ORDER INFO 1======");
-    console.log(orderInfo)
-      console.log("======1 ORDER INFO 1======");
-      if (!orderInfo) {
-          orderInfo = devDataSvc.printfulOrder
+    let isPriceSafe = true
+      // if (!orderInfo) {
+      //     orderInfo = devDataSvc.printfulOrder
+      // }
+    if (orderInfo && orderInfo.items) {
+      for (let item of orderInfo.items) {
+        if (item.name.toLowerCase().indexOf('hoodie') !== -1 && item.retail_price !== '35.00') {
+          isPriceSafe = false;
+        } else if (item.name.toLowerCase().indexOf('hoodie') === -1 && item.retail_price !== '30.00') {
+          isPriceSafe = false;
+        }
       }
-        console.log("======2 ORDER INFO 2======");
-      console.log(orderInfo)
-        console.log("======2 ORDER INFO 2======");
+    }
+
+    if (isPriceSafe) {
       pf.post('orders', orderInfo)
         .success(function(data, info) {
-          console.log("======printful======");
-          console.log(data);
-          console.log("======printful======");
           fulfill(data)
         }).error(function(err) {
+
           reject(err)
         })
+    } else {
+      let error = "I think we know why this was rejected."
+      reject(error)
+    }
   })
 
 
+}
+
+function confirmOrder(id) {
+  //Confirm order with ID 12345 (Replace with your order's ID)
+  console.log(id);
+      pf.post('orders/' + id + '/confirm').success((data, info) => {}).error((err) => {})
 }
 
 function getOrder(orderId) {
@@ -247,5 +260,6 @@ function getOrder(orderId) {
 
 module.exports = {
   createOrder,
+  confirmOrder,
   getOrder
 }
