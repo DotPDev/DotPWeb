@@ -28,6 +28,7 @@ angular.module('clientApp')
     $scope.isManagingCart = false;
     $scope.isItemSelected = false;
     $scope.handleProductClick = handleProductClick;
+    $scope.closeProducts = closeProducts;
     $scope.getProductClass = getProductClass;
     vm.startCheckOut = startCheckOut;
     vm.closeCheckOut = closeCheckOut;
@@ -37,6 +38,7 @@ angular.module('clientApp')
     $scope.validationMessage = '';
     $scope.checkoutMessage = '';
     $scope.data = {};
+    $scope.orderNumber = '';
     vm.removeFromCart = removeFromCart;
     $scope.data.address = {
       name: '',
@@ -59,15 +61,23 @@ angular.module('clientApp')
     }
 
     function handleProductClick(i, $event) {
-      console.log($scope.isItemSelected);
-        console.log(i);
-          console.log($event);
+          console.log($event.currentTarget.parentNode);
       if (!$scope.isItemSelected) {
         $event.currentTarget.className += ' selected-item';
-      } else {
-        $event.currentTarget.className = 'product float-left ng-scope product-' + i;
+        $scope.isItemSelected = true;
       }
-      $scope.isItemSelected = !$scope.isItemSelected;
+    }
+
+    function closeProducts(i, $event) {
+      //HACK - shitty timeout hack
+      setTimeout(function(){console.log("closing products");
+      console.log($event.currentTarget.parentNode.className);
+      $event.currentTarget.parentNode.className = 'product float-left ng-scope product-' + i;
+      console.log($event.currentTarget.parentNode.className);
+      $scope.isItemSelected = false;
+      $scope.$digest();
+    },50);
+
     }
     // jscs:disable
 
@@ -198,7 +208,7 @@ angular.module('clientApp')
     ];
 
     //TODO - Cart Service - Add to cart
-    function addToCart(product) {
+    function addToCart(product, i, $event) {
         $scope.validationMessage = '';
 
         var productJson = {};
@@ -236,6 +246,12 @@ angular.module('clientApp')
         //TODO - Remove this after done with cart svc
         vm.cart.items = cart.getCartItems();
         vm.cart.price = cart.getTotalPrice();
+
+        setTimeout(function() {
+          $event.currentTarget.parentNode.parentNode.className = 'product float-left ng-scope product-' + i;
+          $scope.isItemSelected = false;
+          $scope.$digest();
+        },50);
     }
 
     function removeFromCart(i) {
@@ -245,9 +261,14 @@ angular.module('clientApp')
     }
 
     function renderButton() {
+      var windowLoc = window.location.toString().toLowerCase(),
+        environment = "sandbox";
+      if (windowLoc === "https://defenseofthepatience.herokuapp.com/store" || windowLoc === "http://defenseofthepatience.herokuapp.com/store" || windowLoc === "http://defenseofthepatience.com/store" || windowLoc === "https://defenseofthepatience.com/store") {
+        environment = "production"
+      }
       paypal.Button.render({
 
-            env: 'sandbox', // Optional: specify 'sandbox' environment
+            env: environment, // Optional: specify 'sandbox' environment
 
             payment: function() {
                 // Set up the payment here, when the buyer clicks on the button
@@ -255,6 +276,7 @@ angular.module('clientApp')
                 //Send data
 
                   return paypal.request.post('/api/paypal/create/', {data:createPrintfulOrder()}).then(function(res) {
+                    $scope.printfulId = res.printfulId
                     res.payment = res.id;
                     return res.id;
                 });
@@ -277,7 +299,8 @@ angular.module('clientApp')
                 console.log(actions);
                    return paypal.request.post('/api/paypal/execute/', {
                     payToken: data.paymentID,
-                    payerId: data.payerID
+                    payerId: data.payerID,
+                    printfulId: $scope.printfulId
                 }).then(function (res) {
                     resetCheckout();
                     document.querySelector('#paypal-button').innerText = 'Payment Complete!';

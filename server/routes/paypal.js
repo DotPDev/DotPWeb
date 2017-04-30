@@ -28,29 +28,30 @@ paypal.configure({
     'client_secret': PP_SECRET
 })
 
-if (!experience_profile_id) {
-  paypal.webProfile.create(paypalObjectSvc.buildPaymentProfile(), function (error, web_profile) {
-    if (error) {
-      console.log(error);
-    } else {
-      //Set the id of the created payment experience in payment json
-      experience_profile_id = web_profile.id;
-      console.log(experience_profile_id);
-    }
-  });
-}
+// if (!experience_profile_id) {
+//   paypal.webProfile.create(paypalObjectSvc.buildPaymentProfile(), function (error, web_profile) {
+//     if (error) {
+//       console.log(error);
+//     } else {
+//       //Set the id of the created payment experience in payment json
+//       experience_profile_id = web_profile.id;
+//       console.log(experience_profile_id);
+//     }
+//   });
+// }
 
 router.post('/create', function(req, res) {
-  console.log(req.body)
+
     printfulSvc.createOrder(JSON.parse(req.body.data)).then((data, info) => {
-      console.log(data)
-      console.log(info)
+      console.log(data);
+      console.log(info);
       const order = paypalObjectSvc.buildPaymentObject(data)
       paypal.payment.create(order, function(error, payment) {
           if (error) {
+            console.log(error)
             throw error;
           } else {
-
+              payment.printfulId = data.id;
               res.send(payment);
           }
       });
@@ -61,7 +62,8 @@ router.post('/create', function(req, res) {
 })
 
 router.post('/execute', function(req, res) {
-  const token = req.body.payToken, id = req.body.payerId
+  const token = req.body.payToken, id = req.body.payerId,
+    printfulId = req.body.printfulId
 
     var execute_payment_json = {
         "payer_id": id
@@ -70,10 +72,14 @@ router.post('/execute', function(req, res) {
 
     paypal.payment.execute(token, execute_payment_json, function(error, payment) {
         if (error) {
-            console.log("error.response");
+            console.log(error);
             throw error;
         } else {
             console.log("Get Payment Response");
+            if (PP_ENV === "live") {
+              //commit to printful
+             printfulSvc.confirmOrder(printfulId);
+            }
             res.send(payment);
         }
     });
