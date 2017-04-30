@@ -73,12 +73,10 @@ angular.module('clientApp')
     }
 
     function stripHtml(htmlString) {
-        var firstPass = htmlString.replace('<h2>Defense of the Patience - A Dota 2 Podcast</h2> ', '');
-        var secondPass = firstPass.replace('<h2><strong>Defense of the Patience - A Dota 2Podcast</strong></h2> ', '');
-        var thirdPass = secondPass.replace('<h2><strong>Defense of the Patience - A Dota 2 Podcast</strong></h2> ', '');
-        var fourthPass = thirdPass.replace('<strong>', '');
-        var fifthPass = fourthPass.replace('</strong>', '');
-        return fifthPass;
+        // return htmlString.replace( /<{1}[^<>]{1,}>{1}/g,"")
+   	 	 var tmp = document.createElement("DIV");
+   	 	 tmp.innerHTML = html;
+   	 	 return tmp.textContent || tmp.innerText || "";
     }
 
     function setPageLinks() {

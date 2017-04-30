@@ -3,14 +3,16 @@
   <div ng-class="{ 'opened': vm.isPlaying() }">
 
     <a id="feed-icon" ng-click="vm.handleClick()" alt="Woo RSS!">
-      <div class="circle"></div>
-      <div class="waves">
-        <div class="wave"></div>
-        <div class="wave"></div>
-        <div class="wave"></div>
-        <div class="wave"></div>
-      </div>
-    </a>
+     	<div class="play-icon">
+				<i class="fa fa-play" aria-hidden="true"></i>
+			</div>
+			<div class="waves">
+				<div class="wave"></div>
+				<div class="wave"></div>
+				<div class="wave"></div>
+				<div class="wave"></div>
+			</div>
+		</a>
     <!-- <span id="latest-episode">Latest Episode:</br>vm.latestEpisode</span> -->
   </div>
 </div>

@@ -7,7 +7,7 @@ header#nav {
 }
 div#share {
     position: absolute;
-    top: 55px;
+    top: 60px;
     left: 0;
     width: 100%;
     height: 0px;
@@ -31,7 +31,7 @@ div#share {
           background-color: inherit !important;
           font-size:20px;
           text-align: center;
-          color: #fae207 !important;
+          color: white !important;
         }
       }
     }
@@ -49,12 +49,12 @@ header#nav, header#share {
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
     position: fixed;
-    top: 22px;
+    top: 45px;
     @media @smartphones {
         right: 10px;
     }
     border: 1px solid #665f54;
-    background: #df5244;
+    background: @dotpRed;
     width: 120px;
     height: 55px;
     z-index: 500;
@@ -74,9 +74,9 @@ header#nav, header#share {
     & > div {
         overflow: hidden;
         position: absolute;
-        top: -10px;
-        border: 1px solid #476fa7;
-        background: #1a1113;
+        top: 10px;
+        border: 1px solid @dotpRed;
+        background: black;
         width: 100%;
         height: 100%;
 
@@ -90,8 +90,8 @@ header#nav, header#share {
         & nav {
             position: absolute;
             left: 0;
-            top: 100px;
-            width: 420px;
+            top: 47px;
+            width: 300px;
             @media @smartphones {
                 opacity: 0;
                 transition: opacity 0.75s ease;
@@ -102,7 +102,7 @@ header#nav, header#share {
 
             & li {
                 text-align: center;
-                padding-top: 20px;
+                // padding-top: 20px;
                 &+li {
                     padding-top: 25px;
                 }
@@ -111,7 +111,7 @@ header#nav, header#share {
                     font-weight: 400;
                     text-transform: uppercase;
                     letter-spacing: .4em;
-                    color: #476fa7;
+                    color: @dotpRed;
                     line-height: 30px;
                     text-decoration: none;
                     width: 100%;
@@ -120,7 +120,7 @@ header#nav, header#share {
         }
 
         & a.btn-toggle {
-            background-color: #1a1113;
+            background-color: black;
             display: block;
             position: absolute;
             right: 0;
@@ -186,8 +186,7 @@ header#nav, header#share {
                 position: absolute;
                 right: 13px;
                 top: 28px;
-                //background: #f47522;
-                background: #476fa7;
+                background: @dotpRed;
                 width: 30px;
                 height: 1px;
 
@@ -206,10 +205,10 @@ header#nav, header#share {
     }
 
     &.opened {
-        width: 420px;
-        height: 360px;
-        max-height: 360px;
-        background: #476fa7;
+        width: 300px;
+        height: 350px;
+        max-height: 400px;
+        background: @dotpRed;
         z-index: 501;
         @media @smartphones {
             height: calc(~'100% - 30px');
@@ -246,12 +245,12 @@ header#nav, header#share {
           & span:nth-child(2) {
               transform: rotatez(-135deg);
               -webkit-transform: rotatez(-135deg);
-              background-color: #df5244;
+              background-color: @dotpRed;
           }
           & span:nth-child(3) {
               transform: rotatez(135deg);
               -webkit-transform: rotatez(135deg);
-              background-color: #df5244;
+              background-color: @dotpRed;
           }
         }
 
@@ -259,6 +258,9 @@ header#nav, header#share {
     }
 
     &.shared {
+    	ul.nav-collapse {
+    		display:none;
+    	}
         width: 200px;
         height: 100px;
         background: #f47522;
