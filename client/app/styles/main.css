@@ -705,6 +705,9 @@ player.show-player.opened > .player-wrapper {
   top: 9px;
   left: 5px;
 }
+.thisIsGarbageCodeBecauseTheCssCompiledFileIsNotUpdating {
+  display: none;
+}
 .about-page::-webkit-scrollbar {
   width: 1em;
 }
