@@ -1,3 +1,4 @@
+
 <nav role="navigation">
     <!-- <ul class="collapsed-nav" ng-class="{ 'is-showing-nav': vm.slideNavPanel }">
         <li ui-sref-active="active" ng-click="vm.slideNavPanel = false">
@@ -15,39 +16,50 @@
         <li ui-sref-active="active" ng-if="!vm.user" ui-sref="root.login" ng-click="vm.slideNavPanel = false">
             <a ng-click="vm.goToLogin()" ui-sref="root.login"><span>Login</span></a>
         </li>
-        <li ui-sref-active="active" ng-if="vm.user" ng-click="vm.slideNavPanel = false">
-            <a ng-click="vm.goToLogin()" ui-sref="root.login"><span>{{vm.user.displayName || vm.user.email}}</span></a>
-        </li>
+        
         <li ui-sref-active="active" ng-if="vm.user" ng-click="vm.slideNavPanel = false">
             <a ng-click="vm.signOut()" ui-sref="root.dashboard"><span>Sign Out</span></a>
         </li> -->
     <!-- </ul> -->
-    <ul class="nav" ng-class="{ 'collapsed': vm.isCollapsed }">
-      <li class="title-bar-spacer">
+  
+		<ul class="nav" ng-class="{ 'collapsed': vm.isCollapsed }">
+      <player-container></player-container>
+      <li class="title-bar-nav">
         <div id="dotp-logo">
-          <img src='../images/dotp-logo.svg'/>
+          <img src='../images/dotp-logo-notext-01.svg'/>
         </div>
       </li>
       <li class="title-bar-nav">
-        <player-container></player-container>
-        <!-- <div ui-sref-active="active" >
-          <a class="" ui-sref="root.dashboard" ng-click="vm.slideNavPanel = false">
+        <div ui-sref-active="active" >
+          <a class="nav-link" ui-sref="root.episodes" ng-click="vm.slideNavPanel = false">
             <span>Episodes</span>
           </a>
           <div></div>
-      </div>
-        <div ui-sref-active="active">
-            <a ui-sref="root.ladder">
+      	</div>
+			</li>
+			<li class="title-bar-nav">
+        <div ui-sref-active="active" >
+          <a class="nav-link" ui-sref="root.hosts" ng-click="vm.slideNavPanel = false">
+            <span>Hosts</span>
+          </a>
+          <div></div>
+      	</div>
+			</li>
+      <li class="title-bar-nav">
+				<div ui-sref-active="active">
+            <a class="nav-link" ui-sref="root.ladder">
               <span>Ladder</span>
             </a>
             <div></div>
-        </div>
+        	</div>
+				</li>
+      <li class="title-bar-nav">
         <div ui-sref-active="active">
-            <a ui-sref="root.store">
+            <a class="nav-link" ui-sref="root.store">
               <span>Store</span>
             </a>
             <div></div>
-        </div>-->
+        </div>
       </li>
       <li class="action-wrapper">
         <navbar></navbar>

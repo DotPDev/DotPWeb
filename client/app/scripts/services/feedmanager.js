@@ -34,6 +34,7 @@ angular.module('clientApp')
                         parseFeed();
                     }, 3000);
                 }
+								console.log('feed', response.data)
                 feedData = response.data;
                 return getSlice(feedData, ((page * 5) - 5), (page * 5));
             }).catch(function(error) {
