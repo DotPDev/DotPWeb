@@ -261,9 +261,13 @@ angular.module('clientApp')
     }
 
     function renderButton() {
+      var environment = "sandbox";
+      if (window.location === "https://defenseofthepatience.herokuapp.com/store") {
+        environment = "live"
+      }
       paypal.Button.render({
 
-            env: 'sandbox', // Optional: specify 'sandbox' environment
+            env: environment, // Optional: specify 'sandbox' environment
 
             payment: function() {
                 // Set up the payment here, when the buyer clicks on the button
@@ -290,7 +294,7 @@ angular.module('clientApp')
 
             onAuthorize: function(data, actions) {
                 // Execute the payment here, when the buyer approves the transaction
-                console.log(data); 
+                console.log(data);
                 console.log(actions);
                    return paypal.request.post('/api/paypal/execute/', {
                     payToken: data.paymentID,
