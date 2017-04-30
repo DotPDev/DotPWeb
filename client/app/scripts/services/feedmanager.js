@@ -25,7 +25,7 @@ angular.module('clientApp')
 
     function parseFeed(page) {
         if (feedData.episodes.length === 0) {
-
+          console.log("wtf");
           setTimeout(resetFeed,300000);
             return $http.get('/api/feed/').then(function(response) {
                 //TODO show a message indicating that we're getting data again.
@@ -34,7 +34,7 @@ angular.module('clientApp')
                         parseFeed();
                     }, 3000);
                 }
-                feedData = response.data
+                feedData = response.data;
                 return getSlice(feedData, ((page * 5) - 5), (page * 5));
             }).catch(function(error) {
                 //TODO show UI error to user

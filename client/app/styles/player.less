@@ -123,9 +123,68 @@
     }
 }
 
+player.opened {
+  & > .player-wrapper {
+    width: 280px;
+    pointer-events: all;
+
+    @media @smartphones {
+      width: 100%;
+    }
+    & .podcast-actions {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      opacity: 1;
+      &.show-player {
+        opacity: 0;
+        pointer-events: none;
+      }
+    }
+  }
+
+  &.show-player {
+    & > .player-wrapper {
+      width: 280px;
+      pointer-events: all;
+      & .podcast-actions {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+    }
+  }
+}
+
+.linkify.latest-episode {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+player.show-player {
+  & > .player-wrapper {
+    width: 280px;
+    pointer-events: all;
+
+    & .podcast-actions {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+
+  &.opened {
+    & > .player-wrapper {
+      width: 280px;
+      pointer-events: all;
+    }
+  }
+}
+
 .player-wrapper {
   pointer-events: none;
-    transition: @transition;
+    transition: all 0.6s ease;
     z-index: 20000;
     width: 280px;
     top: -5px;
@@ -134,9 +193,18 @@
     left: 76px;
     right: 0;
     margin: 0 auto;
+    //overflow: hidden;
+
+    & .podcast-actions {
+      display: none;
+      width: 100%;
+    }
 
     & videogular .iconButton, [videogular] .iconButton {
-      color: black;
+      color: white;
+      @media @smartphones {
+        color: black;
+      }
     }
 
     & videogular vg-time-display, [videogular] vg-time-display {

@@ -134,8 +134,13 @@ div#superEps {
         position: relative;
         display: flex;
         min-height: 200px;
-        margin-bottom: 10px;
-        margin-top: 10px;
+        padding-bottom: 20px;
+        padding-top: 20px;
+        border-bottom: 2px solid #df5244;
+
+        &:last-child {
+          border-bottom: none;
+        }
         @media @smartphones {
           flex-direction: column;
         }
@@ -309,7 +314,7 @@ a#feed-icon{
   top: -18px;
   border: 1px solid #665f54;
   background: #df5244;
-  width: 350px;
+  width: 55px;
   @media @smartphones {
     width: 55px;
     left: -40px;
@@ -328,6 +333,18 @@ a#feed-icon{
 
   &.opened {
     z-index: 501;
+    width: 350px;
+    @media @smartphones {
+      width: 55px;
+    }
+  }
+
+  &.show-player {
+      z-index: 501;
+      width: 350px;
+      @media @smartphones {
+        width: 55px;
+      }
   }
 
   ul {

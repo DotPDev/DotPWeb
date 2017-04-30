@@ -8,8 +8,11 @@
 * Controller of the clientApp
 */
 angular.module('clientApp')
-.controller('PlayerCtrl', function ($rootScope, $state, $timeout, $scope, $sce) {
+.controller('PlayerCtrl', function ($rootScope, $state, $timeout, $scope, $sce, feedManager, uiState) {
     var vm = this;
+    vm.feed = {};
+    vm.feed.episodes = [];
+    vm.startPodcast = startPodcast;
     vm.isOpen = false;
     vm.isPlaying = false;
     vm.isDashboard = false;
@@ -28,6 +31,21 @@ angular.module('clientApp')
     };
     vm.goNext = goNext;
     vm.goPrev = goPrev;
+    vm.page = 1;
+
+    function getFeed() {
+        feedManager.parseFeed(vm.page).then(function(response) {
+            vm.feed = response;
+            console.log(response);
+        }).catch(function(error) {
+            console.log(error);
+        });
+    }
+    getFeed();
+
+    function startPodcast() {
+        $rootScope.$broadcast('player-play', vm.feed.episodes[0]);
+    }
 
     function goNext() {
         $rootScope.$broadcast('main-next', {});
@@ -64,6 +82,7 @@ angular.module('clientApp')
 
     $scope.$on('player-play', function(event, args) {
         if (args) {
+            uiState.setState("isPodcastPlaying", true);
             vm.API.stop();
             vm.config.sources = [
                 {
@@ -73,6 +92,13 @@ angular.module('clientApp')
             ];
             vm.config.title = args.title;
         }
+    });
+
+    $scope.$on('player-stop', function(event) {
+          uiState.setState("isPodcastPlaying", false);
+            vm.API.pause();
+            vm.isPlaying = false;
+            vm.config.sources = [];
     });
 
     $scope.$on('$stateChangeSuccess', function (event) {
@@ -85,4 +111,24 @@ angular.module('clientApp')
 
     init();
 
+}).filter('millSecondsToTimeString', function() {
+  return function(millseconds) {
+      var oneSecond = 1000;
+      var oneMinute = oneSecond * 60;
+      var oneHour = oneMinute * 60;
+      var oneDay = oneHour * 24;
+
+      var seconds = Math.floor((millseconds % oneMinute) / oneSecond);
+      var minutes = Math.floor((millseconds % oneHour) / oneMinute);
+      var hours = Math.floor((millseconds % oneDay) / oneHour);
+      if (seconds.toString().length === 1) {
+        seconds = "0" + seconds;
+      }
+      if (minutes.toString().length === 1) {
+        minutes = "0" + minutes;
+      }
+
+
+      return hours + ":" + minutes + ":" + seconds;
+  };
 });
