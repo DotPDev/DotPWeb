@@ -43,7 +43,8 @@ paypal.configure({
 router.post('/create', function(req, res) {
 
     printfulSvc.createOrder(JSON.parse(req.body.data)).then((data, info) => {
-
+      console.log(data);
+      console.log(info);
       const order = paypalObjectSvc.buildPaymentObject(data)
       paypal.payment.create(order, function(error, payment) {
           if (error) {
