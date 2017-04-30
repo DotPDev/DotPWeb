@@ -32,6 +32,7 @@
 
 			<div id="store-spacer"></div>
 			<div class="product float-left" ng-repeat="product in vm.fakeStoreData track by $index" ng-click="handleProductClick($index, $event)" ng-class="getProductClass($index)">
+				<div class="close-product" ng-click="closeProducts($index, $event)"><i class="fa fa-times" /></div>
 				<img class="" ng-src="{{::product.files[1].url}}" />
 				<div class="product-specs">
 					<div class="product-name">{{::product.name}}</div>
@@ -41,7 +42,7 @@
 						</select>
 					</div>
 					<div class="product-price">Price: {{::product.retail_price | currency}}</div>
-					<div class="product-add-to-cart linkify" ng-click="vm.addToCart(product)">
+					<div class="product-add-to-cart linkify" ng-click="vm.addToCart(product, $index, $event)">
 						<i class="fa fa-cart-plus" aria-hidden="true"></i>
 						<span>Add to cart</span>
 					</div>

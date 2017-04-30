@@ -125,16 +125,17 @@ function buildPaymentObject(printfulOrder) {
                     "shipping_discount": printfulOrder.retail_costs.discont
                 }
             },
-            "description": "Thank you for supporting Defense of the Patience! Your order number"
+            "description": "Order Number " + printfulOrder.id + " - Thank you for supporting Defense of the Patience!"
         }],
 
         // DotP Dev Experience -
-        'experience_profile_id': experience_id
+        'experience_profile_id': experience_id,
+        'note_to_payer': "Order Number " + printfulOrder.id + " - Thank you for supporting Defense of the Patience!"
 
         //Deadman Dev Experience -
         //'experience_profile_id': 'XP-B8Q8-KRKB-ASVE-ZFQQ'
     });
-
+    console.log(payReq)
     return payReq;
 }
 
