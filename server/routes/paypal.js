@@ -47,6 +47,7 @@ router.post('/create', function(req, res) {
       const order = paypalObjectSvc.buildPaymentObject(data)
       paypal.payment.create(order, function(error, payment) {
           if (error) {
+            console.log(error)
             throw error;
           } else {
               payment.printfulId = data.id;
@@ -70,7 +71,7 @@ router.post('/execute', function(req, res) {
 
     paypal.payment.execute(token, execute_payment_json, function(error, payment) {
         if (error) {
-            console.log("error.response");
+            console.log(error);
             throw error;
         } else {
             console.log("Get Payment Response");

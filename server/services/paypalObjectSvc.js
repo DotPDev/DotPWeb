@@ -45,10 +45,12 @@
 //   shipments: [],
 //   gift: null,
 //   packing_slip: null }
-let experience_id = 'XP-B8Q8-KRKB-ASVE-ZFQQ'
-if (process && process.env && process.env.PP_EXP_ID) {
+let EXPERIENCE_ID = 'XP-B8Q8-KRKB-ASVE-ZFQQ'
+let PP_REDIRECT = 'http://localhost:9000/store'
+if (process && process.env && process.env.PP_EXP_ID && process.env.PP_REDIRECT) {
 // DotP Dev Experience -
-  experience_id = process.env.PP_EXP_ID
+  PP_REDIRECT = process.env.PP_REDIRECT
+  EXPERIENCE_ID = process.env.PP_EXP_ID
 }
 
 function buildExecuteObject(payment) {
@@ -108,8 +110,8 @@ function buildPaymentObject(printfulOrder) {
             payment_method: 'paypal'
         },
         redirect_urls: {
-            return_url: 'http://localhost:9000/store',
-            cancel_url: 'http://localhost:9000/store'
+            return_url: PP_REDIRECT,
+            cancel_url: PP_REDIRECT
         },
         "transactions": [{
             "item_list": {
@@ -129,7 +131,7 @@ function buildPaymentObject(printfulOrder) {
         }],
 
         // DotP Dev Experience -
-        'experience_profile_id': experience_id,
+        'experience_profile_id': EXPERIENCE_ID,
         'note_to_payer': "Order Number " + printfulOrder.id + " - Thank you for supporting Defense of the Patience!"
 
         //Deadman Dev Experience -
