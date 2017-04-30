@@ -211,15 +211,16 @@ router.get('/', function(req, res, next) {
     console.log(next)
   //doRequest()
 })
-router.get('/orders', function(req, res, next) {
-    console.log(req)
-    console.log(res)
-    console.log(next)
-  //doRequest()
-})
+// router.get('/orders', function(req, res, next) {
+//     console.log(req)
+//     console.log(res)
+//     console.log(next)
+//
+//     pfSvc.getOrder("2643882").then((data, info) => {res.send(data)})
+//   //doRequest()
+// })
 router.get('/orders/:orderId', function(req, res) {
-    console.log(orderId)
-    pfSvc.getOrder(orderId).success((data) => {res.send(data)})
+    pfSvc.getOrder(req.params.orderId).then((data) => {res.send(data)})
 })
 
 module.exports = router;

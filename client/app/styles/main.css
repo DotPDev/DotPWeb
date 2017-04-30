@@ -705,6 +705,9 @@ player.show-player.opened > .player-wrapper {
   top: 9px;
   left: 5px;
 }
+.thisIsGarbageCodeBecauseTheCssCompiledFileIsNotUpdating {
+  display: none;
+}
 .about-page::-webkit-scrollbar {
   width: 1em;
 }
@@ -935,6 +938,11 @@ div#cart-wrapper ul li {
   div#cart-wrapper ul {
     padding: 0;
   }
+}
+.close-product {
+  position: absolute;
+  top: 5px;
+  right: 5px;
 }
 @media only screen and (max-width: 830px) {
   .main-wrapper#store-wrapper {
