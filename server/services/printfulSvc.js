@@ -55,11 +55,11 @@ function createOrder(orderInfo) {
       // }
     if (orderInfo && orderInfo.items) {
       for (let item of orderInfo.items) {
-        if (item.name.toLowerCase().indexOf('hoodie') !== -1 && item.retail_price !== '35.00') {
-          isPriceSafe = false;
-        } else if (item.name.toLowerCase().indexOf('hoodie') === -1 && item.retail_price !== '30.00') {
-          isPriceSafe = false;
-        }
+        // if (item.name.toLowerCase().indexOf('hoodie') !== -1 && item.retail_price !== '35.00') {
+        //   isPriceSafe = false;
+        // } else if (item.name.toLowerCase().indexOf('hoodie') === -1 && item.retail_price !== '30.00') {
+        //   isPriceSafe = false;
+        // }
       }
     }
 
