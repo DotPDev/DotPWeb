@@ -45,7 +45,7 @@ angular
                 controllerAs: 'vm'
             },
             'dotp-loader@': {
-                templateUrl: 'views/home.html',
+                // templateUrl: 'views/home.html',
                 controller: 'DotpLoaderCtrl',
                 controllerAs: 'vm'
             }
