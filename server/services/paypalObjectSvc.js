@@ -96,7 +96,7 @@ function buildPaymentObject(printfulOrder) {
 
     const itemArray = printfulOrder.items.map(item => {
       return {
-        name: item.name,
+        name: item.name + " - Order " + printfulOrder.id,
         sku: item.id,
         price: item.retail_price,
         currency: "USD",
