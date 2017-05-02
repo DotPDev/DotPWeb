@@ -52,10 +52,14 @@ angular.module('clientApp')
     }
 
     function getSlice(feedData, start, end) {
-        return {
-            episodes: feedData.episodes.slice(start,end),
-            meta: feedData.meta
-        }
+      return {
+        episodes: feedData.episodes,
+        meta: feedData.meta
+      }
+			// return {
+        // episodes: feedData.episodes.slice(start,end),
+        // meta: feedData.meta
+      // }
     }
 
     return {
