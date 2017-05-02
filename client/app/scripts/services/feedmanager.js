@@ -36,7 +36,7 @@ angular.module('clientApp')
                 }
 								console.log('feed', response.data)
                 feedData = response.data;
-                return getSlice(feedData, ((page * 5) - 5), (page * 5));
+                return getSlice(feedData, ((page * 6) - 6), (page * 6));
             }).catch(function(error) {
                 //TODO show UI error to user
                 console.log(error);
