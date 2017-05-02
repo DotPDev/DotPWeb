@@ -5,6 +5,7 @@ div#cart-wrapper {
 
   ul {
     list-style: none;
+    clear: both;
     li {
       padding: 5px;
 
@@ -147,35 +148,18 @@ div#cart-wrapper {
       }
     }
 
-     #open-cart, #close-cart, .open-checkout, #close-checkout {
-        cursor: pointer;
-        border-radius: 3px;
-        background-color: #f7f5f6;
-        width: calc(~'100% - 6px');
-        margin-bottom: 10px;
-        text-align: center;
-    		color: @dark-font;
-
-
-
-
-          background: white;
-          border-radius: 2px;
-          padding:5px;
-          filter: drop-shadow(-3px 3px 0px @dotpRed);
-          white-space: nowrap;
-          text-decoration: none;
-          transition: filter 0.15s linear;
-
-
-          &:hover {
-            filter: drop-shadow(-3px 3px 0px #f47522);
-          }
+     .open-cart, #close-cart, .open-checkout, .close-checkout, .product-add-to-cart {
+       &:extend(.podcast-actions button);
+     }
+     .open-cart, #close-cart {
+     	 float: right;
+     	 margin: 0 0 15px 15px;
      }
 
      .open-checkout {
-       font-size: 2em;
+       font-size: 2em !important;
        text-align: center;
+       margin: 0 auto;
 
        @media @smartphones {
          font-size: 1em;
@@ -185,7 +169,7 @@ div#cart-wrapper {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 .form-control {

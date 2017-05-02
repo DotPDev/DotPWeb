@@ -44,7 +44,7 @@ angular.module('clientApp')
         } else {
             var deferred = $q.defer();
             // Mimicking $http.get's success
-            deferred.resolve(getSlice(feedData, ((page * 5) - 5), (page * 5)));
+            deferred.resolve(getSlice(feedData, ((page * 6) - 6), (page * 6)));
 
             return deferred.promise;
         }

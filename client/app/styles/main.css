@@ -954,6 +954,7 @@ div#cart-wrapper {
 }
 div#cart-wrapper ul {
   list-style: none;
+  clear: both;
 }
 div#cart-wrapper ul li {
   padding: 5px;
@@ -1065,34 +1066,15 @@ div#cart-wrapper ul li {
   color: #df5244;
   cursor: pointer;
 }
-.main-wrapper > div#dotp-store #open-cart,
-.main-wrapper > div#dotp-store #close-cart,
-.main-wrapper > div#dotp-store .open-checkout,
-.main-wrapper > div#dotp-store #close-checkout {
-  cursor: pointer;
-  border-radius: 3px;
-  background-color: #f7f5f6;
-  width: calc(100% - 6px);
-  margin-bottom: 10px;
-  text-align: center;
-  color: #21211F;
-  background: white;
-  border-radius: 2px;
-  padding: 5px;
-  filter: drop-shadow(-3px 3px 0px #be1823);
-  white-space: nowrap;
-  text-decoration: none;
-  transition: filter 0.15s linear;
-}
-.main-wrapper > div#dotp-store #open-cart:hover,
-.main-wrapper > div#dotp-store #close-cart:hover,
-.main-wrapper > div#dotp-store .open-checkout:hover,
-.main-wrapper > div#dotp-store #close-checkout:hover {
-  filter: drop-shadow(-3px 3px 0px #f47522);
+.main-wrapper > div#dotp-store .open-cart,
+.main-wrapper > div#dotp-store #close-cart {
+  float: right;
+  margin: 0 0 15px 15px;
 }
 .main-wrapper > div#dotp-store .open-checkout {
-  font-size: 2em;
+  font-size: 2em !important;
   text-align: center;
+  margin: 0 auto;
 }
 @media only screen and (max-width: 830px) {
   .main-wrapper > div#dotp-store .open-checkout {
@@ -1100,7 +1082,7 @@ div#cart-wrapper ul li {
   }
 }
 .hidden {
-  display: none;
+  display: none !important;
 }
 .form-control {
   display: block;
@@ -1647,6 +1629,8 @@ div#superEps div#episodes {
 }
 div#superEps div#episodes ul {
   padding: 0;
+  display: flex;
+  flex-flow: row wrap;
   width: 80%;
   margin: 0 auto;
   list-style: none;
@@ -1654,48 +1638,68 @@ div#superEps div#episodes ul {
 }
 @media only screen and (max-width: 830px) {
   div#superEps div#episodes ul {
-    padding-top: 60px;
+    padding-top: 15px;
   }
 }
-div#superEps div#episodes ul > li {
-  position: relative;
-  display: flex;
-  min-height: 200px;
-  padding-bottom: 20px;
-  padding-top: 20px;
-  border-bottom: 2px solid #be1823;
+div#superEps div#episodes li {
+  box-sizing: border-box;
+  padding: 15px 0;
+  margin: 30px 0;
+  width: 30%;
+  border: 0px solid #be1823;
 }
-div#superEps div#episodes ul > li:last-child {
-  border-bottom: none;
+@media only screen and (max-width: 1130px) and (min-width: 831px) {
+  div#superEps div#episodes li {
+    width: 45%;
+    border-width: 0;
+  }
+  div#superEps div#episodes li:nth-child(even) {
+    border-width: 0 0 0 1px;
+    width: 50%;
+    padding-left: 5%;
+    margin-left: 5%;
+  }
 }
 @media only screen and (max-width: 830px) {
-  div#superEps div#episodes ul > li {
-    flex-direction: column;
+  div#superEps div#episodes li {
+    width: 100%;
+    padding: 0 0 45px;
+    border-width: 0 0 1px;
   }
 }
-div#superEps div#episodes ul > li > div {
-  flex: 3;
-  position: relative;
+@media only screen and (min-width: 1131px) {
+  div#superEps div#episodes li:nth-child(2),
+  div#superEps div#episodes li:nth-child(5) {
+    width: 35%;
+    margin: 30px 2.5%;
+    border-width: 0 1px;
+    padding: 15px 2.5%;
+  }
 }
-div#superEps div#episodes ul > li > div.podcast-actions {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+div#superEps div#episodes li p {
+  overflow-wrap: break-word;
 }
-div#superEps div#episodes ul > li > div.podcast-actions a {
-  flex: 1;
-  margin: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  max-height: 50px;
+.podcast-actions {
+  text-align: center;
+}
+.podcast-actions button,
+.podcast-actions [role="button"],
+.main-wrapper > div#dotp-store .open-cart,
+.main-wrapper > div#dotp-store #close-cart,
+.main-wrapper > div#dotp-store .open-checkout,
+.main-wrapper > div#dotp-store .close-checkout,
+.main-wrapper > div#dotp-store .product-add-to-cart {
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  background: black;
+  color: #be1823;
+  border: 0;
+  padding: 10px;
+  font: normal 1em/1.2 "Work Sans", sans-serif;
 }
 .publish-date {
   text-align: center;
-}
-.podcast-summary > p {
-  padding: 10px;
 }
 @media only screen and (max-width: 830px) {
   .podcast-container > div {
@@ -1703,35 +1707,15 @@ div#superEps div#episodes ul > li > div.podcast-actions a {
   }
 }
 .podcast-container > h2 {
-  width: 70%;
   box-sizing: border-box;
-  position: absolute;
-  right: 0;
   white-space: normal;
-}
-@media only screen and (max-width: 830px) {
-  .podcast-container > h2 {
-    position: relative;
-    width: 100%;
-  }
+  color: #be1823;
 }
 .episode-image {
-  top: 0;
-  left: 0;
-  position: absolute !important;
+  display: block;
+  margin: 0 auto;
   width: 30%;
   box-sizing: border-box;
-}
-@media only screen and (max-width: 830px) {
-  .episode-image {
-    top: 10%;
-    right: -5%;
-    position: absolute !important;
-    width: 10%;
-    box-sizing: border-box;
-    z-index: 1;
-    left: unset;
-  }
 }
 .episode-image > img {
   width: 100%;
@@ -2007,12 +1991,20 @@ a#feed-icon .waves .wave:nth-child(4) {
 #episodes-wrapper > div a.btn-toggle > span:nth-child(4) {
   top: 36px;
 }
-form.form-inline {
-  padding-top: 35px;
+.episode-search {
+  padding-top: 45px;
 }
-form.form-inline > div {
+.episode-search div {
   width: 30%;
   margin: 0 auto;
+}
+@media only screen and (max-width: 830px) {
+  .episode-search {
+    padding-top: 163px;
+  }
+  .episode-search div {
+    width: 80%;
+  }
 }
 div.social-links {
   width: 100%;
@@ -2192,25 +2184,6 @@ div.social-links .reddit:hover {
     min-width: 200px;
     display: inline-block;
   }
-}
-.linkify {
-  color: #be1823;
-  background: black;
-  border-radius: 2px;
-  padding-left: 5px;
-  padding-right: 5px;
-  filter: drop-shadow(-3px -3px 0px #be1823);
-  white-space: nowrap;
-  text-decoration: none;
-  transition: filter 0.15s linear;
-}
-.linkify:hover {
-  filter: drop-shadow(-3px 3px 0px #f47522);
-}
-.linkify a {
-  text-decoration: none;
-  color: #be1823;
-  font-size: 0.8em;
 }
 html {
   overflow: hidden;

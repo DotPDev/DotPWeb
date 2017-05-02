@@ -108,8 +108,6 @@ div#superEps {
   height: calc(~'100vh - 60px');
   overflow: hidden;
   padding-top: 90px;
-  // opacity: 0;
-  // pointer-events: none;
   @media @smartphones {
     padding-top: 20px;
   }
@@ -119,61 +117,73 @@ div#superEps {
   div#episodes {
     background: @background-dark;
 
-    & ul {
+		ul {
       padding: 0;
+      display: flex;
+      flex-flow: row wrap;
       width: 80%;
       margin: 0 auto;
       list-style: none;
       padding-bottom:120px;
 
       @media @smartphones {
-        padding-top: 60px;
+        padding-top: 15px;
       }
+		}
 
-      & > li {
-        position: relative;
-        display: flex;
-        min-height: 200px;
-        padding-bottom: 20px;
-        padding-top: 20px;
-        border-bottom: 2px solid @dotpRed;
-        &:last-child {
-          border-bottom: none;
-        }
-        @media @smartphones {
-          flex-direction: column;
-        }
-
-        & > div {
-          flex: 3;
-          position: relative;
-          &.podcast-actions {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-
-            & a {
-              flex: 1;
-              margin: 10px;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              max-height: 50px;
-            }
-          }
-        }
+    li {
+      box-sizing: border-box;
+      padding: 15px 0;
+      margin: 30px 0;
+      width: 30%;
+      border: 0px solid @dotpRed;
+      
+      @media @tablet  {
+				width: 45%;
+				border-width: 0;
+				&:nth-child(even) {
+					border-width: 0 0 0 1px;
+					width: 50%;
+					padding-left: 5%;
+					margin-left: 5%;
+				}
+      }
+      @media @smartphones {
+      	width: 100%;
+      	padding: 0 0 45px;
+      	border-width: 0 0 1px;
+      }
+      @media @fullScreen {
+				&:nth-child(2), &:nth-child(5) {
+					width: 35%;
+					margin: 30px 2.5%;
+					border-width: 0 1px;
+					padding: 15px 2.5%;
+      	}
+      }
+      
+      p {
+      	overflow-wrap: break-word;	
       }
     }
+  }
+}
+.podcast-actions {
+  text-align: center;
+  button, [role="button"] {
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    background: black;
+    color: @dotpRed;
+    border: 0;
+    padding: 10px;
+		font: normal 1em/1.2 "Work Sans", sans-serif ;
   }
 }
 
 .publish-date {
   text-align: center;
-}
-
-.podcast-summary > p {
-  padding: 10px;
 }
 
 .podcast-container > div {
@@ -183,32 +193,22 @@ div#superEps {
 }
 
 .podcast-container > h2 {
-  width: 70%;
   box-sizing: border-box;
-  position: absolute;
-  right: 0;
   white-space: normal;
-  @media @smartphones {
-    position: relative;
-    width: 100%;
-  }
+  color: @dotpRed;
 }
 
 .episode-image {
-    top: 0;
-    left: 0;
-    position: absolute !important;
+    display: block;
+    margin: 0 auto;
     width: 30%;
     box-sizing: border-box;
 
     @media @smartphones {
-      top: 10%;
-      right: -5%;
-      position: absolute !important;
-      width: 10%;
-      box-sizing: border-box;
-      z-index: 1;
-      left: unset;
+    
+    }
+    @media @tablet {
+
     }
 
     & > img {
@@ -501,7 +501,7 @@ a#feed-icon {
         -webkit-transform-origin: 50% 50%;
         display: block;
         position: absolute;
-        right: 13px;
+        	right: 13px;
         top: 28px;
         //background: #f47522;
         background: #476fa7;
@@ -524,12 +524,16 @@ a#feed-icon {
 
 }
 
-form.form-inline {
-	padding-top: 35px;
-	
-	& > div {
+.episode-search {
+	padding-top: 45px;
+	div {
 		width: 30%;
 		margin: 0 auto;
-
+	}
+	@media @smartphones {
+		padding-top: 163px;
+		div {
+			width: 80%;
+		}
 	}
 }
