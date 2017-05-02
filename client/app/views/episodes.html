@@ -1,6 +1,6 @@
 
 <div id="superEps" ng-class="{ 'open': vm.getPodcastButtonState }">
-    <form class="form-inline">
+    <form class="form-inline episode-search">
         <div class="form-group">
             <input type="text" ng-model="search" class="form-control" placeholder="Search">
         </div>
@@ -11,19 +11,19 @@
         <div class="podcast-container">
           <div class="publish-date"><span class="episode-date">{{episode.date | date:'mediumDate' }}<span></div>
             <div class="episode-image"><img ng-src="{{vm.getImage(episode.date)}}" alt=""></div>
-            <h2 class="linkify">
-              <a ng-href="/episode/{{episode.guid}}">{{episode.title}}</a>
+            <h2 ng-click="vm.startPodcast(episode)">
+              	{{episode.title}}
             </h2>
           </div>
           <div class="podcast-summary">
             <p class="episode-description">{{vm.stripHtml(episode.summary)}}</p>
           </div>
           <div class="podcast-actions">
-            <a class="play-control linkify" ng-click="vm.startPodcast(episode)">
+            <button class="play-control " ng-click="vm.startPodcast(episode)">
               <i class="fa fa-play"></i>
               <span class="play-text">Play</span>
-            </a>
-            <a ng-href="{{episode.link}}" class="download-control linkify" download="{{episode.guid}}">
+            </button>
+            <a ng-href="{{episode.link}}" role="button" class="download-control " download="{{episode.guid}}">
               <i class="fa fa-cloud-download"></i>
               <span class="dl-text">Download</span>
             </a>
