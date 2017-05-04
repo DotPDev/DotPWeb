@@ -1,50 +1,32 @@
 <div class="titlebar-container">
-	<social-links links="dotpSocialLinks"></social-links>
 	<player-container></player-container>
 	<nav class="navbar-full" role="navigation">
-		<div class="nav nav-left">
-			<ul ng-class="{ 'collapsed': vm.isCollapsed }">
-      	<li class="title-bar-nav">
-        	<div ui-sref-active="active" >
-          	<a class="nav-link" ui-sref="root.episodes" ng-click="vm.slideNavPanel = false">
-            	<span>Episodes</span>
-          	</a>
-          	<div></div>
-      		</div>
-				</li>
-				<li class="title-bar-nav">
-        	<div ui-sref-active="active" >
-          	<a class="nav-link" ui-sref="root.hosts" ng-click="vm.slideNavPanel = false">
-            	<span>Hosts</span>
-          	</a>
-          	<div></div>
-      		</div>
-				</li>
-			</ul>
-		</div>
-		<div class="dotp-logo">
-      <img src='../images/dotp-logo-notext-01.svg'/>
-    </div>
-		<div class="nav nav-right">
-			<ul ng-class="{ 'collapsed': vm.isCollapsed }">
-      	<li class="title-bar-nav">
-					<div ui-sref-active="active">
-            	<a class="nav-link" ui-sref="root.ladder">
-              	<span>Ladder</span>
-            	</a>
-            	<div></div>
-        		</div>
-					</li>
-      	<li class="title-bar-nav">
-        	<div ui-sref-active="active">
-            	<a class="nav-link" ui-sref="root.store">
-              	<span>Store</span>
-            	</a>
-            	<div></div>
-        	</div>
-      	</li>
-    	</ul>
-		</div>
+		<ul ng-class="{ 'collapsed': vm.isCollapsed }">
+			<li class="title-bar-logo">
+      	<img src='../images/dotp-logo-notext-01.svg'/>
+    	</li>
+			<li class="title-bar-nav">
+        <a class="nav-link" ui-sref="root.episodes" ng-click="vm.slideNavPanel = false">
+          <span>Episodes</span>
+        </a>
+			</li>
+			<li class="title-bar-nav">
+        <a class="nav-link" ui-sref="root.store">
+          <span>Store</span>
+        </a>
+      </li>
+			<li class="title-bar-nav">
+        <a class="nav-link" ui-sref="root.hosts" ng-click="vm.slideNavPanel = false">
+          <span>Hosts</span>
+        </a>
+			</li>
+			<li class="title-bar-nav">
+        <a class="nav-link" ui-sref="root.ladder">
+          <span>Ladder</span>
+        </a>
+			</li>
+    </ul>
 	</nav>
+	<social-links links="dotpSocialLinks"></social-links>
   <navbar></navbar>
 </div>

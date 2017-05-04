@@ -28,13 +28,13 @@ angular.module('clientApp')
       }
     }
 
-    function handleScrollBars() {
-      [].forEach.call(document.querySelectorAll('.about-page'), function (el) {
-        Ps.initialize(el);
-      });
-    }
+    // function handleScrollBars() {
+    //   [].forEach.call(document.querySelectorAll('.about-page'), function (el) {
+    //     Ps.initialize(el);
+    //   });
+    // }
 
-    handleScrollBars();
+    // handleScrollBars();
 
     return {
       getActiveState: getActiveState,

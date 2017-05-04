@@ -18,11 +18,11 @@ angular.module('clientApp')
     var vm = this;
 
 
-    function handleScrollBars() {
-      [].forEach.call(document.querySelectorAll('.home-page'), function (el) {
-        Ps.initialize(el);
-      });
-    }
+    // function handleScrollBars() {
+    //   [].forEach.call(document.querySelectorAll('.home-page'), function (el) {
+    //     Ps.initialize(el);
+    //   });
+    // }
 
     handleScrollBars();
 
