@@ -187,10 +187,10 @@ player.show-player {
     transition: all 0.6s ease;
     z-index: 20000;
     width: 280px;
-    top: 58px;
+    top: 200px;
     height: 50px;
     position: absolute;
-    left: 76px;
+    left: 50px;
     right: 0;
     margin: 0 auto;
     //overflow: hidden;
@@ -386,3 +386,217 @@ player.show-player {
         }
     }
 }
+
+a#feed-icon {
+  display:block;
+  width:55px;
+  height:55px;
+  position:absolute;
+  left: 0;
+  top: 0;
+  -webkit-backface-visibility: hidden;
+  transition: all 300ms ease;
+  
+  & .play-icon {
+		text-align: center;
+  	padding-top: 0.55em;
+  	padding-left: 0.10em;
+  }
+	
+	i {
+		font-size: 2.5em;
+		color: white;
+	}
+  
+  & .waves {
+    width:47px;
+    height:47px;
+    overflow:hidden;
+    position:absolute;
+    bottom:5px;
+    left:5px;
+    z-index:2;
+
+    .wave {
+      transition: all 0.75s ease;
+      border-radius:50%;
+      position:absolute;
+
+      &:nth-child(odd){
+      }
+      &:nth-child(even){
+      }
+
+      &:nth-child(1){
+        width:38px;
+        height:38px;
+        bottom:-19px;
+        left:-19px;
+        z-index:4
+      }
+      &:nth-child(2){
+        width:62px;
+        height:62px;
+        bottom:-31px;
+        left:-31px;
+        z-index:3
+      }
+      &:nth-child(3){
+        width:86px;
+        height:86px;
+        bottom:-43px;
+        left:-43px;
+        z-index:2
+      }
+      &:nth-child(4){
+        width:110px;
+        height:110px;
+        bottom:-55px;
+        left:-55px;
+        z-index:1;
+      }
+    }
+	}
+}
+
+#episodes-wrapper {
+	//TODO: fix the player	
+  -webkit-transition-duration: .75s;
+  -webkit-transition-property: width,height;
+  -webkit-transition-delay: 0s;
+  -webkit-transition-timing-function: 'ease-in-out';
+  transition-duration: .75s;
+  transition-property: width,height;
+  transition-delay: 0s;
+  transition-timing-function: 'ease-in-out';
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  position: absolute;
+  top: 200px;
+  border: 1px solid @dotpRed;
+  background: black;
+  width: 55px;
+  @media @smartphones {
+    width: 55px;
+    left: -40px;
+  }
+  height: 55px;
+  z-index: 20;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+
+  
+  span#latest-episode {
+    left:60px;
+    color: white;
+    position: absolute;
+  }
+
+  &.opened {
+    z-index: 501;
+    width: 350px;
+    @media @smartphones {
+      width: 55px;
+    }
+  }
+
+  &.show-player {
+      z-index: 501;
+      width: 350px;
+      @media @smartphones {
+        width: 55px;
+      }
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0px;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+
+    li {
+      text-align: center;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+
+
+  & > div {
+
+    &.opened {
+      display:block;
+      //z-index: 501;
+      //height: calc(~'100vh - 100px');
+			
+      & i {
+        display: none;
+      }
+      & .wave {
+        border-radius: 0;
+
+        &:nth-child(odd) {
+          opacity: 0;
+        }
+        &:nth-child(even) {
+          width: 30px;
+          height: 1px;
+          left: 10px;
+          bottom: 22px;
+          background: @dotpRed;
+        }
+        &:nth-child(2) {
+          transform: rotateZ(135deg);
+        }
+        &:nth-child(4) {
+          transform: rotateZ(-135deg);
+        }
+      }
+    }
+
+    &#menu {
+      right: -10px;
+    }
+    &#share {
+      left: -10px;
+    }
+
+    & nav {
+      position: absolute;
+      left: 0;
+      top: 100px;
+      width: 420px;
+      @media @smartphones {
+        opacity: 0;
+        transition: opacity 0.75s ease;
+        pointer-events: none;
+        top: 60px;
+        width: 100%;
+      }
+
+      & li {
+        text-align: center;
+        padding-top: 20px;
+        &+li {
+          padding-top: 25px;
+        }
+
+        & a {
+          font-weight: 400;
+          text-transform: uppercase;
+          letter-spacing: .4em;
+          color: @dotpRed;
+          line-height: 30px;
+          text-decoration: none;
+          width: 100%;
+        }
+      }
+    }
+
+  }
+
+}
+

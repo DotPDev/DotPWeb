@@ -18,6 +18,7 @@ angular.module('clientApp')
     };
     vm.stripHtml = stripHtml;
     vm.getImage = getImage;
+		vm.getUrl = getUrl;
     vm.startPodcast = startPodcast;
 
     vm.isOpen = false;
@@ -112,17 +113,28 @@ angular.module('clientApp')
     }
 
     function getFeed() {
+			
+			console.log('get feed in episodes')
         feedManager.parseFeed(vm.page).then(function(response) {
             vm.feed = response;
         }).catch(function(error) {
             console.log(error);
         });
     }
-
     function startPodcast(episode) {
         $rootScope.$broadcast('player-play', episode);
     }
 
+		$scope.filterFn = function(episode, test, test2, test3) {
+				console.log(episode, test, test2, test3)
+
+    		if(episod.carDetails.doors > 2)
+    		{
+        		return true; // this will be listed in the results
+    		}
+
+    		return false;
+		};
     $scope.$on('main-next', function(event, args) {
         goNext();
     });

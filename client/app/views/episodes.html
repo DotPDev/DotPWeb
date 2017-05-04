@@ -16,7 +16,7 @@
             </h2>
           </div>
           <div class="podcast-summary">
-            <p class="episode-description">{{vm.stripHtml(episode.summary)}}</p>
+            <p class="episode-description">{{episode.summary}}</p>
           </div>
           <div class="podcast-actions">
             <button class="play-control " ng-click="vm.startPodcast(episode)">
@@ -24,6 +24,7 @@
               <span class="play-text">Play</span>
             </button>
             <a ng-href="{{episode.link}}" role="button" class="download-control " download="{{episode.guid}}">
+            <!-- <a ng-href="{{vm.getUrl(episode)}}" role="button" class="download-control " download="{{episode.guid}}"> -->
               <i class="fa fa-cloud-download"></i>
               <span class="dl-text">Download</span>
             </a>
