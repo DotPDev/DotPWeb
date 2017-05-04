@@ -337,10 +337,10 @@ angular.module('clientApp')
       $scope.$digest();
     }
 
-    function handleScrollBars() {
-      var scrollable = document.getElementById("store-wrapper");
-      Ps.initialize(scrollable);
-    }
+    // function handleScrollBars() {
+    //   var scrollable = document.getElementById("store-wrapper");
+    //   Ps.initialize(scrollable);
+    // }
 
-    handleScrollBars();
+    // handleScrollBars();
   });

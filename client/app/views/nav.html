@@ -1,18 +1,6 @@
 
 <header id="nav" ng-class="{ 'opened': vm.isNavOpen, 'shared': vm.isShareOpen }">
-  <!-- <div id="share">
-    <a href="" ng-click="vm.handleShareClick()" class="btn-toggle"><span></span><span></span><span></span><span></span></a>
-    <div>
-      <ul>
-        <li><a href="/" ng-click=""><i class="fa fa-youtube-play"></i></a></li>
-        <li><a href="ladder" ng-click=""><i class="fa fa-twitch"></i></a></li>
-        <li><a href="store" ng-click=""><i class="fa fa-twitter"></i></a></li>
-      </ul>
-    </div>
-  </div> -->
   <div id="menu">
-    <a href="" ng-click="vm.handleShareClick()" class="btn-toggle share"><span></span><span></span><span></span><span></span><span></span></a>
-
     <a href="" ng-click="vm.handleNavClick()" class="btn-toggle open"><span></span><span></span><span></span><span></span></a>
     <nav class="mobile">
       <ul class="nav-collapse">
@@ -23,24 +11,5 @@
         <li><a href="store" ng-click="vm.animateNav('store')">Store</a></li>
       </ul>
     </nav>
-    <div id="share">
-      <ul>
-        <li>
-            <a class="facebook" socialshare="" socialshare-provider="facebook" socialshare-url="http://staging-defenseofthepatience.herokuapp.com">
-                <i class="fa fa-facebook"></i>
-            </a>
-        </li>
-        <li>
-            <a class="twitter" socialshare="" socialshare-provider="twitter" socialshare-text="" socialshare-url="http://staging-defenseofthepatience.herokuapp.com" socialshare-hashtags="">
-                <i class="fa fa-twitter"></i>
-            </a>
-        </li>
-        <li>
-            <a class="reddit" socialshare="" socialshare-provider="reddit" socialshare-text="" socialshare-url="http://staging-defenseofthepatience.herokuapp.com">
-                <i class="fa fa-reddit"></i>
-            </a>
-        </li>
-      </ul>
-    </div>
   </div>
 </header>

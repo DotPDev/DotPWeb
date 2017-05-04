@@ -29,7 +29,7 @@
 
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="styles/videogular.min.css" />
-    <link rel="stylesheet" href="styles/perfect-scrollbar.min.css" />
+    <!-- <link rel="stylesheet" href="styles/perfect-scrollbar.min.css" /> -->
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
@@ -39,107 +39,13 @@
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
-        <link rel='stylesheet' href='styles/perfect-scrollbar.css' />
+        <!-- <link rel='stylesheet' href='styles/perfect-scrollbar.css' /> -->
     <!-- endbuild -->
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyD3M1UXHXtbvqFmLLWomtmfH7kgcqumea8"></script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <base href="/" />
-    <!--<style id="shadows">
-      .shadowed {
-        -webkit-transform: translateZ(0);
-        -mos-transform: translateZ(0);
-        -o-transform: translateZ(0);
-        transform: translateZ(0);
-        transition: filter 2s;
-        filter: drop-shadow(2px 2px 4px black);
-      }
-      #fog {
-        -webkit-transform: translateZ(0);
-        -mos-transform: translateZ(0);
-        -o-transform: translateZ(0);
-        transform: translateZ(0);
-        position: absolute;
-        top: -50%;
-        left: -50%;
-        height: 200%;
-        width: 200%;
-        z-index: 900;
-        pointer-events: none;
-        transition: transform 2s;
-        background-image: radial-gradient(15px at 50% 50%, rgba(68, 71, 33, 0.29) 125px, rgba(0, 0, 0, 0.6) 250px, rgba(0, 0, 0, 0.8) 350px, rgba(0, 0, 0, 0.9) 600px);
-      }
-    </style>
-    <script>
-    var shadowHandler = (function() {
-      var lightPerformanceIndex = 1,
-        lightPerformanceLimit = 1,
-        shadowLengthVariant = 20;
-        var movementTimeout;
-
-      function lg(s) {
-        console.log(s);
-      }
-
-      function executeMovement(e) {
-        if (movementTimeout) {
-          clearTimeout(movementTimeout);
-        }
-        movementTimeout = setTimeout(function(){
-          var xOffset = ((window.innerWidth / 2) - e.clientX - 8);
-          var yOffset = ((window.innerHeight / 2) - e.clientY);
-          var xShadow = (xOffset/shadowLengthVariant);
-          var yShadow = (yOffset/shadowLengthVariant);
-          var newStyle = "radial-gradient(150px at " + e.clientX +  "px " +  e.clientY + "px, rgba(68, 71, 33, 0.29) 125px, rgba(0, 0, 0, 0.9) 600px)";
-          var newFilter = "drop-shadow(" + xShadow + "px " + yShadow + "px " + "4" + "px black)";
-          var offset = "translate(" + (0 - xOffset) + "px, " + (0 - yOffset) + "px)";
-          //lg(newFilter);
-          //lg(document.getElementById("theStyle").sheet.cssRules[0].style['filter']);
-          var shadows = document.getElementById("shadows").sheet;
-          shadows.cssRules[0].style['filter'] = newFilter;
-          shadows.cssRules[1].style['transform'] = offset;
-        }, 500);
-
-      }
-
-      function updateTracking() {
-        lightPerformanceIndex++
-      }
-
-      function shouldThrottle() {
-        if (lightPerformanceIndex % lightPerformanceLimit !== 0) {
-          lightPerformanceIndex++;
-          return true;
-        }
-        lightPerformanceIndex = 1;
-        return false;
-      }
-
-
-        function changeShadowLength(num) {
-              shadowLengthVariant = num;
-        }
-
-        return {
-            executeMovement: executeMovement,
-            shouldThrottle: shouldThrottle,
-            changeShadowLength: changeShadowLength
-        }
-
-
-     })();
-     function handleMouseMove(e) {
-         if(!shadowHandler.shouldThrottle()){
-           console.log("executing Movement");
-             shadowHandler.executeMovement(e);
-           }
-         //lg("window width: " + window.innerWidth);
-         //lg("mouse: " + e.clientX + " " + e.clientY);
-         //lg("w/m: " + ((window.innerWidth / 2) - e.clientX - 8));
-         //lg("w/m: " + ((window.innerWidth / 2) - e.clientX - 8)/30);
-     }
-   </script>-->
 </head>
-<body>
+<body id="mainApp">
     <!--[if lte IE 8]>
     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -341,6 +247,14 @@
     <script src="scripts/directives/socialLinks.js"></script>
     <script src="scripts/directives/playerContainer.js"></script>
     <!-- endbuild -->
-
+<!-- <script> -->
+<!--         //Ps.initialize(document.getElementById("superEps")); -->
+<!--         function handleScrollBars() { -->
+<!--           [].forEach.call(document.querySelectorAll('#mainApp'), function (el) { -->
+<!--             Ps.initialize(el); -->
+<!--           }); -->
+<!--         } -->
+<!--         handleScrollBars() -->
+<!-- </script> -->
 </body>
 </html>

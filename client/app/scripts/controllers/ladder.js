@@ -35,11 +35,11 @@ angular.module('clientApp')
     	}
     }
 
-    function handleScrollBars() {
-      var scrollable = document.getElementById('ladder-content');
-        Ps.initialize(scrollable);
-    }
+    // function handleScrollBars() {
+    //   var scrollable = document.getElementById('ladder-content');
+    //     Ps.initialize(scrollable);
+    // }
 
-    handleScrollBars();
+    // handleScrollBars();
 
   });

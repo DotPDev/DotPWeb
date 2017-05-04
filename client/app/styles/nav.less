@@ -1,43 +1,43 @@
-header#share {
-  right: 150px;
-}
+// header#share {
+//   right: 150px;
+// }
 
 header#nav {
   right: 50px;
 }
-div#share {
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    height: 0px;
-    overflow: hidden;
-    transition: height 0.75s ease;
+// div#share {
+//     position: absolute;
+//     top: 60px;
+//     left: 0;
+//     width: 100%;
+//     height: 0px;
+//     overflow: hidden;
+//     transition: height 0.75s ease;
 
-    & > ul {
-      list-style: none;
-      width: 100%;
-      margin: 0;
-      padding: 0;
-      display: flex;
+//     & > ul {
+//       list-style: none;
+//       width: 100%;
+//       margin: 0;
+//       padding: 0;
+//       display: flex;
 
-      & > li {
-        height: 46px;
-        width: 45px;
-        display:inline-block;
+//       & > li {
+//         height: 46px;
+//         width: 45px;
+//         display:inline-block;
 
-        & > a {
-          width: 100%;
-          background-color: inherit !important;
-          font-size:20px;
-          text-align: center;
-          color: white !important;
-        }
-      }
-    }
-}
+//         & > a {
+//           width: 100%;
+//           background-color: inherit !important;
+//           font-size:20px;
+//           text-align: center;
+//           color: white !important;
+//         }
+//       }
+//     }
+// }
 
-header#nav, header#share {
+header#nav {
     -webkit-transition-duration: .75s;
     -webkit-transition-property: width,height;
     -webkit-transition-delay: 0s;
@@ -49,13 +49,15 @@ header#nav, header#share {
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
     position: fixed;
-    top: 45px;
+    top: 15px;
+    right: 10px;
+    display: none;
     @media @smartphones {
-        right: 10px;
+    	display: block;
     }
     border: 1px solid @dotpRed;
     background: black;
-    width: 120px;
+    width: 55px;
     height: 55px;
     z-index: 500;
 
@@ -77,11 +79,6 @@ header#nav, header#share {
         background: black;
         width: 100%;
         height: 100%;
-
-        &#menu {
-        }
-        &#share {
-        }
 
         & nav {
             position: absolute;

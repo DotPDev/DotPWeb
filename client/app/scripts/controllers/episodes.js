@@ -125,16 +125,6 @@ angular.module('clientApp')
         $rootScope.$broadcast('player-play', episode);
     }
 
-		$scope.filterFn = function(episode, test, test2, test3) {
-				console.log(episode, test, test2, test3)
-
-    		if(episod.carDetails.doors > 2)
-    		{
-        		return true; // this will be listed in the results
-    		}
-
-    		return false;
-		};
     $scope.$on('main-next', function(event, args) {
         goNext();
     });
@@ -143,7 +133,7 @@ angular.module('clientApp')
         goPrev();
     });
 
-        Ps.initialize(document.getElementById("superEps"));
+        // Ps.initialize(document.getElementById("superEps"));
 
     init();
 });

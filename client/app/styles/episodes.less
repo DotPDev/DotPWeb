@@ -1,10 +1,8 @@
-div#superEps {
-  height: calc(~'100vh - 60px');
-  overflow: hidden;
-  padding-top: 90px;
-  @media @smartphones {
-    padding-top: 20px;
-  }
+// div#superEps {
+//   padding-top: 90px;
+//   @media @smartphones {
+//     padding-top: 20px;
+//   }
 
 
 
@@ -16,7 +14,7 @@ div#superEps {
       display: flex;
       flex-flow: row wrap;
       width: 80%;
-      margin: 0 auto;
+      margin: -15px auto;
       list-style: none;
       padding-bottom:120px;
 
@@ -69,7 +67,6 @@ div#superEps {
       }
     }
   }
-}
 
 .podcast-actions {
   text-align: center;
@@ -81,7 +78,7 @@ div#superEps {
     color: @dotpRed;
     border: 0;
     padding: 10px;
-		font: normal 1em/1.2 "Work Sans", sans-serif ;
+		font: normal 1em/1.2 @main-font-family;
   }
 }
 
@@ -107,26 +104,22 @@ div#superEps {
     width: 30%;
     box-sizing: border-box;
 
-    @media @smartphones {
-    
-    }
-    @media @tablet {
-
-    }
-
     & > img {
       width: 100%;
       box-sizing: border-box;
+      filter: drop-shadow(3px -3px 3px #476fa7) drop-shadow(-3px 3px 3px #f47522);
     }
 }
 
 .episode-search {
+	margin: -75px 0 0;
+	min-height: 64px;
 	div {
 		width: 30%;
 		margin: 0 auto;
 	}
 	@media @smartphones {
-		padding-top: 163px;
+		padding-top: 40px;
 		div {
 			width: 80%;
 		}
