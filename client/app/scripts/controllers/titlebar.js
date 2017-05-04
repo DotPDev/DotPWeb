@@ -17,7 +17,30 @@ angular.module('clientApp')
     vm.isCollapsed = false;
     vm.slideNavPanel = false;
     vm.clickPower = clickPower;
-    screenSize.rules = {
+    $scope.dotpSocialLinks = [
+			{
+      	type: "discord",
+      	url: "https://discord.gg/dotp"
+    	},
+			{
+      	type: "twitch",
+      	url: "https://twitch.tv/dotptv"
+    	},
+			{
+      	type: "youtube",
+      	url: "https://www.youtube.com/dotptv1"
+			},
+			{
+     	 type: "patreon",
+     	 url: "https://www.patreon.com/DefenseOfThePatience"
+    	},
+			{
+      	type: "twitter",
+     		url: "https://twitter.com/DotP_Show"
+    	}
+    ];
+
+  	screenSize.rules = {
         smartphones: 'only screen and (max-width: 830px)'
     };
 
