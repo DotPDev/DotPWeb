@@ -460,6 +460,7 @@ player.show-player.opened > .player-wrapper {
   pointer-events: all;
 }
 .player-wrapper {
+  overflow: visible;
   pointer-events: none;
   transition: all 0.6s ease;
   z-index: 20000;
@@ -518,6 +519,7 @@ player.show-player.opened > .player-wrapper {
   z-index: 400;
   pointer-events: none;
   color: white;
+  overflow: hidden;
 }
 @media only screen and (max-width: 830px) {
   .player-wrapper .podcast-title {
@@ -553,11 +555,6 @@ player.show-player.opened > .player-wrapper {
 }
 .player-wrapper .player videogular vg-volume-bar {
   top: 20px;
-}
-@media only screen and (max-width: 830px) {
-  .player-wrapper .player videogular vg-volume-bar {
-    top: 0;
-  }
 }
 @media only screen and (max-width: 830px) {
   .player-wrapper .player {
