@@ -1243,9 +1243,6 @@ div#cart-wrapper ul li {
 .product:hover {
   filter: drop-shadow(-8px 0px 4px #be1823) drop-shadow(8px 0px 4px #be1823);
 }
-.product:last-child {
-  padding-bottom: 50px;
-}
 .product > .product-specs {
   opacity: 0;
   width: 0;
