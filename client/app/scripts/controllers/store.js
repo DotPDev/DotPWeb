@@ -194,7 +194,7 @@ angular.module('clientApp')
       ,{
         type: "mug",
         name: "DotP Coffee Mug",
-        retail_price: '15.00',
+        retail_price: '20.00',
         quantity: 1,
         //TODO - get DotP Mug MOCKUPS
         files: [
