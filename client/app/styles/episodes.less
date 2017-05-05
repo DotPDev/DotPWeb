@@ -1,72 +1,64 @@
-// div#superEps {
-//   padding-top: 90px;
-//   @media @smartphones {
-//     padding-top: 20px;
-//   }
+div#episodes {
+  background: @background-dark;
 
+	ul {
+    padding: 0;
+    display: flex;
+    flex-flow: row wrap;
+    width: 80%;
+    margin: -15px auto;
+    list-style: none;
+    padding-bottom:120px;
 
+    @media @smartphones {
+      padding-top: 15px;
+    }
+	}
 
-  div#episodes {
-    background: @background-dark;
+  li {
+    box-sizing: border-box;
+    padding: 15px 0;
+    margin: 30px 0;
+    width: 30%;
+    border: 0px solid @dotpRed;
 
-		ul {
-      padding: 0;
-      display: flex;
-      flex-flow: row wrap;
-      width: 80%;
-      margin: -15px auto;
-      list-style: none;
-      padding-bottom:120px;
-
-      @media @smartphones {
-        padding-top: 15px;
+    @media @tablet  {
+			width: 45%;
+			border-width: 0;
+			&:nth-child(even) {
+				border-width: 0 0 0 1px;
+				width: 50%;
+				padding-left: 5%;
+				margin-left: 5%;
+			}
+    }
+    @media @smartphones {
+      width: 100%;
+      padding: 0 0 45px;
+      border-width: 0 0 1px;
+    }
+    @media @fullScreen {
+			&:nth-child(3n+1) {
+				width: 33%;
+				border-width: 0 1px 0 0;
+				padding: 15px 2.5%;
       }
-		}
-
-    li {
-      box-sizing: border-box;
-      padding: 15px 0;
-      margin: 30px 0;
-      width: 30%;
-      border: 0px solid @dotpRed;
-      
-      @media @tablet  {
-				width: 45%;
-				border-width: 0;
-				&:nth-child(even) {
-					border-width: 0 0 0 1px;
-					width: 50%;
-					padding-left: 5%;
-					margin-left: 5%;
-				}
+      &:nth-child(3n) {
+				width: 33%;
+				padding: 15px 2.5%;
+				border-width: 0 0 0 1px;
       }
-      @media @smartphones {
-      	width: 100%;
-      	padding: 0 0 45px;
-      	border-width: 0 0 1px;
-      }
-      @media @fullScreen {
-				&:nth-child(3n+1) {
-					width: 33%;
-					border-width: 0 1px 0 0;
-					padding: 15px 2.5%;
-      	}
-      	&:nth-child(3n) {
-					width: 33%;
-					padding: 15px 2.5%;
-					border-width: 0 0 0 1px;
-      	}
-      	&:nth-child(3n-7) {
-					margin: 15px 2.5%;
-					width: 27%;
-      	}
-    	}
-      
-      p {
-      	overflow-wrap: break-word;	
+      &:nth-child(3n-7) {
+				margin: 15px 2.5%;
+				width: 27%;
       }
     }
+
+    p {
+      overflow-wrap: break-word;	
+    }
   }
+}
 
 .podcast-actions {
   text-align: center;
@@ -99,16 +91,16 @@
 }
 
 .episode-image {
-    display: block;
-    margin: 0 auto;
-    width: 30%;
-    box-sizing: border-box;
+  display: block;
+  margin: 0 auto;
+  width: 30%;
+  box-sizing: border-box;
 
-    & > img {
-      width: 100%;
-      box-sizing: border-box;
-      filter: drop-shadow(3px -3px 3px #476fa7) drop-shadow(-3px 3px 3px #f47522);
-    }
+  & > img {
+    width: 100%;
+    box-sizing: border-box;
+    filter: drop-shadow(3px -3px 3px #476fa7) drop-shadow(-3px 3px 3px #f47522);
+  }
 }
 
 .episode-search {
@@ -126,98 +118,4 @@
 	}
 }
 
-// #paging {
-//     transition: @transition;
-//     position: fixed;
-//     bottom: 0;
-//     left: 0;
-//     width:  100%;
-//     height: 50px;
-//     background: #fff;
-//     border-top: 1px solid #5F5F67;
-//     display: flex;
-//     opacity: 0;
-//     pointer-events: none;
-
-//     @media @smartphones {
-//       bottom: 50px;
-//     }
-//     &.visible {
-//       opacity: 1;
-//       pointer-events: all;
-//     }
-
-//     div {
-//       &#prev {
-//         a {
-//           color: @dotpOrange;
-//         }
-//       }
-//       &#next {
-//         a {
-//           color: #3e659e;
-//         }
-//       }
-//       a {
-//         text-decoration: none;
-//         i {
-//             position: absolute;
-//         }
-//       }
-//     }
-//     #prev {
-//         position: relative;
-//         flex: 1;
-//         text-align: right;
-//         &:hover {
-//             cursor: pointer;
-//             .prev-text {
-//                 //transition: @transition;
-//             }
-//             i {
-//                 animation: @left-bump;
-//                 transition: @transition;
-//             }
-//         }
-//         .prev-text {
-//             transition: @transition;
-//             height: 100%;
-//             width: 100%;
-//             line-height: 50px;
-//             margin-left: -40px;
-//         }
-//         i {
-//             transition: @transition;
-//             top: 9px;
-//             right:5px;
-//         }
-//     }
-//     #next {
-//         position: relative;
-//         flex: 1;
-//         text-align: left;
-//         &:hover {
-//             cursor: pointer;
-//             .next-text {
-//                 //transition: @transition;
-//             }
-//             i {
-//                 animation: @right-bump;
-//                 transition: @transition;
-//             }
-//         }
-//         .next-text {
-//             transition: @transition;
-//             height: 100%;
-//             width: 100%;
-//             line-height: 50px;
-//             margin-left: 40px;
-//         }
-//         i {
-//             transition: @transition;
-//             top: 9px;
-//             left:5px;
-//         }
-//     }
-// }
 
