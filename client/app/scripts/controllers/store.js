@@ -152,7 +152,7 @@ angular.module('clientApp')
       {
         type: "clothing",
         	name: "Men's DotP Beefy-T",
-        	retail_price: '20.00',
+        	retail_price: '19.99',
         	quantity: 1,
         	files: [
           	{url: 'https://staging-defenseofthepatience.herokuapp.com/images/dotp-logo-shirt.png'},
@@ -163,7 +163,7 @@ angular.module('clientApp')
       },{
         type: "clothing",
         	name: "Ladies' Deep V DotP T-Shirt",
-        	retail_price: '20.00',
+        	retail_price: '19.99',
         	quantity: 1,
         	files: [
           	{url: 'https://staging-defenseofthepatience.herokuapp.com/images/dotp-logo-ladies-shirt.png'},
@@ -174,7 +174,7 @@ angular.module('clientApp')
       },{
         type: "clothing",
         name: "E'rybody DotP Hoodie",
-        retail_price: '30.00',
+        retail_price: '39.99',
         quantity: 1,
         //TODO - get hoodie MOCKUPS
         files: [
@@ -194,7 +194,7 @@ angular.module('clientApp')
       ,{
         type: "mug",
         name: "DotP Coffee Mug",
-        retail_price: '20.00',
+        retail_price: '19.99',
         quantity: 1,
         //TODO - get DotP Mug MOCKUPS
         files: [
@@ -203,7 +203,8 @@ angular.module('clientApp')
             // {url: 'localhost:9000/images/dotp-mug-11oz.png'},
             // {type: 'preview', url: 'localhost:9000/images/dotp-mug-left-handle.png'}
         ],
-        sizes: [{size: "11oz", variant_id: "1320", file: 'https://staging-defenseofthepatience.herokuapp.com/images/dotp-mug-11oz.png'}, {size: "15oz", variant_id: "4830", file: 'https://staging-defenseofthepatience.herokuapp.com/images/dotp-mug-15oz.png'}]
+        sizes: [{size: "11oz", variant_id: "1320", file: 'https://staging-defenseofthepatience.herokuapp.com/images/dotp-mug-11oz.png'}]
+// {size: "15oz", variant_id: "4830", file: 'https://staging-defenseofthepatience.herokuapp.com/images/dotp-mug-15oz.png'}
       }
     ];
 
