@@ -195,7 +195,6 @@ player.show-player {
   top: 12px;
   position: fixed;
   white-space: no-wrap;
-  overflow: hidden;
   text-overflow: ellipsis;
   left: calc(~'50% + 27.5px');
   transform: translate(-50%, 0);
@@ -276,6 +275,9 @@ player.show-player {
 
     & videogular vg-volume-bar {
       top: 20px;
+      @media @smartphones {
+        top: -100px;
+      }
     }
     @media @smartphones {
       background: #fff;

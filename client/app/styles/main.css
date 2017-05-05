@@ -469,7 +469,6 @@ player.show-player.opened > .player-wrapper {
   top: 12px;
   position: fixed;
   white-space: no-wrap;
-  overflow: hidden;
   text-overflow: ellipsis;
   left: calc(50% + 27.5px);
   transform: translate(-50%, 0);
@@ -555,6 +554,11 @@ player.show-player.opened > .player-wrapper {
 }
 .player-wrapper .player videogular vg-volume-bar {
   top: 20px;
+}
+@media only screen and (max-width: 830px) {
+  .player-wrapper .player videogular vg-volume-bar {
+    top: -100px;
+  }
 }
 @media only screen and (max-width: 830px) {
   .player-wrapper .player {
