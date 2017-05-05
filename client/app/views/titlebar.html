@@ -3,7 +3,9 @@
 	<nav class="navbar-full" role="navigation">
 		<ul ng-class="{ 'collapsed': vm.isCollapsed }">
 			<li class="title-bar-logo">
-      	<img src='../images/dotp-logo-notext-01.svg'/>
+      	<a ui-sref="root.dashboard" ng-click="vm.slideNavPanel = false">
+					<img src='../images/dotp-logo-notext-01.svg'/>
+				</a>
     	</li>
 			<li class="title-bar-nav">
         <a class="nav-link" ui-sref="root.episodes" ng-click="vm.slideNavPanel = false">

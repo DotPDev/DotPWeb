@@ -25,7 +25,7 @@
 
 		<div class="store-item" ng-class="{'item-selected': isItemSelected, 'hidden': isManagingCart|| isCheckingOut}">
 
-			<div ng-click="vm.startCheckOut()" ng-class="{'hidden': isCheckingOut}" class="open-checkout">
+			<div ng-click="vm.startCheckOut()" ng-class="{'hidden': isCheckingOut}" class="open-checkout top-button">
 				<i class="fa fa-credit-card" aria-hidden="true"></i>
 				Check Out{{validationMessage}}
 			</div>
@@ -49,11 +49,6 @@
 				</div>
 			</div>
 		</br>
-			<div ng-click="vm.startCheckOut()" ng-class="{'hidden': isCheckingOut}" class="open-checkout">
-				<i class="fa fa-credit-card" aria-hidden="true"></i>
-				Check Out{{validationMessage}}
-			</div>
-
 		</div>
 		<!-- <div style="margin-bottom:200px">
 		  checking out = {{isCheckingOut}}</br>

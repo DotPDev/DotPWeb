@@ -1,12 +1,12 @@
 'use strict';
 
-/**
- * @ngdoc function
- * @name clientApp.controller:LadderCtrl
- * @description
- * # LadderCtrl
- * Controller of the clientApp
- */
+	/**
+ 	 * @ngdoc function
+ 	 * @name clientApp.controller:LadderCtrl
+ 	 * @description
+ 	 * # LadderCtrl
+ 	 * Controller of the clientApp
+ 	 */
 angular.module('clientApp')
   .controller('StoreCtrl', function ($scope, firebaseSvc, $http, cart) {
     this.awesomeThings = [
@@ -61,7 +61,7 @@ angular.module('clientApp')
     }
 
     function handleProductClick(i, $event) {
-          console.log($event.currentTarget.parentNode);
+      console.log($event.currentTarget.parentNode);
       if (!$scope.isItemSelected) {
         $event.currentTarget.className += ' selected-item';
         $scope.isItemSelected = true;
@@ -71,12 +71,12 @@ angular.module('clientApp')
     function closeProducts(i, $event) {
       //HACK - shitty timeout hack
       setTimeout(function(){console.log("closing products");
-      console.log($event.currentTarget.parentNode.className);
-      $event.currentTarget.parentNode.className = 'product float-left ng-scope product-' + i;
-      console.log($event.currentTarget.parentNode.className);
-      $scope.isItemSelected = false;
-      $scope.$digest();
-    },50);
+      	console.log($event.currentTarget.parentNode.className);
+      	$event.currentTarget.parentNode.className = 'product float-left ng-scope product-' + i;
+      	console.log($event.currentTarget.parentNode.className);
+      	$scope.isItemSelected = false;
+      	$scope.$digest();
+    	},50);
 
     }
     // jscs:disable
@@ -102,17 +102,17 @@ angular.module('clientApp')
     //TODO - move to data creation services
     function createPrintfulOrder(){
       return JSON.stringify({
-          recipient:  {
-              name: $scope.buyer,
-              address1: $scope.data.address.components.streetNumber + ' ' + $scope.data.address.components.street,
-              city: $scope.data.address.components.city,
-              state_code: $scope.data.address.components.state,
-              country_code: $scope.data.address.components.countryCode,
-              zip: $scope.data.address.components.postCode
-          },
+        recipient:  {
+          name: $scope.buyer,
+          address1: $scope.data.address.components.streetNumber + ' ' + $scope.data.address.components.street,
+          city: $scope.data.address.components.city,
+          state_code: $scope.data.address.components.state,
+          country_code: $scope.data.address.components.countryCode,
+          zip: $scope.data.address.components.postCode
+        },
 
-          //TODO - Cart Service - Get Items
-          items: cart.getCartItems()
+        //TODO - Cart Service - Get Items
+        items: cart.getCartItems()
       });
     }
 
@@ -151,24 +151,24 @@ angular.module('clientApp')
       // }
       {
         type: "clothing",
-        name: "Men's DotP Beefy-T",
-        retail_price: '20.00',
-        quantity: 1,
-        files: [
-          {url: 'https://staging-defenseofthepatience.herokuapp.com/images/dotp-logo-shirt.png'},
-          {type: 'preview', url: 'https://staging-defenseofthepatience.herokuapp.com/images/dotp-mens-shirt-black.png'}
-        ],
-        sizes: [{size: "Small", variant_id: "5407"}, {size: "Medium", variant_id: "5408"}, {size: "Large", variant_id: "5409"}, {size: "XL", variant_id: "5410"}, {size: "2XL", variant_id: "5411"}, {size: "3XL", variant_id: "5412"}, {size: "4XL", variant_id: "5413"}, {size: "5XL", variant_id: "5414"}, {size: "6XL", variant_id: "5415"}],
-        chosen_size: {size: "Small", variant_id: "5407"}
+        	name: "Men's DotP Beefy-T",
+        	retail_price: '20.00',
+        	quantity: 1,
+        	files: [
+          	{url: 'https://staging-defenseofthepatience.herokuapp.com/images/dotp-logo-shirt.png'},
+          	{type: 'preview', url: 'https://staging-defenseofthepatience.herokuapp.com/images/dotp-mens-shirt-black.png'}
+        	],
+        	sizes: [{size: "Small", variant_id: "5407"}, {size: "Medium", variant_id: "5408"}, {size: "Large", variant_id: "5409"}, {size: "XL", variant_id: "5410"}, {size: "2XL", variant_id: "5411"}, {size: "3XL", variant_id: "5412"}, {size: "4XL", variant_id: "5413"}, {size: "5XL", variant_id: "5414"}, {size: "6XL", variant_id: "5415"}],
+        	chosen_size: {size: "Small", variant_id: "5407"}
       },{
         type: "clothing",
-        name: "Ladies' Deep V DotP T-Shirt",
-        retail_price: '20.00',
-        quantity: 1,
-        files: [
-          {url: 'https://staging-defenseofthepatience.herokuapp.com/images/dotp-logo-ladies-shirt.png'},
-          {type: 'preview', url: 'https://staging-defenseofthepatience.herokuapp.com/images/dotp-ladies-shirt-black.png'}
-        ],
+        	name: "Ladies' Deep V DotP T-Shirt",
+        	retail_price: '20.00',
+        	quantity: 1,
+        	files: [
+          	{url: 'https://staging-defenseofthepatience.herokuapp.com/images/dotp-logo-ladies-shirt.png'},
+          	{type: 'preview', url: 'https://staging-defenseofthepatience.herokuapp.com/images/dotp-ladies-shirt-black.png'}
+        	],
         sizes: [{size: "Small", variant_id: "6243"}, {size: "Medium", variant_id: "6244"}, {size: "Large", variant_id: "6245"}, {size: "XL", variant_id: "6246"}],
         chosen_size: {size: "Small", variant_id: "6243"}
       },{
@@ -182,76 +182,76 @@ angular.module('clientApp')
           {type: 'preview', url: 'https://staging-defenseofthepatience.herokuapp.com/images/dotp-hoodie.png'}
         ],
         sizes: [{size: "Small", variant_id: "5530"}, {size: "Medium", variant_id: "5531"}, {size: "Large", variant_id: "5532"}, {size: "XL", variant_id: "5533"}, {size: "2XL", variant_id: "5534"}, {size: "3XL", variant_id: "5535"}, {size: "4XL", variant_id: "5536"}, {size: "5XL", variant_id: "5537"}],
-      // },{
-      //   type: "hat",
-      //   variant_id: "7854",
-      //   name: "DotP Baseball Cap",
-      //   retail_price: '30.00',
-      //   quantity: 1,
-      //   //TODO - get DotP Cap MOCKUPS
-      //   files: []
+      	// },{
+      	//   type: "hat",
+      	//   variant_id: "7854",
+      	//   name: "DotP Baseball Cap",
+      	//   retail_price: '30.00',
+      	//   quantity: 1,
+      	//   //TODO - get DotP Cap MOCKUPS
+      	//   files: []
       }
-      // ,{
-      //   type: "mug",
-      //   name: "DotP Coffee Mug",
-      //   retail_price: '15.00',
-      //   quantity: 1,
-      //   //TODO - get DotP Mug MOCKUPS
-      //   files: [
-      //     // {url: 'https://staging-defenseofthepatience.herokuapp.com/images/dotp-mug-11oz.png'},
-      //     // {type: 'preview', url: 'https://staging-defenseofthepatience.herokuapp.com/images/dotp-mug-left-handle.png'}
-      //       {url: 'localhost:9000/images/dotp-mug-11oz.png'},
-      //       {type: 'preview', url: 'localhost:9000/images/dotp-mug-left-handle.png'}
-      //   ],
-      //   sizes: [{size: "11oz", variant_id: "1320", file: 'https://staging-defenseofthepatience.herokuapp.com/images/dotp-mug-11oz.png'}, {size: "15oz", variant_id: "4830", file: 'https://staging-defenseofthepatience.herokuapp.com/images/dotp-mug-15oz.png'}]
-      // }
+      ,{
+        type: "mug",
+        name: "DotP Coffee Mug",
+        retail_price: '15.00',
+        quantity: 1,
+        //TODO - get DotP Mug MOCKUPS
+        files: [
+          {url: 'https://staging-defenseofthepatience.herokuapp.com/images/dotp-mug-11oz.png'},
+          {type: 'preview', url: 'https://staging-defenseofthepatience.herokuapp.com/images/dotp-mug-left-handle.png'}
+            // {url: 'localhost:9000/images/dotp-mug-11oz.png'},
+            // {type: 'preview', url: 'localhost:9000/images/dotp-mug-left-handle.png'}
+        ],
+        sizes: [{size: "11oz", variant_id: "1320", file: 'https://staging-defenseofthepatience.herokuapp.com/images/dotp-mug-11oz.png'}, {size: "15oz", variant_id: "4830", file: 'https://staging-defenseofthepatience.herokuapp.com/images/dotp-mug-15oz.png'}]
+      }
     ];
 
     //TODO - Cart Service - Add to cart
     function addToCart(product, i, $event) {
-        $scope.validationMessage = '';
+      $scope.validationMessage = '';
 
-        var productJson = {};
+      var productJson = {};
 
-        if (product.type === "hat") {
-          productJson = {
-            variant_id: product.variant_id,
-            name: product.name,
-            retail_price: product.retail_price,
-            quantity: 1,
-            files: product.files,
-          };
-        } else if (product.type === "mug") {
-          productJson = {
-            variant_id: product.chosenSize.variant_id,
-            name: product.name,
-            retail_price: product.retail_price,
-            quantity: 1,
-            files: [
-              {url: product.chosenSize.file},
-              {type: 'preview', url: 'https://staging-defenseofthepatience.herokuapp.com/images/dotp-mug-left-handle.png'}
-            ]
-          };
-        } else {
-          productJson = {
-            variant_id: product.chosenSize.variant_id,
-            size: product.chosenSize.size,
-            name: product.name,
-            retail_price: product.retail_price,
-            quantity: 1,
-            files: product.files,
-          };
-        }
-        cart.addToCart(productJson);
-        //TODO - Remove this after done with cart svc
-        vm.cart.items = cart.getCartItems();
-        vm.cart.price = cart.getTotalPrice();
+      if (product.type === "hat") {
+        productJson = {
+          variant_id: product.variant_id,
+          name: product.name,
+          retail_price: product.retail_price,
+          quantity: 1,
+          files: product.files,
+        };
+      } else if (product.type === "mug") {
+        productJson = {
+          variant_id: product.chosenSize.variant_id,
+          name: product.name,
+          retail_price: product.retail_price,
+          quantity: 1,
+          files: [
+            {url: product.chosenSize.file},
+            {type: 'preview', url: 'https://staging-defenseofthepatience.herokuapp.com/images/dotp-mug-left-handle.png'}
+          ]
+        };
+      } else {
+        productJson = {
+          variant_id: product.chosenSize.variant_id,
+          size: product.chosenSize.size,
+          name: product.name,
+          retail_price: product.retail_price,
+          quantity: 1,
+          files: product.files,
+        };
+      }
+      cart.addToCart(productJson);
+      //TODO - Remove this after done with cart svc
+      vm.cart.items = cart.getCartItems();
+      vm.cart.price = cart.getTotalPrice();
 
-        setTimeout(function() {
-          $event.currentTarget.parentNode.parentNode.className = 'product float-left ng-scope product-' + i;
-          $scope.isItemSelected = false;
-          $scope.$digest();
-        },50);
+      setTimeout(function() {
+        $event.currentTarget.parentNode.parentNode.className = 'product float-left ng-scope product-' + i;
+        $scope.isItemSelected = false;
+        $scope.$digest();
+      },50);
     }
 
     function removeFromCart(i) {
@@ -264,51 +264,51 @@ angular.module('clientApp')
       var windowLoc = window.location.toString().toLowerCase(),
         environment = "sandbox";
       if (windowLoc === "https://defenseofthepatience.herokuapp.com/store" || windowLoc === "http://defenseofthepatience.herokuapp.com/store" || windowLoc === "http://defenseofthepatience.com/store" || windowLoc === "https://defenseofthepatience.com/store") {
-        environment = "production"
+        environment = "production";
       }
       paypal.Button.render({
 
-            env: environment, // Optional: specify 'sandbox' environment
+        env: environment, // Optional: specify 'sandbox' environment
 
-            payment: function() {
-                // Set up the payment here, when the buyer clicks on the button
+        payment: function() {
+          // Set up the payment here, when the buyer clicks on the button
 
-                //Send data
+          //Send data
 
-                  return paypal.request.post('/api/paypal/create/', {data:createPrintfulOrder()}).then(function(res) {
-                    $scope.printfulId = res.printfulId
-                    res.payment = res.id;
-                    return res.id;
-                });
+          return paypal.request.post('/api/paypal/create/', {data:createPrintfulOrder()}).then(function(res) {
+            $scope.printfulId = res.printfulId;
+            res.payment = res.id;
+            return res.id;
+          });
 
-                // var env    = this.props.env;
-                // var client = this.props.client;
+          // var env    = this.props.env;
+          // var client = this.props.client;
 
-                // return paypal.rest.payment.create(env, client, {
-                //     transactions: [
-                //         {
-                //             amount: { total: '1.00', currency: 'USD' }
-                //         }
-                //     ]
-                // });
-            },
+          // return paypal.rest.payment.create(env, client, {
+          //     transactions: [
+          //         {
+          //             amount: { total: '1.00', currency: 'USD' }
+          //         }
+          //     ]
+          // });
+        },
 
-            onAuthorize: function(data, actions) {
-                // Execute the payment here, when the buyer approves the transaction
-                console.log(data);
-                console.log(actions);
-                   return paypal.request.post('/api/paypal/execute/', {
-                    payToken: data.paymentID,
-                    payerId: data.payerID,
-                    printfulId: $scope.printfulId
-                }).then(function (res) {
-                    resetCheckout();
-                    document.querySelector('#paypal-button').innerText = 'Payment Complete!';
-                    $scope.checkoutMessage = "Order Placed";
-                });
-           }
+        onAuthorize: function(data, actions) {
+          // Execute the payment here, when the buyer approves the transaction
+          console.log(data);
+          console.log(actions);
+          return paypal.request.post('/api/paypal/execute/', {
+            payToken: data.paymentID,
+            payerId: data.payerID,
+            printfulId: $scope.printfulId
+          }).then(function (res) {
+            resetCheckout();
+            document.querySelector('#paypal-button').innerText = 'Payment Complete!';
+            $scope.checkoutMessage = "Order Placed";
+          });
+        }
 
-        }, '#paypal-button');
+      }, '#paypal-button');
     }
 
     function resetCheckout() {

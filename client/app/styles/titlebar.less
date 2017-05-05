@@ -10,28 +10,28 @@
 .titlebar-container {
 	background-color: transparent !important;
 	padding: 0;
-	
+
 	.title-bar-nav {
 		width: 15%;
 		@media @smartphones {
 			display: none;
 		}
 	}
-	
+
 	.title-bar-logo {
-			width: 40%;
+		width: 40%;
+		@media @smartphones {
+			width: 100%
+		}
+		img {
+			width: 73%;
+			display: block;
+			margin: -68px auto -53px;
 			@media @smartphones {
-				width: 100%
+				width: 40%;
+				margin: 0 auto;
 			}
-			img {
-				width: 73%;
-				display: block;
-				margin: -68px auto -53px;
-				@media @smartphones {
-					width: 40%;
-					margin: 0 auto;
-				}
-			}
+		}
 	}
 
 	nav.navbar-full {
@@ -50,9 +50,9 @@
 			flex-grow: 2;
 			height: 50%;
 			align-self: center;
-			
+
 		}
-		
+
 		ul {
 			list-style: none;
 			padding: 0;

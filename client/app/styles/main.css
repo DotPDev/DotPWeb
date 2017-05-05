@@ -1144,7 +1144,12 @@ div#cart-wrapper ul li {
 .main-wrapper > div#dotp-store .open-checkout {
   font-size: 2em !important;
   text-align: center;
-  margin: 0 auto;
+}
+.main-wrapper > div#dotp-store .open-checkout.top-button {
+  margin: -15px auto;
+}
+.main-wrapper > div#dotp-store .open-checkout.bottom-button {
+  margin-bottom: -100px;
 }
 @media only screen and (max-width: 830px) {
   .main-wrapper > div#dotp-store .open-checkout {
@@ -1216,13 +1221,23 @@ div#cart-wrapper ul li {
   }
 }
 .product.product-2 {
-  bottom: 55px;
+  bottom: 15px;
   left: 0;
   position: absolute;
 }
 @media only screen and (max-width: 830px) {
   .product.product-2 {
     top: 675px;
+  }
+}
+.product.product-3 {
+  bottom: 15px;
+  right: 0;
+  position: absolute;
+}
+@media only screen and (max-width: 830px) {
+  .product.product-3 {
+    top: 985px;
   }
 }
 .product:hover {
@@ -1788,22 +1803,6 @@ div.social-links .reddit {
   padding-left: 120px;
   padding-right: 120px;
   box-sizing: border-box;
-}
-.float-left {
-  width: calc(50% - 20px);
-  min-width: 300px;
-  box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-@media only screen and (max-width: 830px) {
-  .float-left {
-    height: auto;
-    width: 100%;
-    min-width: 200px;
-    display: inline-block;
-  }
 }
 html,
 body {
