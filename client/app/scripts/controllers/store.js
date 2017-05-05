@@ -264,7 +264,7 @@ angular.module('clientApp')
     function renderButton() {
       var windowLoc = window.location.toString().toLowerCase(),
         environment = "sandbox";
-      if (windowLoc === "https://defenseofthepatience.herokuapp.com/store" || windowLoc === "http://defenseofthepatience.herokuapp.com/store" || windowLoc === "http://defenseofthepatience.com/store" || windowLoc === "https://defenseofthepatience.com/store") {
+      if (windowLoc === "https://defenseofthepatience.herokuapp.com/store" || windowLoc === "http://defenseofthepatience.herokuapp.com/store" || windowLoc.indexOf("defenseofthepatience.com/store") !== -1) {
         environment = "production";
       }
       paypal.Button.render({
