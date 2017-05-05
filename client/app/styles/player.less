@@ -6,7 +6,7 @@
     display: block;
   }
 
-  videogular, 
+  videogular,
   [videogular] {
    	[role="slider"] {
     	height: 15px;
@@ -186,6 +186,7 @@ player.show-player {
 }
 
 .player-wrapper {
+  overflow: visible;
   pointer-events: none;
   transition: all 0.6s ease;
   z-index: 20000;
@@ -242,6 +243,7 @@ player.show-player {
     z-index: 400;
     pointer-events: none;
     color: white;
+    overflow: hidden;
     @media @smartphones {
       display: none;
     }
@@ -274,9 +276,6 @@ player.show-player {
 
     & videogular vg-volume-bar {
       top: 20px;
-      @media @smartphones {
-        top: 0;
-      }
     }
     @media @smartphones {
       background: #fff;
@@ -466,7 +465,7 @@ a#feed-icon {
 }
 
 #episodes-wrapper {
-	//TODO: fix the player	
+	//TODO: fix the player
   -webkit-transition-duration: .75s;
   -webkit-transition-property: width,height;
   -webkit-transition-delay: 0s;
@@ -602,4 +601,3 @@ a#feed-icon {
     }
   }
 }
-
