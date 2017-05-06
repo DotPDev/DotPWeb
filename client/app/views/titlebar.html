@@ -1,79 +1,40 @@
-<nav role="navigation">
-    <!-- <ul class="collapsed-nav" ng-class="{ 'is-showing-nav': vm.slideNavPanel }">
-        <li ui-sref-active="active" ng-click="vm.slideNavPanel = false">
-            <a ui-sref="root.dashboard"><span>episodes</span></a>
-        </li>
-        <li ui-sref-active="active" ng-click="vm.slideNavPanel = false">
-            <a ui-sref="root.ladder"><span>ladder</span></a>
-        </li>
-        <li ui-sref-active="active" ng-click="vm.slideNavPanel = false">
-            <a ui-sref="root.store"><span>store</span></a>
-        </li>
-        <li ui-sref-active="active" ng-click="vm.slideNavPanel = false">
-            <a ui-sref="root.about"><span>about</span></a>
-        </li>
-        <li ui-sref-active="active" ng-if="!vm.user" ui-sref="root.login" ng-click="vm.slideNavPanel = false">
-            <a ng-click="vm.goToLogin()" ui-sref="root.login"><span>Login</span></a>
-        </li>
-        <li ui-sref-active="active" ng-if="vm.user" ng-click="vm.slideNavPanel = false">
-            <a ng-click="vm.goToLogin()" ui-sref="root.login"><span>{{vm.user.displayName || vm.user.email}}</span></a>
-        </li>
-        <li ui-sref-active="active" ng-if="vm.user" ng-click="vm.slideNavPanel = false">
-            <a ng-click="vm.signOut()" ui-sref="root.dashboard"><span>Sign Out</span></a>
-        </li> -->
-    <!-- </ul> -->
-    <ul class="nav" ng-class="{ 'collapsed': vm.isCollapsed }">
-      <li class="title-bar-spacer">
-        <div id="dotp-logo">
-          <img src='../images/dotp-logo.svg'/>
-        </div>
+<div class="titlebar-container">
+	<div class="stream-status {{vm.getTwitchClass()}}">
+		<span>DotpTV is {{vm.getTwitchClass()}}</span>
+		<i class="fa fa-circle" aria-hidden="true"></i>
+		<i class="fa fa-circle-o" aria-hidden="true"></i>
+	</div>
+	<player-container></player-container>
+	<nav class="navbar-full" role="navigation">
+		<ul>
+			<li class="title-bar-logo">
+      	<a ui-sref="root.dashboard" ng-click="vm.slideNavPanel = false">
+					<img src='../images/dotp-logo-notext-01.svg'/>
+				</a>
+    	</li>
+			<li class="title-bar-nav">
+        <a class="nav-link" ui-sref="root.episodes" ng-click="vm.slideNavPanel = false">
+          <span>Episodes</span>
+        </a>
+			</li>
+			<li class="title-bar-nav">
+        <a class="nav-link" ui-sref="root.store">
+          <span>Store</span>
+        </a>
       </li>
-      <li class="title-bar-nav">
-        <player-container></player-container>
-        <!-- <div ui-sref-active="active" >
-          <a class="" ui-sref="root.dashboard" ng-click="vm.slideNavPanel = false">
-            <span>Episodes</span>
-          </a>
-          <div></div>
-      </div>
-        <div ui-sref-active="active">
-            <a ui-sref="root.ladder">
-              <span>Ladder</span>
-            </a>
-            <div></div>
-        </div>
-        <div ui-sref-active="active">
-            <a ui-sref="root.store">
-              <span>Store</span>
-            </a>
-            <div></div>
-        </div>-->
-      </li>
-      <li class="action-wrapper">
-        <navbar></navbar>
-
-        <!-- <div class="share-container" ui-sref-active="active">
-            <a class="share-icon" ui-sref="root.social">
-                <i class="fa fa-share-alt"></i>
-            </a>
-        </div>
-        <div class="patreon-container">
-            <a class="patreon" href="https://www.patreon.com/defenseofthepatience" target="_blank">
-                <i class="patreon-icon patreon-nav"></i>
-            </a>
-        </div>
-        <div class="pvgna-container">
-            <a class="pvgna" href="https://pvgna.com/?ref=dotp" target="_blank">
-                <i class="pvgna-icon pvgna-nav"></i>
-            </a>
-        </div>
-        <div class="hidden-login" ng-class="{ 'show-login': vm.isShowingLogin }">
-            <a ng-if="!vm.user" ng-click="vm.goToLogin()" ui-sref="root.login"><span>Login</span></a>
-            <a ng-if="vm.user" ng-click="vm.goToLogin()" ui-sref="root.login"><span>{{vm.user.displayName || vm.user.email}}</span></a>
-            <a ng-if="vm.user" ng-click="vm.signOut()" ui-sref="root.dashboard"><span>Sign Out</span></a>
-        </div> -->
-      </li>
+			<li class="title-bar-nav">
+        <a class="nav-link" ui-sref="root.hosts" ng-click="vm.slideNavPanel = false">
+          <span>Hosts</span>
+        </a>
+			</li>
+			<li class="title-bar-nav">
+        <a class="nav-link disabled">
+          <span style="text-decoration: line-through">Ladder</span>
+        </a>
+					<span class="disabled">Available May 17th</span>
+			</li>
     </ul>
-
-    <!-- <episodes></episodes> -->
-</nav>
+	</nav>
+	<social-links links="dotpSocialLinks"></social-links>
+  <navbar></navbar>
+</div>

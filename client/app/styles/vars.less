@@ -1,18 +1,24 @@
 //breakpoints
 @smartphones: ~"only screen and (max-width: 830px)";
+@tablet: ~"only screen and (max-width: 1130px) and (min-width: 831px)";
+@fullScreen: ~"only screen and (min-width: 1131px)";
 @transition: all 0.2s ease-in-out;
 @margin-bottom: 125px;
 
 //
-@background-dark: #72757e;
+@background-dark: #2D2D2A;
 @background-light: #fafafa;
-@main-font-family: 'Work Sans', sans-serif;
+@main-font-family: 'Constantia', serif;
 @main-font-weight:600;
 @main-letter-spacing: 0.02em;
-@bgPattern: url("../images/txture.png");
-@dotpRed: #df5244;
+@main-font-color: #E8DEE2;
+@dark-font: #21211F;
+// @bgPattern: url("../images/txture.png");
+// @dotpRed: #870D0D;
+@dotpRed: #be1823;
+@dotpOutline: #241a18;
 @dotpOrange: #f36820;
-@dotpBlue: #3e659e;
+@dotpBlue: #090C9B;
 @dotpRedHover: rgba(221, 73, 61, 0.55);
 
 // @navPattern: url("../images/debut-dark.png");
@@ -20,8 +26,8 @@
 @navPattern: url("https://www.transparenttextures.com/patterns/assault.png");
 @navFontSize: 1.0em;
 @navFontTextShadow: -1px 2px 3px rgba(0, 0, 0, 1);
-@navFontColor: #1b1b1b;
-@navPadding: 0.2em;
+@navFontColor: #e8dee2;
+@navPadding: 0.8em;
 @padding: 1em;
 // Nav skewing
 @skewSheerAngle: 5deg;
@@ -57,3 +63,11 @@
   50% { margin-right: 10px; }
   100% { margin-right: 0; }
 }
+@font-face {
+  font-family: 'Constantia';
+  src: url('../fonts/Constantia.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+

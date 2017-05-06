@@ -13,50 +13,25 @@
 @import 'fancy.less';
 @import 'responsive.less';
 
-.ps-scrollbar-y-rail {
-  //margin-top: 100px;
-}
 
-.linkify {
-  color: #476fa7;
-  background: white;
-  border-radius: 2px;
-  padding-left: 5px;
-  padding-right: 5px;
-  filter: drop-shadow(-3px 3px 0px #476fa7);
-  white-space: nowrap;
-  text-decoration: none;
-  transition: filter 0.15s linear;
-
-
-  &:hover {
-    filter: drop-shadow(-3px 3px 0px #f47522);
-  }
-
-  & a {
-    text-decoration: none;
-    color: #476fa7;
-  }
-}
-
-html {
-  overflow: hidden;
-}
 html, body {
   height: 100%;
   width: 100%;
   margin: 0;
-  font-family: 'Work Sans', sans-serif;
-  color: #f7f5f6;
+  font-family: @main-font-family;
+  color: @main-font-color;
+  background-color: @background-dark;
 
 }
 
 #content-main {
   height: 100%;
   width: 100%;
-  position: absolute;
-  overflow: hidden;
-  background: #1a1113;
+  padding-top: 125px;
+  background: @background-dark;
+  @media @smartphones {
+  	padding-top: 75px;
+  }
 }
 
 #floating-elements {
@@ -122,13 +97,13 @@ html, body {
 
   height: 100%;
   width: 100%;
-  position: absolute;
+  // position: absolute;
 
   & > #landing-foreground {
     width: 100%;
     height: 100%;
-    background: radial-gradient(100px rgba(68, 71, 33, 0.29), rgba(0, 0, 0, 0.9) 600px);
-    position: absolute;
+    // background: radial-gradient(100px rgba(68, 71, 33, 0.29), rgba(0, 0, 0, 0.9) 600px);
+    // position: absolute;
     top: 0;
     left: 0;
     z-index: 2
@@ -138,7 +113,7 @@ html, body {
     width: 100%;
     height: 100%;
     background-color: #fff;
-    position: absolute;
+    // position: absolute;
     top: 0;
     left: 0;
     z-index: 1;

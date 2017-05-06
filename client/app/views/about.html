@@ -1,22 +1,6 @@
 <div id="about-wrapper">
-  <nav>
-    <div id="dotp-icon" class="about-nav" ng-class="vm.getActiveState('dotp')" ng-click="vm.navigateAbout('dotp')"><div class="diamond"><span>DotP</span></div></div>
-    <div id="roland-icon" class="about-nav" ng-class="vm.getActiveState('roland')" ng-click="vm.navigateAbout('roland')"><div class="diamond"><span>Roland</span></div></div>
-    <div id="cyphus-icon" class="about-nav" ng-class="vm.getActiveState('cyphus')" ng-click="vm.navigateAbout('cyphus')"><div class="diamond"><span>Cyphus</span></div></div>
-    <div id="ursi-icon" class="about-nav" ng-class="vm.getActiveState('ursi')" ng-click="vm.navigateAbout('ursi')"><div class="diamond"><span>Ursinity</span></div></div>
-    <div id="proud-icon" class="about-nav" ng-class="vm.getActiveState('proud')" ng-click="vm.navigateAbout('proud')"><div class="diamond"><span>Proud</span></div></div>
-    <div id="breaky-icon" class="about-nav" ng-class="vm.getActiveState('breaky')" ng-click="vm.navigateAbout('breaky')"><div class="diamond smaller"><span>BreakyCPK</span></div></div>
-
-  </nav>
-
-  <div id="about-dotp" class="about-page" ng-class="vm.getActiveState('dotp')" >
-    <h1 class="shimmer">Defense of the Patience</h1>
-    <social-links links="dotpSocialLinks"></social-links>
-    <p>Defense of the Patience is the premier Dota 2 podcast with episodes released five days a week focusing on a variety of Dota 2 topics and strategies as well as featuring guests from all throughout the Dota 2 community.  DotP was founded in August 2014 and began as a way for Roland and Cyphus to document their journey through Dota 2 after falling in love with the game earlier that summer.  As the podcast grew and reached a wider audience, Ursinity and Proud joined the roster to provide new areas of expertise and show topics.</p>
-    <p>The DotP community and audience has truly been the driving force behind this project and company.  It is an exceptionally vibrant, welcoming group of Dota 2 fans that Defense of the Patience is honored to be part of.  The community continues to provide DotP with great feedback and inspiration.</p>
-    <p>Our mission is to provide the best informative and entertaining Dota 2-related content possible for our audience and community to continue bringing together Dota 2 players from all walks of life, helping them to improve and enjoy the amazing game we all love.</p>
-  </div>
-  <div id="about-roland" class="about-page" ng-class="vm.getActiveState('roland')" >
+	<div class="about-page active">
+  	<div class="host-card" >
     <h1 class="roland shimmer">Roland</h1>
     <social-links links="rolandSocialLinks"></social-links>
     <div class="about-content">
@@ -29,7 +13,7 @@
       </div>
     </div>
   </div>
-  <div id="about-cyphus" class="about-page" ng-class="vm.getActiveState('cyphus')" >
+  <div id="about-cyphus" class="host-card">
     <h1 class="cyphus shimmer">Cyphus</h1>
     <social-links links="cyphusSocialLinks"></social-links>
     <div class="about-content">
@@ -42,12 +26,13 @@
       </div>
     </div>
   </div>
-  <div id="about-ursi" class="about-page" ng-class="vm.getActiveState('ursi')" >
+  <!-- <div id="about-ursi" class="about-page" ng-class="vm.getActiveState('ursi')" > -->
+  <div id="about-ursi" class="host-card">
     <h1 class="cyphus shimmer">Ursinity</h1>
     <social-links links="ursiSocialLinks"></social-links>
     <div class="about-content">
       <div class="about-left">
-        <img class="host-pic" src="../images/kpop.png" alt="">
+        <img class="host-pic" src="../images/Kpop.png" alt="">
       </div>
       <div class="about-right">
         <p>Ursinity has played dota on-and-off since middle school when he started to realize his complete inability to play RTS games despite his love of Warcraft III and Starcraft 2. Despite taking breaks to play hardcore PvE World of Warcraft and a variety of terrible free-to-play MMOs, once he got into the Dota 2 beta in January, 2012 he has finally settled down. Drifting from core player to support player to everything in between has lent itself to a varied hero pool and the ability to empathize with the manifold frustrations of all kinds of Dota 2 players. Ursinity is currently in a graduate program studying education with a completed bachelor’s degree in history looking to teach middle school or high school in the future while working for a sports memorabilia company in the meantime.</p>
@@ -55,19 +40,21 @@
       </div>
     </div>
   </div>
-  <div id="about-proud" class="about-page" ng-class="vm.getActiveState('proud')" >
+  <div id="about-proud" class="host-card">
     <h1 class="cyphus shimmer">Proud</h1>
     <social-links links="proudSocialLinks"></social-links>
     <div class="about-content">
       <div class="about-left">
-        <img class="host-pic" src="../images/darksouls.jpg" alt="">
+        <img class="host-pic" src="../images/DarkSouls.jpg" alt="">
       </div>
       <div class="about-right">
-        <p>Proud is a sad, angry, bitter man. He also may or may not be aware of Demon Souls, the first of the Souls series.</p>
+        <p>Proud grew up adoring RTS games like Age of Empires and Starcraft and first came to play Dota when it was still a Warcraft 3 mod. After switching between Starcraft 2 and World of Warcraft for several years, Proud has been in a monogamous relationship with Dota since receiving his beta key and has never wavered (Except when a new Dark Souls comes out, but that's not important). Beginning his Dota journey with a friend who had experience playing support in other games, Proud naturally ended up playing the carry in lane duos and has been a safelane carry devotee ever since. He also plays way too much Lone Druid. Let's hope Rabid is un-nerfed by the time you read this. Proud is currently a full time computer science student in addition to carrying Defense of the Patience on his back literally 24/7.</p> 
+
+					<p>Outside of Dota, Proud's main interests include going to see sad music, playing Magic, reading comics, wondering if Berserk is ever going to finish, poring over Dark Souls lore (now it's important), buying new witch hats, suffering, and petting cats.</p>
       </div>
     </div>
   </div>
-  <div id="about-breaky" class="about-page" ng-class="vm.getActiveState('breaky')" >
+  <div id="about-breaky" class="host-card">
     <h1 class="cyphus shimmer">BreakyCPK</h1>
     <social-links links="breakySocialLinks"></social-links>
     <div class="about-content">
@@ -75,28 +62,12 @@
         <img class="host-pic" src="../images/breakycpk.jpg" alt="">
       </div>
       <div class="about-right">
-        <p>BreakyCPK is a dope caster. He talks to people.</p>
-
+				<p>Nikolas “BreakyCPK” Caras is a professional esports broadcaster who has been given the label by many, the voice of Heroes of Newerth.</p>
+				<p>BreakyCPK became involved in esports casting back in 2009 where he was looking for ways to get more experience to become a sportscaster and decided to give casting games a shot, specifically HoN.</p>
+				<p>BreakyCPK then co-founded the streaming service Honcast, which would eventually become the official competitive streaming hub for Heroes of Newerth and was purchased by S2 Games, the creators of HoN, where he would begin working for them full time as a result. The channel Honcast was also granted one of the first official partnerships with Twitch.TV and has over 58 million views as of late 2016.</p>
+				<p>BreakyCPK is a very dedicated talent that knows how to get viewers excited during a broadcast, with experience not only as talent, but also behind the scenes with streaming and video production.</p>
       </div>
     </div>
   </div>
-
-    <!-- <div class="about-section">
-
-    </div>
-    <div class="hosts-section">
-        <ul>
-            <li>
-                <div class="cyphus-container">
-
-                </div>
-            </li>
-            <li>
-                <div class="roland-container">
-
-                </div>
-            </li>
-        </ul>
-    </div> -->
-
+  </div>
 </div>

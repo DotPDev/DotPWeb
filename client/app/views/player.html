@@ -1,55 +1,29 @@
 <div class="player-wrapper" ng-class="{ 'open': vm.getPodcastButtonState() }" ng-click="vm.isOpen = false">
-  <!-- <div class="podcast-actions"  ng-class="{ 'show-player': vm.isPlaying }">
-    <a class="linkify" ng-click="vm.startPodcast()">
-      <i class="fa fa-play"></i>
-      <span class="play-text">Play Latest Episode</span>
-    </a>
-    <div class="share-control">
-    <i class="fa fa-share-alt"></i>
-    <span class="share-text">Share</span>
-    </div>
-  </div> -->
-  <div class="player" ng-class="{ 'show-player': vm.isPlaying }">
-    <div class="podcast-title">
-      <div class="">
-        {{vm.config.title}}
-      </div>
-    </div>
-    <div class="videogular-container">
-      <videogular vg-player-ready="vm.onPlayerReady($API)" vg-can-play="vm.canPlay()" vg-complete="vm.onComplete()" vg-theme="vm.config.theme" class="audio" ng-click="$event.stopPropagation()">
-        <vg-media vg-src="vm.config.sources"
-        vg-type="audio">
-      </vg-media>
-      <vg-controls>
-        <div id="control-top">
-          <vg-scrub-bar>
-            <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
-            <vg-scrub-bar-buffer></vg-scrub-bar-buffer>
-          </vg-scrub-bar>
-        </div>
-        <div id="control-mid">
-          <vg-play-pause-button></vg-play-pause-button>
-          <vg-time-display class="time-holder">{{ currentTime | millSecondsToTimeString }} / {{ totalTime | millSecondsToTimeString }}</vg-time-display>
-          <vg-volume>
-            <vg-volume-bar></vg-volume-bar>
-          </vg-volume>
-        </div>
-      </vg-controls>
-    </videogular>
-  </div>
-</div>
-<!-- <div id="paging" ng-class="{ 'visible': vm.isOpen, 'is-playing': vm.isPlaying }" ng-if="vm.isDashboard" ng-click="$event.stopPropagation()">
-  <div id="prev">
-    <a ng-click="vm.goPrev()">
-      <div class="prev-text">Newer</div>
-      <i class="fa fa-chevron-left fa-2x"></i>
-    </a>
-  </div>
-  <div id="next">
-    <a ng-click="vm.goNext()">
-      <i class="fa fa-chevron-right fa-2x"></i>
-      <div class="next-text">Older</div>
-    </a>
-  </div>
-</div> -->
+	<div class="player" ng-class="{ 'show-player': vm.isPlaying }">
+		<div class="podcast-title">
+			{{vm.config.title}}
+		</div>
+		<div class="videogular-container">
+			<videogular vg-player-ready="vm.onPlayerReady($API)" vg-can-play="vm.canPlay()" vg-complete="vm.onComplete()" vg-theme="vm.config.theme" class="audio" ng-click="$event.stopPropagation()">
+				<vg-media vg-src="vm.config.sources"vg-type="audio"></vg-media>
+				<vg-controls>
+					<div id="control-top">
+						<vg-scrub-bar>
+							<vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+							<vg-scrub-bar-buffer></vg-scrub-bar-buffer>
+						</vg-scrub-bar>
+					</div>
+					<div id="control-mid">
+						<vg-play-pause-button></vg-play-pause-button>
+						<vg-time-display class="time-holder">
+							{{ currentTime | millSecondsToTimeString }} / {{ totalTime | millSecondsToTimeString }}
+						</vg-time-display>
+						<vg-volume>
+							<vg-volume-bar></vg-volume-bar>
+						</vg-volume>
+					</div>
+				</vg-controls>
+			</videogular>
+		</div>
+	</div>
 </div>

@@ -45,7 +45,7 @@ angular
                 controllerAs: 'vm'
             },
             'dotp-loader@': {
-                templateUrl: 'views/dotp-loader.html',
+                // templateUrl: 'views/home.html',
                 controller: 'DotpLoaderCtrl',
                 controllerAs: 'vm'
             }
@@ -62,7 +62,7 @@ angular
         },
         views: {
             'container@': {
-                templateUrl: 'views/about.html',
+                templateUrl: 'views/home.html',
                 controller: 'AboutCtrl',
                 controllerAs: 'vm'
             }
@@ -79,6 +79,21 @@ angular
             'container@': {
                 templateUrl: 'views/dotpeeps.html',
                 controller: 'DotpeepsCtrl',
+                controllerAs: 'vm'
+            }
+        }
+    });
+		$stateProvider.state('root.hosts', {
+        url: '/hosts',
+        data: {
+            pageName: 'hosts',
+            browserTitle: 'Hosts',
+            description: 'Our intrepid Hosts of the podcast'
+        },
+        views: {
+            'container@': {
+                templateUrl: 'views/about.html',
+                controller: 'AboutCtrl',
                 controllerAs: 'vm'
             }
         }

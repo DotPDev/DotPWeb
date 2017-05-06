@@ -1,10 +1,10 @@
 <div id="store-wrapper" class="main-wrapper limit-width-top-level">
 	<div id="dotp-store">
 		<h2>DotP Store{{checkoutMessage}}</h2>
-		<h5><span id="open-cart" ng-click="vm.openCart()"><i class="fa fa-shopping-cart" aria-hidden="true"></i> {{vm.cart.price | currency}}</span></h5>
+		<div id="close-cart" ng-class="{'hidden': !isManagingCart}" ng-click="vm.closeCart()">Close Cart</div>
+		<div class="open-cart" ng-click="vm.openCart()"><i class="fa fa-shopping-cart" aria-hidden="true"></i> {{vm.cart.price | currency}}</div>
 		<!-- <cart></cart> -->
 		<div id="cart-wrapper" ng-class="{'hidden': !isManagingCart}">
-			<div id="close-cart" ng-click="vm.closeCart()">Close Cart</div>
 				<ul id="cart-items">
 					<li class="cart-item" ng-repeat="item in vm.cart.items track by $index">
 						{{item.name}} ({{item.size}}) - {{item.retail_price}} <i class="fa fa-times" aria-hidden="true" ng-click="vm.removeFromCart($index)"></i>
@@ -12,7 +12,7 @@
 				</ul>
 		</div>
 		<div ng-class="{'hidden': !isCheckingOut}">
-			<div id="close-checkout" ng-click="vm.closeCheckOut()">Close Checkout</div>
+			<div class="close-checkout" ng-click="vm.closeCheckOut()">Close Checkout</div>
 			<form>
 				<input class="form-control" placeholder="Enter Your Name" type="text" autocomplete="off" ng-model="buyer">
 				<input class="form-control" placeholder="Enter Delivery Address" vs-google-autocomplete ng-model="data.address.name" vs-place="data.address.place" vs-place-id="data.address.components.placeId" vs-street-number="data.address.components.streetNumber" vs-street="data.address.components.street" vs-city="data.address.components.city"
@@ -25,14 +25,14 @@
 
 		<div class="store-item" ng-class="{'item-selected': isItemSelected, 'hidden': isManagingCart|| isCheckingOut}">
 
-			<div ng-click="vm.startCheckOut()" ng-class="{'hidden': isCheckingOut}" class="open-checkout">
+			<div ng-click="vm.startCheckOut()" ng-class="{'hidden': isCheckingOut}" class="open-checkout top-button">
 				<i class="fa fa-credit-card" aria-hidden="true"></i>
 				Check Out{{validationMessage}}
 			</div>
 
 			<div id="store-spacer"></div>
 			<div class="product float-left" ng-repeat="product in vm.fakeStoreData track by $index" ng-click="handleProductClick($index, $event)" ng-class="getProductClass($index)">
-				<div class="close-product" ng-click="closeProducts($index, $event)"><i class="fa fa-times" /></div>
+				<div class="close-product" ng-click="closeProducts($index, $event)"><i class="fa fa-times"></i></div>
 				<img class="" ng-src="{{::product.files[1].url}}" />
 				<div class="product-specs">
 					<div class="product-name">{{::product.name}}</div>
@@ -42,18 +42,13 @@
 						</select>
 					</div>
 					<div class="product-price">Price: {{::product.retail_price | currency}}</div>
-					<div class="product-add-to-cart linkify" ng-click="vm.addToCart(product, $index, $event)">
+					<div class="product-add-to-cart" ng-click="vm.addToCart(product, $index, $event)">
 						<i class="fa fa-cart-plus" aria-hidden="true"></i>
 						<span>Add to cart</span>
 					</div>
 				</div>
 			</div>
 		</br>
-			<div ng-click="vm.startCheckOut()" ng-class="{'hidden': isCheckingOut}" class="open-checkout">
-				<i class="fa fa-credit-card" aria-hidden="true"></i>
-				Check Out{{validationMessage}}
-			</div>
-
 		</div>
 		<!-- <div style="margin-bottom:200px">
 		  checking out = {{isCheckingOut}}</br>

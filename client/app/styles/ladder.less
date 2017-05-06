@@ -1,109 +1,59 @@
-@records-color: #476fa7;
-@records-name-color: #c6c6c6;
-
-//image sxtuff drop-shadow(7px 7px 20px #476fa7) drop-shadow(-7px 7px 20px #476fa7) drop-shadow(0px -7px 20px #476fa7)
-
-#ladder-wrapper {
-
-    height: calc(~'100% - 90px');
-    top: 90px;
-    width: 80%;
-    max-width: 1300px;
-    margin: 0 auto;
-}
-
-#ladder-content {
-background: orange;
-  & p {
-
-    & a {
-      color: #476fa7;
-      background: white;
-      border-radius: 2px;
-      padding-left: 5px;
-      padding-right: 5px;
-      filter: drop-shadow(-3px 3px 0px #476fa7);
-      white-space: nowrap;
-      text-decoration: none;
-      transition: filter 0.15s linear;
-
-      &:visited {
-        color: #476fa7;
-      }
-
-      &:hover {
-        transform: translateY(3px);
-        filter: drop-shadow(-3px 3px 0px #f47522);
-      }
-    }
-  }
-}
-.main-wrapper {
-    & > div {
-        transition: @transition;
-        //width: 80%;
-        //max-width:600px;
-        //margin: 0 auto;
-        display: block;
-        padding:0;
-        @media @smartphones {
-            width: 90%;
-            transition: @transition;
-        }
-    }
-
-	ul#ladder-records {
-		text-align: center;
-    font-family: @main-font-family;
-    color: @records-color;
-    margin-bottom: @margin-bottom;
-    width: 86%;
-    box-sizing: border-box;
-
+.ladder-table {
+	margin: 50px auto;
+	width: 100%;
+	box-sizing: border-box;
+	border-collapse: collapse;
+	tr {
+		display: table-row;
+		td {
+			text-align: center;
+			border-bottom: 1px solid @dotpRed;
+    	vertical-align: middle;
+		}
+	}
+	th {
+    border-bottom: 1px solid @dotpRed;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 1.75em;
     @media @smartphones {
-        width: 90%;
-        padding-left: 0;
+    	font-size: 1.25em;
     }
+	}
 
-    li {
-      background-color: #fff;
-    }
-
-		li:first-child {
-			margin-top:0
+	tbody {
+		font-size: 1.25em;
+		@media @smartphones {
+			font-size: 1em;
 		}
-
-		.flex-parent {
-			display: flex;
+		td {
+			padding: 10px;
+    	overflow: hidden;
+    	white-space: nowrap;
+    	text-overflow: ellipsis;
 		}
-
-		.records-column-main {
-			flex: 1;
-		}
-
-		.records-column-alt {
-			display: flex;
-			flex: 1;
-		}
-
-		.records-column {
-			flex: 1;
-		}
-
-		.player {
-			padding: 5px;
-			margin: 2px;
-		}
-
-		.name {
-			a {
-				text-decoration: none;
-				color: @records-color;
+		tr {
+			&:nth-child(odd) {
+				background: @dotpOutline;
+			}
+			&:last-child {
+				display: none;
 			}
 		}
-
-		.records-highlight {
-			color: #f47522;
+		a {
+			text-decoration: none;
 		}
 	}
 }
+
+.ladder-content {
+	width: 80%;
+	margin: 0 auto;
+	a {
+		color: white;
+		&:hover {
+			color: @dotpRed;
+		}
+	}
+}
+
