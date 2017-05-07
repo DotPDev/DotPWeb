@@ -44,6 +44,11 @@ angular
                 controller: 'TitlebarCtrl',
                 controllerAs: 'vm'
             },
+            'dotp-loader@': {
+                // templateUrl: 'views/home.html',
+                controller: 'DotpLoaderCtrl',
+                controllerAs: 'vm'
+            }
         }
     });
     $stateProvider.state('root.dashboard', {
