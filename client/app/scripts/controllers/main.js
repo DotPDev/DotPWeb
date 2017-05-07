@@ -22,8 +22,8 @@ angular.module('clientApp')
     vm.states.podcastPlaying = "isPodcastPlaying";
     vm.getImage = getImage;
     vm.startPodcast = startPodcast;
-
-    vm.isOpen = false;
+    
+		vm.isOpen = false;
     vm.isPlaying = isPlaying;
     vm.handleClick = handleClick;
     vm.getPodcastButtonState = getPodcastButtonState;

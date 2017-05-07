@@ -130,6 +130,9 @@ span.disabled {
   font-size: 1.5em;
   color: white;
 }
+.titlebar-container nav.navbar-full a:hover {
+  color: #241a18;
+}
 .titlebar-container nav.navbar-full a i {
   font-size: 2em;
 }
@@ -137,6 +140,13 @@ span.disabled {
   position: fixed;
   top: 15px;
   right: 15px;
+}
+.stream-status a {
+  text-decoration: none;
+  color: white;
+}
+.stream-status a:hover {
+  color: #be1823;
 }
 .stream-status i {
   position: relative;

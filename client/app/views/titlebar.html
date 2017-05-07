@@ -1,8 +1,10 @@
 <div class="titlebar-container">
 	<div class="stream-status {{vm.getTwitchClass()}}">
-		<span>DotpTV is {{vm.getTwitchClass()}}</span>
-		<i class="fa fa-circle" aria-hidden="true"></i>
-		<i class="fa fa-circle-o" aria-hidden="true"></i>
+		<a target="_blank" href="https://twitch.tv/dotptv" class="twitch">
+			<span>DotpTV is {{vm.getTwitchClass()}}</span>
+			<i class="fa fa-circle" aria-hidden="true"></i>
+			<i class="fa fa-circle-o" aria-hidden="true"></i>
+    </a>
 	</div>
 	<player-container></player-container>
 	<nav class="navbar-full" role="navigation">

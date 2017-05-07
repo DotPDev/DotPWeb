@@ -99,6 +99,10 @@ span.disabled {
       font-size: 1.5em;
       color: white;
 
+      &:hover {
+      	color: @dotpOutline;
+      }
+
       i {
         font-size: 2em;
       }
@@ -110,11 +114,20 @@ span.disabled {
   position: fixed;
   top: 15px;
   right: 15px;
+  a {
+		text-decoration: none;
+		color: white;
+		&:hover {
+			color: @dotpRed;
+		}
+  }
+
   i {
   	position: relative;
   	top: -5px;
   	margin-left: 5px;
   }
+	
 	&.offline {
 		i {
 			color: white;
