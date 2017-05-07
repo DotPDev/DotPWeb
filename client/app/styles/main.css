@@ -133,6 +133,36 @@ span.disabled {
 .titlebar-container nav.navbar-full a i {
   font-size: 2em;
 }
+.stream-status {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+}
+.stream-status a {
+  text-decoration: none;
+  color: white;
+}
+.stream-status a:hover {
+  color: #be1823;
+}
+.stream-status i {
+  position: relative;
+  top: -5px;
+  margin-left: 5px;
+}
+.stream-status.offline i {
+  color: white;
+}
+.stream-status.offline i.fa-circle {
+  display: none;
+}
+.stream-status.streaming i {
+  color: red;
+  filter: drop-shadow(3px -3px 3px #be1823) drop-shadow(-3px 3px 3px #be1823);
+}
+.stream-status.streaming i.fa-circle-o {
+  display: none;
+}
 #dotp-loader-container {
   z-index: 101;
   position: absolute;
