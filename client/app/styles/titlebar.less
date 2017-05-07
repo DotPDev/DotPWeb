@@ -105,3 +105,43 @@ span.disabled {
 		}
 	}
 }
+
+
+.stream-status {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  
+  a {
+		text-decoration: none;
+		color: white;
+		&:hover {
+			color: @dotpRed;
+		}
+  }
+
+  i {
+  	position: relative;
+  	top: -5px;
+  	margin-left: 5px;
+  }
+	
+	&.offline {
+		i {
+			color: white;
+			&.fa-circle {
+				display: none;
+			}
+		}
+	}
+
+	&.streaming {
+ 		i {
+			color: red;
+    	filter: drop-shadow(3px -3px 3px @dotpRed) drop-shadow(-3px 3px 3px @dotpRed);
+			&.fa-circle-o {
+				display: none;
+			}
+		}
+	}
+}
