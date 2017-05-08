@@ -152,7 +152,7 @@ angular.module('clientApp')
       {
         type: "clothing",
         	name: "Men's DotP Beefy-T",
-        	retail_price: '19.99',
+        	retail_price: '24.99',
         	quantity: 1,
         	files: [
           	{url: 'https://staging-defenseofthepatience.herokuapp.com/images/dotp-logo-shirt.png'},
@@ -163,7 +163,7 @@ angular.module('clientApp')
       },{
         type: "clothing",
         	name: "Ladies' Deep V DotP T-Shirt",
-        	retail_price: '19.99',
+        	retail_price: '24.99',
         	quantity: 1,
         	files: [
           	{url: 'https://staging-defenseofthepatience.herokuapp.com/images/dotp-logo-ladies-shirt.png'},
@@ -174,7 +174,7 @@ angular.module('clientApp')
       },{
         type: "clothing",
         name: "E'rybody DotP Hoodie",
-        retail_price: '39.99',
+        retail_price: '44.99',
         quantity: 1,
         //TODO - get hoodie MOCKUPS
         files: [
