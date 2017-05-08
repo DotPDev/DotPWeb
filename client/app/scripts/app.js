@@ -208,6 +208,23 @@ angular
             }
         }
     });
+    $stateProvider.state('root.orderStatus', {
+        url: '/orders/:orderId',
+        resolve: {
+        },
+        data: {
+            pageName: 'OrderStatusCtrl',
+            browserTitle: 'Order Status',
+            description: 'Check your order status'
+        },
+        views: {
+            'container@': {
+                templateUrl: 'views/order-status.html',
+                controller: 'OrderStatusCtrl',
+                controllerAs: 'vm'
+            }
+        }
+    });
 })
 .run(function ($rootScope, firebaseSvc, $location, googleAnalytics, MetaService) {
     googleAnalytics.init();
