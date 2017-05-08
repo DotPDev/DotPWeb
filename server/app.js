@@ -12,6 +12,7 @@ var users = require('./routes/users');
 var feed = require('./routes/feed');
 var printful = require('./routes/printful')
 var paypal = require('./routes/paypal')
+require('./services/emailSvc')
 
 var app = express();
 
@@ -30,6 +31,9 @@ app.use('/api/users', users); // <-- note we're calling this API
 app.use('/api/feed', feed);
 app.use('/api/printful', printful);
 app.use('/api/paypal', paypal);
+// app.use('*', function (req, res, next) {
+//     res.sendFile(path.resolve('dist/index.html'));
+// });
 
 // In production, we'll actually serve our angular app from express
 if (app.get('env') === 'production') {

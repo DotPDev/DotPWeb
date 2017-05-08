@@ -5,6 +5,7 @@ const paypal = require('paypal-rest-sdk')
 
 const printfulSvc = require('../services/printfulSvc')
 const paypalObjectSvc = require('../services/paypalObjectSvc')
+const emailSvc = require('../services/emailSvc')
 
 const TOKEN = "access_token$production$y26bhr2tmk88zrtx$18bab4b85418a871470a1cc18c31af25"
 
@@ -53,6 +54,7 @@ router.post('/create', function(req, res) {
         console.log(error)
         throw error;
       } else {
+        console.log(payment)
         payment.printfulId = data.id;
         res.send(payment);
       }
@@ -77,7 +79,10 @@ router.post('/execute', function(req, res) {
       console.log(error);
       throw error;
     } else {
-      console.log("Get Payment Response");
+      console.log("Get Payment Response")
+      let orderId = payment.transactions[0].description.replace("Order Number ", "").replace(" - Thank you for supporting Defense of the Patience!", "")
+      console.log(orderId)
+      emailSvc.sendConfirmationEmail(payment.payer.payer_info.email, orderId)
       if (PP_ENV === "live") {
         //commit to printful
         printfulSvc.confirmOrder(printfulId);

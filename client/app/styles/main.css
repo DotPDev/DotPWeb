@@ -1815,6 +1815,12 @@ div.social-links .reddit {
   padding-right: 120px;
   box-sizing: border-box;
 }
+div#order-status {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 html,
 body {
   height: 100%;

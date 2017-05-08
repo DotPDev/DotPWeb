@@ -1,0 +1,6 @@
+<div id="order-status">
+  <div id="order-id">Order ID: {{vm.orderId}}</div>
+  <div id="printful-status">Item Status: {{vm.printfulStatus}}</div>
+  <div id="shipping-status">Shipping Status: {{vm.shippingStatus}}</div>
+  <div id="shipping-link" ng-if="vm.shippingLink"><a ng-href="{{vm.shippingLink}}">Shipping Tracking</a></div>
+</div>
