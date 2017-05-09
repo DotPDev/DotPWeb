@@ -157,18 +157,18 @@ angular
             }
         }
     });
-    $stateProvider.state('root.about', {
-        url: '/about',
+    $stateProvider.state('root.giveaway', {
+        url: '/1080giveaway',
         resolve: {
         },
         data: {
-            pageName: 'AboutCtrl',
+            pageName: 'giveAway',
             browserTitle: 'About',
-            description: 'Defense of the Patience is a gaming podcast founded in July 2014. We began as humble, amateur Dota 2 podcast hosts, and have expanded to cover additional games with special bonus episodes while still featuring a solid lineup of shows devoted to Dota 2 featuring a wide array of talented Dota 2 players, amateurs and scene insiders alike.'
+            description: 'Defense of the Patience is a gaming podcast founded in July 2014. Join in our exciting giveaway of a GTX1080!'
         },
         views: {
             'container@': {
-                templateUrl: 'views/about.html',
+                templateUrl: 'views/1080giveaway.html',
                 controller: 'AboutCtrl',
                 controllerAs: 'vm'
             }

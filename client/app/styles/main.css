@@ -867,6 +867,10 @@ a#feed-icon .waves .wave:nth-child(4) {
 .about-page::-webkit-scrollbar {
   width: 1em;
 }
+.contest-link {
+  display: inline-block;
+  filter: drop-shadow(3px -3px 3px #be1823) drop-shadow(-3px 3px 3px #be1823);
+}
 .about-page::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }
@@ -913,6 +917,13 @@ a#feed-icon .waves .wave:nth-child(4) {
     font-size: 1em;
     padding-bottom: 50px;
   }
+}
+#about-wrapper .giveaway,
+#ladder-wrapper .giveaway {
+  text-align: center;
+  margin-top: -30px;
+  margin-bottom: 30px;
+  height: 80px;
 }
 #about-wrapper > div,
 #ladder-wrapper > div {
@@ -1615,6 +1626,7 @@ div#episodes li p {
 }
 .podcast-actions button,
 .podcast-actions [role="button"],
+.contest-link,
 .main-wrapper > div#dotp-store .open-cart,
 .main-wrapper > div#dotp-store #close-cart,
 .main-wrapper > div#dotp-store .open-checkout,

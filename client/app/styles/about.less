@@ -2,6 +2,12 @@
   width: 1em;
 }
 
+.contest-link {
+	display: inline-block;
+  &:extend(.podcast-actions button);
+  filter: drop-shadow(3px -3px 3px @dotpRed) drop-shadow(-3px 3px 3px @dotpRed);
+}
+
 .about-page::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
 }
@@ -44,12 +50,18 @@
       }
     }
   }
-
+	.giveaway {
+		text-align: center;
+		margin-top: -30px;
+		margin-bottom: 30px;
+		height: 80px;
+	}
   & > div {
     height: 100%;
     width: 100%;
     color: #f7f5f6;
     font-size: 1.5em;
+		
     @media @smartphones {
       font-size: 1em;
     }
