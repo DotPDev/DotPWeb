@@ -23,6 +23,8 @@ angular.module('clientApp')
        	return "patreon-icon";
      	} else if (lowerType === "discord") {
        	return "discord-icon";
+     	} else if (lowerType === "pvgna") {
+       	return "pvgna-icon";
      	}
    	}
  	})
