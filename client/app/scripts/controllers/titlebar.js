@@ -42,7 +42,11 @@ angular.module('clientApp')
 			{
       	type: "twitter",
      		url: "https://twitter.com/DotP_Show"
-    	}
+    	},
+			{
+				type: "PVGNA",
+				url: "https://pvgna.com/?ref=dotp"
+			}
     ];
 
   	screenSize.rules = {
