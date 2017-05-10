@@ -174,6 +174,25 @@ angular
             }
         }
     });
+		$stateProvider.state('root.pvgna', {
+        url: '/pvgna',
+        resolve: {
+        },
+        data: {
+            pageName: 'pvgna',
+            browserTitle: 'PVGNA',
+            description: 'Defense of the Patience is a gaming podcast founded in July 2014. Redirect to PVGNA...'
+        },
+				onEnter: function() {
+				 	window.location.href = "https://pvgna.com/?ref=dotp"
+				},
+        views: {
+            'container@': {
+								templateUrl: 'views/home.html',
+                controller: 'AboutCtrl',
+            }
+        },
+    });
     $stateProvider.state('root.episodes', {
         url: '/episodes',
         resolve: {
