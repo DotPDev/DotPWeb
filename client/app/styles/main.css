@@ -159,7 +159,7 @@ span.disabled {
   .stream-status {
     left: 50%;
     transform: translate(-50%, 0);
-    width: 232px;
+    width: 223px;
   }
 }
 .stream-status a {
