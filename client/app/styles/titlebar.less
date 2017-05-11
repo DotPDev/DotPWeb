@@ -20,6 +20,21 @@ span.disabled {
 	background-color: transparent !important;
 	padding: 0;
 
+	iframe {
+		position: fixed;
+		bottom: 15px;
+  	left: 50%;
+  	z-index: 1;
+  	transform: translate(-50%, 0);
+  	filter: drop-shadow(3px -3px 3px @dotpRed) drop-shadow(-3px 3px 3px @dotpRed);
+
+  	@media @smartphones {
+  		bottom: 60px;
+  		left: 50%;
+  		transform: translate(-50%, 0);
+  	}
+	}
+
 	.title-bar-nav {
 		width: 15%;
 		@media @smartphones {
@@ -30,7 +45,7 @@ span.disabled {
 	.title-bar-logo {
 		width: 40%;
 		@media @smartphones {
-			width: 100%
+			width: 100%;
 		}
 		img {
 			width: 73%;
@@ -38,7 +53,7 @@ span.disabled {
 			margin: -68px auto -53px;
 			@media @smartphones {
 				width: 40%;
-				margin: 0 auto;
+				margin: 20px auto 0;
 			}
 		}
 	}
@@ -111,8 +126,16 @@ span.disabled {
   position: fixed;
   top: 15px;
   right: 15px;
-  
+  font-size: 1.5em;
+  border: 1px solid @dotpRed;
+
+  @media @smartphones {
+  	left: 50%;
+  	transform: translate(-50%, 0);
+  	width: 232px;
+  }
   a {
+  	&:extend(.podcast-actions button);
 		text-decoration: none;
 		color: white;
 		&:hover {
@@ -128,7 +151,7 @@ span.disabled {
 	
 	&.offline {
 		i {
-			color: white;
+			color: @dotpRed;
 			&.fa-circle {
 				display: none;
 			}
@@ -136,8 +159,11 @@ span.disabled {
 	}
 
 	&.streaming {
+		a {
+  		filter: drop-shadow(3px -3px 3px @dotpRed) drop-shadow(-3px 3px 3px @dotpRed);
+		}
  		i {
-			color: red;
+			color: @dotpRed;
     	filter: drop-shadow(3px -3px 3px @dotpRed) drop-shadow(-3px 3px 3px @dotpRed);
 			&.fa-circle-o {
 				display: none;

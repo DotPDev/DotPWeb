@@ -48,6 +48,21 @@ span.disabled {
   background-color: transparent !important;
   padding: 0;
 }
+.titlebar-container iframe {
+  position: fixed;
+  bottom: 15px;
+  left: 50%;
+  z-index: 1;
+  transform: translate(-50%, 0);
+  filter: drop-shadow(3px -3px 3px #be1823) drop-shadow(-3px 3px 3px #be1823);
+}
+@media only screen and (max-width: 830px) {
+  .titlebar-container iframe {
+    bottom: 60px;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+}
 .titlebar-container .title-bar-nav {
   width: 15%;
 }
@@ -72,7 +87,7 @@ span.disabled {
 @media only screen and (max-width: 830px) {
   .titlebar-container .title-bar-logo img {
     width: 40%;
-    margin: 0 auto;
+    margin: 20px auto 0;
   }
 }
 .titlebar-container nav.navbar-full {
@@ -137,6 +152,15 @@ span.disabled {
   position: fixed;
   top: 15px;
   right: 15px;
+  font-size: 1.5em;
+  border: 1px solid #be1823;
+}
+@media only screen and (max-width: 830px) {
+  .stream-status {
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 232px;
+  }
 }
 .stream-status a {
   text-decoration: none;
@@ -151,13 +175,16 @@ span.disabled {
   margin-left: 5px;
 }
 .stream-status.offline i {
-  color: white;
+  color: #be1823;
 }
 .stream-status.offline i.fa-circle {
   display: none;
 }
+.stream-status.streaming a {
+  filter: drop-shadow(3px -3px 3px #be1823) drop-shadow(-3px 3px 3px #be1823);
+}
 .stream-status.streaming i {
-  color: red;
+  color: #be1823;
   filter: drop-shadow(3px -3px 3px #be1823) drop-shadow(-3px 3px 3px #be1823);
 }
 .stream-status.streaming i.fa-circle-o {
@@ -915,7 +942,7 @@ a#feed-icon .waves .wave:nth-child(4) {
   #ladder-wrapper p:last-child {
     padding: 15px;
     font-size: 1em;
-    padding-bottom: 50px;
+    padding-bottom: 150px;
   }
 }
 #about-wrapper .giveaway,
@@ -1627,6 +1654,7 @@ div#episodes li p {
 }
 .podcast-actions button,
 .podcast-actions [role="button"],
+.stream-status a,
 .contest-link,
 .main-wrapper > div#dotp-store .open-cart,
 .main-wrapper > div#dotp-store #close-cart,
