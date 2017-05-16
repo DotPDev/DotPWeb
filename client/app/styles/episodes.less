@@ -1,28 +1,28 @@
 div#episodes {
-  background: @background-dark;
+  	background: @background-dark;
 
 	ul {
-    padding: 0;
-    display: flex;
-    flex-flow: row wrap;
-    width: 80%;
-    margin: -15px auto;
-    list-style: none;
-    padding-bottom:120px;
+    	padding: 0;
+    	display: flex;
+    	flex-flow: row wrap;
+    	width: 80%;
+    	margin: -15px auto;
+    	list-style: none;
+    	padding-bottom:120px;
 
-    @media @smartphones {
-      padding-top: 15px;
-    }
+    	@media @smartphones {
+      		padding-top: 15px;
+    	}
 	}
 
-  li {
-    box-sizing: border-box;
-    padding: 15px 0;
-    margin: 30px 0;
-    width: 30%;
-    border: 0px solid @dotpRed;
+  	li {
+    	box-sizing: border-box;
+    	padding: 15px 0;
+    	margin: 30px 0;
+    	width: 30%;
+    	border: 0px solid @dotpRed;
 
-    @media @tablet  {
+    	@media @tablet  {
 			width: 45%;
 			border-width: 0;
 			&:nth-child(even) {
@@ -31,76 +31,78 @@ div#episodes {
 				padding-left: 5%;
 				margin-left: 5%;
 			}
-    }
-    @media @smartphones {
-      width: 100%;
-      padding: 0 0 45px;
-      border-width: 0 0 1px;
-    }
-    @media @fullScreen {
+    	}
+    	@media @smartphones {
+      		width: 100%;
+      		padding: 0 0 45px;
+      		border-width: 0 0 1px;
+    	}
+    	@media @fullScreen {
 			&:nth-child(3n+1) {
 				width: 33%;
 				border-width: 0 1px 0 0;
 				padding: 15px 2.5%;
-      }
-      &:nth-child(3n) {
+      		}
+      		&:nth-child(3n) {
 				width: 33%;
 				padding: 15px 2.5%;
 				border-width: 0 0 0 1px;
-      }
-      &:nth-child(3n-7) {
+      		}
+      		&:nth-child(3n-7) {
 				margin: 15px 2.5%;
 				width: 27%;
-      }
-    }
+      		}
+    	}
 
-    p {
-      overflow-wrap: break-word;	
-    }
-  }
+    	p {
+      		overflow-wrap: break-word;	
+    	}
+  	}
 }
 
 .podcast-actions {
-  text-align: center;
-  button, [role="button"] {
-    cursor: pointer;
-    display: inline-block;
-    text-decoration: none;
-    background: black;
-    color: @dotpRed;
-    border: 0;
-    padding: 10px;
+  	text-align: center;
+  	button, [role="button"] {
+    	cursor: pointer;
+    	display: inline-block;
+    	text-decoration: none;
+    	background: black;
+    	color: @dotpRed;
+    	border: 0;
+    	padding: 10px;
 		font: normal 1em/1.2 @main-font-family;
-  }
+  	}
 }
 
 .publish-date {
-  text-align: center;
+	margin: 0 auto;
+  	text-align: center;
 }
 
 .podcast-container > div {
-  @media @smartphones {
-    position: relative;
-  }
+  	@media @smartphones {
+    	position: relative;
+  	}
 }
 
-.podcast-container > h2 {
-  box-sizing: border-box;
-  white-space: normal;
-  color: @dotpRed;
+.podcast-container > a {
+	text-decoration: none;
+	box-sizing: border-box;
+  	white-space: normal;
+  	color: @dotpRed;
 }
 
 .episode-image {
-  display: block;
-  margin: 0 auto;
-  width: 30%;
-  box-sizing: border-box;
+  	display: block;
+  	margin: 0 auto;
+  	width: 30%;
+  	box-sizing: border-box;
 
-  & > img {
-    width: 100%;
-    box-sizing: border-box;
-    filter: drop-shadow(3px -3px 3px #476fa7) drop-shadow(-3px 3px 3px #f47522);
-  }
+  	& > img {
+    	width: 100%;
+    	box-sizing: border-box;
+    	filter: drop-shadow(3px -3px 3px #476fa7) drop-shadow(-3px 3px 3px #f47522);
+  	}
 }
 
 .episode-search {
@@ -118,4 +120,28 @@ div#episodes {
 	}
 }
 
+div#episode {
+	width: 80%;
+	margin: 0 auto;
+	display: flex;
+	@media @smartphones {
+		display: block;
+	}
+	.podcast-actions {
+		margin-top: 30px;
+	}
+	.podcast-container {
+		margin: 0 auto;
+		width: 40%;
+		.episode-image {
+			width: 100%;
+		}
+	}
+
+	h2 {
+  		box-sizing: border-box;
+  		white-space: normal;
+  		color: @dotpRed;
+	}
+}
 
