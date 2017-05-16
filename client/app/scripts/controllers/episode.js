@@ -50,9 +50,10 @@ angular.module('clientApp')
 
     function getEpisode() {
       feedManager.parseFeed(vm.page).then(function(response) {
-        vm.episode = response.episodes.find((e) => e.guid === $stateParams.episodeId);
-		console.log(vm.episode)	
-      }).catch(function(error) {
+        vm.episode = response.episodes.find(function(e) {
+			return e.guid === $stateParams.episodeId;
+		});
+	  }).catch(function(error) {
         console.log(error);
       });
     }
