@@ -1671,6 +1671,7 @@ div#episodes li p {
   font: normal 1em/1.2 'Constantia', serif;
 }
 .publish-date {
+  margin: 0 auto;
   text-align: center;
 }
 @media only screen and (max-width: 830px) {
@@ -1678,7 +1679,8 @@ div#episodes li p {
     position: relative;
   }
 }
-.podcast-container > h2 {
+.podcast-container > a {
+  text-decoration: none;
   box-sizing: border-box;
   white-space: normal;
   color: #be1823;
@@ -1709,6 +1711,31 @@ div#episodes li p {
   .episode-search div {
     width: 80%;
   }
+}
+div#episode {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+}
+@media only screen and (max-width: 830px) {
+  div#episode {
+    display: block;
+  }
+}
+div#episode .podcast-actions {
+  margin-top: 30px;
+}
+div#episode .podcast-container {
+  margin: 0 auto;
+  width: 40%;
+}
+div#episode .podcast-container .episode-image {
+  width: 100%;
+}
+div#episode h2 {
+  box-sizing: border-box;
+  white-space: normal;
+  color: #be1823;
 }
 div.social-links {
   width: 100%;

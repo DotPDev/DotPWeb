@@ -1,54 +1,38 @@
-
-<!-- <div id="superEps" ng-class="{ 'open': vm.getPodcastButtonState }"> -->
-    <form class="form-inline episode-search">
-        <div class="form-group">
-            <input type="text" ng-model="search" class="form-control" placeholder="Search">
-        </div>
-    </form>
-	<div id="episodes">
-    <ul>
-      <li ng-repeat="episode in vm.feed.episodes | filter:search">
-        <div class="podcast-container">
-          <div class="publish-date"><span class="episode-date">{{episode.date | date:'mediumDate' }}<span></div>
-            <div class="episode-image"><img ng-src="{{vm.getImage(episode.date)}}" alt=""></div>
-            <h2 ng-click="vm.startPodcast(episode)">
-              	{{episode.title}}
-            </h2>
-          </div>
-          <div class="podcast-summary">
-            <p class="episode-description">{{episode.summary}}</p>
-          </div>
-          <div class="podcast-actions">
-            <button class="play-control " ng-click="vm.startPodcast(episode)">
-              <i class="fa fa-play"></i>
-              <span class="play-text">Play</span>
-            </button>
-            <a ng-href="{{episode.link}}" role="button" class="download-control " download="{{episode.guid}}">
-            <!-- <a ng-href="{{vm.getUrl(episode)}}" role="button" class="download-control " download="{{episode.guid}}"> -->
-              <i class="fa fa-cloud-download"></i>
-              <span class="dl-text">Download</span>
-            </a>
-            <!-- <div class="share-control">
-            <i class="fa fa-share-alt"></i>
-            <span class="share-text">Share</span>
-          </div> -->
-        </div>
-      </li>
-    </ul>
-  </div>
-  <!-- <div id="paging" class="visible" ng-class="{ 'visible': vm.isOpen }" ng-click="$event.stopPropagation()"> -->
-  <!--   <div id="prev"> -->
-  <!--     <a ng-click="vm.goPrev()"> -->
-  <!--       <div class="prev-text">Newer</div> -->
-  <!--       <i class="fa fa-chevron-left fa-2x"></i> -->
-  <!--     </a> -->
-  <!--   </div> -->
-  <!--   <div id="next"> -->
-  <!--     <a ng-click="vm.goNext()"> -->
-  <!--       <i class="fa fa-chevron-right fa-2x"></i> -->
-  <!--       <div class="next-text">Older</div> -->
-  <!--     </a> -->
-  <!--   </div> -->
-  <!-- </div> -->
-<!-- </div> -->
+<form class="form-inline episode-search">
+	<div class="form-group">
+		<input type="text" ng-model="search" class="form-control" placeholder="Search">
+	</div>
+</form>
+<div id="episodes">
+	<ul>
+		<li ng-repeat="episode in vm.feed.episodes | filter:search">
+			<div class="podcast-container">
+				<div class="publish-date">
+					<span class="episode-date">{{episode.date | date:'mediumDate' }}<span>
+				</div>
+				<div class="episode-image">
+					<img ng-src="{{vm.getImage(episode.date)}}" alt="">
+				</div>
+				<a href="/episodes/{{episode.guid}}">
+					<h2 >
+						{{episode.title}}
+					</h2>
+				</a>
+			</div>
+			<div class="podcast-summary">
+				<p class="episode-description">{{episode.summary}}</p>
+			</div>
+			<div class="podcast-actions">
+				<button class="play-control " ng-click="vm.startPodcast(episode)">
+				<i class="fa fa-play"></i>
+				<span class="play-text">Play</span>
+				</button>
+				<a ng-href="{{episode.link}}" role="button" class="download-control " download="{{episode.guid}}">
+				<i class="fa fa-cloud-download"></i>
+				<span class="dl-text">Download</span>
+				</a>
+			</div>
+		</li>
+	</ul>
+</div>
 

@@ -1,0 +1,27 @@
+<div id="episode">
+	<div class="podcast-container">
+		<div class="publish-date">
+			<span class="episode-date">{{vm.episode.date | date:'mediumDate' }}<span>
+		</div>
+		<div class="episode-image">
+			<img ng-src="{{vm.getImage(vm.episode.date)}}" alt="">
+		</div>
+	</div>
+	<div class="podcast-summary">
+		<h2 ng-click="vm.startPodcast(vm.episode)">
+			{{vm.episode.title}}
+		</h2>
+		<p class="episode-description">{{vm.episode.summary}}</p>
+		<div class="podcast-actions">
+			<button class="play-control " ng-click="vm.startPodcast(vm.episode)">
+				<i class="fa fa-play"></i>
+				<span class="play-text">Play</span>
+			</button>
+			<a ng-href="{{vm.episode.link}}" role="button" class="download-control " download="{{vm.episode.guid}}">
+				<i class="fa fa-cloud-download"></i>
+				<span class="dl-text">Download</span>
+			</a>
+		</div>
+	</div>
+</div>
+
