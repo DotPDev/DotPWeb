@@ -23,16 +23,16 @@ span.disabled {
 	iframe {
 		position: fixed;
 		bottom: 15px;
-  	left: 50%;
-  	z-index: 1;
-  	transform: translate(-50%, 0);
-  	filter: drop-shadow(3px -3px 3px @dotpRed) drop-shadow(-3px 3px 3px @dotpRed);
-
-  	@media @smartphones {
-  		bottom: 60px;
   		left: 50%;
+  		z-index: 1;
   		transform: translate(-50%, 0);
-  	}
+  		filter: drop-shadow(3px -3px 3px @dotpRed) drop-shadow(-3px 3px 3px @dotpRed);
+
+  		@media @smartphones {
+  			bottom: 60px;
+  			left: 50%;
+  			transform: translate(-50%, 0);
+  		}
 	}
 
 	.title-bar-nav {
@@ -104,51 +104,51 @@ span.disabled {
 		}
 
 		a {
-      height:100%;
-      width:100%;
-      display:flex;
-      align-items: center;
-      text-decoration: none;
-      text-align: center;
-      justify-content: center;
-      font-size: 1.5em;
-      color: white;
+      		height:100%;
+      		width:100%;
+      		display:flex;
+      		align-items: center;
+      		text-decoration: none;
+      		text-align: center;
+      		justify-content: center;
+      		font-size: 1.5em;
+      		color: white;
 
-      i {
-        font-size: 2em;
-      }
+      		i {
+        		font-size: 2em;
+      		}
 		}
 	}
 }
 
 
 .stream-status {
-  position: fixed;
-  top: 15px;
-  right: 15px;
-  font-size: 1.5em;
-  border: 1px solid @dotpRed;
+  	position: fixed;
+  	top: 15px;
+  	right: 15px;
+  	font-size: 1.5em;
+  	border: 1px solid @dotpRed;
 
-  @media @smartphones {
-  	left: 50%;
-  	transform: translate(-50%, 0);
-  	width: 223px;
-  }
-  a {
-  	&:extend(.podcast-actions button);
+  	@media @smartphones {
+  		left: 50%;
+  		transform: translate(-50%, 0);
+  		width: 223px;
+  	}
+  	a {
+  		&:extend(.podcast-actions button);
 		text-decoration: none;
 		color: white;
 		&:hover {
 			color: @dotpRed;
 		}
-  }
+  	}
 
-  i {
-  	position: relative;
-  	top: -5px;
-  	margin-left: 5px;
-  }
-	
+  	i {
+  		position: relative;
+  		top: -5px;
+  		margin-left: 5px;
+  	}
+
 	&.offline {
 		i {
 			color: @dotpRed;
@@ -160,14 +160,21 @@ span.disabled {
 
 	&.streaming {
 		a {
-  		filter: drop-shadow(3px -3px 3px @dotpRed) drop-shadow(-3px 3px 3px @dotpRed);
+  			filter: drop-shadow(3px -3px 3px @dotpRed) drop-shadow(-3px 3px 3px @dotpRed);
 		}
  		i {
 			color: @dotpRed;
-    	filter: drop-shadow(3px -3px 3px @dotpRed) drop-shadow(-3px 3px 3px @dotpRed);
+    		filter: drop-shadow(3px -3px 3px @dotpRed) drop-shadow(-3px 3px 3px @dotpRed);
 			&.fa-circle-o {
 				display: none;
 			}
 		}
 	}
+}
+.rss-feed-link {
+	position: fixed;
+	bottom: 15px;
+	right: 15px;
+	font-size: 2em;
+	color: white;
 }

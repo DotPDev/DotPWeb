@@ -190,6 +190,13 @@ span.disabled {
 .stream-status.streaming i.fa-circle-o {
   display: none;
 }
+.rss-feed-link {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  font-size: 2em;
+  color: white;
+}
 #dotp-loader-container {
   z-index: 101;
   position: absolute;
