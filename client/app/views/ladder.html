@@ -53,7 +53,7 @@
 			<tbody>
 				<tr ng-repeat="player in vm.ladder.players">
 					<td>
-						<a style="color:{{::player.color}}" ng-href="http://www.dotabuff.com/players/{{::player.playerId}}">{{::player.nickName}}</a>
+						<a style="{{::player.nameStyle}}" ng-href="{{::player.link}}">{{::player.nickName}}</a>
 					</td>
 					<td>
 						{{::player.wins}}
