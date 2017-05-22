@@ -152,18 +152,18 @@ angular.module('clientApp')
       {
         type: "clothing",
         	name: "Men's DotP Beefy-T",
-        	retail_price: '24.99',
+        	retail_price: '19.99',
         	quantity: 1,
         	files: [
           	{url: 'https://staging-defenseofthepatience.herokuapp.com/images/dotp-logo-shirt.png'},
           	{type: 'preview', url: 'https://staging-defenseofthepatience.herokuapp.com/images/dotp-mens-shirt-black.png'}
         	],
-        	sizes: [{size: "Small", variant_id: "5407"}, {size: "Medium", variant_id: "5408"}, {size: "Large", variant_id: "5409"}, {size: "XL", variant_id: "5410"}, {size: "2XL", variant_id: "5411"}, {size: "3XL", variant_id: "5412"}, {size: "4XL", variant_id: "5413"}, {size: "5XL", variant_id: "5414"}, {size: "6XL", variant_id: "5415"}],
+        	sizes: [{size: "Small", variant_id: "5407"}, {size: "Medium", variant_id: "5408"}, {size: "Large", variant_id: "5409"}, {size: "XL", variant_id: "5410"}, {size: "2XL", variant_id: "5411"}],
         	chosen_size: {size: "Small", variant_id: "5407"}
       },{
         type: "clothing",
         	name: "Ladies' Deep V DotP T-Shirt",
-        	retail_price: '24.99',
+        	retail_price: '19.99',
         	quantity: 1,
         	files: [
           	{url: 'https://staging-defenseofthepatience.herokuapp.com/images/dotp-logo-ladies-shirt.png'},
@@ -174,14 +174,14 @@ angular.module('clientApp')
       },{
         type: "clothing",
         name: "E'rybody DotP Hoodie",
-        retail_price: '44.99',
+        retail_price: '34.99',
         quantity: 1,
         //TODO - get hoodie MOCKUPS
         files: [
           {url: 'https://staging-defenseofthepatience.herokuapp.com/images/dotp-logo-hoodie.png'},
           {type: 'preview', url: 'https://staging-defenseofthepatience.herokuapp.com/images/dotp-hoodie.png'}
         ],
-        sizes: [{size: "Small", variant_id: "5530"}, {size: "Medium", variant_id: "5531"}, {size: "Large", variant_id: "5532"}, {size: "XL", variant_id: "5533"}, {size: "2XL", variant_id: "5534"}, {size: "3XL", variant_id: "5535"}, {size: "4XL", variant_id: "5536"}, {size: "5XL", variant_id: "5537"}],
+        sizes: [{size: "Small", variant_id: "5530"}, {size: "Medium", variant_id: "5531"}, {size: "Large", variant_id: "5532"}, {size: "XL", variant_id: "5533"}, {size: "2XL", variant_id: "5534"}],
       	// },{
       	//   type: "hat",
       	//   variant_id: "7854",
@@ -194,7 +194,7 @@ angular.module('clientApp')
       ,{
         type: "mug",
         name: "DotP Coffee Mug",
-        retail_price: '19.99',
+        retail_price: '14.99',
         quantity: 1,
         //TODO - get DotP Mug MOCKUPS
         files: [
