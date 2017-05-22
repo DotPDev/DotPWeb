@@ -157,23 +157,23 @@ angular
             	}
         	}
     	});
-    	$stateProvider.state('root.giveaway', {
-        	url: '/1080giveaway',
-        	resolve: {
-        	},
-        	data: {
-            	pageName: 'giveAway',
-            	browserTitle: 'About',
-            	description: 'Defense of the Patience is a gaming podcast founded in July 2014. Join in our exciting giveaway of a GTX1080!'
-        	},
-        	views: {
-            	'container@': {
-                	templateUrl: 'views/1080giveaway.html',
-                	controller: 'AboutCtrl',
-                	controllerAs: 'vm'
-            	}
-        	}
-    	});
+    	// $stateProvider.state('root.giveaway', {
+        	// url: '/1080giveaway',
+        	// resolve: {
+        	// },
+        	// data: {
+            	// pageName: 'giveAway',
+            	// browserTitle: 'About',
+            	// description: 'Defense of the Patience is a gaming podcast founded in July 2014. Join in our exciting giveaway of a GTX1080!'
+        	// },
+        	// views: {
+            	// 'container@': {
+                	// templateUrl: 'views/1080giveaway.html',
+                	// controller: 'AboutCtrl',
+                	// controllerAs: 'vm'
+            	// }
+        	// }
+    	// });
 		$stateProvider.state('root.pvgna', {
         	url: '/pvgna',
         	resolve: {

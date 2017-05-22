@@ -1,5 +1,6 @@
 .ladder-table {
 	margin: 50px auto;
+	margin-bottom: 150px;
 	width: 100%;
 	box-sizing: border-box;
 	border-collapse: collapse;
@@ -8,17 +9,17 @@
 		td {
 			text-align: center;
 			border-bottom: 1px solid @dotpRed;
-    	vertical-align: middle;
+    		vertical-align: middle;
 		}
 	}
 	th {
-    border-bottom: 1px solid @dotpRed;
-    vertical-align: middle;
-    text-align: center;
-    font-size: 1.75em;
-    @media @smartphones {
-    	font-size: 1.25em;
-    }
+    	border-bottom: 1px solid @dotpRed;
+    	vertical-align: middle;
+    	text-align: center;
+    	font-size: 1.75em;
+    	@media @smartphones {
+    		font-size: 1.25em;
+    	}
 	}
 
 	tbody {
@@ -28,16 +29,13 @@
 		}
 		td {
 			padding: 10px;
-    	overflow: hidden;
-    	white-space: nowrap;
-    	text-overflow: ellipsis;
+    		overflow: hidden;
+    		white-space: nowrap;
+    		text-overflow: ellipsis;
 		}
 		tr {
 			&:nth-child(odd) {
 				background: @dotpOutline;
-			}
-			&:last-child {
-				display: none;
 			}
 		}
 		a {

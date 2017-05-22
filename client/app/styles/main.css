@@ -314,6 +314,7 @@ span.disabled {
 }
 .ladder-table {
   margin: 50px auto;
+  margin-bottom: 150px;
   width: 100%;
   box-sizing: border-box;
   border-collapse: collapse;
@@ -353,9 +354,6 @@ span.disabled {
 }
 .ladder-table tbody tr:nth-child(odd) {
   background: #241a18;
-}
-.ladder-table tbody tr:last-child {
-  display: none;
 }
 .ladder-table tbody a {
   text-decoration: none;

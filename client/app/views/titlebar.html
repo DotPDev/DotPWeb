@@ -16,32 +16,31 @@
 	<nav class="navbar-full" role="navigation">
 		<ul ng-class="{ 'collapsed': vm.isCollapsed }">
 			<li class="title-bar-logo">
-      	<a ui-sref="root.dashboard" ng-click="vm.slideNavPanel = false">
+      			<a ui-sref="root.dashboard" ng-click="vm.slideNavPanel = false">
 					<img src='../images/dotp-logo-notext-01.svg'/>
 				</a>
-    	</li>
+    		</li>
 			<li class="title-bar-nav">
-        <a class="nav-link" ui-sref="root.episodes" ng-click="vm.slideNavPanel = false">
-          <span>Episodes</span>
-        </a>
+        		<a class="nav-link" ui-sref="root.episodes" ng-click="vm.slideNavPanel = false">
+          	  	  <span>Episodes</span>
+        		</a>
 			</li>
 			<li class="title-bar-nav">
-        <a class="nav-link" ui-sref="root.store">
-          <span>Store</span>
-        </a>
-      </li>
-			<li class="title-bar-nav">
-        <a class="nav-link" ui-sref="root.hosts" ng-click="vm.slideNavPanel = false">
-          <span>Hosts</span>
-        </a>
+        		<a class="nav-link" ui-sref="root.store">
+          	  	  <span>Store</span>
+        		</a>
 			</li>
 			<li class="title-bar-nav">
-        <a class="nav-link disabled">
-          <span style="text-decoration: line-through">Ladder</span>
-        </a>
-					<span class="disabled">Available May 17th</span>
+        		<a class="nav-link" ui-sref="root.hosts" ng-click="vm.slideNavPanel = false">
+          	  	  <span>Hosts</span>
+        		</a>
 			</li>
-    </ul>
+			<li class="title-bar-nav">
+        		<a class="nav-link" ui-sref="root.ladder" ng-click="vm.slideNavPanel = false">
+          	  	  <span>Ladder</span>
+        		</a>
+			</li>
+    	</ul>
 	</nav>
 	<social-links links="dotpSocialLinks"></social-links>
   <navbar></navbar>
